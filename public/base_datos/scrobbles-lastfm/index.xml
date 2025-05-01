@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scrobbles lastfm :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/scrobbles-lastfm/index.html</link>
+    <description>Obtiene scrobbles de lastfm para el usuario indicado&#xA;27.000 scrobbles con 11.180 enlazados en 6 minutos&#xA;Tabla scrobbles Campo Tipo Descripción id INTEGER ID único (autoincremental) track_name TEXT Nombre de la canción album_name TEXT Nombre del álbum artist_name TEXT Nombre del artista timestamp INTEGER Timestamp Unix del scrobble scrobble_date TEXT Fecha y hora del scrobble en formato legible lastfm_url TEXT URL de Last.fm para el scrobble song_id INTEGER ID de referencia a la tabla songs (puede ser NULL) album_id INTEGER ID de referencia a la tabla albums (puede ser NULL) artist_id INTEGER ID de referencia a la tabla artists (puede ser NULL) Tabla lastfm_config Campo Tipo Descripción id INTEGER ID único (siempre 1) lastfm_username TEXT Nombre de usuario de Last.fm last_timestamp INTEGER Último timestamp procesado last_updated TIMESTAMP Fecha de última actualización Tabla artists Campo Tipo Descripción name TEXT Nombre del artista mbid TEXT ID de MusicBrainz tags TEXT Etiquetas separadas por comas bio TEXT Biografía del artista lastfm_url TEXT URL de Last.fm para el artista origen TEXT Origen de los datos (‘scrobbles’) Tabla albums Campo Tipo Descripción artist_id INTEGER ID del artista name TEXT Nombre del álbum year INTEGER Año de lanzamiento lastfm_url TEXT URL de Last.fm para el álbum mbid TEXT ID de MusicBrainz total_tracks INTEGER Número total de pistas origen TEXT Origen de los datos (‘scrobbles’) Tabla songs Campo Tipo Descripción title TEXT Título de la canción mbid TEXT ID de MusicBrainz added_timestamp INTEGER Timestamp de cuando se añadió la canción added_week INTEGER Semana en que se añadió la canción added_month INTEGER Mes en que se añadió la canción added_year INTEGER Año en que se añadió la canción duration INTEGER Duración en segundos album TEXT Nombre del álbum album_artist TEXT Artista del álbum artist TEXT Artista de la canción genre TEXT Género musical origen TEXT Origen de los datos (‘scrobbles’) Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción lastfm_url TEXT URL de Last.fm para la canción</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/scrobbles-lastfm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/scrobbles-lastfm/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/scrobbles-lastfm/argumentos/index.html</guid>
+      <description>Argumento Descripción --config Ruta al archivo de configuración JSON --lastfm_user Nombre de usuario de Last.fm --lastfm-api-key Clave de API de Last.fm --db-path Ruta al archivo de base de datos SQLite --force-update Bandera para forzar una actualización completa (borra scrobbles existentes) --output-json Ruta para guardar todos los scrobbles en formato JSON (opcional) --interactive Modo interactivo para añadir nuevos elementos --cache-dir Directorio para archivos de caché</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/scrobbles-lastfm/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/scrobbles-lastfm/datos/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>13. Articulos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/13.-articulos/index.html</link>
+    <description># posts_fresh_rss El script posts_fresh_rss.py se encarga de recuperar artículos y publicaciones de un servidor FreshRSS relacionados con entidades musicales (artistas, álbumes, sellos discográficos) y guardarlos en la base de datos para su posterior consulta.&#xA;Tabla feeds Clave Tipo Descripción freshrss_url TEXT URL base del servidor FreshRSS freshrss_username TEXT Nombre de usuario para autenticación en FreshRSS freshrss_password TEXT Contraseña para autenticación en FreshRSS db_path TEXT Ruta al archivo de base de datos SQLite freshrss_cache_path TEXT (opcional) Ruta al archivo de caché categories LIST Categorías a procesar (por defecto: [&#39;Blogs&#39;, &#39;Revistas&#39;, &#39;Wallabag&#39;]) search_entities LIST Entidades a buscar (por ejemplo: artists, albums, labels) search_short_terms BOOLEAN Permitir o bloquear términos cortos (por defecto: False) ignore_patterns LIST Patrones a ignorar (por defecto incluye: &#39;mix-for-nts&#39;, etc.)</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/13.-articulos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/13.-articulos/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/13.-articulos/argumentos/index.html</guid>
+      <description>Clave Tipo Descripción freshrss_url TEXT URL base del servidor FreshRSS freshrss_username TEXT Nombre de usuario para autenticación en FreshRSS freshrss_password TEXT Contraseña para autenticación en FreshRSS db_path TEXT Ruta al archivo de base de datos SQLite freshrss_cache_path TEXT (opcional) Ruta al archivo de caché categories LIST Categorías a procesar (por defecto: [&#39;Blogs&#39;, &#39;Revistas&#39;, &#39;Wallabag&#39;]) search_entities LIST Entidades a buscar (por ejemplo: artists, albums, labels) search_short_terms BOOLEAN Permitir o bloquear términos cortos (por defecto: False) ignore_patterns LIST Patrones a ignorar (por defecto incluye: &#39;mix-for-nts&#39;, etc.)</description>
+    </item>
+    <item>
+      <title>Archivos</title>
+      <link>//192.168.1.133:1313/base_datos/13.-articulos/archivos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/13.-articulos/archivos/index.html</guid>
+      <description>Tipo Ruta por Defecto / Configurada Formato Descripción / Contenido Principal Caché cache/freshrss_cache.json JSON Guarda artículos ya procesados para evitar duplicados. Estructura: Identificadores únicos y metadatos de los artículos Log Determinada por configuración de logging Texto plano Registra eventos del proceso con nivel INFO por defecto. Incluye: - Inicio y finalización del proceso - Errores de conexión o autenticación - Entidades encontradas en artículos - Errores al procesar artículos</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/13.-articulos/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/13.-articulos/datos/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

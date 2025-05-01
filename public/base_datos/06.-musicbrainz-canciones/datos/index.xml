@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/datos/index.html</link>
+    <description>Campo Tipo Descripción id INTEGER (PK) Identificador único autoincremental song_id INTEGER ID de la canción en la tabla songs relationship_type TEXT Tipo de relación (ej. sample, remix, etc.) related_mbid TEXT ID de MusicBrainz del elemento relacionado related_title TEXT Título del elemento relacionado related_artist TEXT Artista del elemento relacionado relationship_direction TEXT Dirección de la relación (entrante o saliente) last_updated TIMESTAMP Fecha y hora de la última actualización</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/datos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

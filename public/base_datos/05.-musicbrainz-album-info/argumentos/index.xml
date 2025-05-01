@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Argumentos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/argumentos/index.html</link>
+    <description>Argumento Descripción Requerido Valor por defecto / Tipo --config [config_file] Ruta al archivo de configuración JSON Sí (si no se usa --db-path) Archivo JSON --db-path [path] Ruta a la base de datos SQLite Alternativa a --config - --limit [n] Limita el número de lanzamientos a procesar No Entero --force-update Fuerza la actualización de entradas existentes No Bandera --mode [mode] Modo de operación: &#39;auto&#39; o &#39;manual&#39; No auto/manual --cache-file [path] Ruta al archivo de caché para reanudar procesamiento No Archivo JSON --skip-properties [ids] IDs de propiedades de Wikidata a omitir No Lista separada por comas --interactive Activa modo interactivo con más información y confirmaciones No Bandera --log-level [level] Nivel de detalle del log (DEBUG, INFO, WARNING, ERROR) No INFO</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/argumentos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

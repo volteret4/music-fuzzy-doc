@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Creación de la base de datos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/main/main/index.html</link>
+    <description>Esta serie de scripts nos permitirán crear una base de datos con información sobre artistas, álbumes o cancioens de varios modos:&#xA;Puedes elegir una carpeta o varias con archivos de música flac o mp3 Es posible partir de la musica escuchada en lastfm (scrobbles) o listenbrainz (listens) Una vez seleccionado el o los puntos de partida, el script utiliza varios módulos opcionales para aumentar la información de la base de datos</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/main/main/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

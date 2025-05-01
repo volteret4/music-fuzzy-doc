@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Creación de la base de datos Esta serie de scripts nos permitirán crear una base de datos con información sobre artistas, álbumes o cancioens de varios modos:
+Puedes elegir una carpeta o varias con archivos de música flac o mp3 Es posible partir de la musica escuchada en lastfm (scrobbles) o listenbrainz (listens) Una vez seleccionado el o los puntos de partida, el script utiliza varios módulos opcionales para aumentar la información de la base de datos">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Creación de la base de datos :: mfuz">
+    <meta name="twitter:description" content="Creación de la base de datos Esta serie de scripts nos permitirán crear una base de datos con información sobre artistas, álbumes o cancioens de varios modos:
+Puedes elegir una carpeta o varias con archivos de música flac o mp3 Es posible partir de la musica escuchada en lastfm (scrobbles) o listenbrainz (listens) Una vez seleccionado el o los puntos de partida, el script utiliza varios módulos opcionales para aumentar la información de la base de datos">
+    <meta property="og:url" content="//192.168.1.133:1313/main/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="Creación de la base de datos :: mfuz">
+    <meta property="og:description" content="Creación de la base de datos Esta serie de scripts nos permitirán crear una base de datos con información sobre artistas, álbumes o cancioens de varios modos:
+Puedes elegir una carpeta o varias con archivos de música flac o mp3 Es posible partir de la musica escuchada en lastfm (scrobbles) o listenbrainz (listens) Una vez seleccionado el o los puntos de partida, el script utiliza varios módulos opcionales para aumentar la información de la base de datos">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="mfuz">
+    <meta itemprop="name" content="Creación de la base de datos :: mfuz">
+    <meta itemprop="description" content="Creación de la base de datos Esta serie de scripts nos permitirán crear una base de datos con información sobre artistas, álbumes o cancioens de varios modos:
+Puedes elegir una carpeta o varias con archivos de música flac o mp3 Es posible partir de la musica escuchada en lastfm (scrobbles) o listenbrainz (listens) Una vez seleccionado el o los puntos de partida, el script utiliza varios módulos opcionales para aumentar la información de la base de datos">
+    <meta itemprop="wordCount" content="314">
+    <title>Creación de la base de datos :: mfuz</title>
+    <link href="//192.168.1.133:1313/main/index.html" rel="canonical" type="text/html" title="Creación de la base de datos :: mfuz">
+    <link href="/main/index.xml" rel="alternate" type="application/rss+xml" title="Creación de la base de datos :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/main\/index.html';
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/main/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#auxiliares">Auxiliares</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Creación de la base de datos</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/main/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/modulos/index.html" title="Modulos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/listenbrainz/index.html" title="listenbrainz (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable page" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="creación-de-la-base-de-datos">Creación de la base de datos</h1>
+
+<h1 id="creación-de-la-base-de-datos">Creación de la base de datos</h1>
+<p>Esta serie de scripts nos permitirán crear una base de datos con información sobre artistas, álbumes o cancioens de varios modos:</p>
+<ul>
+<li>Puedes elegir una carpeta o varias con archivos de música flac o mp3</li>
+<li>Es posible partir de la musica escuchada en lastfm (scrobbles) o listenbrainz (listens)</li>
+</ul>
+<p>Una vez seleccionado el o los puntos de partida, el script utiliza varios módulos opcionales para aumentar la información de la base de datos</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># Dependencias externas a instalar:</span>
+</span></span><span style="display:flex;"><span>pip install requests beautifulsoup4 spotipy musicbrainzngs python3<span style="color:#f92672">-</span>discogs<span style="color:#f92672">-</span>client pylast python<span style="color:#f92672">-</span>youtube<span style="color:#f92672">-</span>search playwright tqdm
+</span></span><span style="display:flex;"><span>google<span style="color:#f92672">-</span>api<span style="color:#f92672">-</span>python<span style="color:#f92672">-</span>client <span style="color:#960050;background-color:#1e0010">??</span></span></span></code></pre></div>
+<h2 id="auxiliares">Auxiliares</h2>
+<p>Estos scripts puedes usarlos durante el proceso de creación o al final para consultar datos sobre la base de datos.</p>
+<ul>
+<li>[[estadisticas_db.py]] Muestra detalladamente el estado de la base de datos en comparación a una tabla completa finalizando todos los scripts. Uso <code>python estadisticas_db.py --db-path basedatos.db</code></li>
+<li>[[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py|consultar_items_db.py]] Puedes obtener diversos campos de la base de datos usando varios filtros. Leer mas aqui TODO</li>
+<li>[[unir_artistas.py]] Permite unir artistas bajo un mismo nombre, útil cuando te aparecen Chimobayo feat. Björk o similares colaboraciones.</li>
+</ul>
+<h1 id="10-optimización">10. Optimización</h1>
+<pre><code>        CONSEJOS DE USO:
+        - Para búsquedas de texto rápidas, usa las tablas virtuales '_fts':
+          SELECT * FROM songs WHERE id IN (SELECT id FROM song_fts WHERE song_fts MATCH 'palabra_clave')
+
+        - Utiliza las vistas 'view_song_details', 'view_album_stats', 'view_artist_stats',
+          'view_label_stats' y 'view_country_stats' para consultas comunes
+
+        - Aprovecha las columnas desnormalizadas para consultas más rápidas:
+          - album_year
+          - artist_origin
+          - album_art_path_denorm
+          - has_lyrics
+          - album_label
+          - decade
+
+        - Tablas normalizadas:
+          - genres_normalized: Para consultas relacionadas con géneros
+          - countries: Normaliza países para estadísticas
+          - decades: Facilita consultas por década
+
+        - Búsqueda avanzada:
+          - song_fts: Búsqueda de texto completo en canciones
+          - artist_fts: Búsqueda de texto completo en artistas
+          - album_fts: Búsqueda de texto completo en álbumes
+          - lyrics_fts: Búsqueda de texto completo en letras
+</code></pre>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #create_db
+
+short mode
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

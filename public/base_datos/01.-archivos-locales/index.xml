@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>01. Archivos locales :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/01.-archivos-locales/index.html</link>
+    <description>Crea la base de datos leyendo metadata de los archivos flac y mp3.&#xA;Este script es el único que leerá la ruta de archivos, desde aquí todos añaden información a a la base de datos basandose en los ya existentes. Si tienes diferentes rutas con música debes volver a ejecutar el script por cada ruta diferente antes de continuar añadiendo datos a la base de datos con el resto de scripts.</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/01.-archivos-locales/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/01.-archivos-locales/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/01.-archivos-locales/argumentos/index.html</guid>
+      <description>Con estos argumentos puedes crear tu base de datos con el esquema necesario para todos los demás scripts.&#xA;Argumento Tipo Descripción Ejemplo --root-path Obligatorio Carpeta con los archivos de música para añadir a la base de datos --root-path $HOME/Música --db-path Obligatorio Ruta a la base de datos --db_path $HOME/Musica/flac.db --lastfm_api_key Opcional Puedes añadir tu api key para obtener la bio de lastfm --lastfm_api_key 123456789qwerasdfzxcv --update-schema Opcional Actualiza la base de datos con las tablas necesarias para este programa --update-schema --update-bitrates Opcional Calcula un rango de bitrate por álbum --update-bitrates --update-replay-gain Opcional Actualiza replaygain para los elementos de la base de datos --update-replay-gain --optimize Opcional Mejora el rendimiento de la base de datos --optimize --quick-scan Alternativo Muestra un vistazo rápido de la base de datos --quick-scan --force-update Opcional Reescaneará de nuevo el directorio para añadir nuevos. Se puede combinar con –update-… --force-update --help Alternativo Muestra un panel informativo --help</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/01.-archivos-locales/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/01.-archivos-locales/datos/index.html</guid>
+      <description>Rellena las tablas artists, álbums y songs con:&#xA;Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain)</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/08.-enlaces-albums/datos/index.html</link>
+    <description>album_links (principal) Crea la tabla si no existe Actualiza los enlaces para cada álbum albums (referencia) Lee información sobre álbumes (id, name, artist_id) No modifica directamente esta tabla</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/08.-enlaces-albums/datos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

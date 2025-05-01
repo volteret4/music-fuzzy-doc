@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/enlaces-canciones/datos/index.html</link>
+    <description>Campo Tipo Descripción id INTEGER Clave primaria song_id INTEGER ID de la canción en la tabla songs spotify_url TEXT URL de la canción en Spotify spotify_id TEXT ID de la canción en Spotify lastfm_url TEXT URL de la canción en Last.fm links_updated TIMESTAMP Fecha de última actualización youtube_url TEXT URL de la canción en YouTube musicbrainz_url TEXT URL de la canción en MusicBrainz musicbrainz_recording_id TEXT ID de grabación en MusicBrainz bandcamp_url TEXT URL de la canción en Bandcamp soundcloud_url TEXT URL de la canción en SoundCloud boomkat_url TEXT URL de la canción en Boomkat</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/enlaces-canciones/datos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

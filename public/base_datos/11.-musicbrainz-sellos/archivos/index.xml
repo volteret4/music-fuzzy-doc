@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archivos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/archivos/index.html</link>
+    <description>Tipo Ubicación Típica Descripción Base de Datos Ruta especificada por db_path Archivo SQLite donde se almacena la información Caché cache/mb_sellos/ Directorio para almacenar datos descargados desde MusicBrainz Logs logs/mb_sellos.log Archivo de registro con nivel configurable (por defecto: INFO)</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/archivos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Argumentos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/13.-articulos/argumentos/index.html</link>
+    <description>Clave Tipo Descripción freshrss_url TEXT URL base del servidor FreshRSS freshrss_username TEXT Nombre de usuario para autenticación en FreshRSS freshrss_password TEXT Contraseña para autenticación en FreshRSS db_path TEXT Ruta al archivo de base de datos SQLite freshrss_cache_path TEXT (opcional) Ruta al archivo de caché categories LIST Categorías a procesar (por defecto: [&#39;Blogs&#39;, &#39;Revistas&#39;, &#39;Wallabag&#39;]) search_entities LIST Entidades a buscar (por ejemplo: artists, albums, labels) search_short_terms BOOLEAN Permitir o bloquear términos cortos (por defecto: False) ignore_patterns LIST Patrones a ignorar (por defecto incluye: &#39;mix-for-nts&#39;, etc.)</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/13.-articulos/argumentos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archivos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/archivos/index.html</link>
+    <description>Tipo Ruta Descripción Logs logs/enlaces_artista_album_{timestamp}.log Registros de ejecución del script Caché cache/spotify_{artist_name}.json Respuestas cacheadas de la API de Spotify cache/lastfm_{artist_name}.json Respuestas cacheadas de la API de Last.fm cache/musicbrainz_{artist_name}.json Respuestas cacheadas de la API de MusicBrainz cache/discogs_{artist_name}.json Respuestas cacheadas de la API de Discogs Depuración debug_screenshots/{timestamp}_{service}_{artist_name}.png Capturas de pantalla en modo debug</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/07.-enlaces-artistas/archivos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

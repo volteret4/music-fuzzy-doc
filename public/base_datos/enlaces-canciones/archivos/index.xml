@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archivos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/enlaces-canciones/archivos/index.html</link>
+    <description>Tipo Ruta Típica Descripción Caché de enlaces {checkpoint_path}/song_links_cache.json Guarda el estado de los enlaces procesados Registro de actividad {log_dir}/enlaces_canciones_{timestamp}.log Log de ejecución con marcas de tiempo Caché por servicio {cache_dir}/spotify_cache.json, etc. Resultados de consultas individuales a servicios externos</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/enlaces-canciones/archivos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

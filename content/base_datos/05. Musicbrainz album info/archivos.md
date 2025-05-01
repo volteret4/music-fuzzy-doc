@@ -1,0 +1,9 @@
+---
+title: Archivos
+weight: 3
+---
+
+|Tipo|Ubicación por Defecto|Descripción|
+|---|---|---|
+|Archivo de caché|`mb_release_group_cache.json`|JSON con el estado de procesamiento para reanudar tareas|
+|Archivo de log|`logs/mb_release_group.log`|Registro de mensajes informativos y errores|

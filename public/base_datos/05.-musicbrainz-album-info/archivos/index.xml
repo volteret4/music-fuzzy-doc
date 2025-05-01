@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archivos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/archivos/index.html</link>
+    <description>Tipo Ubicación por Defecto Descripción Archivo de caché mb_release_group_cache.json JSON con el estado de procesamiento para reanudar tareas Archivo de log logs/mb_release_group.log Registro de mensajes informativos y errores</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/archivos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

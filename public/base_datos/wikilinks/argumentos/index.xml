@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Argumentos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/wikilinks/argumentos/index.html</link>
+    <description>Argumento Tipo Descripción Valor por Defecto --config str Ruta al archivo de configuración JSON (obligatorio) — --log-file str Archivo de registro para seguimiento del progreso — --db-path str Ruta a la base de datos SQLite — --type str Tipo de entidad a actualizar (artists, albums, artists_content, albums_content, labels, labels_content) — --user-agent str User-Agent para las peticiones a MusicBrainz — --modo str Tipo de lanzamiento: auto o manual — --force-update bool Flag para forzar la actualización de todos los elementos False</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/wikilinks/argumentos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

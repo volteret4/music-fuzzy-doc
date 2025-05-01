@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>credenciales :: mfuz</title>
+    <link>//192.168.1.133:1313/credenciales/index.html</link>
+    <description>Aqui explicaré brevemente como obtener algunas de las credenciales:</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/credenciales/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>discogs</title>
+      <link>//192.168.1.133:1313/credenciales/discogs/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/credenciales/discogs/index.html</guid>
+      <description>Desde esta url puedes crear un token para usar con discogs. Debes tener una cuenta registrada anteriormente. E internet.</description>
+    </item>
+    <item>
+      <title>genius</title>
+      <link>//192.168.1.133:1313/credenciales/genius/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/credenciales/genius/index.html</guid>
+      <description>En esta página puedes crear tus credenciales, copia client-id y client-secret en un lugar fresco y seco</description>
+    </item>
+    <item>
+      <title>lastfm</title>
+      <link>//192.168.1.133:1313/credenciales/lastfm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/credenciales/lastfm/index.html</guid>
+      <description>Crea una accediendo a este enlace&#xA;Luego copien en un lugar seguro su api key y secret</description>
+    </item>
+    <item>
+      <title>lirycs_ovh</title>
+      <link>//192.168.1.133:1313/credenciales/lirycs_ovh/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/credenciales/lirycs_ovh/index.html</guid>
+      <description>No necesitas nada para poder aprovechar este gran proyecto</description>
+    </item>
+    <item>
+      <title>muspy</title>
+      <link>//192.168.1.133:1313/credenciales/muspy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/credenciales/muspy/index.html</guid>
+      <description>Otra maravilla del código abierto, en su página puedes agregar manualmente tus artistas favoritos para poder estar al tanto por mail o RSS de sus lanzamientos.&#xA;Puedes obtener su id tras crear una cuenta.&#xA;Para obtener el id y usarlo en esta app puedes copiar el enlace del icono RSS:&#xA;Y quedate con la última parte tras id=</description>
+    </item>
+    <item>
+      <title>spotify</title>
+      <link>//192.168.1.133:1313/credenciales/spotify/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/credenciales/spotify/index.html</guid>
+      <description>Primero accede con tu cuenta spotify aquí, que no, que era aquí&#xA;Luego accede a tu dashboard&#xA;Crean una app nueva especificando un nombre y una redirect-uri, copien esta última junto al client-id y client-secret&#xA;Ten en cuenta que Spotify permite un máximo de 20.000 consultas por día, tendrás que ajustar el lanzamiento del script si superas dicho número de elementos.</description>
+    </item>
+    <item>
+      <title>youtube</title>
+      <link>//192.168.1.133:1313/credenciales/youtube/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/credenciales/youtube/index.html</guid>
+      <description>google tiene el nivel gratuito más bajo de consultas diarias, 1000. Por lo que si necesitas realizar estas múltiples veces deberías planearlo con antelación. Quien avisa es avisador.</description>
+    </item>
+  </channel>
+</rss>

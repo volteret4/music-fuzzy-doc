@@ -1,0 +1,63 @@
+languageCode = "es-es"
+baseurl      = "https://volteret4.github.io/mfuz/"
+title        = "Music fuzzy documentation"
+
+disableKinds = ["taxonomy"]
+
+# Code higlighting settings
+pygmentsCodefences            = true
+pygmentsCodeFencesGuesSsyntax = false
+pygmentsOptions               = ""
+pygmentsStyle                 = "monokai"
+pygmentsUseClasses            = false
+
+defaultContentLanguage = "en"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      autoHeadingIDType = "github-ascii"
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[module]
+  [module.hugoVersion]
+  [[module.imports]]
+    # This is replaced in go.mod to point to the directory above.
+    path = "github.com/bep/docuapi/v2"
+
+[params]
+  search       = true
+  maxMenuDepth = 3    # (optional) available options are: 1, 2, or 3 (default: 2)
+
+  # Configure the language example tabs.
+  [[params.language_tabs]]
+    key  = "go"
+    name = "Argumentos"
+  [[params.language_tabs]]
+    key  = "shell"
+    name = "Credenciales"
+  [[params.language_tabs]]
+    key  = "javascript"
+    name = "Archivos"
+  [[params.language_tabs]]
+    key  = "ruby"
+    name = "Datos"
+  [[params.language_tabs]]
+    key  = "python"
+    name = "Instalar"
+
+#Languages 
+[languages]
+
+  [languages.en]
+    languageName = "English"
+    weight       = 2
+    title        = "DocuAPI Example Site"
+    [languages.en.params]
+      # Left sidebar footer items. Use HTMl or Markdown.
+      toc_footers = [
+        "<a href='#'>Sign Up for a Developer Key</a>",
+        "Documentation Powered by [DocuAPI](https://github.com/bep/docuapi)",
+        "Hugo Theme by [bep](https://github.com/bep)",
+      ]

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>12. Letras :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/12.-letras/index.html</link>
+    <description>Módulo para gestionar los enlaces de canciones en servicios de música en línea.&#xA;Este script actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py.&#xA;4 horas en 5140 canciones, Media de una canción cada 2.82 segundos&#xA;Tabla lyrics Campo Tipo Descripción id INTEGER Identificador único de la letra track_id INTEGER ID de la canción asociada (clave foránea a songs.id) lyrics TEXT El texto completo de la letra source TEXT La fuente de la letra (ej. ‘Genius’, ’lyrics.ovh’, ‘Happi’, ‘Musixmatch’) last_updated TIMESTAMP Fecha y hora de la última actualización</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/12.-letras/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/12.-letras/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/12.-letras/argumentos/index.html</guid>
+      <description>Argumento Tipo Descripción Valor por Defecto --db_path str Ruta a la base de datos SQLite (requerido) — --force-update bool Bandera para forzar la actualización de todas las letras, incluso las que ya existen False --batch-size int Número de canciones a procesar por lote 1000 --no-resume bool Bandera para no continuar desde el último punto guardado False --config str Archivo de configuración JSON con parámetros adicionales —</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/12.-letras/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/12.-letras/datos/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

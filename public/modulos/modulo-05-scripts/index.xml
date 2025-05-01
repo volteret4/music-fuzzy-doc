@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modulo 05 Scripts :: mfuz</title>
+    <link>//192.168.1.133:1313/modulos/modulo-05-scripts/index.html</link>
+    <description>Módulo 5: Scripts Este módulos se encarga de lanzar unos scripts con diversos argumentos configurado todo ello en un JSON.&#xA;Scripts: [[scripts_module.py]]&#xA;not done tags include #m_fuzzy tags include #scripts hide tags sort by due sort by priority sort by scheduled</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/modulos/modulo-05-scripts/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

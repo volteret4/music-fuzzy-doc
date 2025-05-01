@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archivos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/post_fresh_rss/archivos/index.html</link>
+    <description>Tipo Ruta por Defecto / Configurada Formato Descripción / Contenido Principal Caché cache/freshrss_cache.json JSON Guarda artículos ya procesados para evitar duplicados. Estructura: Identificadores únicos y metadatos de los artículos Log Determinada por configuración de logging Texto plano Registra eventos del proceso con nivel INFO por defecto. Incluye: - Inicio y finalización del proceso - Errores de conexión o autenticación - Entidades encontradas en artículos - Errores al procesar artículos</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/post_fresh_rss/archivos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

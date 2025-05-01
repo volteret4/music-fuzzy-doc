@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Este módulo forma parte del sistema de base de datos musical y se encarga de:
+Recopilar URLs de redes sociales y plataformas web para artistas Obtener datos desde múltiples fuentes como Discogs, MusicBrainz y páginas web oficiales Almacenar y actualizar información en la tabla artists_networks de la base de datos Tabla artists_networks Campo Tipo Descripción id INTEGER Clave primaria artist_id INTEGER ID del artista (clave foránea a la tabla artists) allmusic TEXT URL de AllMusic bandcamp TEXT URL de Bandcamp boomkat TEXT URL de Boomkat facebook TEXT URL de Facebook twitter TEXT URL de Twitter mastodon TEXT URL de Mastodon bluesky TEXT URL de Bluesky instagram TEXT URL de Instagram spotify TEXT URL de Spotify lastfm TEXT URL de Last.fm wikipedia TEXT URL de Wikipedia juno TEXT URL de Juno soundcloud TEXT URL de SoundCloud youtube TEXT URL de YouTube imdb TEXT URL de IMDb progarchives TEXT URL de ProgArchives setlist_fm TEXT URL de Setlist.fm who_sampled TEXT URL de WhoSampled vimeo TEXT URL de Vimeo genius TEXT URL de Genius myspace TEXT URL de MySpace tumblr TEXT URL de Tumblr resident_advisor TEXT URL de Resident Advisor rateyourmusic TEXT URL de RateYourMusic enlaces TEXT JSON con enlaces adicionales no categorizados last_updated TIMESTAMP Fecha y hora de la última actualización">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="04. Redes :: mfuz">
+    <meta name="twitter:description" content="Este módulo forma parte del sistema de base de datos musical y se encarga de:
+Recopilar URLs de redes sociales y plataformas web para artistas Obtener datos desde múltiples fuentes como Discogs, MusicBrainz y páginas web oficiales Almacenar y actualizar información en la tabla artists_networks de la base de datos Tabla artists_networks Campo Tipo Descripción id INTEGER Clave primaria artist_id INTEGER ID del artista (clave foránea a la tabla artists) allmusic TEXT URL de AllMusic bandcamp TEXT URL de Bandcamp boomkat TEXT URL de Boomkat facebook TEXT URL de Facebook twitter TEXT URL de Twitter mastodon TEXT URL de Mastodon bluesky TEXT URL de Bluesky instagram TEXT URL de Instagram spotify TEXT URL de Spotify lastfm TEXT URL de Last.fm wikipedia TEXT URL de Wikipedia juno TEXT URL de Juno soundcloud TEXT URL de SoundCloud youtube TEXT URL de YouTube imdb TEXT URL de IMDb progarchives TEXT URL de ProgArchives setlist_fm TEXT URL de Setlist.fm who_sampled TEXT URL de WhoSampled vimeo TEXT URL de Vimeo genius TEXT URL de Genius myspace TEXT URL de MySpace tumblr TEXT URL de Tumblr resident_advisor TEXT URL de Resident Advisor rateyourmusic TEXT URL de RateYourMusic enlaces TEXT JSON con enlaces adicionales no categorizados last_updated TIMESTAMP Fecha y hora de la última actualización">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/04.-redes/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="04. Redes :: mfuz">
+    <meta property="og:description" content="Este módulo forma parte del sistema de base de datos musical y se encarga de:
+Recopilar URLs de redes sociales y plataformas web para artistas Obtener datos desde múltiples fuentes como Discogs, MusicBrainz y páginas web oficiales Almacenar y actualizar información en la tabla artists_networks de la base de datos Tabla artists_networks Campo Tipo Descripción id INTEGER Clave primaria artist_id INTEGER ID del artista (clave foránea a la tabla artists) allmusic TEXT URL de AllMusic bandcamp TEXT URL de Bandcamp boomkat TEXT URL de Boomkat facebook TEXT URL de Facebook twitter TEXT URL de Twitter mastodon TEXT URL de Mastodon bluesky TEXT URL de Bluesky instagram TEXT URL de Instagram spotify TEXT URL de Spotify lastfm TEXT URL de Last.fm wikipedia TEXT URL de Wikipedia juno TEXT URL de Juno soundcloud TEXT URL de SoundCloud youtube TEXT URL de YouTube imdb TEXT URL de IMDb progarchives TEXT URL de ProgArchives setlist_fm TEXT URL de Setlist.fm who_sampled TEXT URL de WhoSampled vimeo TEXT URL de Vimeo genius TEXT URL de Genius myspace TEXT URL de MySpace tumblr TEXT URL de Tumblr resident_advisor TEXT URL de Resident Advisor rateyourmusic TEXT URL de RateYourMusic enlaces TEXT JSON con enlaces adicionales no categorizados last_updated TIMESTAMP Fecha y hora de la última actualización">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="04. Redes :: mfuz">
+    <meta itemprop="description" content="Este módulo forma parte del sistema de base de datos musical y se encarga de:
+Recopilar URLs de redes sociales y plataformas web para artistas Obtener datos desde múltiples fuentes como Discogs, MusicBrainz y páginas web oficiales Almacenar y actualizar información en la tabla artists_networks de la base de datos Tabla artists_networks Campo Tipo Descripción id INTEGER Clave primaria artist_id INTEGER ID del artista (clave foránea a la tabla artists) allmusic TEXT URL de AllMusic bandcamp TEXT URL de Bandcamp boomkat TEXT URL de Boomkat facebook TEXT URL de Facebook twitter TEXT URL de Twitter mastodon TEXT URL de Mastodon bluesky TEXT URL de Bluesky instagram TEXT URL de Instagram spotify TEXT URL de Spotify lastfm TEXT URL de Last.fm wikipedia TEXT URL de Wikipedia juno TEXT URL de Juno soundcloud TEXT URL de SoundCloud youtube TEXT URL de YouTube imdb TEXT URL de IMDb progarchives TEXT URL de ProgArchives setlist_fm TEXT URL de Setlist.fm who_sampled TEXT URL de WhoSampled vimeo TEXT URL de Vimeo genius TEXT URL de Genius myspace TEXT URL de MySpace tumblr TEXT URL de Tumblr resident_advisor TEXT URL de Resident Advisor rateyourmusic TEXT URL de RateYourMusic enlaces TEXT JSON con enlaces adicionales no categorizados last_updated TIMESTAMP Fecha y hora de la última actualización">
+    <meta itemprop="wordCount" content="208">
+    <title>04. Redes :: mfuz</title>
+    <link href="//192.168.1.133:1313/base_datos/04.-redes/index.html" rel="canonical" type="text/html" title="04. Redes :: mfuz">
+    <link href="/base_datos/04.-redes/index.xml" rel="alternate" type="application/rss+xml" title="04. Redes :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/04.-redes\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/base_datos/04.-redes/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">04. Redes</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/04.-redes/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/03.-listens-listenbrainz/datos/index.html" title="Datos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/04.-redes/argumentos/index.html" title="Argumentos (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="04-redes">04. Redes</h1>
+
+<p>Este módulo forma parte del sistema de base de datos musical y se encarga de:</p>
+<ul>
+<li>Recopilar URLs de redes sociales y plataformas web para artistas</li>
+<li>Obtener datos desde múltiples fuentes como Discogs, MusicBrainz y páginas web oficiales</li>
+<li>Almacenar y actualizar información en la tabla artists_networks de la base de datos</li>
+</ul>
+<h4 id="tabla-artists_networks">Tabla <code>artists_networks</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>Clave primaria</td>
+      </tr>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>ID del artista (clave foránea a la tabla <code>artists</code>)</td>
+      </tr>
+      <tr>
+          <td><code>allmusic</code></td>
+          <td>TEXT</td>
+          <td>URL de AllMusic</td>
+      </tr>
+      <tr>
+          <td><code>bandcamp</code></td>
+          <td>TEXT</td>
+          <td>URL de Bandcamp</td>
+      </tr>
+      <tr>
+          <td><code>boomkat</code></td>
+          <td>TEXT</td>
+          <td>URL de Boomkat</td>
+      </tr>
+      <tr>
+          <td><code>facebook</code></td>
+          <td>TEXT</td>
+          <td>URL de Facebook</td>
+      </tr>
+      <tr>
+          <td><code>twitter</code></td>
+          <td>TEXT</td>
+          <td>URL de Twitter</td>
+      </tr>
+      <tr>
+          <td><code>mastodon</code></td>
+          <td>TEXT</td>
+          <td>URL de Mastodon</td>
+      </tr>
+      <tr>
+          <td><code>bluesky</code></td>
+          <td>TEXT</td>
+          <td>URL de Bluesky</td>
+      </tr>
+      <tr>
+          <td><code>instagram</code></td>
+          <td>TEXT</td>
+          <td>URL de Instagram</td>
+      </tr>
+      <tr>
+          <td><code>spotify</code></td>
+          <td>TEXT</td>
+          <td>URL de Spotify</td>
+      </tr>
+      <tr>
+          <td><code>lastfm</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>wikipedia</code></td>
+          <td>TEXT</td>
+          <td>URL de Wikipedia</td>
+      </tr>
+      <tr>
+          <td><code>juno</code></td>
+          <td>TEXT</td>
+          <td>URL de Juno</td>
+      </tr>
+      <tr>
+          <td><code>soundcloud</code></td>
+          <td>TEXT</td>
+          <td>URL de SoundCloud</td>
+      </tr>
+      <tr>
+          <td><code>youtube</code></td>
+          <td>TEXT</td>
+          <td>URL de YouTube</td>
+      </tr>
+      <tr>
+          <td><code>imdb</code></td>
+          <td>TEXT</td>
+          <td>URL de IMDb</td>
+      </tr>
+      <tr>
+          <td><code>progarchives</code></td>
+          <td>TEXT</td>
+          <td>URL de ProgArchives</td>
+      </tr>
+      <tr>
+          <td><code>setlist_fm</code></td>
+          <td>TEXT</td>
+          <td>URL de Setlist.fm</td>
+      </tr>
+      <tr>
+          <td><code>who_sampled</code></td>
+          <td>TEXT</td>
+          <td>URL de WhoSampled</td>
+      </tr>
+      <tr>
+          <td><code>vimeo</code></td>
+          <td>TEXT</td>
+          <td>URL de Vimeo</td>
+      </tr>
+      <tr>
+          <td><code>genius</code></td>
+          <td>TEXT</td>
+          <td>URL de Genius</td>
+      </tr>
+      <tr>
+          <td><code>myspace</code></td>
+          <td>TEXT</td>
+          <td>URL de MySpace</td>
+      </tr>
+      <tr>
+          <td><code>tumblr</code></td>
+          <td>TEXT</td>
+          <td>URL de Tumblr</td>
+      </tr>
+      <tr>
+          <td><code>resident_advisor</code></td>
+          <td>TEXT</td>
+          <td>URL de Resident Advisor</td>
+      </tr>
+      <tr>
+          <td><code>rateyourmusic</code></td>
+          <td>TEXT</td>
+          <td>URL de RateYourMusic</td>
+      </tr>
+      <tr>
+          <td><code>enlaces</code></td>
+          <td>TEXT</td>
+          <td>JSON con enlaces adicionales no categorizados</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha y hora de la última actualización</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 04. Redes</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Valor por Defecto</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>config</code></td>
+          <td><code>dict</code></td>
+          <td>Diccionario con la configuración</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>config.db_path</code></td>
+          <td><code>str</code></td>
+          <td>Ruta al archivo de la base de datos SQLite (obligatorio)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>config.discogs_token</code></td>
+          <td><code>str</code></td>
+          <td>Token para la API de Discogs (obligatorio)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>config.rate_limit</code></td>
+          <td><code>float</code></td>
+          <td>Tiempo de espera entre solicitudes (por defecto: <code>1.0</code>)</td>
+          <td><code>1.0</code></td>
+      </tr>
+      <tr>
+          <td><code>config.max_retries</code></td>
+          <td><code>int</code></td>
+          <td>Número máximo de reintentos para solicitudes fallidas (por defecto: <code>3</code>)</td>
+          <td><code>3</code></td>
+      </tr>
+      <tr>
+          <td><code>config.batch_size</code></td>
+          <td><code>int</code></td>
+          <td>Cantidad de artistas a procesar por lote (por defecto: <code>50</code>)</td>
+          <td><code>50</code></td>
+      </tr>
+      <tr>
+          <td><code>config.force_update</code></td>
+          <td><code>bool</code></td>
+          <td>Forzar actualización incluso si ya existen datos (por defecto: <code>False</code>)</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>config.missing_only</code></td>
+          <td><code>bool</code></td>
+          <td>Procesar solo artistas sin registro de redes sociales (por defecto: <code>True</code>)</td>
+          <td><code>True</code></td>
+      </tr>
+      <tr>
+          <td><code>config.concurrent_workers</code></td>
+          <td><code>int</code></td>
+          <td>Número de hilos para procesamiento en paralelo (por defecto: <code>1</code>)</td>
+          <td><code>1</code></td>
+      </tr>
+      <tr>
+          <td><code>config.user_agent</code></td>
+          <td><code>str</code></td>
+          <td>Agente de usuario para las solicitudes HTTP (por defecto: <code>'MusicDatabaseApp/1.0'</code>)</td>
+          <td><code>'MusicDatabaseApp/1.0'</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

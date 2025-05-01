@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>06. Musicbrainz canciones :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/index.html</link>
+    <description># mb_data_canciones Módulo para obtener y almacenar relaciones entre canciones desde MusicBrainz.&#xA;Este script extrae información sobre relaciones entre canciones (samples, remixes, covers, etc.) utilizando la API de MusicBrainz y almacena estos datos en la tabla mb_data_songs de la base de datos.</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/argumentos/index.html</guid>
+      <description>Argumento Descripción Obligatorio --config Ruta al archivo de configuración JSON Sí --db-path Ruta a la base de datos SQLite (sobrescribe valor en config) No --force-update Fuerza la actualización de todos los registros No --interactive Modo interactivo para confirmar operaciones No --verbose Nivel de detalle en los logs No</description>
+    </item>
+    <item>
+      <title>Archivos</title>
+      <link>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/archivos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/archivos/index.html</guid>
+      <description>Tipo Ubicación típica Descripción Log logs/mb_data_canciones.log Registra la ejecución; se crea o añade según configuración Caché cache/musicbrainz/ Almacena respuestas de la API para reducir llamadas Otros No aplica No modifica archivos de audio originales</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/datos/index.html</guid>
+      <description>Campo Tipo Descripción id INTEGER (PK) Identificador único autoincremental song_id INTEGER ID de la canción en la tabla songs relationship_type TEXT Tipo de relación (ej. sample, remix, etc.) related_mbid TEXT ID de MusicBrainz del elemento relacionado related_title TEXT Título del elemento relacionado related_artist TEXT Artista del elemento relacionado relationship_direction TEXT Dirección de la relación (entrante o saliente) last_updated TIMESTAMP Fecha y hora de la última actualización</description>
+    </item>
+  </channel>
+</rss>

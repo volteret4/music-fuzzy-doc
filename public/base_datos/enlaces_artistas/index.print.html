@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Configuración JSON { &#34;db_path&#34;: &#34;ruta/a/tu/base_de_datos.db&#34;, &#34;log_path&#34;: &#34;logs/&#34;, &#34;cache_path&#34;: &#34;cache/&#34;, &#34;cache_duration&#34;: 30, &#34;rate_limit&#34;: 0.5, &#34;spotify&#34;: { &#34;client_id&#34;: &#34;tu_spotify_client_id&#34;, &#34;client_secret&#34;: &#34;tu_spotify_client_secret&#34; }, &#34;lastfm&#34;: { &#34;api_key&#34;: &#34;tu_lastfm_api_key&#34;, &#34;api_secret&#34;: &#34;tu_lastfm_api_secret&#34; }, &#34;discogs&#34;: { &#34;token&#34;: &#34;tu_discogs_token&#34; }, &#34;user_agent&#34;: &#34;MusicDatabaseEnricher/1.0 (contacto@ejemplo.com)&#34; } Variables de entorno alternativas SPOTIFY_CLIENT_ID SPOTIFY_CLIENT_SECRET LASTFM_API_KEY LASTFM_API_SECRET DISCOGS_TOKEN Tabla artists Campo Tipo Descripción spotify_url TEXT URL del artista en Spotify youtube_url TEXT URL del canal/tópico del artista en YouTube musicbrainz_url TEXT URL del artista en MusicBrainz discogs_url TEXT URL del artista en Discogs rateyourmusic_url TEXT URL del artista en RateYourMusic bandcamp_url TEXT URL del artista en Bandcamp mbid TEXT ID de MusicBrainz del artista origin TEXT Origen o país del artista formed_year INTEGER Año de formación del artista total_albums INTEGER Número total de álbumes del artista bio TEXT Biografía del artista similar_artists TEXT/JSON Artistas similares tags TEXT/JSON Etiquetas o géneros aliases TEXT/JSON Nombres alternativos del artista member_of TEXT/JSON Grupos a los que pertenece el artista lastfm_url TEXT URL del artista en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla albums Campo Tipo Descripción spotify_url TEXT URL del álbum en Spotify spotify_id TEXT ID del álbum en Spotify youtube_url TEXT URL de resultados o playlist del álbum en YouTube musicbrainz_url TEXT URL del álbum en MusicBrainz discogs_url TEXT URL del álbum en Discogs rateyourmusic_url TEXT URL del álbum en RateYourMusic bandcamp_url TEXT URL del álbum en Bandcamp mbid TEXT ID de MusicBrainz del álbum producers TEXT/JSON Productores del álbum engineers TEXT/JSON Ingenieros de grabación mastering_engineers TEXT/JSON Ingenieros de masterización credits JSON Detalles de los créditos lastfm_url TEXT URL del álbum en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla songs Campo Tipo Descripción mbid TEXT Identificador de MusicBrainz para la grabación tags include #enlaces_artista_album sort by due reverse hide tags">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="enlaces_artistas :: mfuz">
+    <meta name="twitter:description" content="Configuración JSON { &#34;db_path&#34;: &#34;ruta/a/tu/base_de_datos.db&#34;, &#34;log_path&#34;: &#34;logs/&#34;, &#34;cache_path&#34;: &#34;cache/&#34;, &#34;cache_duration&#34;: 30, &#34;rate_limit&#34;: 0.5, &#34;spotify&#34;: { &#34;client_id&#34;: &#34;tu_spotify_client_id&#34;, &#34;client_secret&#34;: &#34;tu_spotify_client_secret&#34; }, &#34;lastfm&#34;: { &#34;api_key&#34;: &#34;tu_lastfm_api_key&#34;, &#34;api_secret&#34;: &#34;tu_lastfm_api_secret&#34; }, &#34;discogs&#34;: { &#34;token&#34;: &#34;tu_discogs_token&#34; }, &#34;user_agent&#34;: &#34;MusicDatabaseEnricher/1.0 (contacto@ejemplo.com)&#34; } Variables de entorno alternativas SPOTIFY_CLIENT_ID SPOTIFY_CLIENT_SECRET LASTFM_API_KEY LASTFM_API_SECRET DISCOGS_TOKEN Tabla artists Campo Tipo Descripción spotify_url TEXT URL del artista en Spotify youtube_url TEXT URL del canal/tópico del artista en YouTube musicbrainz_url TEXT URL del artista en MusicBrainz discogs_url TEXT URL del artista en Discogs rateyourmusic_url TEXT URL del artista en RateYourMusic bandcamp_url TEXT URL del artista en Bandcamp mbid TEXT ID de MusicBrainz del artista origin TEXT Origen o país del artista formed_year INTEGER Año de formación del artista total_albums INTEGER Número total de álbumes del artista bio TEXT Biografía del artista similar_artists TEXT/JSON Artistas similares tags TEXT/JSON Etiquetas o géneros aliases TEXT/JSON Nombres alternativos del artista member_of TEXT/JSON Grupos a los que pertenece el artista lastfm_url TEXT URL del artista en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla albums Campo Tipo Descripción spotify_url TEXT URL del álbum en Spotify spotify_id TEXT ID del álbum en Spotify youtube_url TEXT URL de resultados o playlist del álbum en YouTube musicbrainz_url TEXT URL del álbum en MusicBrainz discogs_url TEXT URL del álbum en Discogs rateyourmusic_url TEXT URL del álbum en RateYourMusic bandcamp_url TEXT URL del álbum en Bandcamp mbid TEXT ID de MusicBrainz del álbum producers TEXT/JSON Productores del álbum engineers TEXT/JSON Ingenieros de grabación mastering_engineers TEXT/JSON Ingenieros de masterización credits JSON Detalles de los créditos lastfm_url TEXT URL del álbum en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla songs Campo Tipo Descripción mbid TEXT Identificador de MusicBrainz para la grabación tags include #enlaces_artista_album sort by due reverse hide tags">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/enlaces_artistas/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="enlaces_artistas :: mfuz">
+    <meta property="og:description" content="Configuración JSON { &#34;db_path&#34;: &#34;ruta/a/tu/base_de_datos.db&#34;, &#34;log_path&#34;: &#34;logs/&#34;, &#34;cache_path&#34;: &#34;cache/&#34;, &#34;cache_duration&#34;: 30, &#34;rate_limit&#34;: 0.5, &#34;spotify&#34;: { &#34;client_id&#34;: &#34;tu_spotify_client_id&#34;, &#34;client_secret&#34;: &#34;tu_spotify_client_secret&#34; }, &#34;lastfm&#34;: { &#34;api_key&#34;: &#34;tu_lastfm_api_key&#34;, &#34;api_secret&#34;: &#34;tu_lastfm_api_secret&#34; }, &#34;discogs&#34;: { &#34;token&#34;: &#34;tu_discogs_token&#34; }, &#34;user_agent&#34;: &#34;MusicDatabaseEnricher/1.0 (contacto@ejemplo.com)&#34; } Variables de entorno alternativas SPOTIFY_CLIENT_ID SPOTIFY_CLIENT_SECRET LASTFM_API_KEY LASTFM_API_SECRET DISCOGS_TOKEN Tabla artists Campo Tipo Descripción spotify_url TEXT URL del artista en Spotify youtube_url TEXT URL del canal/tópico del artista en YouTube musicbrainz_url TEXT URL del artista en MusicBrainz discogs_url TEXT URL del artista en Discogs rateyourmusic_url TEXT URL del artista en RateYourMusic bandcamp_url TEXT URL del artista en Bandcamp mbid TEXT ID de MusicBrainz del artista origin TEXT Origen o país del artista formed_year INTEGER Año de formación del artista total_albums INTEGER Número total de álbumes del artista bio TEXT Biografía del artista similar_artists TEXT/JSON Artistas similares tags TEXT/JSON Etiquetas o géneros aliases TEXT/JSON Nombres alternativos del artista member_of TEXT/JSON Grupos a los que pertenece el artista lastfm_url TEXT URL del artista en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla albums Campo Tipo Descripción spotify_url TEXT URL del álbum en Spotify spotify_id TEXT ID del álbum en Spotify youtube_url TEXT URL de resultados o playlist del álbum en YouTube musicbrainz_url TEXT URL del álbum en MusicBrainz discogs_url TEXT URL del álbum en Discogs rateyourmusic_url TEXT URL del álbum en RateYourMusic bandcamp_url TEXT URL del álbum en Bandcamp mbid TEXT ID de MusicBrainz del álbum producers TEXT/JSON Productores del álbum engineers TEXT/JSON Ingenieros de grabación mastering_engineers TEXT/JSON Ingenieros de masterización credits JSON Detalles de los créditos lastfm_url TEXT URL del álbum en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla songs Campo Tipo Descripción mbid TEXT Identificador de MusicBrainz para la grabación tags include #enlaces_artista_album sort by due reverse hide tags">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="enlaces_artistas :: mfuz">
+    <meta itemprop="description" content="Configuración JSON { &#34;db_path&#34;: &#34;ruta/a/tu/base_de_datos.db&#34;, &#34;log_path&#34;: &#34;logs/&#34;, &#34;cache_path&#34;: &#34;cache/&#34;, &#34;cache_duration&#34;: 30, &#34;rate_limit&#34;: 0.5, &#34;spotify&#34;: { &#34;client_id&#34;: &#34;tu_spotify_client_id&#34;, &#34;client_secret&#34;: &#34;tu_spotify_client_secret&#34; }, &#34;lastfm&#34;: { &#34;api_key&#34;: &#34;tu_lastfm_api_key&#34;, &#34;api_secret&#34;: &#34;tu_lastfm_api_secret&#34; }, &#34;discogs&#34;: { &#34;token&#34;: &#34;tu_discogs_token&#34; }, &#34;user_agent&#34;: &#34;MusicDatabaseEnricher/1.0 (contacto@ejemplo.com)&#34; } Variables de entorno alternativas SPOTIFY_CLIENT_ID SPOTIFY_CLIENT_SECRET LASTFM_API_KEY LASTFM_API_SECRET DISCOGS_TOKEN Tabla artists Campo Tipo Descripción spotify_url TEXT URL del artista en Spotify youtube_url TEXT URL del canal/tópico del artista en YouTube musicbrainz_url TEXT URL del artista en MusicBrainz discogs_url TEXT URL del artista en Discogs rateyourmusic_url TEXT URL del artista en RateYourMusic bandcamp_url TEXT URL del artista en Bandcamp mbid TEXT ID de MusicBrainz del artista origin TEXT Origen o país del artista formed_year INTEGER Año de formación del artista total_albums INTEGER Número total de álbumes del artista bio TEXT Biografía del artista similar_artists TEXT/JSON Artistas similares tags TEXT/JSON Etiquetas o géneros aliases TEXT/JSON Nombres alternativos del artista member_of TEXT/JSON Grupos a los que pertenece el artista lastfm_url TEXT URL del artista en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla albums Campo Tipo Descripción spotify_url TEXT URL del álbum en Spotify spotify_id TEXT ID del álbum en Spotify youtube_url TEXT URL de resultados o playlist del álbum en YouTube musicbrainz_url TEXT URL del álbum en MusicBrainz discogs_url TEXT URL del álbum en Discogs rateyourmusic_url TEXT URL del álbum en RateYourMusic bandcamp_url TEXT URL del álbum en Bandcamp mbid TEXT ID de MusicBrainz del álbum producers TEXT/JSON Productores del álbum engineers TEXT/JSON Ingenieros de grabación mastering_engineers TEXT/JSON Ingenieros de masterización credits JSON Detalles de los créditos lastfm_url TEXT URL del álbum en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla songs Campo Tipo Descripción mbid TEXT Identificador de MusicBrainz para la grabación tags include #enlaces_artista_album sort by due reverse hide tags">
+    <meta itemprop="wordCount" content="288">
+    <title>enlaces_artistas :: mfuz</title>
+    <link href="//192.168.1.133:1313/base_datos/enlaces_artistas/index.html" rel="canonical" type="text/html" title="enlaces_artistas :: mfuz">
+    <link href="/base_datos/enlaces_artistas/index.xml" rel="alternate" type="application/rss+xml" title="enlaces_artistas :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/enlaces_artistas\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/base_datos/enlaces_artistas/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">enlaces_artistas</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces_artistas/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces-canciones/datos/index.html" title="Datos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces_artistas/argumentos/index.html" title="Argumentos (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="enlaces_artistas">enlaces_artistas</h1>
+
+<h4 id="configuración-json">Configuración JSON</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;db_path&#34;</span>: <span style="color:#e6db74">&#34;ruta/a/tu/base_de_datos.db&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;log_path&#34;</span>: <span style="color:#e6db74">&#34;logs/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;cache_path&#34;</span>: <span style="color:#e6db74">&#34;cache/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;cache_duration&#34;</span>: <span style="color:#ae81ff">30</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;rate_limit&#34;</span>: <span style="color:#ae81ff">0.5</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;spotify&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;client_id&#34;</span>: <span style="color:#e6db74">&#34;tu_spotify_client_id&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;client_secret&#34;</span>: <span style="color:#e6db74">&#34;tu_spotify_client_secret&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;lastfm&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;api_key&#34;</span>: <span style="color:#e6db74">&#34;tu_lastfm_api_key&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;api_secret&#34;</span>: <span style="color:#e6db74">&#34;tu_lastfm_api_secret&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;discogs&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;tu_discogs_token&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;user_agent&#34;</span>: <span style="color:#e6db74">&#34;MusicDatabaseEnricher/1.0 (contacto@ejemplo.com)&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h5 id="variables-de-entorno-alternativas">Variables de entorno alternativas</h5>
+<ul>
+<li>SPOTIFY_CLIENT_ID</li>
+<li>SPOTIFY_CLIENT_SECRET</li>
+<li>LASTFM_API_KEY</li>
+<li>LASTFM_API_SECRET</li>
+<li>DISCOGS_TOKEN</li>
+</ul>
+<h4 id="tabla-artists">Tabla artists</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>spotify_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>youtube_url</code></td>
+          <td>TEXT</td>
+          <td>URL del canal/tópico del artista en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>musicbrainz_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>discogs_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en Discogs</td>
+      </tr>
+      <tr>
+          <td><code>rateyourmusic_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en RateYourMusic</td>
+      </tr>
+      <tr>
+          <td><code>bandcamp_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en Bandcamp</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz del artista</td>
+      </tr>
+      <tr>
+          <td><code>origin</code></td>
+          <td>TEXT</td>
+          <td>Origen o país del artista</td>
+      </tr>
+      <tr>
+          <td><code>formed_year</code></td>
+          <td>INTEGER</td>
+          <td>Año de formación del artista</td>
+      </tr>
+      <tr>
+          <td><code>total_albums</code></td>
+          <td>INTEGER</td>
+          <td>Número total de álbumes del artista</td>
+      </tr>
+      <tr>
+          <td><code>bio</code></td>
+          <td>TEXT</td>
+          <td>Biografía del artista</td>
+      </tr>
+      <tr>
+          <td><code>similar_artists</code></td>
+          <td>TEXT/JSON</td>
+          <td>Artistas similares</td>
+      </tr>
+      <tr>
+          <td><code>tags</code></td>
+          <td>TEXT/JSON</td>
+          <td>Etiquetas o géneros</td>
+      </tr>
+      <tr>
+          <td><code>aliases</code></td>
+          <td>TEXT/JSON</td>
+          <td>Nombres alternativos del artista</td>
+      </tr>
+      <tr>
+          <td><code>member_of</code></td>
+          <td>TEXT/JSON</td>
+          <td>Grupos a los que pertenece el artista</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de la última actualización</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-albums">Tabla albums</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>spotify_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>spotify_id</code></td>
+          <td>TEXT</td>
+          <td>ID del álbum en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>youtube_url</code></td>
+          <td>TEXT</td>
+          <td>URL de resultados o playlist del álbum en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>musicbrainz_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>discogs_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en Discogs</td>
+      </tr>
+      <tr>
+          <td><code>rateyourmusic_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en RateYourMusic</td>
+      </tr>
+      <tr>
+          <td><code>bandcamp_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en Bandcamp</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz del álbum</td>
+      </tr>
+      <tr>
+          <td><code>producers</code></td>
+          <td>TEXT/JSON</td>
+          <td>Productores del álbum</td>
+      </tr>
+      <tr>
+          <td><code>engineers</code></td>
+          <td>TEXT/JSON</td>
+          <td>Ingenieros de grabación</td>
+      </tr>
+      <tr>
+          <td><code>mastering_engineers</code></td>
+          <td>TEXT/JSON</td>
+          <td>Ingenieros de masterización</td>
+      </tr>
+      <tr>
+          <td><code>credits</code></td>
+          <td>JSON</td>
+          <td>Detalles de los créditos</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de la última actualización</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-songs">Tabla songs</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>Identificador de MusicBrainz para la grabación</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">tags include #enlaces_artista_album 
+sort by due reverse
+hide tags</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of enlaces_artistas</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config</code></td>
+          <td>Obligatorio</td>
+          <td>Ruta al archivo de configuración JSON</td>
+      </tr>
+      <tr>
+          <td><code>--artist</code></td>
+          <td>Opcional</td>
+          <td>Buscar un artista específico</td>
+      </tr>
+      <tr>
+          <td><code>--album</code></td>
+          <td>Opcional</td>
+          <td>Buscar un álbum específico</td>
+      </tr>
+      <tr>
+          <td><code>--days</code></td>
+          <td>Opcional</td>
+          <td>Actualizar registros más antiguos que N días</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td>Flag</td>
+          <td>Forzar actualización de todos los registros</td>
+      </tr>
+      <tr>
+          <td><code>--missing-only</code></td>
+          <td>Flag</td>
+          <td>Actualizar solo registros con datos faltantes</td>
+      </tr>
+      <tr>
+          <td><code>--older-only</code></td>
+          <td>Flag</td>
+          <td>Actualizar solo registros más antiguos</td>
+      </tr>
+      <tr>
+          <td><code>--summary-only</code></td>
+          <td>Flag</td>
+          <td>Mostrar solo resumen sin actualizar</td>
+      </tr>
+      <tr>
+          <td><code>--debug</code></td>
+          <td>Flag</td>
+          <td>Activar modo debug con screenshots</td>
+      </tr>
+      <tr>
+          <td><code>--disable-services</code></td>
+          <td>Lista</td>
+          <td>Deshabilitar servicios específicos</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="credenciales">Credenciales</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Servicio</th>
+          <th>Credenciales</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Spotify</td>
+          <td><code>client_id</code>, <code>client_secret</code></td>
+          <td>Credenciales de Spotify Developer</td>
+      </tr>
+      <tr>
+          <td>Last.fm</td>
+          <td><code>api_key</code>, <code>api_secret</code></td>
+          <td>Claves de API de Last.fm</td>
+      </tr>
+      <tr>
+          <td>Discogs</td>
+          <td><code>token</code></td>
+          <td>Token de acceso para la API de Discogs</td>
+      </tr>
+      <tr>
+          <td>MusicBrainz</td>
+          <td>No requiere credenciales</td>
+          <td>Usa un user-agent personalizado</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ruta</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Logs</td>
+          <td><code>logs/enlaces_artista_album_{timestamp}.log</code></td>
+          <td>Registros de ejecución del script</td>
+      </tr>
+      <tr>
+          <td>Caché</td>
+          <td><code>cache/spotify_{artist_name}.json</code></td>
+          <td>Respuestas cacheadas de la API de Spotify</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>cache/lastfm_{artist_name}.json</code></td>
+          <td>Respuestas cacheadas de la API de Last.fm</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>cache/musicbrainz_{artist_name}.json</code></td>
+          <td>Respuestas cacheadas de la API de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>cache/discogs_{artist_name}.json</code></td>
+          <td>Respuestas cacheadas de la API de Discogs</td>
+      </tr>
+      <tr>
+          <td>Depuración</td>
+          <td><code>debug_screenshots/{timestamp}_{service}_{artist_name}.png</code></td>
+          <td>Capturas de pantalla en modo debug</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

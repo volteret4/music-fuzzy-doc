@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Modulo 3 Blogs :: mfuz</title>
+    <link>//192.168.1.133:1313/modulos/modulo-3-blogs/index.html</link>
+    <description>Módulo 3: Blogs playlists Pensado para crear una playlist mensual de cada blog musical que sigo:&#xA;Obtiene las urls a los posts no leídos de mi servidor freshrss y las separa por meses de publicación Busca en cada post, enlaces a youtube, bandcamp y soundcloud y los añade a la playlist Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda. Se pueden añadir urls a post singulares para crear una playlist del mismo y guardarla en playlist locales.</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/modulos/modulo-3-blogs/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

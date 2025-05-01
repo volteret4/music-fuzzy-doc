@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>11. Youtube links de canciones :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/index.html</link>
+    <description>Este script busca videos de YouTube relacionados con las canciones en la base de datos y almacena los enlaces correspondientes. También actualiza información de enlaces para álbumes y artistas.&#xA;Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción youtube_url TEXT URL del video en YouTube youtube_id TEXT ID del video en YouTube video_title TEXT Título del video channel_name TEXT Nombre del canal de YouTube view_count INTEGER Número de vistas (si disponible) match_score REAL Puntuación de coincidencia (0.0 - 1.0) last_updated TIMESTAMP Fecha de última actualización Otras tablas Tabla Campo Descripción albums youtube_url URL de canal o playlist del álbum en YouTube artists youtube_url URL del canal oficial del artista en YouTube</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/argumentos/index.html</guid>
+      <description>Argumento Descripción Valor por Defecto db_path Ruta a la base de datos SQLite — youtube_api_key Clave de API de YouTube — lastfm_api_key Clave de API de Last.fm — rate_limit Tiempo entre solicitudes API (segundos) 1.0 user_agent Agente de usuario para solicitudes HTTP &#39;MusicDB/1.0&#39; missing_only Solo procesar elementos sin enlaces True cache_file Ruta del archivo de caché PROJECT_ROOT/.content/cache/youtube_links_cache.json force_update Forzar actualización incluso si hay datos en caché False batch_size Número de elementos a procesar por lote 100 max_retries Máximo de reintentos para solicitudes fallidas 3 use_scrapers Usar scraping si falla la API True entity_types Tipos de entidades a procesar [&#39;songs&#39;] log_file Ruta del archivo de log PROJECT_ROOT/.content/logs/youtube_links.log log_level Nivel de detalle del registro &#39;INFO&#39; concurrent_workers Número de procesos simultáneos 4 query_template Plantilla de búsqueda en YouTube &#34;{artist} - {title} official&#34; max_results Número máximo de resultados por búsqueda 5 min_match_score Puntuación mínima para considerar coincidencia 0.7</description>
+    </item>
+    <item>
+      <title>Credenciales</title>
+      <link>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/credenciales/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/credenciales/index.html</guid>
+      <description>Clave Descripción Obligatoria YOUTUBE_API_KEY Clave de API de YouTube (console.developers.google.com) Sí LASTFM_API_KEY Clave de API de Last.fm (last.fm/api) Sí USER_AGENT User-Agent personalizado para solicitudes HTTP Sí</description>
+    </item>
+    <item>
+      <title>Archivos</title>
+      <link>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/archivos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/archivos/index.html</guid>
+      <description>Tipo Ruta Descripción Caché PROJECT_ROOT/.content/cache/youtube_links_cache.json Almacena resultados de búsquedas para evitar duplicados Logs PROJECT_ROOT/.content/logs/youtube_links.log Archivo de registro de actividad y errores Temporales PROJECT_ROOT/.content/temp/yt_results/ Carpeta de archivos temporales generados</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/datos/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

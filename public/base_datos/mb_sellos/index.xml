@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mb_sellos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/mb_sellos/index.html</link>
+    <description>Este script obtiene y almacena información detallada sobre sellos discográficos desde MusicBrainz y fuentes adicionales como Wikipedia y Discogs.</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/mb_sellos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/mb_sellos/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/mb_sellos/argumentos/index.html</guid>
+      <description>Clave Descripción Opcional db_path Ruta a la base de datos SQLite No cache_path Ruta al directorio de caché Sí log_level Nivel de registro (DEBUG, INFO, WARNING, ERROR) Sí mb_sellos Configuración específica del módulo No</description>
+    </item>
+    <item>
+      <title>Credenciales</title>
+      <link>//192.168.1.133:1313/base_datos/mb_sellos/credenciales/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/mb_sellos/credenciales/index.html</guid>
+      <description>Variable Descripción Opcional MUSICBRAINZ_APP Nombre de la aplicación para usar la API de MusicBrainz No MUSICBRAINZ_VERSION Versión de la aplicación No MUSICBRAINZ_EMAIL Correo electrónico para identificación en MusicBrainz No DISCOGS_TOKEN Token de autenticación para la API de Discogs Sí</description>
+    </item>
+    <item>
+      <title>Archivos</title>
+      <link>//192.168.1.133:1313/base_datos/mb_sellos/archivos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/mb_sellos/archivos/index.html</guid>
+      <description>Tipo Ubicación Típica Descripción Base de Datos Ruta especificada por db_path Archivo SQLite donde se almacena la información Caché cache/mb_sellos/ Directorio para almacenar datos descargados desde MusicBrainz Logs logs/mb_sellos.log Archivo de registro con nivel configurable (por defecto: INFO)</description>
+    </item>
+  </channel>
+</rss>

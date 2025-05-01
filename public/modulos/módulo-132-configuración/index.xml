@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Módulo 132 Configuración :: mfuz</title>
+    <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-132-configuraci%C3%B3n/index.html</link>
+    <description>Módulo 132: Configuración Este es el módulo encargado de crear una UI para la configuración y permite modificar cualquier argumento recibido por el resto de módulos.&#xA;Las claves del json [[Spaces/Scripts/menus/musica/config.json|config.json]] con múltiples opciones se mostrarán como un menú desplegable.&#xA;Script: [[config_editor_module.py]]</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/modulos/m%C3%B3dulo-132-configuraci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

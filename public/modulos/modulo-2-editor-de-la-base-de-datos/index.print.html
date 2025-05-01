@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Módulo 2: Editor de la base de datos Parecido al primer tab, este se permite editar cualquier campo de la base de datos.
+Script: [[editor_module.py]]
+not done tags include #m_fuzzy tags include #db_editor hide tags sort by due sort by priority sort by scheduled">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Modulo 2 Editor de la base de datos :: mfuz">
+    <meta name="twitter:description" content="Módulo 2: Editor de la base de datos Parecido al primer tab, este se permite editar cualquier campo de la base de datos.
+Script: [[editor_module.py]]
+not done tags include #m_fuzzy tags include #db_editor hide tags sort by due sort by priority sort by scheduled">
+    <meta property="og:url" content="//192.168.1.133:1313/modulos/modulo-2-editor-de-la-base-de-datos/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="Modulo 2 Editor de la base de datos :: mfuz">
+    <meta property="og:description" content="Módulo 2: Editor de la base de datos Parecido al primer tab, este se permite editar cualquier campo de la base de datos.
+Script: [[editor_module.py]]
+not done tags include #m_fuzzy tags include #db_editor hide tags sort by due sort by priority sort by scheduled">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Modulo 2 Editor de la base de datos :: mfuz">
+    <meta itemprop="description" content="Módulo 2: Editor de la base de datos Parecido al primer tab, este se permite editar cualquier campo de la base de datos.
+Script: [[editor_module.py]]
+not done tags include #m_fuzzy tags include #db_editor hide tags sort by due sort by priority sort by scheduled">
+    <meta itemprop="wordCount" content="44">
+    <title>Modulo 2 Editor de la base de datos :: mfuz</title>
+    <link href="//192.168.1.133:1313/modulos/modulo-2-editor-de-la-base-de-datos/index.html" rel="canonical" type="text/html" title="Modulo 2 Editor de la base de datos :: mfuz">
+    <link href="/modulos/modulo-2-editor-de-la-base-de-datos/index.xml" rel="alternate" type="application/rss+xml" title="Modulo 2 Editor de la base de datos :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/modulos\/modulo-2-editor-de-la-base-de-datos\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/modulos/modulo-2-editor-de-la-base-de-datos/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/modulos/index.html"><span itemprop="name">MÓDULOS</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Modulo 2 Editor de la base de datos</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/modulos/modulo-2-editor-de-la-base-de-datos/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/modulos/m%C3%B3dulo-132-configuraci%C3%B3n/index.html" title="Módulo 132 Configuración (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/modulos/modulo-3-blogs/index.html" title="Modulo 3 Blogs (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable modulos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-2-editor-de-la-base-de-datos">Modulo 2 Editor de la base de datos</h1>
+
+<h4 id="módulo-2-editor-de-la-base-de-datos">Módulo 2: Editor de la base de datos</h4>
+<p>Parecido al primer tab, este se permite editar cualquier campo de la base de datos.</p>
+<p>Script:
+[[editor_module.py]]</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #db_editor 
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

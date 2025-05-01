@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Argumentos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/scrobbles-lastfm/argumentos/index.html</link>
+    <description>Argumento Descripción --config Ruta al archivo de configuración JSON --lastfm_user Nombre de usuario de Last.fm --lastfm-api-key Clave de API de Last.fm --db-path Ruta al archivo de base de datos SQLite --force-update Bandera para forzar una actualización completa (borra scrobbles existentes) --output-json Ruta para guardar todos los scrobbles en formato JSON (opcional) --interactive Modo interactivo para añadir nuevos elementos --cache-dir Directorio para archivos de caché</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/scrobbles-lastfm/argumentos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

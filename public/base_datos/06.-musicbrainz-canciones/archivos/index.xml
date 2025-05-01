@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archivos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/archivos/index.html</link>
+    <description>Tipo Ubicación típica Descripción Log logs/mb_data_canciones.log Registra la ejecución; se crea o añade según configuración Caché cache/musicbrainz/ Almacena respuestas de la API para reducir llamadas Otros No aplica No modifica archivos de audio originales</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/archivos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

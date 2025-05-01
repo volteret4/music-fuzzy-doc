@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Módulo 3: Blogs playlists Pensado para crear una playlist mensual de cada blog musical que sigo:
+Obtiene las urls a los posts no leídos de mi servidor freshrss y las separa por meses de publicación Busca en cada post, enlaces a youtube, bandcamp y soundcloud y los añade a la playlist Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda. Se pueden añadir urls a post singulares para crear una playlist del mismo y guardarla en playlist locales.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Modulo 03 Blogs :: mfuz">
+    <meta name="twitter:description" content="Módulo 3: Blogs playlists Pensado para crear una playlist mensual de cada blog musical que sigo:
+Obtiene las urls a los posts no leídos de mi servidor freshrss y las separa por meses de publicación Busca en cada post, enlaces a youtube, bandcamp y soundcloud y los añade a la playlist Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda. Se pueden añadir urls a post singulares para crear una playlist del mismo y guardarla en playlist locales.">
+    <meta property="og:url" content="//192.168.1.133:1313/modulos/modulo-03-blogs/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="Modulo 03 Blogs :: mfuz">
+    <meta property="og:description" content="Módulo 3: Blogs playlists Pensado para crear una playlist mensual de cada blog musical que sigo:
+Obtiene las urls a los posts no leídos de mi servidor freshrss y las separa por meses de publicación Busca en cada post, enlaces a youtube, bandcamp y soundcloud y los añade a la playlist Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda. Se pueden añadir urls a post singulares para crear una playlist del mismo y guardarla en playlist locales.">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Modulo 03 Blogs :: mfuz">
+    <meta itemprop="description" content="Módulo 3: Blogs playlists Pensado para crear una playlist mensual de cada blog musical que sigo:
+Obtiene las urls a los posts no leídos de mi servidor freshrss y las separa por meses de publicación Busca en cada post, enlaces a youtube, bandcamp y soundcloud y los añade a la playlist Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda. Se pueden añadir urls a post singulares para crear una playlist del mismo y guardarla en playlist locales.">
+    <meta itemprop="wordCount" content="122">
+    <title>Modulo 03 Blogs :: mfuz</title>
+    <link href="/modulos/modulo-03-blogs/index.xml" rel="alternate" type="application/rss+xml" title="Modulo 03 Blogs :: mfuz">
+    <link href="/modulos/modulo-03-blogs/index.print.html" rel="alternate" type="text/html" title="Modulo 03 Blogs :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-html.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/modulos\/modulo-03-blogs\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/modulos/modulo-03-blogs/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/modulos/index.html"><span itemprop="name">Modulos de la app</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Modulo 03 Blogs</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/modulos/modulo-03-blogs/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/modulos/modulo-02-editor-de-la-base-de-datos/index.html" title="Modulo 02 Editor de la base de datos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/modulos/modulo-04-conciertos/index.html" title="Modulo 04 Conciertos (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable modulos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-03-blogs">Modulo 03 Blogs</h1>
+
+<h4 id="módulo-3-blogs-playlists">Módulo 3: Blogs playlists</h4>
+<p>Pensado para crear una playlist mensual de cada blog musical que sigo:</p>
+<ol>
+<li>Obtiene las urls a los posts no leídos de mi servidor freshrss y las separa por meses de publicación</li>
+<li>Busca en cada post, enlaces a youtube, bandcamp y soundcloud y los añade a la playlist</li>
+<li>Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda.</li>
+</ol>
+<p>Se pueden añadir urls a post singulares para crear una playlist del mismo y guardarla en playlist locales.</p>
+<p>Actualmente reproduce las canciones en mpv</p>
+<p>Script:
+[[menu_blogs_module.py]]</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #blogs 
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">mfuz</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-controls">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-home">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="" data-nav-id="/introduccion/index.html"><a class="padding" href="/introduccion/index.html">Introducción</a></li>
+            <li class="" data-nav-id="/instalacion/index.html"><a class="padding" href="/instalacion/index.html">instalación</a></li>
+            <li class="" data-nav-id="/base_datos/index.html"><a class="padding" href="/base_datos/index.html">Creación de la base de datos</a><ul id="R-subsections-37c67787f2618f27a34854322beea326" class="collapsible-menu"></ul></li>
+            <li class="parent " data-nav-id="/modulos/index.html"><a class="padding" href="/modulos/index.html">Modulos de la app</a><ul id="R-subsections-2b7372743a6928555c05103f039a6cdf" class="collapsible-menu">
+            <li class="" data-nav-id="/modulos/modulo-01-music-fuzzy/index.html"><a class="padding" href="/modulos/modulo-01-music-fuzzy/index.html">Modulo 01 music-fuzzy</a></li>
+            <li class="" data-nav-id="/modulos/modulo-02-editor-de-la-base-de-datos/index.html"><a class="padding" href="/modulos/modulo-02-editor-de-la-base-de-datos/index.html">Modulo 02 Editor de la base de datos</a></li>
+            <li class="active " data-nav-id="/modulos/modulo-03-blogs/index.html"><a class="padding" href="/modulos/modulo-03-blogs/index.html">Modulo 03 Blogs</a></li>
+            <li class="" data-nav-id="/modulos/modulo-04-conciertos/index.html"><a class="padding" href="/modulos/modulo-04-conciertos/index.html">Modulo 04 Conciertos</a></li>
+            <li class="" data-nav-id="/modulos/modulo-05-scripts/index.html"><a class="padding" href="/modulos/modulo-05-scripts/index.html">Modulo 05 Scripts</a></li>
+            <li class="" data-nav-id="/modulos/modulo-06-muspy/index.html"><a class="padding" href="/modulos/modulo-06-muspy/index.html">Modulo 06 Muspy</a></li>
+            <li class="" data-nav-id="/modulos/modulo-07-lastfm-scrobbler/index.html"><a class="padding" href="/modulos/modulo-07-lastfm-scrobbler/index.html">Modulo 07 Lastfm scrobbler</a></li>
+            <li class="" data-nav-id="/modulos/modulo-08-jaangle/index.html"><a class="padding" href="/modulos/modulo-08-jaangle/index.html">Modulo 08 Jaangle</a></li>
+            <li class="" data-nav-id="/modulos/modulo-09-enlaces/index.html"><a class="padding" href="/modulos/modulo-09-enlaces/index.html">Modulo 09 Enlaces</a></li>
+            <li class="" data-nav-id="/modulos/m%C3%B3dulo-10-listas-spotify/index.html"><a class="padding" href="/modulos/m%C3%B3dulo-10-listas-spotify/index.html">Módulo 10 Listas Spotify</a></li>
+            <li class="" data-nav-id="/modulos/m%C3%B3dulo-11-widgets/index.html"><a class="padding" href="/modulos/m%C3%B3dulo-11-widgets/index.html">Módulo 11 Widgets</a></li>
+            <li class="" data-nav-id="/modulos/m%C3%B3dulo-12-reproductor/index.html"><a class="padding" href="/modulos/m%C3%B3dulo-12-reproductor/index.html">Módulo 12 Reproductor</a></li>
+            <li class="" data-nav-id="/modulos/m%C3%B3dulo-132-configuraci%C3%B3n/index.html"><a class="padding" href="/modulos/m%C3%B3dulo-132-configuraci%C3%B3n/index.html">Módulo 132 Configuración</a></li></ul></li>
+            <li class="" data-nav-id="/credenciales/index.html"><a class="padding" href="/credenciales/index.html">credenciales</a><ul id="R-subsections-531febb0ee57af4ff73e1c73de87ea64" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-controls">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-relearn-light" value="relearn-light" selected>Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

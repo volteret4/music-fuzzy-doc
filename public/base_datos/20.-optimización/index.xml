@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>20. Optimización :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/20.-optimizaci%C3%B3n/index.html</link>
+    <description># 10. Optimización CONSEJOS DE USO: - Para búsquedas de texto rápidas, usa las tablas virtuales &#39;_fts&#39;: SELECT * FROM songs WHERE id IN (SELECT id FROM song_fts WHERE song_fts MATCH &#39;palabra_clave&#39;) - Utiliza las vistas &#39;view_song_details&#39;, &#39;view_album_stats&#39;, &#39;view_artist_stats&#39;, &#39;view_label_stats&#39; y &#39;view_country_stats&#39; para consultas comunes - Aprovecha las columnas desnormalizadas para consultas más rápidas: - album_year - artist_origin - album_art_path_denorm - has_lyrics - album_label - decade - Tablas normalizadas: - genres_normalized: Para consultas relacionadas con géneros - countries: Normaliza países para estadísticas - decades: Facilita consultas por década - Búsqueda avanzada: - song_fts: Búsqueda de texto completo en canciones - artist_fts: Búsqueda de texto completo en artistas - album_fts: Búsqueda de texto completo en álbumes - lyrics_fts: Búsqueda de texto completo en letras</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/20.-optimizaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

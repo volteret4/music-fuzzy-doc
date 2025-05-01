@@ -1,0 +1,23 @@
+theme = 'hugo-theme-relearn'
+baseURL = 'https://volteret4.github.io/music-fuzzy-doc'
+relativeURLs = false
+languageCode = 'es-ES'
+title = 'documentacion'
+
+[author]
+  name = 'volteret4'
+  email = 'frodobolson@disroot.org'
+#  images = ['images/hero.png']
+
+  
+
+[params]
+  disableLanguageSwitchingButton = true
+  disableGeneratorVersion = true
+  disableAssetsBusting = true # desactivar en prod.
+  themeVariant = ['relearn-light', 'relearn-dark', 'zen-light', 'zen-dark']
+
+[outputs]
+  home = ['html', 'rss', 'print']
+  page = ['html', 'rss', 'print']
+  section = ['html', 'rss', 'print']

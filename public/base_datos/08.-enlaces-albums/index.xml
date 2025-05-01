@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>08. Enlaces albums :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/08.-enlaces-albums/index.html</link>
+    <description>Limitaciones y Control de Tasa Retraso entre solicitudes: Configurable para evitar bloqueos de IP Reintentos: 3 intentos por solicitud fallida con incremento exponencial de espera Límite de tiempo de ejecución: Tiempo máximo de ejecución por defecto de 3600 segundos (configurable)</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/08.-enlaces-albums/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/08.-enlaces-albums/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/08.-enlaces-albums/argumentos/index.html</guid>
+      <description>Argumento Descripción Tipo / Valor por Defecto Obligatorio --db-path Ruta a la base de datos SQLite Cadena Sí --missing-only Solo procesa álbumes con enlaces faltantes Bandera (booleano) No --delay Retraso entre solicitudes en segundos float, por defecto: 1.0 No --cache-dir Directorio para el archivo de caché Cadena, por defecto: ~/.cache/music_db No --user-agent Agente de usuario para solicitudes HTTP Cadena, por defecto: &#39;MusicLibraryManager/1.0&#39; No --log-level Nivel de logging Cadena, por defecto: INFO No --batch-size Número de álbumes a procesar en cada lote Entero, por defecto: 50 No</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/08.-enlaces-albums/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/08.-enlaces-albums/datos/index.html</guid>
+      <description>album_links (principal) Crea la tabla si no existe Actualiza los enlaces para cada álbum albums (referencia) Lee información sobre álbumes (id, name, artist_id) No modifica directamente esta tabla</description>
+    </item>
+    <item>
+      <title>Archivos</title>
+      <link>//192.168.1.133:1313/base_datos/08.-enlaces-albums/archivos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/08.-enlaces-albums/archivos/index.html</guid>
+      <description>Archivo Descripción Detalles de Formato o Estructura ~/.cache/music_db/enlaces_albumes_cache.json Almacena resultados de búsquedas previas {&#34;query_hash&#34;: {&#34;url&#34;: &#34;...&#34;, &#34;timestamp&#34;: &#34;...&#34;}} logs/enlaces_albumes.log Registra actividad, errores y resultados de la ejecución [FECHA] [NIVEL] [Mensaje]</description>
+    </item>
+  </channel>
+</rss>

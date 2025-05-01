@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Credenciales :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/enlaces-canciones/credenciales/index.html</link>
+    <description>Spotify API (client_id, client_secret) Last.fm API (api_key) Google API (api_key, custom_search_engine_id)</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/enlaces-canciones/credenciales/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

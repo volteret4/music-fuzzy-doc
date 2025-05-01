@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/redes_sociales/datos/index.html</link>
+    <description></description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/redes_sociales/datos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>muspy :: mfuz</title>
+    <link>//192.168.1.133:1313/credenciales/muspy/index.html</link>
+    <description>Otra maravilla del código abierto, en su página puedes agregar manualmente tus artistas favoritos para poder estar al tanto por mail o RSS de sus lanzamientos.&#xA;Puedes obtener su id tras crear una cuenta.&#xA;Para obtener el id y usarlo en esta app puedes copiar el enlace del icono RSS:&#xA;Y quedate con la última parte tras id=</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/credenciales/muspy/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Creación de la base de datos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/index.html</link>
+    <description>Para poder crear la base de datos tienes varias opciones:&#xA;Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>01. Archivos locales</title>
+      <link>//192.168.1.133:1313/base_datos/01.-archivos-locales/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/01.-archivos-locales/index.html</guid>
+      <description>Crea la base de datos leyendo metadata de los archivos flac y mp3.&#xA;Este script es el único que leerá la ruta de archivos, desde aquí todos añaden información a a la base de datos basandose en los ya existentes. Si tienes diferentes rutas con música debes volver a ejecutar el script por cada ruta diferente antes de continuar añadiendo datos a la base de datos con el resto de scripts.</description>
+    </item>
+    <item>
+      <title>02. Scrobbles lastfm</title>
+      <link>//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/index.html</guid>
+      <description>Obtiene scrobbles de lastfm para el usuario indicado&#xA;27.000 scrobbles con 11.180 enlazados en 6 minutos&#xA;Tabla scrobbles Campo Tipo Descripción id INTEGER ID único (autoincremental) track_name TEXT Nombre de la canción album_name TEXT Nombre del álbum artist_name TEXT Nombre del artista timestamp INTEGER Timestamp Unix del scrobble scrobble_date TEXT Fecha y hora del scrobble en formato legible lastfm_url TEXT URL de Last.fm para el scrobble song_id INTEGER ID de referencia a la tabla songs (puede ser NULL) album_id INTEGER ID de referencia a la tabla albums (puede ser NULL) artist_id INTEGER ID de referencia a la tabla artists (puede ser NULL) Tabla lastfm_config Campo Tipo Descripción id INTEGER ID único (siempre 1) lastfm_username TEXT Nombre de usuario de Last.fm last_timestamp INTEGER Último timestamp procesado last_updated TIMESTAMP Fecha de última actualización Tabla artists Campo Tipo Descripción name TEXT Nombre del artista mbid TEXT ID de MusicBrainz tags TEXT Etiquetas separadas por comas bio TEXT Biografía del artista lastfm_url TEXT URL de Last.fm para el artista origen TEXT Origen de los datos (‘scrobbles’) Tabla albums Campo Tipo Descripción artist_id INTEGER ID del artista name TEXT Nombre del álbum year INTEGER Año de lanzamiento lastfm_url TEXT URL de Last.fm para el álbum mbid TEXT ID de MusicBrainz total_tracks INTEGER Número total de pistas origen TEXT Origen de los datos (‘scrobbles’) Tabla songs Campo Tipo Descripción title TEXT Título de la canción mbid TEXT ID de MusicBrainz added_timestamp INTEGER Timestamp de cuando se añadió la canción added_week INTEGER Semana en que se añadió la canción added_month INTEGER Mes en que se añadió la canción added_year INTEGER Año en que se añadió la canción duration INTEGER Duración en segundos album TEXT Nombre del álbum album_artist TEXT Artista del álbum artist TEXT Artista de la canción genre TEXT Género musical origen TEXT Origen de los datos (‘scrobbles’) Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción lastfm_url TEXT URL de Last.fm para la canción</description>
+    </item>
+    <item>
+      <title>03. Listens listenbrainz</title>
+      <link>//192.168.1.133:1313/base_datos/03.-listens-listenbrainz/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/03.-listens-listenbrainz/index.html</guid>
+      <description>Este script se encarga de obtener y procesar los registros de escuchas (listens) desde ListenBrainz, almacenándolos en una base de datos SQLite y enlazándolos con canciones, artistas y álbumes existentes en tu biblioteca.&#xA;Este script permite varios métodos para mejorar la búsqueda estricta:&#xA;normalize-strings enhanced-matrching mbid-matching fuzzy-matching analyze-mismatches use-all-matching Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían</description>
+    </item>
+    <item>
+      <title>04. Redes</title>
+      <link>//192.168.1.133:1313/base_datos/04.-redes/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/04.-redes/index.html</guid>
+      <description>Este módulo forma parte del sistema de base de datos musical y se encarga de:&#xA;Recopilar URLs de redes sociales y plataformas web para artistas Obtener datos desde múltiples fuentes como Discogs, MusicBrainz y páginas web oficiales Almacenar y actualizar información en la tabla artists_networks de la base de datos Tabla artists_networks Campo Tipo Descripción id INTEGER Clave primaria artist_id INTEGER ID del artista (clave foránea a la tabla artists) allmusic TEXT URL de AllMusic bandcamp TEXT URL de Bandcamp boomkat TEXT URL de Boomkat facebook TEXT URL de Facebook twitter TEXT URL de Twitter mastodon TEXT URL de Mastodon bluesky TEXT URL de Bluesky instagram TEXT URL de Instagram spotify TEXT URL de Spotify lastfm TEXT URL de Last.fm wikipedia TEXT URL de Wikipedia juno TEXT URL de Juno soundcloud TEXT URL de SoundCloud youtube TEXT URL de YouTube imdb TEXT URL de IMDb progarchives TEXT URL de ProgArchives setlist_fm TEXT URL de Setlist.fm who_sampled TEXT URL de WhoSampled vimeo TEXT URL de Vimeo genius TEXT URL de Genius myspace TEXT URL de MySpace tumblr TEXT URL de Tumblr resident_advisor TEXT URL de Resident Advisor rateyourmusic TEXT URL de RateYourMusic enlaces TEXT JSON con enlaces adicionales no categorizados last_updated TIMESTAMP Fecha y hora de la última actualización</description>
+    </item>
+    <item>
+      <title>05. Musicbrainz album info</title>
+      <link>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/index.html</guid>
+      <description>Este script recopila datos de grupos de lanzamientos (release groups) desde MusicBrainz y Wikidata, y los almacena en la base de datos SQLite para enriquecer la información musical.&#xA;Tabla mb_release_group Campo Tipo Descripción id INTEGER PK Clave primaria mbid TEXT ID de MusicBrainz title TEXT Título del grupo de lanzamiento artist_credit TEXT Créditos de artistas first_release_date TEXT Fecha del primer lanzamiento primary_type TEXT Tipo primario (álbum, single, etc.) secondary_types TEXT Tipos secundarios album_id INTEGER Referencia al álbum artist_id INTEGER Referencia al artista genre TEXT Géneros musicales associated_singles TEXT Singles asociados discogs_url TEXT Enlace a Discogs rateyourmusic_url TEXT Enlace a RateYourMusic allmusic_url TEXT Enlace a AllMusic wikidata_id TEXT ID de Wikidata last_updated TIMESTAMP Fecha de la última actualización [columnas dinámicas] Variado Columnas generadas desde propiedades de Wikidata Tabla mb_wikidata Campo Tipo Descripción id INTEGER PK Clave primaria wikidata_id TEXT ID de la entidad en Wikidata release_group_mbid TEXT Referencia al MBID del grupo de lanzamiento album_id INTEGER Referencia al álbum artist_id INTEGER Referencia al artista label_id INTEGER Referencia al sello discográfico property_id TEXT ID de la propiedad de Wikidata property_label TEXT Etiqueta legible de la propiedad property_value TEXT Valor de la propiedad last_updated TIMESTAMP Fecha de la última actualización value_type TEXT Tipo de valor is_link INTEGER Indica si el valor es un enlace (0 o 1)</description>
+    </item>
+    <item>
+      <title>06. Musicbrainz canciones</title>
+      <link>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/index.html</guid>
+      <description># mb_data_canciones Módulo para obtener y almacenar relaciones entre canciones desde MusicBrainz.&#xA;Este script extrae información sobre relaciones entre canciones (samples, remixes, covers, etc.) utilizando la API de MusicBrainz y almacena estos datos en la tabla mb_data_songs de la base de datos.</description>
+    </item>
+    <item>
+      <title>07. Enlaces artistas</title>
+      <link>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/index.html</guid>
+      <description>Configuración JSON { &#34;db_path&#34;: &#34;ruta/a/tu/base_de_datos.db&#34;, &#34;log_path&#34;: &#34;logs/&#34;, &#34;cache_path&#34;: &#34;cache/&#34;, &#34;cache_duration&#34;: 30, &#34;rate_limit&#34;: 0.5, &#34;spotify&#34;: { &#34;client_id&#34;: &#34;tu_spotify_client_id&#34;, &#34;client_secret&#34;: &#34;tu_spotify_client_secret&#34; }, &#34;lastfm&#34;: { &#34;api_key&#34;: &#34;tu_lastfm_api_key&#34;, &#34;api_secret&#34;: &#34;tu_lastfm_api_secret&#34; }, &#34;discogs&#34;: { &#34;token&#34;: &#34;tu_discogs_token&#34; }, &#34;user_agent&#34;: &#34;MusicDatabaseEnricher/1.0 (contacto@ejemplo.com)&#34; } Variables de entorno alternativas SPOTIFY_CLIENT_ID SPOTIFY_CLIENT_SECRET LASTFM_API_KEY LASTFM_API_SECRET DISCOGS_TOKEN Tabla artists Campo Tipo Descripción spotify_url TEXT URL del artista en Spotify youtube_url TEXT URL del canal/tópico del artista en YouTube musicbrainz_url TEXT URL del artista en MusicBrainz discogs_url TEXT URL del artista en Discogs rateyourmusic_url TEXT URL del artista en RateYourMusic bandcamp_url TEXT URL del artista en Bandcamp mbid TEXT ID de MusicBrainz del artista origin TEXT Origen o país del artista formed_year INTEGER Año de formación del artista total_albums INTEGER Número total de álbumes del artista bio TEXT Biografía del artista similar_artists TEXT/JSON Artistas similares tags TEXT/JSON Etiquetas o géneros aliases TEXT/JSON Nombres alternativos del artista member_of TEXT/JSON Grupos a los que pertenece el artista lastfm_url TEXT URL del artista en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla albums Campo Tipo Descripción spotify_url TEXT URL del álbum en Spotify spotify_id TEXT ID del álbum en Spotify youtube_url TEXT URL de resultados o playlist del álbum en YouTube musicbrainz_url TEXT URL del álbum en MusicBrainz discogs_url TEXT URL del álbum en Discogs rateyourmusic_url TEXT URL del álbum en RateYourMusic bandcamp_url TEXT URL del álbum en Bandcamp mbid TEXT ID de MusicBrainz del álbum producers TEXT/JSON Productores del álbum engineers TEXT/JSON Ingenieros de grabación mastering_engineers TEXT/JSON Ingenieros de masterización credits JSON Detalles de los créditos lastfm_url TEXT URL del álbum en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla songs Campo Tipo Descripción mbid TEXT Identificador de MusicBrainz para la grabación tags include #enlaces_artista_album sort by due reverse hide tags</description>
+    </item>
+    <item>
+      <title>08. Enlaces albums</title>
+      <link>//192.168.1.133:1313/base_datos/08.-enlaces-albums/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/08.-enlaces-albums/index.html</guid>
+      <description>Limitaciones y Control de Tasa Retraso entre solicitudes: Configurable para evitar bloqueos de IP Reintentos: 3 intentos por solicitud fallida con incremento exponencial de espera Límite de tiempo de ejecución: Tiempo máximo de ejecución por defecto de 3600 segundos (configurable)</description>
+    </item>
+    <item>
+      <title>09. Enlaces canciones</title>
+      <link>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/index.html</guid>
+      <description>Busca enlaces para cada canción en spotify y lastfm.&#xA;Módulo para gestionar los enlaces de canciones en servicios de música en línea. Actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py. Dependencias&#xA;Servicios usados: spotify: Enlaces a canciones en Spotify lastfm: Enlaces a canciones en Last.fm youtube: Enlaces a videos de canciones en YouTube musicbrainz: Enlaces a grabaciones en MusicBrainz bandcamp: Enlaces a canciones en Bandcamp soundcloud: Enlaces a canciones en SoundCloud boomkat: Enlaces a canciones en Boomkat</description>
+    </item>
+    <item>
+      <title>10. Wikipedia</title>
+      <link>//192.168.1.133:1313/base_datos/10.-wikipedia/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/10.-wikipedia/index.html</guid>
+      <description>Obtiene enlaces a wikipedia desde musicbrainz, y extrae su contenido. En caso de no encontrarlo en wikimedia, se puede hacer manualmente con wikipedia.&#xA;Tabla artists Campo Tipo Descripción wikipedia_url TEXT URL de la página de Wikipedia del artista wikipedia_content TEXT Contenido extraído de la página de Wikipedia wikipedia_updated TIMESTAMP Timestamp de la última actualización de la información de Wikipedia links_updated TIMESTAMP Timestamp de la última actualización de los enlaces Tabla albums Campo Tipo Descripción wikipedia_url TEXT URL de la página de Wikipedia del artista wikipedia_content TEXT Contenido extraído de la página de Wikipedia wikipedia_updated TIMESTAMP Timestamp de la última actualización de la información de Wikipedia links_updated TIMESTAMP Timestamp de la última actualización de los enlaces Tabla labels Campo Tipo Descripción wikipedia_url TEXT URL de la página de Wikipedia del sello discográfico wikipedia_content TEXT Contenido extraído de la página de Wikipedia wikipedia_updated TIMESTAMP Timestamp de la última actualización de la información de Wikipedia links_updated TIMESTAMP Timestamp de la última actualización de los enlaces</description>
+    </item>
+    <item>
+      <title>11. Musicbrainz sellos</title>
+      <link>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/index.html</guid>
+      <description>Este script obtiene y almacena información detallada sobre sellos discográficos desde MusicBrainz y fuentes adicionales como Wikipedia y Discogs.</description>
+    </item>
+    <item>
+      <title>11. Youtube links de canciones</title>
+      <link>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/index.html</guid>
+      <description>Este script busca videos de YouTube relacionados con las canciones en la base de datos y almacena los enlaces correspondientes. También actualiza información de enlaces para álbumes y artistas.&#xA;Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción youtube_url TEXT URL del video en YouTube youtube_id TEXT ID del video en YouTube video_title TEXT Título del video channel_name TEXT Nombre del canal de YouTube view_count INTEGER Número de vistas (si disponible) match_score REAL Puntuación de coincidencia (0.0 - 1.0) last_updated TIMESTAMP Fecha de última actualización Otras tablas Tabla Campo Descripción albums youtube_url URL de canal o playlist del álbum en YouTube artists youtube_url URL del canal oficial del artista en YouTube</description>
+    </item>
+    <item>
+      <title>12. Letras</title>
+      <link>//192.168.1.133:1313/base_datos/12.-letras/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/12.-letras/index.html</guid>
+      <description>Módulo para gestionar los enlaces de canciones en servicios de música en línea.&#xA;Este script actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py.&#xA;4 horas en 5140 canciones, Media de una canción cada 2.82 segundos&#xA;Tabla lyrics Campo Tipo Descripción id INTEGER Identificador único de la letra track_id INTEGER ID de la canción asociada (clave foránea a songs.id) lyrics TEXT El texto completo de la letra source TEXT La fuente de la letra (ej. ‘Genius’, ’lyrics.ovh’, ‘Happi’, ‘Musixmatch’) last_updated TIMESTAMP Fecha y hora de la última actualización</description>
+    </item>
+    <item>
+      <title>13. Articulos</title>
+      <link>//192.168.1.133:1313/base_datos/13.-articulos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/13.-articulos/index.html</guid>
+      <description># posts_fresh_rss El script posts_fresh_rss.py se encarga de recuperar artículos y publicaciones de un servidor FreshRSS relacionados con entidades musicales (artistas, álbumes, sellos discográficos) y guardarlos en la base de datos para su posterior consulta.&#xA;Tabla feeds Clave Tipo Descripción freshrss_url TEXT URL base del servidor FreshRSS freshrss_username TEXT Nombre de usuario para autenticación en FreshRSS freshrss_password TEXT Contraseña para autenticación en FreshRSS db_path TEXT Ruta al archivo de base de datos SQLite freshrss_cache_path TEXT (opcional) Ruta al archivo de caché categories LIST Categorías a procesar (por defecto: [&#39;Blogs&#39;, &#39;Revistas&#39;, &#39;Wallabag&#39;]) search_entities LIST Entidades a buscar (por ejemplo: artists, albums, labels) search_short_terms BOOLEAN Permitir o bloquear términos cortos (por defecto: False) ignore_patterns LIST Patrones a ignorar (por defecto incluye: &#39;mix-for-nts&#39;, etc.)</description>
+    </item>
+    <item>
+      <title>20. Optimización</title>
+      <link>//192.168.1.133:1313/base_datos/20.-optimizaci%C3%B3n/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/20.-optimizaci%C3%B3n/index.html</guid>
+      <description># 10. Optimización CONSEJOS DE USO: - Para búsquedas de texto rápidas, usa las tablas virtuales &#39;_fts&#39;: SELECT * FROM songs WHERE id IN (SELECT id FROM song_fts WHERE song_fts MATCH &#39;palabra_clave&#39;) - Utiliza las vistas &#39;view_song_details&#39;, &#39;view_album_stats&#39;, &#39;view_artist_stats&#39;, &#39;view_label_stats&#39; y &#39;view_country_stats&#39; para consultas comunes - Aprovecha las columnas desnormalizadas para consultas más rápidas: - album_year - artist_origin - album_art_path_denorm - has_lyrics - album_label - decade - Tablas normalizadas: - genres_normalized: Para consultas relacionadas con géneros - countries: Normaliza países para estadísticas - decades: Facilita consultas por década - Búsqueda avanzada: - song_fts: Búsqueda de texto completo en canciones - artist_fts: Búsqueda de texto completo en artistas - album_fts: Búsqueda de texto completo en álbumes - lyrics_fts: Búsqueda de texto completo en letras</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archivos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/08.-enlaces-albums/archivos/index.html</link>
+    <description>Archivo Descripción Detalles de Formato o Estructura ~/.cache/music_db/enlaces_albumes_cache.json Almacena resultados de búsquedas previas {&#34;query_hash&#34;: {&#34;url&#34;: &#34;...&#34;, &#34;timestamp&#34;: &#34;...&#34;}} logs/enlaces_albumes.log Registra actividad, errores y resultados de la ejecución [FECHA] [NIVEL] [Mensaje]</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/08.-enlaces-albums/archivos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

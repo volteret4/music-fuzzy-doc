@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Este script se encarga de obtener y procesar los registros de escuchas (listens) desde ListenBrainz, almacenándolos en una base de datos SQLite y enlazándolos con canciones, artistas y álbumes existentes en tu biblioteca.
+Este script permite varios métodos para mejorar la búsqueda estricta:
+normalize-strings enhanced-matrching mbid-matching fuzzy-matching analyze-mismatches use-all-matching Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="03. Listens listenbrainz :: mfuz">
+    <meta name="twitter:description" content="Este script se encarga de obtener y procesar los registros de escuchas (listens) desde ListenBrainz, almacenándolos en una base de datos SQLite y enlazándolos con canciones, artistas y álbumes existentes en tu biblioteca.
+Este script permite varios métodos para mejorar la búsqueda estricta:
+normalize-strings enhanced-matrching mbid-matching fuzzy-matching analyze-mismatches use-all-matching Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/03.-listens-listenbrainz/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="03. Listens listenbrainz :: mfuz">
+    <meta property="og:description" content="Este script se encarga de obtener y procesar los registros de escuchas (listens) desde ListenBrainz, almacenándolos en una base de datos SQLite y enlazándolos con canciones, artistas y álbumes existentes en tu biblioteca.
+Este script permite varios métodos para mejorar la búsqueda estricta:
+normalize-strings enhanced-matrching mbid-matching fuzzy-matching analyze-mismatches use-all-matching Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="03. Listens listenbrainz :: mfuz">
+    <meta itemprop="description" content="Este script se encarga de obtener y procesar los registros de escuchas (listens) desde ListenBrainz, almacenándolos en una base de datos SQLite y enlazándolos con canciones, artistas y álbumes existentes en tu biblioteca.
+Este script permite varios métodos para mejorar la búsqueda estricta:
+normalize-strings enhanced-matrching mbid-matching fuzzy-matching analyze-mismatches use-all-matching Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían">
+    <meta itemprop="wordCount" content="251">
+    <title>03. Listens listenbrainz :: mfuz</title>
+    <link href="//192.168.1.133:1313/base_datos/03.-listens-listenbrainz/index.html" rel="canonical" type="text/html" title="03. Listens listenbrainz :: mfuz">
+    <link href="/base_datos/03.-listens-listenbrainz/index.xml" rel="alternate" type="application/rss+xml" title="03. Listens listenbrainz :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/03.-listens-listenbrainz\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/base_datos/03.-listens-listenbrainz/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">03. Listens listenbrainz</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/03.-listens-listenbrainz/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/02.-scrobbles-lastfm/datos/index.html" title="Datos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/03.-listens-listenbrainz/argumentos/index.html" title="Argumentos (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="03-listens-listenbrainz">03. Listens listenbrainz</h1>
+
+<p>Este script se encarga de obtener y procesar los registros de escuchas (listens) desde ListenBrainz, almacenándolos en una base de datos SQLite y enlazándolos con canciones, artistas y álbumes existentes en tu biblioteca.</p>
+<p>Este script permite varios métodos para mejorar la búsqueda estricta:</p>
+<ul>
+<li><code>normalize-strings</code></li>
+<li><code>enhanced-matrching</code></li>
+<li><code>mbid-matching</code></li>
+<li><code>fuzzy-matching</code></li>
+<li><code>analyze-mismatches</code></li>
+<li><code>use-all-matching</code></li>
+</ul>
+<blockquote>
+<p>Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían</p></blockquote>
+<h4 id="tabla-listens">Tabla <code>listens</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>ID único para cada listen (clave primaria)</td>
+      </tr>
+      <tr>
+          <td><code>track_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre de la pista/canción</td>
+      </tr>
+      <tr>
+          <td><code>album_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del álbum (opcional)</td>
+      </tr>
+      <tr>
+          <td><code>artist_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del artista</td>
+      </tr>
+      <tr>
+          <td><code>timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Timestamp en formato Unix de cuando se escuchó la canción</td>
+      </tr>
+      <tr>
+          <td><code>listen_date</code></td>
+          <td>TEXT</td>
+          <td>Fecha y hora en formato legible de cuando se escuchó la canción</td>
+      </tr>
+      <tr>
+          <td><code>listenbrainz_url</code></td>
+          <td>TEXT</td>
+          <td>URL a la página de ListenBrainz del usuario</td>
+      </tr>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción correspondiente en la tabla <code>songs</code> (si se encuentra)</td>
+      </tr>
+      <tr>
+          <td><code>album_id</code></td>
+          <td>INTEGER</td>
+          <td>ID del álbum correspondiente en la tabla <code>albums</code> (si se encuentra)</td>
+      </tr>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>ID del artista correspondiente en la tabla <code>artists</code> (si se encuentra)</td>
+      </tr>
+      <tr>
+          <td><code>additional_data</code></td>
+          <td>TEXT</td>
+          <td>Metadatos adicionales en formato JSON (añadido dinámicamente)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-listenbrainz_config">Tabla <code>listenbrainz_config</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>ID único siempre 1 (solo una configuración)</td>
+      </tr>
+      <tr>
+          <td><code>username</code></td>
+          <td>TEXT</td>
+          <td>Nombre de usuario en ListenBrainz</td>
+      </tr>
+      <tr>
+          <td><code>last_timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Último timestamp procesado</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha y hora de la última actualización</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-normalized_songs-si-se-activa-enhanced_matching">Tabla <code>normalized_songs</code> (si se activa <code>enhanced_matching</code>)</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción</td>
+      </tr>
+      <tr>
+          <td><code>normalized_title</code></td>
+          <td>TEXT</td>
+          <td>Título normalizado</td>
+      </tr>
+      <tr>
+          <td><code>normalized_artist</code></td>
+          <td>TEXT</td>
+          <td>Artista normalizado</td>
+      </tr>
+      <tr>
+          <td><code>normalized_album</code></td>
+          <td>TEXT</td>
+          <td>Álbum normalizado</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 03. Listens listenbrainz</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Valor por Defecto</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config</code></td>
+          <td><code>str</code></td>
+          <td>Ruta al archivo de configuración JSON</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--user</code></td>
+          <td><code>str</code></td>
+          <td>Nombre de usuario en ListenBrainz</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--token</code></td>
+          <td><code>str</code></td>
+          <td>Token de autenticación para ListenBrainz</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td><code>str</code></td>
+          <td>Ruta al archivo de base de datos SQLite</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td><code>bool</code></td>
+          <td>Si se debe forzar una actualización completa (ignorando el último timestamp)</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--output-json</code></td>
+          <td><code>str</code></td>
+          <td>Ruta para guardar los listens en formato JSON (opcional)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--max-items</code></td>
+          <td><code>int</code></td>
+          <td>Número máximo de listens a obtener por llamada</td>
+          <td><code>1000</code></td>
+      </tr>
+      <tr>
+          <td><code>--limit-process</code></td>
+          <td><code>int</code></td>
+          <td>Número máximo de listens a procesar (opcional)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--reprocess-existing</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben reprocesar los listens existentes con los métodos de coincidencia seleccionados</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--normalize-strings</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben normalizar las cadenas para mejorar coincidencias</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--enhanced-matching</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben crear y usar tablas normalizadas para buscar coincidencias</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--mbid-matching</code></td>
+          <td><code>bool</code></td>
+          <td>Si se debe intentar coincidencia por MusicBrainz IDs</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--fuzzy-matching</code></td>
+          <td><code>bool</code></td>
+          <td>Si se debe usar coincidencia difusa para encontrar canciones</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--analyze-mismatches</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben analizar las razones de discrepancias</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--use-all-matching</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben utilizar todas las técnicas de coincidencia mejoradas</td>
+          <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

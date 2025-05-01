@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Argumentos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/12.-letras/argumentos/index.html</link>
+    <description>Argumento Tipo Descripción Valor por Defecto --db_path str Ruta a la base de datos SQLite (requerido) — --force-update bool Bandera para forzar la actualización de todas las letras, incluso las que ya existen False --batch-size int Número de canciones a procesar por lote 1000 --no-resume bool Bandera para no continuar desde el último punto guardado False --config str Archivo de configuración JSON con parámetros adicionales —</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/12.-letras/argumentos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

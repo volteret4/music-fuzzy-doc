@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Obtiene scrobbles de lastfm para el usuario indicado
+27.000 scrobbles con 11.180 enlazados en 6 minutos
+Tabla scrobbles Campo Tipo Descripción id INTEGER ID único (autoincremental) track_name TEXT Nombre de la canción album_name TEXT Nombre del álbum artist_name TEXT Nombre del artista timestamp INTEGER Timestamp Unix del scrobble scrobble_date TEXT Fecha y hora del scrobble en formato legible lastfm_url TEXT URL de Last.fm para el scrobble song_id INTEGER ID de referencia a la tabla songs (puede ser NULL) album_id INTEGER ID de referencia a la tabla albums (puede ser NULL) artist_id INTEGER ID de referencia a la tabla artists (puede ser NULL) Tabla lastfm_config Campo Tipo Descripción id INTEGER ID único (siempre 1) lastfm_username TEXT Nombre de usuario de Last.fm last_timestamp INTEGER Último timestamp procesado last_updated TIMESTAMP Fecha de última actualización Tabla artists Campo Tipo Descripción name TEXT Nombre del artista mbid TEXT ID de MusicBrainz tags TEXT Etiquetas separadas por comas bio TEXT Biografía del artista lastfm_url TEXT URL de Last.fm para el artista origen TEXT Origen de los datos (‘scrobbles’) Tabla albums Campo Tipo Descripción artist_id INTEGER ID del artista name TEXT Nombre del álbum year INTEGER Año de lanzamiento lastfm_url TEXT URL de Last.fm para el álbum mbid TEXT ID de MusicBrainz total_tracks INTEGER Número total de pistas origen TEXT Origen de los datos (‘scrobbles’) Tabla songs Campo Tipo Descripción title TEXT Título de la canción mbid TEXT ID de MusicBrainz added_timestamp INTEGER Timestamp de cuando se añadió la canción added_week INTEGER Semana en que se añadió la canción added_month INTEGER Mes en que se añadió la canción added_year INTEGER Año en que se añadió la canción duration INTEGER Duración en segundos album TEXT Nombre del álbum album_artist TEXT Artista del álbum artist TEXT Artista de la canción genre TEXT Género musical origen TEXT Origen de los datos (‘scrobbles’) Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción lastfm_url TEXT URL de Last.fm para la canción">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="02. Scrobbles lastfm :: mfuz">
+    <meta name="twitter:description" content="Obtiene scrobbles de lastfm para el usuario indicado
+27.000 scrobbles con 11.180 enlazados en 6 minutos
+Tabla scrobbles Campo Tipo Descripción id INTEGER ID único (autoincremental) track_name TEXT Nombre de la canción album_name TEXT Nombre del álbum artist_name TEXT Nombre del artista timestamp INTEGER Timestamp Unix del scrobble scrobble_date TEXT Fecha y hora del scrobble en formato legible lastfm_url TEXT URL de Last.fm para el scrobble song_id INTEGER ID de referencia a la tabla songs (puede ser NULL) album_id INTEGER ID de referencia a la tabla albums (puede ser NULL) artist_id INTEGER ID de referencia a la tabla artists (puede ser NULL) Tabla lastfm_config Campo Tipo Descripción id INTEGER ID único (siempre 1) lastfm_username TEXT Nombre de usuario de Last.fm last_timestamp INTEGER Último timestamp procesado last_updated TIMESTAMP Fecha de última actualización Tabla artists Campo Tipo Descripción name TEXT Nombre del artista mbid TEXT ID de MusicBrainz tags TEXT Etiquetas separadas por comas bio TEXT Biografía del artista lastfm_url TEXT URL de Last.fm para el artista origen TEXT Origen de los datos (‘scrobbles’) Tabla albums Campo Tipo Descripción artist_id INTEGER ID del artista name TEXT Nombre del álbum year INTEGER Año de lanzamiento lastfm_url TEXT URL de Last.fm para el álbum mbid TEXT ID de MusicBrainz total_tracks INTEGER Número total de pistas origen TEXT Origen de los datos (‘scrobbles’) Tabla songs Campo Tipo Descripción title TEXT Título de la canción mbid TEXT ID de MusicBrainz added_timestamp INTEGER Timestamp de cuando se añadió la canción added_week INTEGER Semana en que se añadió la canción added_month INTEGER Mes en que se añadió la canción added_year INTEGER Año en que se añadió la canción duration INTEGER Duración en segundos album TEXT Nombre del álbum album_artist TEXT Artista del álbum artist TEXT Artista de la canción genre TEXT Género musical origen TEXT Origen de los datos (‘scrobbles’) Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción lastfm_url TEXT URL de Last.fm para la canción">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="02. Scrobbles lastfm :: mfuz">
+    <meta property="og:description" content="Obtiene scrobbles de lastfm para el usuario indicado
+27.000 scrobbles con 11.180 enlazados en 6 minutos
+Tabla scrobbles Campo Tipo Descripción id INTEGER ID único (autoincremental) track_name TEXT Nombre de la canción album_name TEXT Nombre del álbum artist_name TEXT Nombre del artista timestamp INTEGER Timestamp Unix del scrobble scrobble_date TEXT Fecha y hora del scrobble en formato legible lastfm_url TEXT URL de Last.fm para el scrobble song_id INTEGER ID de referencia a la tabla songs (puede ser NULL) album_id INTEGER ID de referencia a la tabla albums (puede ser NULL) artist_id INTEGER ID de referencia a la tabla artists (puede ser NULL) Tabla lastfm_config Campo Tipo Descripción id INTEGER ID único (siempre 1) lastfm_username TEXT Nombre de usuario de Last.fm last_timestamp INTEGER Último timestamp procesado last_updated TIMESTAMP Fecha de última actualización Tabla artists Campo Tipo Descripción name TEXT Nombre del artista mbid TEXT ID de MusicBrainz tags TEXT Etiquetas separadas por comas bio TEXT Biografía del artista lastfm_url TEXT URL de Last.fm para el artista origen TEXT Origen de los datos (‘scrobbles’) Tabla albums Campo Tipo Descripción artist_id INTEGER ID del artista name TEXT Nombre del álbum year INTEGER Año de lanzamiento lastfm_url TEXT URL de Last.fm para el álbum mbid TEXT ID de MusicBrainz total_tracks INTEGER Número total de pistas origen TEXT Origen de los datos (‘scrobbles’) Tabla songs Campo Tipo Descripción title TEXT Título de la canción mbid TEXT ID de MusicBrainz added_timestamp INTEGER Timestamp de cuando se añadió la canción added_week INTEGER Semana en que se añadió la canción added_month INTEGER Mes en que se añadió la canción added_year INTEGER Año en que se añadió la canción duration INTEGER Duración en segundos album TEXT Nombre del álbum album_artist TEXT Artista del álbum artist TEXT Artista de la canción genre TEXT Género musical origen TEXT Origen de los datos (‘scrobbles’) Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción lastfm_url TEXT URL de Last.fm para la canción">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="02. Scrobbles lastfm :: mfuz">
+    <meta itemprop="description" content="Obtiene scrobbles de lastfm para el usuario indicado
+27.000 scrobbles con 11.180 enlazados en 6 minutos
+Tabla scrobbles Campo Tipo Descripción id INTEGER ID único (autoincremental) track_name TEXT Nombre de la canción album_name TEXT Nombre del álbum artist_name TEXT Nombre del artista timestamp INTEGER Timestamp Unix del scrobble scrobble_date TEXT Fecha y hora del scrobble en formato legible lastfm_url TEXT URL de Last.fm para el scrobble song_id INTEGER ID de referencia a la tabla songs (puede ser NULL) album_id INTEGER ID de referencia a la tabla albums (puede ser NULL) artist_id INTEGER ID de referencia a la tabla artists (puede ser NULL) Tabla lastfm_config Campo Tipo Descripción id INTEGER ID único (siempre 1) lastfm_username TEXT Nombre de usuario de Last.fm last_timestamp INTEGER Último timestamp procesado last_updated TIMESTAMP Fecha de última actualización Tabla artists Campo Tipo Descripción name TEXT Nombre del artista mbid TEXT ID de MusicBrainz tags TEXT Etiquetas separadas por comas bio TEXT Biografía del artista lastfm_url TEXT URL de Last.fm para el artista origen TEXT Origen de los datos (‘scrobbles’) Tabla albums Campo Tipo Descripción artist_id INTEGER ID del artista name TEXT Nombre del álbum year INTEGER Año de lanzamiento lastfm_url TEXT URL de Last.fm para el álbum mbid TEXT ID de MusicBrainz total_tracks INTEGER Número total de pistas origen TEXT Origen de los datos (‘scrobbles’) Tabla songs Campo Tipo Descripción title TEXT Título de la canción mbid TEXT ID de MusicBrainz added_timestamp INTEGER Timestamp de cuando se añadió la canción added_week INTEGER Semana en que se añadió la canción added_month INTEGER Mes en que se añadió la canción added_year INTEGER Año en que se añadió la canción duration INTEGER Duración en segundos album TEXT Nombre del álbum album_artist TEXT Artista del álbum artist TEXT Artista de la canción genre TEXT Género musical origen TEXT Origen de los datos (‘scrobbles’) Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción lastfm_url TEXT URL de Last.fm para la canción">
+    <meta itemprop="wordCount" content="321">
+    <title>02. Scrobbles lastfm :: mfuz</title>
+    <link href="//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/index.html" rel="canonical" type="text/html" title="02. Scrobbles lastfm :: mfuz">
+    <link href="/base_datos/02.-scrobbles-lastfm/index.xml" rel="alternate" type="application/rss+xml" title="02. Scrobbles lastfm :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/02.-scrobbles-lastfm\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/base_datos/02.-scrobbles-lastfm/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">02. Scrobbles lastfm</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/02.-scrobbles-lastfm/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/01.-archivos-locales/datos/index.html" title="Datos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/02.-scrobbles-lastfm/argumentos/index.html" title="Argumentos (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="02-scrobbles-lastfm">02. Scrobbles lastfm</h1>
+
+<p>Obtiene scrobbles de lastfm para el usuario indicado</p>
+<blockquote>
+<p>27.000 scrobbles con 11.180 enlazados en 6 minutos</p></blockquote>
+<h4 id="tabla-scrobbles">Tabla <code>scrobbles</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>ID único (autoincremental)</td>
+      </tr>
+      <tr>
+          <td><code>track_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre de la canción</td>
+      </tr>
+      <tr>
+          <td><code>album_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del álbum</td>
+      </tr>
+      <tr>
+          <td><code>artist_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del artista</td>
+      </tr>
+      <tr>
+          <td><code>timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Timestamp Unix del scrobble</td>
+      </tr>
+      <tr>
+          <td><code>scrobble_date</code></td>
+          <td>TEXT</td>
+          <td>Fecha y hora del scrobble en formato legible</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm para el scrobble</td>
+      </tr>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de referencia a la tabla <code>songs</code> (puede ser NULL)</td>
+      </tr>
+      <tr>
+          <td><code>album_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de referencia a la tabla <code>albums</code> (puede ser NULL)</td>
+      </tr>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de referencia a la tabla <code>artists</code> (puede ser NULL)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-lastfm_config">Tabla <code>lastfm_config</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>ID único (siempre 1)</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_username</code></td>
+          <td>TEXT</td>
+          <td>Nombre de usuario de Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>last_timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Último timestamp procesado</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de última actualización</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-artists">Tabla <code>artists</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del artista</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>tags</code></td>
+          <td>TEXT</td>
+          <td>Etiquetas separadas por comas</td>
+      </tr>
+      <tr>
+          <td><code>bio</code></td>
+          <td>TEXT</td>
+          <td>Biografía del artista</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm para el artista</td>
+      </tr>
+      <tr>
+          <td><code>origen</code></td>
+          <td>TEXT</td>
+          <td>Origen de los datos (&lsquo;scrobbles&rsquo;)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-albums">Tabla <code>albums</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>ID del artista</td>
+      </tr>
+      <tr>
+          <td><code>name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del álbum</td>
+      </tr>
+      <tr>
+          <td><code>year</code></td>
+          <td>INTEGER</td>
+          <td>Año de lanzamiento</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm para el álbum</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>total_tracks</code></td>
+          <td>INTEGER</td>
+          <td>Número total de pistas</td>
+      </tr>
+      <tr>
+          <td><code>origen</code></td>
+          <td>TEXT</td>
+          <td>Origen de los datos (&lsquo;scrobbles&rsquo;)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-songs">Tabla <code>songs</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>title</code></td>
+          <td>TEXT</td>
+          <td>Título de la canción</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>added_timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Timestamp de cuando se añadió la canción</td>
+      </tr>
+      <tr>
+          <td><code>added_week</code></td>
+          <td>INTEGER</td>
+          <td>Semana en que se añadió la canción</td>
+      </tr>
+      <tr>
+          <td><code>added_month</code></td>
+          <td>INTEGER</td>
+          <td>Mes en que se añadió la canción</td>
+      </tr>
+      <tr>
+          <td><code>added_year</code></td>
+          <td>INTEGER</td>
+          <td>Año en que se añadió la canción</td>
+      </tr>
+      <tr>
+          <td><code>duration</code></td>
+          <td>INTEGER</td>
+          <td>Duración en segundos</td>
+      </tr>
+      <tr>
+          <td><code>album</code></td>
+          <td>TEXT</td>
+          <td>Nombre del álbum</td>
+      </tr>
+      <tr>
+          <td><code>album_artist</code></td>
+          <td>TEXT</td>
+          <td>Artista del álbum</td>
+      </tr>
+      <tr>
+          <td><code>artist</code></td>
+          <td>TEXT</td>
+          <td>Artista de la canción</td>
+      </tr>
+      <tr>
+          <td><code>genre</code></td>
+          <td>TEXT</td>
+          <td>Género musical</td>
+      </tr>
+      <tr>
+          <td><code>origen</code></td>
+          <td>TEXT</td>
+          <td>Origen de los datos (&lsquo;scrobbles&rsquo;)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-song_links">Tabla <code>song_links</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm para la canción</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 02. Scrobbles lastfm</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config</code></td>
+          <td>Ruta al archivo de configuración JSON</td>
+      </tr>
+      <tr>
+          <td><code>--lastfm_user</code></td>
+          <td>Nombre de usuario de Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>--lastfm-api-key</code></td>
+          <td>Clave de API de Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td>Ruta al archivo de base de datos SQLite</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td>Bandera para forzar una actualización completa (borra scrobbles existentes)</td>
+      </tr>
+      <tr>
+          <td><code>--output-json</code></td>
+          <td>Ruta para guardar todos los scrobbles en formato JSON (opcional)</td>
+      </tr>
+      <tr>
+          <td><code>--interactive</code></td>
+          <td>Modo interactivo para añadir nuevos elementos</td>
+      </tr>
+      <tr>
+          <td><code>--cache-dir</code></td>
+          <td>Directorio para archivos de caché</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,3598 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Para poder crear la base de datos tienes varias opciones:
+Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Creación de la base de datos :: mfuz">
+    <meta name="twitter:description" content="Para poder crear la base de datos tienes varias opciones:
+Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="Creación de la base de datos :: mfuz">
+    <meta property="og:description" content="Para poder crear la base de datos tienes varias opciones:
+Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="Creación de la base de datos :: mfuz">
+    <meta itemprop="description" content="Para poder crear la base de datos tienes varias opciones:
+Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.">
+    <meta itemprop="wordCount" content="263">
+    <title>Creación de la base de datos :: mfuz</title>
+    <link href="//192.168.1.133:1313/base_datos/index.html" rel="canonical" type="text/html" title="Creación de la base de datos :: mfuz">
+    <link href="/base_datos/index.xml" rel="alternate" type="application/rss+xml" title="Creación de la base de datos :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/index.html';
+      window.relearn.relBasePath='..';
+      window.relearn.relBaseUri='..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/base_datos/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li><a href="#dependencias-totales">Dependencias totales</a></li>
+    <li><a href="#scripts-auxiliares">Scripts Auxiliares</a></li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Creación de la base de datos</span><meta itemprop="position" content="2"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/instalacion/index.html" title="instalación (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/01.-archivos-locales/index.html" title="01. Archivos locales (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="creación-de-la-base-de-datos">Creación de la base de datos</h1>
+
+<p>Para poder crear la base de datos tienes varias opciones:</p>
+<ul>
+<li>Crearla con archivos locales</li>
+<li>Extraer información de tus scrobbles en lastfm o listenbrainz</li>
+<li>Obtener los artistas que sigues en spotify y sus discografías TODO</li>
+<li>Procesar los artistas que sigues en muspy TODO</li>
+<li>Todo ello secuencialmente</li>
+</ul>
+<p>Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.</p>
+<blockquote>
+<p>En cada paso se dan unas estimaciones del tiempo consumido</p>
+<p>Todas las consultas respetan los limites establecidas por cada api, aunque las restricciones diarias pausaran el script que alcanze el límite hasta que este sea reestablecido</p></blockquote>
+<p>El resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales o paquetes de python.</p>
+<h2 id="dependencias-totales">Dependencias totales</h2>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pip install requests beautifulsoup4 spotipy musicbrainzngs python3-discogs-client pylast python-youtube-search playwright tqdm
+</span></span><span style="display:flex;"><span>google-api-python-client ??</span></span></code></pre></div>
+<h2 id="scripts-auxiliares">Scripts Auxiliares</h2>
+<p>Estos scripts puedes usarlos durante el proceso de creación o al final para consultar datos sobre la base de datos.</p>
+<ul>
+<li>[[estadisticas_db.py]] Muestra detalladamente el estado de la base de datos en comparación a una tabla completa finalizando todos los scripts. Uso <code>python estadisticas_db.py --db-path basedatos.db</code></li>
+<li>[[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py|consultar_items_db.py]] Puedes obtener diversos campos de la base de datos usando varios filtros. Leer mas aqui TODO</li>
+<li>[[unir_artistas.py]] Permite unir artistas bajo un mismo nombre, útil cuando te aparecen Chimobayo feat. Björk o similares colaboraciones.</li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #create_db
+
+short mode
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of Creación de la base de datos</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="01-archivos-locales">01. Archivos locales</h1>
+
+<p>Crea la base de datos leyendo metadata de los archivos flac y mp3.</p>
+<p>Este script es el único que leerá la ruta de archivos, desde aquí todos añaden información a a la base de datos basandose en los ya existentes. Si tienes diferentes rutas con música debes volver a ejecutar el script por cada ruta diferente antes de continuar añadiendo datos a la base de datos con el resto de scripts.</p>
+<blockquote>
+<p>Tomará cada carpeta como un album.
+Se ha probado con:</p>
+<ul>
+<li>3160 discos en 1,4 TB en un servidor NFS: 8 horas</li>
+<li>10 discos en 5 TB en local: 1 segundo</li>
+</ul></blockquote>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 01. Archivos locales</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<p>Con estos argumentos puedes crear tu base de datos con el esquema necesario para todos los demás scripts.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Ejemplo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--root-path</code></td>
+          <td>Obligatorio</td>
+          <td>Carpeta con los archivos de música para añadir a la base de datos</td>
+          <td><code>--root-path $HOME/Música</code></td>
+      </tr>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td>Obligatorio</td>
+          <td>Ruta a la base de datos</td>
+          <td><code>--db_path $HOME/Musica/flac.db</code></td>
+      </tr>
+      <tr>
+          <td><code>--lastfm_api_key</code></td>
+          <td>Opcional</td>
+          <td>Puedes añadir tu api key para obtener la bio de lastfm</td>
+          <td><code>--lastfm_api_key 123456789qwerasdfzxcv</code></td>
+      </tr>
+      <tr>
+          <td><code>--update-schema</code></td>
+          <td>Opcional</td>
+          <td>Actualiza la base de datos con las tablas necesarias para este programa</td>
+          <td><code>--update-schema</code></td>
+      </tr>
+      <tr>
+          <td><code>--update-bitrates</code></td>
+          <td>Opcional</td>
+          <td>Calcula un rango de bitrate por álbum</td>
+          <td><code>--update-bitrates</code></td>
+      </tr>
+      <tr>
+          <td><code>--update-replay-gain</code></td>
+          <td>Opcional</td>
+          <td>Actualiza replaygain para los elementos de la base de datos</td>
+          <td><code>--update-replay-gain</code></td>
+      </tr>
+      <tr>
+          <td><code>--optimize</code></td>
+          <td>Opcional</td>
+          <td>Mejora el rendimiento de la base de datos</td>
+          <td><code>--optimize</code></td>
+      </tr>
+      <tr>
+          <td><code>--quick-scan</code></td>
+          <td>Alternativo</td>
+          <td>Muestra un vistazo rápido de la base de datos</td>
+          <td><code>--quick-scan</code></td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td>Opcional</td>
+          <td>Reescaneará de nuevo el directorio para añadir nuevos. Se puede combinar con &ndash;update-&hellip;</td>
+          <td><code>--force-update</code></td>
+      </tr>
+      <tr>
+          <td><code>--help</code></td>
+          <td>Alternativo</td>
+          <td>Muestra un panel informativo</td>
+          <td><code>--help</code></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<p>Rellena las tablas artists, álbums y songs con:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Origen</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>file_path</code></td>
+          <td>Metadata</td>
+          <td>Ruta completa al archivo de audio</td>
+      </tr>
+      <tr>
+          <td><code>title</code></td>
+          <td>Metadata</td>
+          <td>Título de la canción</td>
+      </tr>
+      <tr>
+          <td><code>track_number</code></td>
+          <td>Metadata</td>
+          <td>Número de pista dentro del álbum</td>
+      </tr>
+      <tr>
+          <td><code>artist</code></td>
+          <td>Metadata</td>
+          <td>Artista principal</td>
+      </tr>
+      <tr>
+          <td><code>album_artist</code></td>
+          <td>Metadata</td>
+          <td>Artista del álbum (puede diferir del artista de la pista)</td>
+      </tr>
+      <tr>
+          <td><code>album</code></td>
+          <td>Metadata</td>
+          <td>Nombre del álbum</td>
+      </tr>
+      <tr>
+          <td><code>date</code></td>
+          <td>Metadata</td>
+          <td>Año de publicación o grabación</td>
+      </tr>
+      <tr>
+          <td><code>genre</code></td>
+          <td>Metadata</td>
+          <td>Género musical</td>
+      </tr>
+      <tr>
+          <td><code>label</code></td>
+          <td>Metadata</td>
+          <td>Sello discográfico</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>Metadata</td>
+          <td>Identificador MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>last_modified</code></td>
+          <td>Archivo</td>
+          <td>Fecha de última modificación del archivo</td>
+      </tr>
+      <tr>
+          <td><code>added_timestamp</code></td>
+          <td>Sistema</td>
+          <td>Momento exacto en que fue añadido a la base de datos</td>
+      </tr>
+      <tr>
+          <td><code>added_week</code></td>
+          <td>Derivado</td>
+          <td>Semana del año en la que fue añadido</td>
+      </tr>
+      <tr>
+          <td><code>added_month</code></td>
+          <td>Derivado</td>
+          <td>Mes en que fue añadido</td>
+      </tr>
+      <tr>
+          <td><code>added_year</code></td>
+          <td>Derivado</td>
+          <td>Año en que fue añadido</td>
+      </tr>
+      <tr>
+          <td><code>folder_path</code></td>
+          <td>Sistema</td>
+          <td>Carpeta donde se encuentra el archivo</td>
+      </tr>
+      <tr>
+          <td><code>replay_gain_album_gain</code></td>
+          <td>Metadata</td>
+          <td>Ganancia de volumen del álbum (ReplayGain)</td>
+      </tr>
+      <tr>
+          <td><code>replay_gain_album_peak</code></td>
+          <td>Metadata</td>
+          <td>Pico de volumen del álbum (ReplayGain)</td>
+      </tr>
+      <tr>
+          <td><code>replay_gain_track_gain</code></td>
+          <td>Metadata</td>
+          <td>Ganancia de volumen de la pista (ReplayGain)</td>
+      </tr>
+      <tr>
+          <td><code>replay_gain_track_peak</code></td>
+          <td>Metadata</td>
+          <td>Pico de volumen de la pista (ReplayGain)</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="02-scrobbles-lastfm">02. Scrobbles lastfm</h1>
+
+<p>Obtiene scrobbles de lastfm para el usuario indicado</p>
+<blockquote>
+<p>27.000 scrobbles con 11.180 enlazados en 6 minutos</p></blockquote>
+<h4 id="tabla-scrobbles">Tabla <code>scrobbles</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>ID único (autoincremental)</td>
+      </tr>
+      <tr>
+          <td><code>track_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre de la canción</td>
+      </tr>
+      <tr>
+          <td><code>album_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del álbum</td>
+      </tr>
+      <tr>
+          <td><code>artist_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del artista</td>
+      </tr>
+      <tr>
+          <td><code>timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Timestamp Unix del scrobble</td>
+      </tr>
+      <tr>
+          <td><code>scrobble_date</code></td>
+          <td>TEXT</td>
+          <td>Fecha y hora del scrobble en formato legible</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm para el scrobble</td>
+      </tr>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de referencia a la tabla <code>songs</code> (puede ser NULL)</td>
+      </tr>
+      <tr>
+          <td><code>album_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de referencia a la tabla <code>albums</code> (puede ser NULL)</td>
+      </tr>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de referencia a la tabla <code>artists</code> (puede ser NULL)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-lastfm_config">Tabla <code>lastfm_config</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>ID único (siempre 1)</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_username</code></td>
+          <td>TEXT</td>
+          <td>Nombre de usuario de Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>last_timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Último timestamp procesado</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de última actualización</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-artists">Tabla <code>artists</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del artista</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>tags</code></td>
+          <td>TEXT</td>
+          <td>Etiquetas separadas por comas</td>
+      </tr>
+      <tr>
+          <td><code>bio</code></td>
+          <td>TEXT</td>
+          <td>Biografía del artista</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm para el artista</td>
+      </tr>
+      <tr>
+          <td><code>origen</code></td>
+          <td>TEXT</td>
+          <td>Origen de los datos (&lsquo;scrobbles&rsquo;)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-albums">Tabla <code>albums</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>ID del artista</td>
+      </tr>
+      <tr>
+          <td><code>name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del álbum</td>
+      </tr>
+      <tr>
+          <td><code>year</code></td>
+          <td>INTEGER</td>
+          <td>Año de lanzamiento</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm para el álbum</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>total_tracks</code></td>
+          <td>INTEGER</td>
+          <td>Número total de pistas</td>
+      </tr>
+      <tr>
+          <td><code>origen</code></td>
+          <td>TEXT</td>
+          <td>Origen de los datos (&lsquo;scrobbles&rsquo;)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-songs">Tabla <code>songs</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>title</code></td>
+          <td>TEXT</td>
+          <td>Título de la canción</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>added_timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Timestamp de cuando se añadió la canción</td>
+      </tr>
+      <tr>
+          <td><code>added_week</code></td>
+          <td>INTEGER</td>
+          <td>Semana en que se añadió la canción</td>
+      </tr>
+      <tr>
+          <td><code>added_month</code></td>
+          <td>INTEGER</td>
+          <td>Mes en que se añadió la canción</td>
+      </tr>
+      <tr>
+          <td><code>added_year</code></td>
+          <td>INTEGER</td>
+          <td>Año en que se añadió la canción</td>
+      </tr>
+      <tr>
+          <td><code>duration</code></td>
+          <td>INTEGER</td>
+          <td>Duración en segundos</td>
+      </tr>
+      <tr>
+          <td><code>album</code></td>
+          <td>TEXT</td>
+          <td>Nombre del álbum</td>
+      </tr>
+      <tr>
+          <td><code>album_artist</code></td>
+          <td>TEXT</td>
+          <td>Artista del álbum</td>
+      </tr>
+      <tr>
+          <td><code>artist</code></td>
+          <td>TEXT</td>
+          <td>Artista de la canción</td>
+      </tr>
+      <tr>
+          <td><code>genre</code></td>
+          <td>TEXT</td>
+          <td>Género musical</td>
+      </tr>
+      <tr>
+          <td><code>origen</code></td>
+          <td>TEXT</td>
+          <td>Origen de los datos (&lsquo;scrobbles&rsquo;)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-song_links">Tabla <code>song_links</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm para la canción</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 02. Scrobbles lastfm</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config</code></td>
+          <td>Ruta al archivo de configuración JSON</td>
+      </tr>
+      <tr>
+          <td><code>--lastfm_user</code></td>
+          <td>Nombre de usuario de Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>--lastfm-api-key</code></td>
+          <td>Clave de API de Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td>Ruta al archivo de base de datos SQLite</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td>Bandera para forzar una actualización completa (borra scrobbles existentes)</td>
+      </tr>
+      <tr>
+          <td><code>--output-json</code></td>
+          <td>Ruta para guardar todos los scrobbles en formato JSON (opcional)</td>
+      </tr>
+      <tr>
+          <td><code>--interactive</code></td>
+          <td>Modo interactivo para añadir nuevos elementos</td>
+      </tr>
+      <tr>
+          <td><code>--cache-dir</code></td>
+          <td>Directorio para archivos de caché</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="03-listens-listenbrainz">03. Listens listenbrainz</h1>
+
+<p>Este script se encarga de obtener y procesar los registros de escuchas (listens) desde ListenBrainz, almacenándolos en una base de datos SQLite y enlazándolos con canciones, artistas y álbumes existentes en tu biblioteca.</p>
+<p>Este script permite varios métodos para mejorar la búsqueda estricta:</p>
+<ul>
+<li><code>normalize-strings</code></li>
+<li><code>enhanced-matrching</code></li>
+<li><code>mbid-matching</code></li>
+<li><code>fuzzy-matching</code></li>
+<li><code>analyze-mismatches</code></li>
+<li><code>use-all-matching</code></li>
+</ul>
+<blockquote>
+<p>Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían</p></blockquote>
+<h4 id="tabla-listens">Tabla <code>listens</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>ID único para cada listen (clave primaria)</td>
+      </tr>
+      <tr>
+          <td><code>track_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre de la pista/canción</td>
+      </tr>
+      <tr>
+          <td><code>album_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del álbum (opcional)</td>
+      </tr>
+      <tr>
+          <td><code>artist_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del artista</td>
+      </tr>
+      <tr>
+          <td><code>timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Timestamp en formato Unix de cuando se escuchó la canción</td>
+      </tr>
+      <tr>
+          <td><code>listen_date</code></td>
+          <td>TEXT</td>
+          <td>Fecha y hora en formato legible de cuando se escuchó la canción</td>
+      </tr>
+      <tr>
+          <td><code>listenbrainz_url</code></td>
+          <td>TEXT</td>
+          <td>URL a la página de ListenBrainz del usuario</td>
+      </tr>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción correspondiente en la tabla <code>songs</code> (si se encuentra)</td>
+      </tr>
+      <tr>
+          <td><code>album_id</code></td>
+          <td>INTEGER</td>
+          <td>ID del álbum correspondiente en la tabla <code>albums</code> (si se encuentra)</td>
+      </tr>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>ID del artista correspondiente en la tabla <code>artists</code> (si se encuentra)</td>
+      </tr>
+      <tr>
+          <td><code>additional_data</code></td>
+          <td>TEXT</td>
+          <td>Metadatos adicionales en formato JSON (añadido dinámicamente)</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-listenbrainz_config">Tabla <code>listenbrainz_config</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>ID único siempre 1 (solo una configuración)</td>
+      </tr>
+      <tr>
+          <td><code>username</code></td>
+          <td>TEXT</td>
+          <td>Nombre de usuario en ListenBrainz</td>
+      </tr>
+      <tr>
+          <td><code>last_timestamp</code></td>
+          <td>INTEGER</td>
+          <td>Último timestamp procesado</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha y hora de la última actualización</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-normalized_songs-si-se-activa-enhanced_matching">Tabla <code>normalized_songs</code> (si se activa <code>enhanced_matching</code>)</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción</td>
+      </tr>
+      <tr>
+          <td><code>normalized_title</code></td>
+          <td>TEXT</td>
+          <td>Título normalizado</td>
+      </tr>
+      <tr>
+          <td><code>normalized_artist</code></td>
+          <td>TEXT</td>
+          <td>Artista normalizado</td>
+      </tr>
+      <tr>
+          <td><code>normalized_album</code></td>
+          <td>TEXT</td>
+          <td>Álbum normalizado</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 03. Listens listenbrainz</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Valor por Defecto</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config</code></td>
+          <td><code>str</code></td>
+          <td>Ruta al archivo de configuración JSON</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--user</code></td>
+          <td><code>str</code></td>
+          <td>Nombre de usuario en ListenBrainz</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--token</code></td>
+          <td><code>str</code></td>
+          <td>Token de autenticación para ListenBrainz</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td><code>str</code></td>
+          <td>Ruta al archivo de base de datos SQLite</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td><code>bool</code></td>
+          <td>Si se debe forzar una actualización completa (ignorando el último timestamp)</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--output-json</code></td>
+          <td><code>str</code></td>
+          <td>Ruta para guardar los listens en formato JSON (opcional)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--max-items</code></td>
+          <td><code>int</code></td>
+          <td>Número máximo de listens a obtener por llamada</td>
+          <td><code>1000</code></td>
+      </tr>
+      <tr>
+          <td><code>--limit-process</code></td>
+          <td><code>int</code></td>
+          <td>Número máximo de listens a procesar (opcional)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--reprocess-existing</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben reprocesar los listens existentes con los métodos de coincidencia seleccionados</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--normalize-strings</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben normalizar las cadenas para mejorar coincidencias</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--enhanced-matching</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben crear y usar tablas normalizadas para buscar coincidencias</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--mbid-matching</code></td>
+          <td><code>bool</code></td>
+          <td>Si se debe intentar coincidencia por MusicBrainz IDs</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--fuzzy-matching</code></td>
+          <td><code>bool</code></td>
+          <td>Si se debe usar coincidencia difusa para encontrar canciones</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--analyze-mismatches</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben analizar las razones de discrepancias</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--use-all-matching</code></td>
+          <td><code>bool</code></td>
+          <td>Si se deben utilizar todas las técnicas de coincidencia mejoradas</td>
+          <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="04-redes">04. Redes</h1>
+
+<p>Este módulo forma parte del sistema de base de datos musical y se encarga de:</p>
+<ul>
+<li>Recopilar URLs de redes sociales y plataformas web para artistas</li>
+<li>Obtener datos desde múltiples fuentes como Discogs, MusicBrainz y páginas web oficiales</li>
+<li>Almacenar y actualizar información en la tabla artists_networks de la base de datos</li>
+</ul>
+<h4 id="tabla-artists_networks">Tabla <code>artists_networks</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>Clave primaria</td>
+      </tr>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>ID del artista (clave foránea a la tabla <code>artists</code>)</td>
+      </tr>
+      <tr>
+          <td><code>allmusic</code></td>
+          <td>TEXT</td>
+          <td>URL de AllMusic</td>
+      </tr>
+      <tr>
+          <td><code>bandcamp</code></td>
+          <td>TEXT</td>
+          <td>URL de Bandcamp</td>
+      </tr>
+      <tr>
+          <td><code>boomkat</code></td>
+          <td>TEXT</td>
+          <td>URL de Boomkat</td>
+      </tr>
+      <tr>
+          <td><code>facebook</code></td>
+          <td>TEXT</td>
+          <td>URL de Facebook</td>
+      </tr>
+      <tr>
+          <td><code>twitter</code></td>
+          <td>TEXT</td>
+          <td>URL de Twitter</td>
+      </tr>
+      <tr>
+          <td><code>mastodon</code></td>
+          <td>TEXT</td>
+          <td>URL de Mastodon</td>
+      </tr>
+      <tr>
+          <td><code>bluesky</code></td>
+          <td>TEXT</td>
+          <td>URL de Bluesky</td>
+      </tr>
+      <tr>
+          <td><code>instagram</code></td>
+          <td>TEXT</td>
+          <td>URL de Instagram</td>
+      </tr>
+      <tr>
+          <td><code>spotify</code></td>
+          <td>TEXT</td>
+          <td>URL de Spotify</td>
+      </tr>
+      <tr>
+          <td><code>lastfm</code></td>
+          <td>TEXT</td>
+          <td>URL de Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>wikipedia</code></td>
+          <td>TEXT</td>
+          <td>URL de Wikipedia</td>
+      </tr>
+      <tr>
+          <td><code>juno</code></td>
+          <td>TEXT</td>
+          <td>URL de Juno</td>
+      </tr>
+      <tr>
+          <td><code>soundcloud</code></td>
+          <td>TEXT</td>
+          <td>URL de SoundCloud</td>
+      </tr>
+      <tr>
+          <td><code>youtube</code></td>
+          <td>TEXT</td>
+          <td>URL de YouTube</td>
+      </tr>
+      <tr>
+          <td><code>imdb</code></td>
+          <td>TEXT</td>
+          <td>URL de IMDb</td>
+      </tr>
+      <tr>
+          <td><code>progarchives</code></td>
+          <td>TEXT</td>
+          <td>URL de ProgArchives</td>
+      </tr>
+      <tr>
+          <td><code>setlist_fm</code></td>
+          <td>TEXT</td>
+          <td>URL de Setlist.fm</td>
+      </tr>
+      <tr>
+          <td><code>who_sampled</code></td>
+          <td>TEXT</td>
+          <td>URL de WhoSampled</td>
+      </tr>
+      <tr>
+          <td><code>vimeo</code></td>
+          <td>TEXT</td>
+          <td>URL de Vimeo</td>
+      </tr>
+      <tr>
+          <td><code>genius</code></td>
+          <td>TEXT</td>
+          <td>URL de Genius</td>
+      </tr>
+      <tr>
+          <td><code>myspace</code></td>
+          <td>TEXT</td>
+          <td>URL de MySpace</td>
+      </tr>
+      <tr>
+          <td><code>tumblr</code></td>
+          <td>TEXT</td>
+          <td>URL de Tumblr</td>
+      </tr>
+      <tr>
+          <td><code>resident_advisor</code></td>
+          <td>TEXT</td>
+          <td>URL de Resident Advisor</td>
+      </tr>
+      <tr>
+          <td><code>rateyourmusic</code></td>
+          <td>TEXT</td>
+          <td>URL de RateYourMusic</td>
+      </tr>
+      <tr>
+          <td><code>enlaces</code></td>
+          <td>TEXT</td>
+          <td>JSON con enlaces adicionales no categorizados</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha y hora de la última actualización</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 04. Redes</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Valor por Defecto</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>config</code></td>
+          <td><code>dict</code></td>
+          <td>Diccionario con la configuración</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>config.db_path</code></td>
+          <td><code>str</code></td>
+          <td>Ruta al archivo de la base de datos SQLite (obligatorio)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>config.discogs_token</code></td>
+          <td><code>str</code></td>
+          <td>Token para la API de Discogs (obligatorio)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>config.rate_limit</code></td>
+          <td><code>float</code></td>
+          <td>Tiempo de espera entre solicitudes (por defecto: <code>1.0</code>)</td>
+          <td><code>1.0</code></td>
+      </tr>
+      <tr>
+          <td><code>config.max_retries</code></td>
+          <td><code>int</code></td>
+          <td>Número máximo de reintentos para solicitudes fallidas (por defecto: <code>3</code>)</td>
+          <td><code>3</code></td>
+      </tr>
+      <tr>
+          <td><code>config.batch_size</code></td>
+          <td><code>int</code></td>
+          <td>Cantidad de artistas a procesar por lote (por defecto: <code>50</code>)</td>
+          <td><code>50</code></td>
+      </tr>
+      <tr>
+          <td><code>config.force_update</code></td>
+          <td><code>bool</code></td>
+          <td>Forzar actualización incluso si ya existen datos (por defecto: <code>False</code>)</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>config.missing_only</code></td>
+          <td><code>bool</code></td>
+          <td>Procesar solo artistas sin registro de redes sociales (por defecto: <code>True</code>)</td>
+          <td><code>True</code></td>
+      </tr>
+      <tr>
+          <td><code>config.concurrent_workers</code></td>
+          <td><code>int</code></td>
+          <td>Número de hilos para procesamiento en paralelo (por defecto: <code>1</code>)</td>
+          <td><code>1</code></td>
+      </tr>
+      <tr>
+          <td><code>config.user_agent</code></td>
+          <td><code>str</code></td>
+          <td>Agente de usuario para las solicitudes HTTP (por defecto: <code>'MusicDatabaseApp/1.0'</code>)</td>
+          <td><code>'MusicDatabaseApp/1.0'</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="05-musicbrainz-album-info">05. Musicbrainz album info</h1>
+
+<p>Este script recopila datos de grupos de lanzamientos (release groups) desde MusicBrainz y Wikidata, y los almacena en la base de datos SQLite para enriquecer la información musical.</p>
+<h4 id="tabla-mb_release_group">Tabla mb_release_group</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER PK</td>
+          <td>Clave primaria</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>title</code></td>
+          <td>TEXT</td>
+          <td>Título del grupo de lanzamiento</td>
+      </tr>
+      <tr>
+          <td><code>artist_credit</code></td>
+          <td>TEXT</td>
+          <td>Créditos de artistas</td>
+      </tr>
+      <tr>
+          <td><code>first_release_date</code></td>
+          <td>TEXT</td>
+          <td>Fecha del primer lanzamiento</td>
+      </tr>
+      <tr>
+          <td><code>primary_type</code></td>
+          <td>TEXT</td>
+          <td>Tipo primario (álbum, single, etc.)</td>
+      </tr>
+      <tr>
+          <td><code>secondary_types</code></td>
+          <td>TEXT</td>
+          <td>Tipos secundarios</td>
+      </tr>
+      <tr>
+          <td><code>album_id</code></td>
+          <td>INTEGER</td>
+          <td>Referencia al álbum</td>
+      </tr>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>Referencia al artista</td>
+      </tr>
+      <tr>
+          <td><code>genre</code></td>
+          <td>TEXT</td>
+          <td>Géneros musicales</td>
+      </tr>
+      <tr>
+          <td><code>associated_singles</code></td>
+          <td>TEXT</td>
+          <td>Singles asociados</td>
+      </tr>
+      <tr>
+          <td><code>discogs_url</code></td>
+          <td>TEXT</td>
+          <td>Enlace a Discogs</td>
+      </tr>
+      <tr>
+          <td><code>rateyourmusic_url</code></td>
+          <td>TEXT</td>
+          <td>Enlace a RateYourMusic</td>
+      </tr>
+      <tr>
+          <td><code>allmusic_url</code></td>
+          <td>TEXT</td>
+          <td>Enlace a AllMusic</td>
+      </tr>
+      <tr>
+          <td><code>wikidata_id</code></td>
+          <td>TEXT</td>
+          <td>ID de Wikidata</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de la última actualización</td>
+      </tr>
+      <tr>
+          <td><code>[columnas dinámicas]</code></td>
+          <td>Variado</td>
+          <td>Columnas generadas desde propiedades de Wikidata</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-mb_wikidata">Tabla mb_wikidata</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER PK</td>
+          <td>Clave primaria</td>
+      </tr>
+      <tr>
+          <td><code>wikidata_id</code></td>
+          <td>TEXT</td>
+          <td>ID de la entidad en Wikidata</td>
+      </tr>
+      <tr>
+          <td><code>release_group_mbid</code></td>
+          <td>TEXT</td>
+          <td>Referencia al MBID del grupo de lanzamiento</td>
+      </tr>
+      <tr>
+          <td><code>album_id</code></td>
+          <td>INTEGER</td>
+          <td>Referencia al álbum</td>
+      </tr>
+      <tr>
+          <td><code>artist_id</code></td>
+          <td>INTEGER</td>
+          <td>Referencia al artista</td>
+      </tr>
+      <tr>
+          <td><code>label_id</code></td>
+          <td>INTEGER</td>
+          <td>Referencia al sello discográfico</td>
+      </tr>
+      <tr>
+          <td><code>property_id</code></td>
+          <td>TEXT</td>
+          <td>ID de la propiedad de Wikidata</td>
+      </tr>
+      <tr>
+          <td><code>property_label</code></td>
+          <td>TEXT</td>
+          <td>Etiqueta legible de la propiedad</td>
+      </tr>
+      <tr>
+          <td><code>property_value</code></td>
+          <td>TEXT</td>
+          <td>Valor de la propiedad</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de la última actualización</td>
+      </tr>
+      <tr>
+          <td><code>value_type</code></td>
+          <td>TEXT</td>
+          <td>Tipo de valor</td>
+      </tr>
+      <tr>
+          <td><code>is_link</code></td>
+          <td>INTEGER</td>
+          <td>Indica si el valor es un enlace (<code>0</code> o <code>1</code>)</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 05. Musicbrainz album info</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+          <th>Requerido</th>
+          <th>Valor por defecto / Tipo</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config [config_file]</code></td>
+          <td>Ruta al archivo de configuración JSON</td>
+          <td>Sí (si no se usa <code>--db-path</code>)</td>
+          <td>Archivo JSON</td>
+      </tr>
+      <tr>
+          <td><code>--db-path [path]</code></td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>Alternativa a <code>--config</code></td>
+          <td>-</td>
+      </tr>
+      <tr>
+          <td><code>--limit [n]</code></td>
+          <td>Limita el número de lanzamientos a procesar</td>
+          <td>No</td>
+          <td>Entero</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td>Fuerza la actualización de entradas existentes</td>
+          <td>No</td>
+          <td>Bandera</td>
+      </tr>
+      <tr>
+          <td><code>--mode [mode]</code></td>
+          <td>Modo de operación: <code>'auto'</code> o <code>'manual'</code></td>
+          <td>No</td>
+          <td>auto/manual</td>
+      </tr>
+      <tr>
+          <td><code>--cache-file [path]</code></td>
+          <td>Ruta al archivo de caché para reanudar procesamiento</td>
+          <td>No</td>
+          <td>Archivo JSON</td>
+      </tr>
+      <tr>
+          <td><code>--skip-properties [ids]</code></td>
+          <td>IDs de propiedades de Wikidata a omitir</td>
+          <td>No</td>
+          <td>Lista separada por comas</td>
+      </tr>
+      <tr>
+          <td><code>--interactive</code></td>
+          <td>Activa modo interactivo con más información y confirmaciones</td>
+          <td>No</td>
+          <td>Bandera</td>
+      </tr>
+      <tr>
+          <td><code>--log-level [level]</code></td>
+          <td>Nivel de detalle del log (<code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>)</td>
+          <td>No</td>
+          <td>INFO</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ubicación por Defecto</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Archivo de caché</td>
+          <td><code>mb_release_group_cache.json</code></td>
+          <td>JSON con el estado de procesamiento para reanudar tareas</td>
+      </tr>
+      <tr>
+          <td>Archivo de log</td>
+          <td><code>logs/mb_release_group.log</code></td>
+          <td>Registro de mensajes informativos y errores</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="06-musicbrainz-canciones">06. Musicbrainz canciones</h1>
+
+<h4 id="-mb_data_canciones"># mb_data_canciones</h4>
+<p>Módulo para obtener y almacenar relaciones entre canciones desde MusicBrainz.</p>
+<p>Este script extrae información sobre relaciones entre canciones (samples, remixes, covers, etc.)
+utilizando la API de MusicBrainz y almacena estos datos en la tabla mb_data_songs de la base de datos.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 06. Musicbrainz canciones</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+          <th>Obligatorio</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config</code></td>
+          <td>Ruta al archivo de configuración JSON</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td>Ruta a la base de datos SQLite (sobrescribe valor en config)</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td>Fuerza la actualización de todos los registros</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--interactive</code></td>
+          <td>Modo interactivo para confirmar operaciones</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--verbose</code></td>
+          <td>Nivel de detalle en los logs</td>
+          <td>No</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ubicación típica</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Log</td>
+          <td><code>logs/mb_data_canciones.log</code></td>
+          <td>Registra la ejecución; se crea o añade según configuración</td>
+      </tr>
+      <tr>
+          <td>Caché</td>
+          <td><code>cache/musicbrainz/</code></td>
+          <td>Almacena respuestas de la API para reducir llamadas</td>
+      </tr>
+      <tr>
+          <td>Otros</td>
+          <td>No aplica</td>
+          <td>No modifica archivos de audio originales</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER (PK)</td>
+          <td>Identificador único autoincremental</td>
+      </tr>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción en la tabla <code>songs</code></td>
+      </tr>
+      <tr>
+          <td><code>relationship_type</code></td>
+          <td>TEXT</td>
+          <td>Tipo de relación (ej. <em>sample</em>, <em>remix</em>, etc.)</td>
+      </tr>
+      <tr>
+          <td><code>related_mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz del elemento relacionado</td>
+      </tr>
+      <tr>
+          <td><code>related_title</code></td>
+          <td>TEXT</td>
+          <td>Título del elemento relacionado</td>
+      </tr>
+      <tr>
+          <td><code>related_artist</code></td>
+          <td>TEXT</td>
+          <td>Artista del elemento relacionado</td>
+      </tr>
+      <tr>
+          <td><code>relationship_direction</code></td>
+          <td>TEXT</td>
+          <td>Dirección de la relación (<em>entrante</em> o <em>saliente</em>)</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha y hora de la última actualización</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="07-enlaces-artistas">07. Enlaces artistas</h1>
+
+<h4 id="configuración-json">Configuración JSON</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;db_path&#34;</span>: <span style="color:#e6db74">&#34;ruta/a/tu/base_de_datos.db&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;log_path&#34;</span>: <span style="color:#e6db74">&#34;logs/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;cache_path&#34;</span>: <span style="color:#e6db74">&#34;cache/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;cache_duration&#34;</span>: <span style="color:#ae81ff">30</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;rate_limit&#34;</span>: <span style="color:#ae81ff">0.5</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;spotify&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;client_id&#34;</span>: <span style="color:#e6db74">&#34;tu_spotify_client_id&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;client_secret&#34;</span>: <span style="color:#e6db74">&#34;tu_spotify_client_secret&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;lastfm&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;api_key&#34;</span>: <span style="color:#e6db74">&#34;tu_lastfm_api_key&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;api_secret&#34;</span>: <span style="color:#e6db74">&#34;tu_lastfm_api_secret&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;discogs&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;token&#34;</span>: <span style="color:#e6db74">&#34;tu_discogs_token&#34;</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;user_agent&#34;</span>: <span style="color:#e6db74">&#34;MusicDatabaseEnricher/1.0 (contacto@ejemplo.com)&#34;</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></div>
+<h5 id="variables-de-entorno-alternativas">Variables de entorno alternativas</h5>
+<ul>
+<li>SPOTIFY_CLIENT_ID</li>
+<li>SPOTIFY_CLIENT_SECRET</li>
+<li>LASTFM_API_KEY</li>
+<li>LASTFM_API_SECRET</li>
+<li>DISCOGS_TOKEN</li>
+</ul>
+<h4 id="tabla-artists">Tabla artists</h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>spotify_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>youtube_url</code></td>
+          <td>TEXT</td>
+          <td>URL del canal/tópico del artista en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>musicbrainz_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>discogs_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en Discogs</td>
+      </tr>
+      <tr>
+          <td><code>rateyourmusic_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en RateYourMusic</td>
+      </tr>
+      <tr>
+          <td><code>bandcamp_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en Bandcamp</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz del artista</td>
+      </tr>
+      <tr>
+          <td><code>origin</code></td>
+          <td>TEXT</td>
+          <td>Origen o país del artista</td>
+      </tr>
+      <tr>
+          <td><code>formed_year</code></td>
+          <td>INTEGER</td>
+          <td>Año de formación del artista</td>
+      </tr>
+      <tr>
+          <td><code>total_albums</code></td>
+          <td>INTEGER</td>
+          <td>Número total de álbumes del artista</td>
+      </tr>
+      <tr>
+          <td><code>bio</code></td>
+          <td>TEXT</td>
+          <td>Biografía del artista</td>
+      </tr>
+      <tr>
+          <td><code>similar_artists</code></td>
+          <td>TEXT/JSON</td>
+          <td>Artistas similares</td>
+      </tr>
+      <tr>
+          <td><code>tags</code></td>
+          <td>TEXT/JSON</td>
+          <td>Etiquetas o géneros</td>
+      </tr>
+      <tr>
+          <td><code>aliases</code></td>
+          <td>TEXT/JSON</td>
+          <td>Nombres alternativos del artista</td>
+      </tr>
+      <tr>
+          <td><code>member_of</code></td>
+          <td>TEXT/JSON</td>
+          <td>Grupos a los que pertenece el artista</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL del artista en Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de la última actualización</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-albums">Tabla albums</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>spotify_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>spotify_id</code></td>
+          <td>TEXT</td>
+          <td>ID del álbum en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>youtube_url</code></td>
+          <td>TEXT</td>
+          <td>URL de resultados o playlist del álbum en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>musicbrainz_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>discogs_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en Discogs</td>
+      </tr>
+      <tr>
+          <td><code>rateyourmusic_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en RateYourMusic</td>
+      </tr>
+      <tr>
+          <td><code>bandcamp_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en Bandcamp</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>ID de MusicBrainz del álbum</td>
+      </tr>
+      <tr>
+          <td><code>producers</code></td>
+          <td>TEXT/JSON</td>
+          <td>Productores del álbum</td>
+      </tr>
+      <tr>
+          <td><code>engineers</code></td>
+          <td>TEXT/JSON</td>
+          <td>Ingenieros de grabación</td>
+      </tr>
+      <tr>
+          <td><code>mastering_engineers</code></td>
+          <td>TEXT/JSON</td>
+          <td>Ingenieros de masterización</td>
+      </tr>
+      <tr>
+          <td><code>credits</code></td>
+          <td>JSON</td>
+          <td>Detalles de los créditos</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL del álbum en Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de la última actualización</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-songs">Tabla songs</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>TEXT</td>
+          <td>Identificador de MusicBrainz para la grabación</td>
+      </tr>
+  </tbody>
+</table>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">tags include #enlaces_artista_album 
+sort by due reverse
+hide tags</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 07. Enlaces artistas</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config</code></td>
+          <td>Obligatorio</td>
+          <td>Ruta al archivo de configuración JSON</td>
+      </tr>
+      <tr>
+          <td><code>--artist</code></td>
+          <td>Opcional</td>
+          <td>Buscar un artista específico</td>
+      </tr>
+      <tr>
+          <td><code>--album</code></td>
+          <td>Opcional</td>
+          <td>Buscar un álbum específico</td>
+      </tr>
+      <tr>
+          <td><code>--days</code></td>
+          <td>Opcional</td>
+          <td>Actualizar registros más antiguos que N días</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td>Flag</td>
+          <td>Forzar actualización de todos los registros</td>
+      </tr>
+      <tr>
+          <td><code>--missing-only</code></td>
+          <td>Flag</td>
+          <td>Actualizar solo registros con datos faltantes</td>
+      </tr>
+      <tr>
+          <td><code>--older-only</code></td>
+          <td>Flag</td>
+          <td>Actualizar solo registros más antiguos</td>
+      </tr>
+      <tr>
+          <td><code>--summary-only</code></td>
+          <td>Flag</td>
+          <td>Mostrar solo resumen sin actualizar</td>
+      </tr>
+      <tr>
+          <td><code>--debug</code></td>
+          <td>Flag</td>
+          <td>Activar modo debug con screenshots</td>
+      </tr>
+      <tr>
+          <td><code>--disable-services</code></td>
+          <td>Lista</td>
+          <td>Deshabilitar servicios específicos</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="credenciales">Credenciales</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Servicio</th>
+          <th>Credenciales</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Spotify</td>
+          <td><code>client_id</code>, <code>client_secret</code></td>
+          <td>Credenciales de Spotify Developer</td>
+      </tr>
+      <tr>
+          <td>Last.fm</td>
+          <td><code>api_key</code>, <code>api_secret</code></td>
+          <td>Claves de API de Last.fm</td>
+      </tr>
+      <tr>
+          <td>Discogs</td>
+          <td><code>token</code></td>
+          <td>Token de acceso para la API de Discogs</td>
+      </tr>
+      <tr>
+          <td>MusicBrainz</td>
+          <td>No requiere credenciales</td>
+          <td>Usa un user-agent personalizado</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ruta</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Logs</td>
+          <td><code>logs/enlaces_artista_album_{timestamp}.log</code></td>
+          <td>Registros de ejecución del script</td>
+      </tr>
+      <tr>
+          <td>Caché</td>
+          <td><code>cache/spotify_{artist_name}.json</code></td>
+          <td>Respuestas cacheadas de la API de Spotify</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>cache/lastfm_{artist_name}.json</code></td>
+          <td>Respuestas cacheadas de la API de Last.fm</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>cache/musicbrainz_{artist_name}.json</code></td>
+          <td>Respuestas cacheadas de la API de MusicBrainz</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td><code>cache/discogs_{artist_name}.json</code></td>
+          <td>Respuestas cacheadas de la API de Discogs</td>
+      </tr>
+      <tr>
+          <td>Depuración</td>
+          <td><code>debug_screenshots/{timestamp}_{service}_{artist_name}.png</code></td>
+          <td>Capturas de pantalla en modo debug</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="08-enlaces-albums">08. Enlaces albums</h1>
+
+<h4 id="limitaciones-y-control-de-tasa">Limitaciones y Control de Tasa</h4>
+<ul>
+<li><strong>Retraso entre solicitudes</strong>: Configurable para evitar bloqueos de IP</li>
+<li><strong>Reintentos</strong>: 3 intentos por solicitud fallida con incremento exponencial de espera</li>
+<li><strong>Límite de tiempo de ejecución</strong>: Tiempo máximo de ejecución por defecto de 3600 segundos (configurable)</li>
+<li></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 08. Enlaces albums</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+          <th>Tipo / Valor por Defecto</th>
+          <th>Obligatorio</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>Cadena</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>--missing-only</code></td>
+          <td>Solo procesa álbumes con enlaces faltantes</td>
+          <td>Bandera (booleano)</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--delay</code></td>
+          <td>Retraso entre solicitudes en segundos</td>
+          <td><code>float</code>, por defecto: <code>1.0</code></td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--cache-dir</code></td>
+          <td>Directorio para el archivo de caché</td>
+          <td>Cadena, por defecto: <code>~/.cache/music_db</code></td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--user-agent</code></td>
+          <td>Agente de usuario para solicitudes HTTP</td>
+          <td>Cadena, por defecto: <code>'MusicLibraryManager/1.0'</code></td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--log-level</code></td>
+          <td>Nivel de logging</td>
+          <td>Cadena, por defecto: <code>INFO</code></td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--batch-size</code></td>
+          <td>Número de álbumes a procesar en cada lote</td>
+          <td>Entero, por defecto: <code>50</code></td>
+          <td>No</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<ol>
+<li><strong>album_links</strong> (principal)
+<ul>
+<li>Crea la tabla si no existe</li>
+<li>Actualiza los enlaces para cada álbum</li>
+</ul>
+</li>
+<li><strong>albums</strong> (referencia)
+<ul>
+<li>Lee información sobre álbumes (id, name, artist_id)</li>
+<li>No modifica directamente esta tabla</li>
+</ul>
+</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Archivo</th>
+          <th>Descripción</th>
+          <th>Detalles de Formato o Estructura</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>~/.cache/music_db/enlaces_albumes_cache.json</code></td>
+          <td>Almacena resultados de búsquedas previas</td>
+          <td><code>{&quot;query_hash&quot;: {&quot;url&quot;: &quot;...&quot;, &quot;timestamp&quot;: &quot;...&quot;}}</code></td>
+      </tr>
+      <tr>
+          <td><code>logs/enlaces_albumes.log</code></td>
+          <td>Registra actividad, errores y resultados de la ejecución</td>
+          <td><code>[FECHA] [NIVEL] [Mensaje]</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="09-enlaces-canciones">09. Enlaces canciones</h1>
+
+<p>Busca enlaces para cada canción en spotify y lastfm.</p>
+<p>Módulo para gestionar los enlaces de canciones en servicios de música en línea. Actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py.
+Dependencias</p>
+<h4 id="servicios-usados">Servicios usados:</h4>
+<ul>
+<li>spotify: Enlaces a canciones en Spotify</li>
+<li>lastfm: Enlaces a canciones en Last.fm</li>
+<li>youtube: Enlaces a videos de canciones en YouTube</li>
+<li>musicbrainz: Enlaces a grabaciones en MusicBrainz</li>
+<li>bandcamp: Enlaces a canciones en Bandcamp</li>
+<li>soundcloud: Enlaces a canciones en SoundCloud</li>
+<li>boomkat: Enlaces a canciones en Boomkat</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 09. Enlaces canciones</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Valor predeterminado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>db_path</td>
+          <td>str</td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>musica.db</td>
+      </tr>
+      <tr>
+          <td>checkpoint_path</td>
+          <td>str</td>
+          <td>Directorio para guardar el progreso en formato JSON</td>
+          <td>./checkpoints</td>
+      </tr>
+      <tr>
+          <td>log_dir</td>
+          <td>str</td>
+          <td>Directorio para los archivos de registro</td>
+          <td>./logs</td>
+      </tr>
+      <tr>
+          <td>cache_dir</td>
+          <td>str</td>
+          <td>Directorio para archivos de caché por servicio</td>
+          <td>./caches</td>
+      </tr>
+      <tr>
+          <td>services</td>
+          <td>list/str</td>
+          <td>Lista de servicios a buscar (spotify, lastfm, youtube)</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>limit</td>
+          <td>int</td>
+          <td>Límite de canciones a procesar (0 para todas)</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>force_update</td>
+          <td>bool</td>
+          <td>Actualizar enlaces existentes</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>delete_old</td>
+          <td>bool</td>
+          <td>Eliminar enlaces antiguos si no se encuentra uno nuevo</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>spotify_client_id</td>
+          <td>str</td>
+          <td>ID de cliente para la API de Spotify</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spotify_client_secret</td>
+          <td>str</td>
+          <td>Secreto de cliente para la API de Spotify</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>lastfm_api_key</td>
+          <td>str</td>
+          <td>Clave de API de Last.fm</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>google_api_key</td>
+          <td>str</td>
+          <td>Clave de API de Google</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>google_cx</td>
+          <td>str</td>
+          <td>ID de motor de búsqueda personalizado de Google</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>max_retries</td>
+          <td>int</td>
+          <td>Número máximo de reintentos para solicitudes fallidas</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>retry_delay</td>
+          <td>int</td>
+          <td>Tiempo de espera entre reintentos (segundos)</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>batch_size</td>
+          <td>int</td>
+          <td>Tamaño del lote para procesar canciones</td>
+          <td>100</td>
+      </tr>
+      <tr>
+          <td>no_progress</td>
+          <td>bool</td>
+          <td>Desactivar barra de progreso</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>interactive</td>
+          <td>bool</td>
+          <td>Modo interactivo para confirmaciones</td>
+          <td>False</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="credenciales">Credenciales</h1>
+
+<ul>
+<li>Spotify API (client_id, client_secret)</li>
+<li>Last.fm API (api_key)</li>
+<li>Google API (api_key, custom_search_engine_id)</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ruta Típica</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Caché de enlaces</td>
+          <td><code>{checkpoint_path}/song_links_cache.json</code></td>
+          <td>Guarda el estado de los enlaces procesados</td>
+      </tr>
+      <tr>
+          <td>Registro de actividad</td>
+          <td><code>{log_dir}/enlaces_canciones_{timestamp}.log</code></td>
+          <td>Log de ejecución con marcas de tiempo</td>
+      </tr>
+      <tr>
+          <td>Caché por servicio</td>
+          <td><code>{cache_dir}/spotify_cache.json</code>, etc.</td>
+          <td>Resultados de consultas individuales a servicios externos</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>Clave primaria</td>
+      </tr>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción en la tabla <code>songs</code></td>
+      </tr>
+      <tr>
+          <td><code>spotify_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>spotify_id</code></td>
+          <td>TEXT</td>
+          <td>ID de la canción en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de última actualización</td>
+      </tr>
+      <tr>
+          <td><code>youtube_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>musicbrainz_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>musicbrainz_recording_id</code></td>
+          <td>TEXT</td>
+          <td>ID de grabación en MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>bandcamp_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en Bandcamp</td>
+      </tr>
+      <tr>
+          <td><code>soundcloud_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en SoundCloud</td>
+      </tr>
+      <tr>
+          <td><code>boomkat_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en Boomkat</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="10-wikipedia">10. Wikipedia</h1>
+
+<p>Obtiene enlaces a wikipedia desde musicbrainz, y extrae su contenido. En caso de no encontrarlo en wikimedia, se puede hacer manualmente con wikipedia.</p>
+<h4 id="tabla-artists">Tabla <code>artists</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>wikipedia_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la página de Wikipedia del artista</td>
+      </tr>
+      <tr>
+          <td><code>wikipedia_content</code></td>
+          <td>TEXT</td>
+          <td>Contenido extraído de la página de Wikipedia</td>
+      </tr>
+      <tr>
+          <td><code>wikipedia_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Timestamp de la última actualización de la información de Wikipedia</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Timestamp de la última actualización de los enlaces</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-albums">Tabla <code>albums</code></h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>wikipedia_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la página de Wikipedia del artista</td>
+      </tr>
+      <tr>
+          <td><code>wikipedia_content</code></td>
+          <td>TEXT</td>
+          <td>Contenido extraído de la página de Wikipedia</td>
+      </tr>
+      <tr>
+          <td><code>wikipedia_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Timestamp de la última actualización de la información de Wikipedia</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Timestamp de la última actualización de los enlaces</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="tabla-labels">Tabla labels</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>wikipedia_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la página de Wikipedia del sello discográfico</td>
+      </tr>
+      <tr>
+          <td><code>wikipedia_content</code></td>
+          <td>TEXT</td>
+          <td>Contenido extraído de la página de Wikipedia</td>
+      </tr>
+      <tr>
+          <td><code>wikipedia_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Timestamp de la última actualización de la información de Wikipedia</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Timestamp de la última actualización de los enlaces</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 10. Wikipedia</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Valor por Defecto</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--config</code></td>
+          <td><code>str</code></td>
+          <td>Ruta al archivo de configuración JSON (obligatorio)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--log-file</code></td>
+          <td><code>str</code></td>
+          <td>Archivo de registro para seguimiento del progreso</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td><code>str</code></td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--type</code></td>
+          <td><code>str</code></td>
+          <td>Tipo de entidad a actualizar (<code>artists</code>, <code>albums</code>, <code>artists_content</code>, <code>albums_content</code>, <code>labels</code>, <code>labels_content</code>)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--user-agent</code></td>
+          <td><code>str</code></td>
+          <td>User-Agent para las peticiones a MusicBrainz</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--modo</code></td>
+          <td><code>str</code></td>
+          <td>Tipo de lanzamiento: <code>auto</code> o <code>manual</code></td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td><code>bool</code></td>
+          <td>Flag para forzar la actualización de todos los elementos</td>
+          <td><code>False</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="11-musicbrainz-sellos">11. Musicbrainz sellos</h1>
+
+<p>Este script obtiene y almacena información detallada sobre sellos discográficos desde MusicBrainz y fuentes adicionales como Wikipedia y Discogs.</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 11. Musicbrainz sellos</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Clave</th>
+          <th>Descripción</th>
+          <th>Opcional</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>db_path</code></td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>cache_path</code></td>
+          <td>Ruta al directorio de caché</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>log_level</code></td>
+          <td>Nivel de registro (<code>DEBUG</code>, <code>INFO</code>, <code>WARNING</code>, <code>ERROR</code>)</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>mb_sellos</code></td>
+          <td>Configuración específica del módulo</td>
+          <td>No</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="credenciales">Credenciales</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Variable</th>
+          <th>Descripción</th>
+          <th>Opcional</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>MUSICBRAINZ_APP</code></td>
+          <td>Nombre de la aplicación para usar la API de MusicBrainz</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>MUSICBRAINZ_VERSION</code></td>
+          <td>Versión de la aplicación</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>MUSICBRAINZ_EMAIL</code></td>
+          <td>Correo electrónico para identificación en MusicBrainz</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>DISCOGS_TOKEN</code></td>
+          <td>Token de autenticación para la API de Discogs</td>
+          <td>Sí</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ubicación Típica</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Base de Datos</td>
+          <td>Ruta especificada por <code>db_path</code></td>
+          <td>Archivo SQLite donde se almacena la información</td>
+      </tr>
+      <tr>
+          <td>Caché</td>
+          <td><code>cache/mb_sellos/</code></td>
+          <td>Directorio para almacenar datos descargados desde MusicBrainz</td>
+      </tr>
+      <tr>
+          <td>Logs</td>
+          <td><code>logs/mb_sellos.log</code></td>
+          <td>Archivo de registro con nivel configurable (por defecto: <code>INFO</code>)</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="11-youtube-links-de-canciones">11. Youtube links de canciones</h1>
+
+<p>Este script busca videos de YouTube relacionados con las canciones en la base de datos y almacena los enlaces correspondientes. También actualiza información de enlaces para álbumes y artistas.</p>
+<h4 id="tabla-song_links">Tabla <code>song_links</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción</td>
+      </tr>
+      <tr>
+          <td><code>youtube_url</code></td>
+          <td>TEXT</td>
+          <td>URL del video en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>youtube_id</code></td>
+          <td>TEXT</td>
+          <td>ID del video en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>video_title</code></td>
+          <td>TEXT</td>
+          <td>Título del video</td>
+      </tr>
+      <tr>
+          <td><code>channel_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del canal de YouTube</td>
+      </tr>
+      <tr>
+          <td><code>view_count</code></td>
+          <td>INTEGER</td>
+          <td>Número de vistas (si disponible)</td>
+      </tr>
+      <tr>
+          <td><code>match_score</code></td>
+          <td>REAL</td>
+          <td>Puntuación de coincidencia (0.0 - 1.0)</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de última actualización</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="otras-tablas">Otras tablas</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Tabla</th>
+          <th>Campo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>albums</code></td>
+          <td><code>youtube_url</code></td>
+          <td>URL de canal o playlist del álbum en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>artists</code></td>
+          <td><code>youtube_url</code></td>
+          <td>URL del canal oficial del artista en YouTube</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 11. Youtube links de canciones</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+          <th>Valor por Defecto</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>db_path</code></td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>youtube_api_key</code></td>
+          <td>Clave de API de YouTube</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_api_key</code></td>
+          <td>Clave de API de Last.fm</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>rate_limit</code></td>
+          <td>Tiempo entre solicitudes API (segundos)</td>
+          <td><code>1.0</code></td>
+      </tr>
+      <tr>
+          <td><code>user_agent</code></td>
+          <td>Agente de usuario para solicitudes HTTP</td>
+          <td><code>'MusicDB/1.0'</code></td>
+      </tr>
+      <tr>
+          <td><code>missing_only</code></td>
+          <td>Solo procesar elementos sin enlaces</td>
+          <td><code>True</code></td>
+      </tr>
+      <tr>
+          <td><code>cache_file</code></td>
+          <td>Ruta del archivo de caché</td>
+          <td><code>PROJECT_ROOT/.content/cache/youtube_links_cache.json</code></td>
+      </tr>
+      <tr>
+          <td><code>force_update</code></td>
+          <td>Forzar actualización incluso si hay datos en caché</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>batch_size</code></td>
+          <td>Número de elementos a procesar por lote</td>
+          <td><code>100</code></td>
+      </tr>
+      <tr>
+          <td><code>max_retries</code></td>
+          <td>Máximo de reintentos para solicitudes fallidas</td>
+          <td><code>3</code></td>
+      </tr>
+      <tr>
+          <td><code>use_scrapers</code></td>
+          <td>Usar scraping si falla la API</td>
+          <td><code>True</code></td>
+      </tr>
+      <tr>
+          <td><code>entity_types</code></td>
+          <td>Tipos de entidades a procesar</td>
+          <td><code>['songs']</code></td>
+      </tr>
+      <tr>
+          <td><code>log_file</code></td>
+          <td>Ruta del archivo de log</td>
+          <td><code>PROJECT_ROOT/.content/logs/youtube_links.log</code></td>
+      </tr>
+      <tr>
+          <td><code>log_level</code></td>
+          <td>Nivel de detalle del registro</td>
+          <td><code>'INFO'</code></td>
+      </tr>
+      <tr>
+          <td><code>concurrent_workers</code></td>
+          <td>Número de procesos simultáneos</td>
+          <td><code>4</code></td>
+      </tr>
+      <tr>
+          <td><code>query_template</code></td>
+          <td>Plantilla de búsqueda en YouTube</td>
+          <td><code>&quot;{artist} - {title} official&quot;</code></td>
+      </tr>
+      <tr>
+          <td><code>max_results</code></td>
+          <td>Número máximo de resultados por búsqueda</td>
+          <td><code>5</code></td>
+      </tr>
+      <tr>
+          <td><code>min_match_score</code></td>
+          <td>Puntuación mínima para considerar coincidencia</td>
+          <td><code>0.7</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="credenciales">Credenciales</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Clave</th>
+          <th>Descripción</th>
+          <th>Obligatoria</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>YOUTUBE_API_KEY</code></td>
+          <td>Clave de API de YouTube (<a href="https://console.developers.google.com/" rel="external" target="_blank">console.developers.google.com</a>)</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>LASTFM_API_KEY</code></td>
+          <td>Clave de API de Last.fm (<a href="https://www.last.fm/api/" rel="external" target="_blank">last.fm/api</a>)</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>USER_AGENT</code></td>
+          <td>User-Agent personalizado para solicitudes HTTP</td>
+          <td>Sí</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ruta</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Caché</td>
+          <td><code>PROJECT_ROOT/.content/cache/youtube_links_cache.json</code></td>
+          <td>Almacena resultados de búsquedas para evitar duplicados</td>
+      </tr>
+      <tr>
+          <td>Logs</td>
+          <td><code>PROJECT_ROOT/.content/logs/youtube_links.log</code></td>
+          <td>Archivo de registro de actividad y errores</td>
+      </tr>
+      <tr>
+          <td>Temporales</td>
+          <td><code>PROJECT_ROOT/.content/temp/yt_results/</code></td>
+          <td>Carpeta de archivos temporales generados</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="12-letras">12. Letras</h1>
+
+<p>Módulo para gestionar los enlaces de canciones en servicios de música en línea.</p>
+<p>Este script actualiza los enlaces de diversos servicios de música (Spotify, YouTube,
+Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente
+o como parte de la cadena de scripts de db_creator.py.</p>
+<blockquote>
+<p>4 horas en 5140 canciones, Media de una canción cada 2.82 segundos</p></blockquote>
+<h4 id="tabla-lyrics">Tabla <code>lyrics</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>Identificador único de la letra</td>
+      </tr>
+      <tr>
+          <td><code>track_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción asociada (clave foránea a <code>songs.id</code>)</td>
+      </tr>
+      <tr>
+          <td><code>lyrics</code></td>
+          <td>TEXT</td>
+          <td>El texto completo de la letra</td>
+      </tr>
+      <tr>
+          <td><code>source</code></td>
+          <td>TEXT</td>
+          <td>La fuente de la letra (ej. &lsquo;Genius&rsquo;, &rsquo;lyrics.ovh&rsquo;, &lsquo;Happi&rsquo;, &lsquo;Musixmatch&rsquo;)</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha y hora de la última actualización</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 12. Letras</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Valor por Defecto</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--db_path</code></td>
+          <td><code>str</code></td>
+          <td>Ruta a la base de datos SQLite (requerido)</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>--force-update</code></td>
+          <td><code>bool</code></td>
+          <td>Bandera para forzar la actualización de todas las letras, incluso las que ya existen</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--batch-size</code></td>
+          <td><code>int</code></td>
+          <td>Número de canciones a procesar por lote</td>
+          <td><code>1000</code></td>
+      </tr>
+      <tr>
+          <td><code>--no-resume</code></td>
+          <td><code>bool</code></td>
+          <td>Bandera para no continuar desde el último punto guardado</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>--config</code></td>
+          <td><code>str</code></td>
+          <td>Archivo de configuración JSON con parámetros adicionales</td>
+          <td>—</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="13-articulos">13. Articulos</h1>
+
+<h4 id="-posts_fresh_rss"># posts_fresh_rss</h4>
+<p>El script <code>posts_fresh_rss.py</code> se encarga de recuperar artículos y publicaciones de un servidor FreshRSS relacionados con entidades musicales (artistas, álbumes, sellos discográficos) y guardarlos en la base de datos para su posterior consulta.</p>
+<h4 id="tabla-feeds">Tabla <code>feeds</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Clave</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>freshrss_url</code></td>
+          <td>TEXT</td>
+          <td>URL base del servidor FreshRSS</td>
+      </tr>
+      <tr>
+          <td><code>freshrss_username</code></td>
+          <td>TEXT</td>
+          <td>Nombre de usuario para autenticación en FreshRSS</td>
+      </tr>
+      <tr>
+          <td><code>freshrss_password</code></td>
+          <td>TEXT</td>
+          <td>Contraseña para autenticación en FreshRSS</td>
+      </tr>
+      <tr>
+          <td><code>db_path</code></td>
+          <td>TEXT</td>
+          <td>Ruta al archivo de base de datos SQLite</td>
+      </tr>
+      <tr>
+          <td><code>freshrss_cache_path</code></td>
+          <td>TEXT (opcional)</td>
+          <td>Ruta al archivo de caché</td>
+      </tr>
+      <tr>
+          <td><code>categories</code></td>
+          <td>LIST</td>
+          <td>Categorías a procesar (por defecto: <code>['Blogs', 'Revistas', 'Wallabag']</code>)</td>
+      </tr>
+      <tr>
+          <td><code>search_entities</code></td>
+          <td>LIST</td>
+          <td>Entidades a buscar (por ejemplo: <code>artists</code>, <code>albums</code>, <code>labels</code>)</td>
+      </tr>
+      <tr>
+          <td><code>search_short_terms</code></td>
+          <td>BOOLEAN</td>
+          <td>Permitir o bloquear términos cortos (por defecto: <code>False</code>)</td>
+      </tr>
+      <tr>
+          <td><code>ignore_patterns</code></td>
+          <td>LIST</td>
+          <td>Patrones a ignorar (por defecto incluye: <code>'mix-for-nts'</code>, etc.)</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of 13. Articulos</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Clave</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>freshrss_url</code></td>
+          <td>TEXT</td>
+          <td>URL base del servidor FreshRSS</td>
+      </tr>
+      <tr>
+          <td><code>freshrss_username</code></td>
+          <td>TEXT</td>
+          <td>Nombre de usuario para autenticación en FreshRSS</td>
+      </tr>
+      <tr>
+          <td><code>freshrss_password</code></td>
+          <td>TEXT</td>
+          <td>Contraseña para autenticación en FreshRSS</td>
+      </tr>
+      <tr>
+          <td><code>db_path</code></td>
+          <td>TEXT</td>
+          <td>Ruta al archivo de base de datos SQLite</td>
+      </tr>
+      <tr>
+          <td><code>freshrss_cache_path</code></td>
+          <td>TEXT (opcional)</td>
+          <td>Ruta al archivo de caché</td>
+      </tr>
+      <tr>
+          <td><code>categories</code></td>
+          <td>LIST</td>
+          <td>Categorías a procesar (por defecto: <code>['Blogs', 'Revistas', 'Wallabag']</code>)</td>
+      </tr>
+      <tr>
+          <td><code>search_entities</code></td>
+          <td>LIST</td>
+          <td>Entidades a buscar (por ejemplo: <code>artists</code>, <code>albums</code>, <code>labels</code>)</td>
+      </tr>
+      <tr>
+          <td><code>search_short_terms</code></td>
+          <td>BOOLEAN</td>
+          <td>Permitir o bloquear términos cortos (por defecto: <code>False</code>)</td>
+      </tr>
+      <tr>
+          <td><code>ignore_patterns</code></td>
+          <td>LIST</td>
+          <td>Patrones a ignorar (por defecto incluye: <code>'mix-for-nts'</code>, etc.)</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ruta por Defecto / Configurada</th>
+          <th>Formato</th>
+          <th>Descripción / Contenido Principal</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Caché</strong></td>
+          <td><code>cache/freshrss_cache.json</code></td>
+          <td>JSON</td>
+          <td>Guarda artículos ya procesados para evitar duplicados.</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><strong>Estructura</strong>: Identificadores únicos y metadatos de los artículos</td>
+      </tr>
+      <tr>
+          <td><strong>Log</strong></td>
+          <td>Determinada por configuración de logging</td>
+          <td>Texto plano</td>
+          <td>Registra eventos del proceso con nivel <code>INFO</code> por defecto. Incluye:</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>- Inicio y finalización del proceso</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>- Errores de conexión o autenticación</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>- Entidades encontradas en artículos</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>- Errores al procesar artículos</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="20-optimización">20. Optimización</h1>
+
+<h4 id="-10-optimización"># 10. Optimización</h4>
+<pre><code>        CONSEJOS DE USO:
+        - Para búsquedas de texto rápidas, usa las tablas virtuales '_fts':
+          SELECT * FROM songs WHERE id IN (SELECT id FROM song_fts WHERE song_fts MATCH 'palabra_clave')
+
+        - Utiliza las vistas 'view_song_details', 'view_album_stats', 'view_artist_stats',
+          'view_label_stats' y 'view_country_stats' para consultas comunes
+
+        - Aprovecha las columnas desnormalizadas para consultas más rápidas:
+          - album_year
+          - artist_origin
+          - album_art_path_denorm
+          - has_lyrics
+          - album_label
+          - decade
+
+        - Tablas normalizadas:
+          - genres_normalized: Para consultas relacionadas con géneros
+          - countries: Normaliza países para estadísticas
+          - decades: Facilita consultas por década
+
+        - Búsqueda avanzada:
+          - song_fts: Búsqueda de texto completo en canciones
+          - artist_fts: Búsqueda de texto completo en artistas
+          - album_fts: Búsqueda de texto completo en álbumes
+          - lyrics_fts: Búsqueda de texto completo en letras
+</code></pre>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

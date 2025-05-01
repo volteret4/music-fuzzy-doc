@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Limitaciones y Control de Tasa Retraso entre solicitudes: Configurable para evitar bloqueos de IP Reintentos: 3 intentos por solicitud fallida con incremento exponencial de espera Límite de tiempo de ejecución: Tiempo máximo de ejecución por defecto de 3600 segundos (configurable)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="enlaces albums :: mfuz">
+    <meta name="twitter:description" content="Limitaciones y Control de Tasa Retraso entre solicitudes: Configurable para evitar bloqueos de IP Reintentos: 3 intentos por solicitud fallida con incremento exponencial de espera Límite de tiempo de ejecución: Tiempo máximo de ejecución por defecto de 3600 segundos (configurable)">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/enlaces-albums/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="enlaces albums :: mfuz">
+    <meta property="og:description" content="Limitaciones y Control de Tasa Retraso entre solicitudes: Configurable para evitar bloqueos de IP Reintentos: 3 intentos por solicitud fallida con incremento exponencial de espera Límite de tiempo de ejecución: Tiempo máximo de ejecución por defecto de 3600 segundos (configurable)">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="enlaces albums :: mfuz">
+    <meta itemprop="description" content="Limitaciones y Control de Tasa Retraso entre solicitudes: Configurable para evitar bloqueos de IP Reintentos: 3 intentos por solicitud fallida con incremento exponencial de espera Límite de tiempo de ejecución: Tiempo máximo de ejecución por defecto de 3600 segundos (configurable)">
+    <meta itemprop="wordCount" content="40">
+    <title>enlaces albums :: mfuz</title>
+    <link href="//192.168.1.133:1313/base_datos/enlaces-albums/index.html" rel="canonical" type="text/html" title="enlaces albums :: mfuz">
+    <link href="/base_datos/enlaces-albums/index.xml" rel="alternate" type="application/rss+xml" title="enlaces albums :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/enlaces-albums\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/base_datos/enlaces-albums/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">enlaces albums</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces-albums/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/db_musica_path/datos/index.html" title="Datos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces-albums/argumentos/index.html" title="Argumentos (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="enlaces-albums">enlaces albums</h1>
+
+<h4 id="limitaciones-y-control-de-tasa">Limitaciones y Control de Tasa</h4>
+<ul>
+<li><strong>Retraso entre solicitudes</strong>: Configurable para evitar bloqueos de IP</li>
+<li><strong>Reintentos</strong>: 3 intentos por solicitud fallida con incremento exponencial de espera</li>
+<li><strong>Límite de tiempo de ejecución</strong>: Tiempo máximo de ejecución por defecto de 3600 segundos (configurable)</li>
+<li></li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of enlaces albums</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+          <th>Tipo / Valor por Defecto</th>
+          <th>Obligatorio</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>--db-path</code></td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>Cadena</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>--missing-only</code></td>
+          <td>Solo procesa álbumes con enlaces faltantes</td>
+          <td>Bandera (booleano)</td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--delay</code></td>
+          <td>Retraso entre solicitudes en segundos</td>
+          <td><code>float</code>, por defecto: <code>1.0</code></td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--cache-dir</code></td>
+          <td>Directorio para el archivo de caché</td>
+          <td>Cadena, por defecto: <code>~/.cache/music_db</code></td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--user-agent</code></td>
+          <td>Agente de usuario para solicitudes HTTP</td>
+          <td>Cadena, por defecto: <code>'MusicLibraryManager/1.0'</code></td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--log-level</code></td>
+          <td>Nivel de logging</td>
+          <td>Cadena, por defecto: <code>INFO</code></td>
+          <td>No</td>
+      </tr>
+      <tr>
+          <td><code>--batch-size</code></td>
+          <td>Número de álbumes a procesar en cada lote</td>
+          <td>Entero, por defecto: <code>50</code></td>
+          <td>No</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<ol>
+<li><strong>album_links</strong> (principal)
+<ul>
+<li>Crea la tabla si no existe</li>
+<li>Actualiza los enlaces para cada álbum</li>
+</ul>
+</li>
+<li><strong>albums</strong> (referencia)
+<ul>
+<li>Lee información sobre álbumes (id, name, artist_id)</li>
+<li>No modifica directamente esta tabla</li>
+</ul>
+</li>
+</ol>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Archivo</th>
+          <th>Descripción</th>
+          <th>Detalles de Formato o Estructura</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>~/.cache/music_db/enlaces_albumes_cache.json</code></td>
+          <td>Almacena resultados de búsquedas previas</td>
+          <td><code>{&quot;query_hash&quot;: {&quot;url&quot;: &quot;...&quot;, &quot;timestamp&quot;: &quot;...&quot;}}</code></td>
+      </tr>
+      <tr>
+          <td><code>logs/enlaces_albumes.log</code></td>
+          <td>Registra actividad, errores y resultados de la ejecución</td>
+          <td><code>[FECHA] [NIVEL] [Mensaje]</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

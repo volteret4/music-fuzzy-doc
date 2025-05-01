@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>09. Enlaces canciones :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/index.html</link>
+    <description>Busca enlaces para cada canción en spotify y lastfm.&#xA;Módulo para gestionar los enlaces de canciones en servicios de música en línea. Actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py. Dependencias&#xA;Servicios usados: spotify: Enlaces a canciones en Spotify lastfm: Enlaces a canciones en Last.fm youtube: Enlaces a videos de canciones en YouTube musicbrainz: Enlaces a grabaciones en MusicBrainz bandcamp: Enlaces a canciones en Bandcamp soundcloud: Enlaces a canciones en SoundCloud boomkat: Enlaces a canciones en Boomkat</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/09.-enlaces-canciones/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/argumentos/index.html</guid>
+      <description>Argumento Tipo Descripción Valor predeterminado db_path str Ruta a la base de datos SQLite musica.db checkpoint_path str Directorio para guardar el progreso en formato JSON ./checkpoints log_dir str Directorio para los archivos de registro ./logs cache_dir str Directorio para archivos de caché por servicio ./caches services list/str Lista de servicios a buscar (spotify, lastfm, youtube) limit int Límite de canciones a procesar (0 para todas) 0 force_update bool Actualizar enlaces existentes False delete_old bool Eliminar enlaces antiguos si no se encuentra uno nuevo False spotify_client_id str ID de cliente para la API de Spotify spotify_client_secret str Secreto de cliente para la API de Spotify lastfm_api_key str Clave de API de Last.fm google_api_key str Clave de API de Google google_cx str ID de motor de búsqueda personalizado de Google max_retries int Número máximo de reintentos para solicitudes fallidas 3 retry_delay int Tiempo de espera entre reintentos (segundos) 5 batch_size int Tamaño del lote para procesar canciones 100 no_progress bool Desactivar barra de progreso False interactive bool Modo interactivo para confirmaciones False</description>
+    </item>
+    <item>
+      <title>Credenciales</title>
+      <link>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/credenciales/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/credenciales/index.html</guid>
+      <description>Spotify API (client_id, client_secret) Last.fm API (api_key) Google API (api_key, custom_search_engine_id)</description>
+    </item>
+    <item>
+      <title>Archivos</title>
+      <link>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/archivos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/archivos/index.html</guid>
+      <description>Tipo Ruta Típica Descripción Caché de enlaces {checkpoint_path}/song_links_cache.json Guarda el estado de los enlaces procesados Registro de actividad {log_dir}/enlaces_canciones_{timestamp}.log Log de ejecución con marcas de tiempo Caché por servicio {cache_dir}/spotify_cache.json, etc. Resultados de consultas individuales a servicios externos</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/datos/index.html</guid>
+      <description>Campo Tipo Descripción id INTEGER Clave primaria song_id INTEGER ID de la canción en la tabla songs spotify_url TEXT URL de la canción en Spotify spotify_id TEXT ID de la canción en Spotify lastfm_url TEXT URL de la canción en Last.fm links_updated TIMESTAMP Fecha de última actualización youtube_url TEXT URL de la canción en YouTube musicbrainz_url TEXT URL de la canción en MusicBrainz musicbrainz_recording_id TEXT ID de grabación en MusicBrainz bandcamp_url TEXT URL de la canción en Bandcamp soundcloud_url TEXT URL de la canción en SoundCloud boomkat_url TEXT URL de la canción en Boomkat</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Busca enlaces para cada canción en spotify y lastfm.
+Módulo para gestionar los enlaces de canciones en servicios de música en línea. Actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py. Dependencias
+Servicios usados: spotify: Enlaces a canciones en Spotify lastfm: Enlaces a canciones en Last.fm youtube: Enlaces a videos de canciones en YouTube musicbrainz: Enlaces a grabaciones en MusicBrainz bandcamp: Enlaces a canciones en Bandcamp soundcloud: Enlaces a canciones en SoundCloud boomkat: Enlaces a canciones en Boomkat">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="enlaces canciones :: mfuz">
+    <meta name="twitter:description" content="Busca enlaces para cada canción en spotify y lastfm.
+Módulo para gestionar los enlaces de canciones en servicios de música en línea. Actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py. Dependencias
+Servicios usados: spotify: Enlaces a canciones en Spotify lastfm: Enlaces a canciones en Last.fm youtube: Enlaces a videos de canciones en YouTube musicbrainz: Enlaces a grabaciones en MusicBrainz bandcamp: Enlaces a canciones en Bandcamp soundcloud: Enlaces a canciones en SoundCloud boomkat: Enlaces a canciones en Boomkat">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/enlaces-canciones/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="enlaces canciones :: mfuz">
+    <meta property="og:description" content="Busca enlaces para cada canción en spotify y lastfm.
+Módulo para gestionar los enlaces de canciones en servicios de música en línea. Actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py. Dependencias
+Servicios usados: spotify: Enlaces a canciones en Spotify lastfm: Enlaces a canciones en Last.fm youtube: Enlaces a videos de canciones en YouTube musicbrainz: Enlaces a grabaciones en MusicBrainz bandcamp: Enlaces a canciones en Bandcamp soundcloud: Enlaces a canciones en SoundCloud boomkat: Enlaces a canciones en Boomkat">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="enlaces canciones :: mfuz">
+    <meta itemprop="description" content="Busca enlaces para cada canción en spotify y lastfm.
+Módulo para gestionar los enlaces de canciones en servicios de música en línea. Actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py. Dependencias
+Servicios usados: spotify: Enlaces a canciones en Spotify lastfm: Enlaces a canciones en Last.fm youtube: Enlaces a videos de canciones en YouTube musicbrainz: Enlaces a grabaciones en MusicBrainz bandcamp: Enlaces a canciones en Bandcamp soundcloud: Enlaces a canciones en SoundCloud boomkat: Enlaces a canciones en Boomkat">
+    <meta itemprop="wordCount" content="103">
+    <title>enlaces canciones :: mfuz</title>
+    <link href="//192.168.1.133:1313/base_datos/enlaces-canciones/index.html" rel="canonical" type="text/html" title="enlaces canciones :: mfuz">
+    <link href="/base_datos/enlaces-canciones/index.xml" rel="alternate" type="application/rss+xml" title="enlaces canciones :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/enlaces-canciones\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/base_datos/enlaces-canciones/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">enlaces canciones</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces-canciones/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces-albums/archivos/index.html" title="Archivos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces-canciones/argumentos/index.html" title="Argumentos (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="enlaces-canciones">enlaces canciones</h1>
+
+<p>Busca enlaces para cada canción en spotify y lastfm.</p>
+<p>Módulo para gestionar los enlaces de canciones en servicios de música en línea. Actualiza los enlaces de diversos servicios de música (Spotify, YouTube, Bandcamp, etc.) para las canciones en la base de datos. Se puede ejecutar directamente o como parte de la cadena de scripts de db_creator.py.
+Dependencias</p>
+<h4 id="servicios-usados">Servicios usados:</h4>
+<ul>
+<li>spotify: Enlaces a canciones en Spotify</li>
+<li>lastfm: Enlaces a canciones en Last.fm</li>
+<li>youtube: Enlaces a videos de canciones en YouTube</li>
+<li>musicbrainz: Enlaces a grabaciones en MusicBrainz</li>
+<li>bandcamp: Enlaces a canciones en Bandcamp</li>
+<li>soundcloud: Enlaces a canciones en SoundCloud</li>
+<li>boomkat: Enlaces a canciones en Boomkat</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of enlaces canciones</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+          <th>Valor predeterminado</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>db_path</td>
+          <td>str</td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>musica.db</td>
+      </tr>
+      <tr>
+          <td>checkpoint_path</td>
+          <td>str</td>
+          <td>Directorio para guardar el progreso en formato JSON</td>
+          <td>./checkpoints</td>
+      </tr>
+      <tr>
+          <td>log_dir</td>
+          <td>str</td>
+          <td>Directorio para los archivos de registro</td>
+          <td>./logs</td>
+      </tr>
+      <tr>
+          <td>cache_dir</td>
+          <td>str</td>
+          <td>Directorio para archivos de caché por servicio</td>
+          <td>./caches</td>
+      </tr>
+      <tr>
+          <td>services</td>
+          <td>list/str</td>
+          <td>Lista de servicios a buscar (spotify, lastfm, youtube)</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>limit</td>
+          <td>int</td>
+          <td>Límite de canciones a procesar (0 para todas)</td>
+          <td>0</td>
+      </tr>
+      <tr>
+          <td>force_update</td>
+          <td>bool</td>
+          <td>Actualizar enlaces existentes</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>delete_old</td>
+          <td>bool</td>
+          <td>Eliminar enlaces antiguos si no se encuentra uno nuevo</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>spotify_client_id</td>
+          <td>str</td>
+          <td>ID de cliente para la API de Spotify</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spotify_client_secret</td>
+          <td>str</td>
+          <td>Secreto de cliente para la API de Spotify</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>lastfm_api_key</td>
+          <td>str</td>
+          <td>Clave de API de Last.fm</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>google_api_key</td>
+          <td>str</td>
+          <td>Clave de API de Google</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>google_cx</td>
+          <td>str</td>
+          <td>ID de motor de búsqueda personalizado de Google</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>max_retries</td>
+          <td>int</td>
+          <td>Número máximo de reintentos para solicitudes fallidas</td>
+          <td>3</td>
+      </tr>
+      <tr>
+          <td>retry_delay</td>
+          <td>int</td>
+          <td>Tiempo de espera entre reintentos (segundos)</td>
+          <td>5</td>
+      </tr>
+      <tr>
+          <td>batch_size</td>
+          <td>int</td>
+          <td>Tamaño del lote para procesar canciones</td>
+          <td>100</td>
+      </tr>
+      <tr>
+          <td>no_progress</td>
+          <td>bool</td>
+          <td>Desactivar barra de progreso</td>
+          <td>False</td>
+      </tr>
+      <tr>
+          <td>interactive</td>
+          <td>bool</td>
+          <td>Modo interactivo para confirmaciones</td>
+          <td>False</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="credenciales">Credenciales</h1>
+
+<ul>
+<li>Spotify API (client_id, client_secret)</li>
+<li>Last.fm API (api_key)</li>
+<li>Google API (api_key, custom_search_engine_id)</li>
+</ul>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ruta Típica</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Caché de enlaces</td>
+          <td><code>{checkpoint_path}/song_links_cache.json</code></td>
+          <td>Guarda el estado de los enlaces procesados</td>
+      </tr>
+      <tr>
+          <td>Registro de actividad</td>
+          <td><code>{log_dir}/enlaces_canciones_{timestamp}.log</code></td>
+          <td>Log de ejecución con marcas de tiempo</td>
+      </tr>
+      <tr>
+          <td>Caché por servicio</td>
+          <td><code>{cache_dir}/spotify_cache.json</code>, etc.</td>
+          <td>Resultados de consultas individuales a servicios externos</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>id</code></td>
+          <td>INTEGER</td>
+          <td>Clave primaria</td>
+      </tr>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción en la tabla <code>songs</code></td>
+      </tr>
+      <tr>
+          <td><code>spotify_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>spotify_id</code></td>
+          <td>TEXT</td>
+          <td>ID de la canción en Spotify</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en Last.fm</td>
+      </tr>
+      <tr>
+          <td><code>links_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de última actualización</td>
+      </tr>
+      <tr>
+          <td><code>youtube_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>musicbrainz_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>musicbrainz_recording_id</code></td>
+          <td>TEXT</td>
+          <td>ID de grabación en MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>bandcamp_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en Bandcamp</td>
+      </tr>
+      <tr>
+          <td><code>soundcloud_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en SoundCloud</td>
+      </tr>
+      <tr>
+          <td><code>boomkat_url</code></td>
+          <td>TEXT</td>
+          <td>URL de la canción en Boomkat</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="print">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Este script busca videos de YouTube relacionados con las canciones en la base de datos y almacena los enlaces correspondientes. También actualiza información de enlaces para álbumes y artistas.
+Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción youtube_url TEXT URL del video en YouTube youtube_id TEXT ID del video en YouTube video_title TEXT Título del video channel_name TEXT Nombre del canal de YouTube view_count INTEGER Número de vistas (si disponible) match_score REAL Puntuación de coincidencia (0.0 - 1.0) last_updated TIMESTAMP Fecha de última actualización Otras tablas Tabla Campo Descripción albums youtube_url URL de canal o playlist del álbum en YouTube artists youtube_url URL del canal oficial del artista en YouTube">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="yt_song_links :: mfuz">
+    <meta name="twitter:description" content="Este script busca videos de YouTube relacionados con las canciones en la base de datos y almacena los enlaces correspondientes. También actualiza información de enlaces para álbumes y artistas.
+Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción youtube_url TEXT URL del video en YouTube youtube_id TEXT ID del video en YouTube video_title TEXT Título del video channel_name TEXT Nombre del canal de YouTube view_count INTEGER Número de vistas (si disponible) match_score REAL Puntuación de coincidencia (0.0 - 1.0) last_updated TIMESTAMP Fecha de última actualización Otras tablas Tabla Campo Descripción albums youtube_url URL de canal o playlist del álbum en YouTube artists youtube_url URL del canal oficial del artista en YouTube">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/yt_song_links/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="yt_song_links :: mfuz">
+    <meta property="og:description" content="Este script busca videos de YouTube relacionados con las canciones en la base de datos y almacena los enlaces correspondientes. También actualiza información de enlaces para álbumes y artistas.
+Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción youtube_url TEXT URL del video en YouTube youtube_id TEXT ID del video en YouTube video_title TEXT Título del video channel_name TEXT Nombre del canal de YouTube view_count INTEGER Número de vistas (si disponible) match_score REAL Puntuación de coincidencia (0.0 - 1.0) last_updated TIMESTAMP Fecha de última actualización Otras tablas Tabla Campo Descripción albums youtube_url URL de canal o playlist del álbum en YouTube artists youtube_url URL del canal oficial del artista en YouTube">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="yt_song_links :: mfuz">
+    <meta itemprop="description" content="Este script busca videos de YouTube relacionados con las canciones en la base de datos y almacena los enlaces correspondientes. También actualiza información de enlaces para álbumes y artistas.
+Tabla song_links Campo Tipo Descripción song_id INTEGER ID de la canción youtube_url TEXT URL del video en YouTube youtube_id TEXT ID del video en YouTube video_title TEXT Título del video channel_name TEXT Nombre del canal de YouTube view_count INTEGER Número de vistas (si disponible) match_score REAL Puntuación de coincidencia (0.0 - 1.0) last_updated TIMESTAMP Fecha de última actualización Otras tablas Tabla Campo Descripción albums youtube_url URL de canal o playlist del álbum en YouTube artists youtube_url URL del canal oficial del artista en YouTube">
+    <meta itemprop="wordCount" content="113">
+    <title>yt_song_links :: mfuz</title>
+    <link href="//192.168.1.133:1313/base_datos/yt_song_links/index.html" rel="canonical" type="text/html" title="yt_song_links :: mfuz">
+    <link href="/base_datos/yt_song_links/index.xml" rel="alternate" type="application/rss+xml" title="yt_song_links :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-print.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/yt_song_links\/index.html';
+      window.relearn.relBasePath='..\/..';
+      window.relearn.relBaseUri='..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support print" data-url="/base_datos/yt_song_links/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">yt_song_links</span><meta itemprop="position" content="3"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/yt_song_links/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/wikilinks/datos/index.html" title="Datos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/yt_song_links/argumentos/index.html" title="Argumentos (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="yt_song_links">yt_song_links</h1>
+
+<p>Este script busca videos de YouTube relacionados con las canciones en la base de datos y almacena los enlaces correspondientes. También actualiza información de enlaces para álbumes y artistas.</p>
+<h4 id="tabla-song_links">Tabla <code>song_links</code></h4>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Tipo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>song_id</code></td>
+          <td>INTEGER</td>
+          <td>ID de la canción</td>
+      </tr>
+      <tr>
+          <td><code>youtube_url</code></td>
+          <td>TEXT</td>
+          <td>URL del video en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>youtube_id</code></td>
+          <td>TEXT</td>
+          <td>ID del video en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>video_title</code></td>
+          <td>TEXT</td>
+          <td>Título del video</td>
+      </tr>
+      <tr>
+          <td><code>channel_name</code></td>
+          <td>TEXT</td>
+          <td>Nombre del canal de YouTube</td>
+      </tr>
+      <tr>
+          <td><code>view_count</code></td>
+          <td>INTEGER</td>
+          <td>Número de vistas (si disponible)</td>
+      </tr>
+      <tr>
+          <td><code>match_score</code></td>
+          <td>REAL</td>
+          <td>Puntuación de coincidencia (0.0 - 1.0)</td>
+      </tr>
+      <tr>
+          <td><code>last_updated</code></td>
+          <td>TIMESTAMP</td>
+          <td>Fecha de última actualización</td>
+      </tr>
+  </tbody>
+</table>
+<h5 id="otras-tablas">Otras tablas</h5>
+<table>
+  <thead>
+      <tr>
+          <th>Tabla</th>
+          <th>Campo</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>albums</code></td>
+          <td><code>youtube_url</code></td>
+          <td>URL de canal o playlist del álbum en YouTube</td>
+      </tr>
+      <tr>
+          <td><code>artists</code></td>
+          <td><code>youtube_url</code></td>
+          <td>URL del canal oficial del artista en YouTube</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of yt_song_links</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="argumentos">Argumentos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Argumento</th>
+          <th>Descripción</th>
+          <th>Valor por Defecto</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>db_path</code></td>
+          <td>Ruta a la base de datos SQLite</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>youtube_api_key</code></td>
+          <td>Clave de API de YouTube</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>lastfm_api_key</code></td>
+          <td>Clave de API de Last.fm</td>
+          <td>—</td>
+      </tr>
+      <tr>
+          <td><code>rate_limit</code></td>
+          <td>Tiempo entre solicitudes API (segundos)</td>
+          <td><code>1.0</code></td>
+      </tr>
+      <tr>
+          <td><code>user_agent</code></td>
+          <td>Agente de usuario para solicitudes HTTP</td>
+          <td><code>'MusicDB/1.0'</code></td>
+      </tr>
+      <tr>
+          <td><code>missing_only</code></td>
+          <td>Solo procesar elementos sin enlaces</td>
+          <td><code>True</code></td>
+      </tr>
+      <tr>
+          <td><code>cache_file</code></td>
+          <td>Ruta del archivo de caché</td>
+          <td><code>PROJECT_ROOT/.content/cache/youtube_links_cache.json</code></td>
+      </tr>
+      <tr>
+          <td><code>force_update</code></td>
+          <td>Forzar actualización incluso si hay datos en caché</td>
+          <td><code>False</code></td>
+      </tr>
+      <tr>
+          <td><code>batch_size</code></td>
+          <td>Número de elementos a procesar por lote</td>
+          <td><code>100</code></td>
+      </tr>
+      <tr>
+          <td><code>max_retries</code></td>
+          <td>Máximo de reintentos para solicitudes fallidas</td>
+          <td><code>3</code></td>
+      </tr>
+      <tr>
+          <td><code>use_scrapers</code></td>
+          <td>Usar scraping si falla la API</td>
+          <td><code>True</code></td>
+      </tr>
+      <tr>
+          <td><code>entity_types</code></td>
+          <td>Tipos de entidades a procesar</td>
+          <td><code>['songs']</code></td>
+      </tr>
+      <tr>
+          <td><code>log_file</code></td>
+          <td>Ruta del archivo de log</td>
+          <td><code>PROJECT_ROOT/.content/logs/youtube_links.log</code></td>
+      </tr>
+      <tr>
+          <td><code>log_level</code></td>
+          <td>Nivel de detalle del registro</td>
+          <td><code>'INFO'</code></td>
+      </tr>
+      <tr>
+          <td><code>concurrent_workers</code></td>
+          <td>Número de procesos simultáneos</td>
+          <td><code>4</code></td>
+      </tr>
+      <tr>
+          <td><code>query_template</code></td>
+          <td>Plantilla de búsqueda en YouTube</td>
+          <td><code>&quot;{artist} - {title} official&quot;</code></td>
+      </tr>
+      <tr>
+          <td><code>max_results</code></td>
+          <td>Número máximo de resultados por búsqueda</td>
+          <td><code>5</code></td>
+      </tr>
+      <tr>
+          <td><code>min_match_score</code></td>
+          <td>Puntuación mínima para considerar coincidencia</td>
+          <td><code>0.7</code></td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="credenciales">Credenciales</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Clave</th>
+          <th>Descripción</th>
+          <th>Obligatoria</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>YOUTUBE_API_KEY</code></td>
+          <td>Clave de API de YouTube (<a href="https://console.developers.google.com/" rel="external" target="_blank">console.developers.google.com</a>)</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>LASTFM_API_KEY</code></td>
+          <td>Clave de API de Last.fm (<a href="https://www.last.fm/api/" rel="external" target="_blank">last.fm/api</a>)</td>
+          <td>Sí</td>
+      </tr>
+      <tr>
+          <td><code>USER_AGENT</code></td>
+          <td>User-Agent personalizado para solicitudes HTTP</td>
+          <td>Sí</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="archivos">Archivos</h1>
+
+<table>
+  <thead>
+      <tr>
+          <th>Tipo</th>
+          <th>Ruta</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Caché</td>
+          <td><code>PROJECT_ROOT/.content/cache/youtube_links_cache.json</code></td>
+          <td>Almacena resultados de búsquedas para evitar duplicados</td>
+      </tr>
+      <tr>
+          <td>Logs</td>
+          <td><code>PROJECT_ROOT/.content/logs/youtube_links.log</code></td>
+          <td>Archivo de registro de actividad y errores</td>
+      </tr>
+      <tr>
+          <td>Temporales</td>
+          <td><code>PROJECT_ROOT/.content/temp/yt_results/</code></td>
+          <td>Carpeta de archivos temporales generados</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<h1></h1>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

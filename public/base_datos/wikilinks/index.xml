@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>wikilinks :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/wikilinks/index.html</link>
+    <description>Obtiene enlaces a wikipedia desde musicbrainz, y extrae su contenido. En caso de no encontrarlo en wikimedia, se puede hacer manualmente con wikipedia.&#xA;Tabla artists Campo Tipo Descripción wikipedia_url TEXT URL de la página de Wikipedia del artista wikipedia_content TEXT Contenido extraído de la página de Wikipedia wikipedia_updated TIMESTAMP Timestamp de la última actualización de la información de Wikipedia links_updated TIMESTAMP Timestamp de la última actualización de los enlaces Tabla albums Campo Tipo Descripción wikipedia_url TEXT URL de la página de Wikipedia del artista wikipedia_content TEXT Contenido extraído de la página de Wikipedia wikipedia_updated TIMESTAMP Timestamp de la última actualización de la información de Wikipedia links_updated TIMESTAMP Timestamp de la última actualización de los enlaces Tabla labels Campo Tipo Descripción wikipedia_url TEXT URL de la página de Wikipedia del sello discográfico wikipedia_content TEXT Contenido extraído de la página de Wikipedia wikipedia_updated TIMESTAMP Timestamp de la última actualización de la información de Wikipedia links_updated TIMESTAMP Timestamp de la última actualización de los enlaces</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/wikilinks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/wikilinks/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/wikilinks/argumentos/index.html</guid>
+      <description>Argumento Tipo Descripción Valor por Defecto --config str Ruta al archivo de configuración JSON (obligatorio) — --log-file str Archivo de registro para seguimiento del progreso — --db-path str Ruta a la base de datos SQLite — --type str Tipo de entidad a actualizar (artists, albums, artists_content, albums_content, labels, labels_content) — --user-agent str User-Agent para las peticiones a MusicBrainz — --modo str Tipo de lanzamiento: auto o manual — --force-update bool Flag para forzar la actualización de todos los elementos False</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/wikilinks/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/wikilinks/datos/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

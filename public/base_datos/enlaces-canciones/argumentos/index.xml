@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Argumentos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/enlaces-canciones/argumentos/index.html</link>
+    <description>Argumento Tipo Descripción Valor predeterminado db_path str Ruta a la base de datos SQLite musica.db checkpoint_path str Directorio para guardar el progreso en formato JSON ./checkpoints log_dir str Directorio para los archivos de registro ./logs cache_dir str Directorio para archivos de caché por servicio ./caches services list/str Lista de servicios a buscar (spotify, lastfm, youtube) limit int Límite de canciones a procesar (0 para todas) 0 force_update bool Actualizar enlaces existentes False delete_old bool Eliminar enlaces antiguos si no se encuentra uno nuevo False spotify_client_id str ID de cliente para la API de Spotify spotify_client_secret str Secreto de cliente para la API de Spotify lastfm_api_key str Clave de API de Last.fm google_api_key str Clave de API de Google google_cx str ID de motor de búsqueda personalizado de Google max_retries int Número máximo de reintentos para solicitudes fallidas 3 retry_delay int Tiempo de espera entre reintentos (segundos) 5 batch_size int Tamaño del lote para procesar canciones 100 no_progress bool Desactivar barra de progreso False interactive bool Modo interactivo para confirmaciones False</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/enlaces-canciones/argumentos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

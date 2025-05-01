@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>instalación :: mfuz</title>
+    <link>//192.168.1.133:1313/instalacion/index.html</link>
+    <description>Actualmente la aplicación solo está disponible para sistemas Linux, ya sea un Sistema Operativo, o el submódulo wsl para windows&#xA;Para ello necesitarás:&#xA;Clonar el repositorio desde github git clone https://github.com/volteret4/mfuz Instalar los requisitos ![[Spaces/Blogs/blogs/snipets y scripts/music-fuzzy/requisitos/requisitos|requisitos]]&#xA;Configurar el config file ya sea json o yml ![[Spaces/Blogs/blogs/snipets y scripts/music-fuzzy/instalacion/config json|config json]]</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/instalacion/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

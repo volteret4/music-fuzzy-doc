@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Datos :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/db_musica_path/datos/index.html</link>
+    <description>Rellena las tablas artists, álbums y songs con:&#xA;Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain)</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/db_musica_path/datos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

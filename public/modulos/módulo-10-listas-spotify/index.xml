@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Módulo 10 Listas Spotify :: mfuz</title>
+    <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-10-listas-spotify/index.html</link>
+    <description>Módulo 10: Listas Spotify Permite crear nuevas playlists, buscar canciones y añadirlas o cargarlas desde otras playlists.&#xA;not done tags include #m_fuzzy tags include #spotify hide tags sort by due sort by priority sort by scheduled</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/modulos/m%C3%B3dulo-10-listas-spotify/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

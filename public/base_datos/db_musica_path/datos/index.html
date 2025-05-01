@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Rellena las tablas artists, álbums y songs con:
+Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain)">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Datos :: mfuz">
+    <meta name="twitter:description" content="Rellena las tablas artists, álbums y songs con:
+Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain)">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/db_musica_path/datos/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="Datos :: mfuz">
+    <meta property="og:description" content="Rellena las tablas artists, álbums y songs con:
+Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain)">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="article">
+    <meta property="article:section" content="Creación de la base de datos">
+    <meta itemprop="name" content="Datos :: mfuz">
+    <meta itemprop="description" content="Rellena las tablas artists, álbums y songs con:
+Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain)">
+    <meta itemprop="wordCount" content="160">
+    <title>Datos :: mfuz</title>
+    <link href="/base_datos/db_musica_path/datos/index.xml" rel="alternate" type="application/rss+xml" title="Datos :: mfuz">
+    <link href="/base_datos/db_musica_path/datos/index.print.html" rel="alternate" type="text/html" title="Datos :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-html.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base_datos\/db_musica_path\/datos\/index.html';
+      window.relearn.relBasePath='..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/base_datos/db_musica_path/datos/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper"> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/db_musica_path/index.html"><span itemprop="name">db_musica_path</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Datos</span><meta itemprop="position" content="4"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/db_musica_path/datos/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/db_musica_path/argumentos/index.html" title="Argumentos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/enlaces-albums/index.html" title="enlaces albums (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="datos">Datos</h1>
+
+<p>Rellena las tablas artists, álbums y songs con:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Campo</th>
+          <th>Origen</th>
+          <th>Descripción</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>file_path</code></td>
+          <td>Metadata</td>
+          <td>Ruta completa al archivo de audio</td>
+      </tr>
+      <tr>
+          <td><code>title</code></td>
+          <td>Metadata</td>
+          <td>Título de la canción</td>
+      </tr>
+      <tr>
+          <td><code>track_number</code></td>
+          <td>Metadata</td>
+          <td>Número de pista dentro del álbum</td>
+      </tr>
+      <tr>
+          <td><code>artist</code></td>
+          <td>Metadata</td>
+          <td>Artista principal</td>
+      </tr>
+      <tr>
+          <td><code>album_artist</code></td>
+          <td>Metadata</td>
+          <td>Artista del álbum (puede diferir del artista de la pista)</td>
+      </tr>
+      <tr>
+          <td><code>album</code></td>
+          <td>Metadata</td>
+          <td>Nombre del álbum</td>
+      </tr>
+      <tr>
+          <td><code>date</code></td>
+          <td>Metadata</td>
+          <td>Año de publicación o grabación</td>
+      </tr>
+      <tr>
+          <td><code>genre</code></td>
+          <td>Metadata</td>
+          <td>Género musical</td>
+      </tr>
+      <tr>
+          <td><code>label</code></td>
+          <td>Metadata</td>
+          <td>Sello discográfico</td>
+      </tr>
+      <tr>
+          <td><code>mbid</code></td>
+          <td>Metadata</td>
+          <td>Identificador MusicBrainz</td>
+      </tr>
+      <tr>
+          <td><code>last_modified</code></td>
+          <td>Archivo</td>
+          <td>Fecha de última modificación del archivo</td>
+      </tr>
+      <tr>
+          <td><code>added_timestamp</code></td>
+          <td>Sistema</td>
+          <td>Momento exacto en que fue añadido a la base de datos</td>
+      </tr>
+      <tr>
+          <td><code>added_week</code></td>
+          <td>Derivado</td>
+          <td>Semana del año en la que fue añadido</td>
+      </tr>
+      <tr>
+          <td><code>added_month</code></td>
+          <td>Derivado</td>
+          <td>Mes en que fue añadido</td>
+      </tr>
+      <tr>
+          <td><code>added_year</code></td>
+          <td>Derivado</td>
+          <td>Año en que fue añadido</td>
+      </tr>
+      <tr>
+          <td><code>folder_path</code></td>
+          <td>Sistema</td>
+          <td>Carpeta donde se encuentra el archivo</td>
+      </tr>
+      <tr>
+          <td><code>replay_gain_album_gain</code></td>
+          <td>Metadata</td>
+          <td>Ganancia de volumen del álbum (ReplayGain)</td>
+      </tr>
+      <tr>
+          <td><code>replay_gain_album_peak</code></td>
+          <td>Metadata</td>
+          <td>Pico de volumen del álbum (ReplayGain)</td>
+      </tr>
+      <tr>
+          <td><code>replay_gain_track_gain</code></td>
+          <td>Metadata</td>
+          <td>Ganancia de volumen de la pista (ReplayGain)</td>
+      </tr>
+      <tr>
+          <td><code>replay_gain_track_peak</code></td>
+          <td>Metadata</td>
+          <td>Pico de volumen de la pista (ReplayGain)</td>
+      </tr>
+  </tbody>
+</table>
+
+  <footer class="footline">
+  </footer>
+</article>
+        </div>
+      </main>
+    </div>
+    <aside id="R-sidebar" class="default-animation">
+      <div id="R-header-topbar" class="default-animation"></div>
+      <div id="R-header-wrapper" class="default-animation">
+        <div id="R-header" class="default-animation">
+          <a id="R-logo" class="R-default" href="/index.html">
+            <div class="logo-title">mfuz</div>
+          </a>
+        </div>
+        <search><form action="/search/index.html" method="get">
+          <div class="searchbox default-animation">
+            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
+            <label class="a11y-only" for="R-search-by">Search</label>
+            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
+            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
+          </div>
+        </form></search>
+      </div>
+      <div id="R-homelinks" class="default-animation homelinks">
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
+          <ul class="space collapsible-menu">
+            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-controls">
+          <ul class="">
+          </ul>
+        </div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+      </div>
+      <div id="R-content-wrapper" class="highlightable">
+        <div class="R-sidebarmenu R-shortcutmenu-home">
+          <ul class="enlarge morespace collapsible-menu">
+            <li class="parent " data-nav-id="/base_datos/index.html"><a class="padding" href="/base_datos/index.html">Creación de la base de datos</a><ul id="R-subsections-37c67787f2618f27a34854322beea326" class="collapsible-menu">
+            <li class="parent alwaysopen " data-nav-id="/base_datos/db_musica_path/index.html"><a class="padding" href="/base_datos/db_musica_path/index.html">db_musica_path</a><ul id="R-subsections-21e0c6d793e1f9cbb76fdd5de8129633" class="collapsible-menu">
+            <li class="" data-nav-id="/base_datos/db_musica_path/argumentos/index.html"><a class="padding" href="/base_datos/db_musica_path/argumentos/index.html">Argumentos</a></li>
+            <li class="active " data-nav-id="/base_datos/db_musica_path/datos/index.html"><a class="padding" href="/base_datos/db_musica_path/datos/index.html">Datos</a></li></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/enlaces-albums/index.html"><a class="padding" href="/base_datos/enlaces-albums/index.html">enlaces albums</a><ul id="R-subsections-5fac42ecce11f82e55a0b1054e6ee33f" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/enlaces-canciones/index.html"><a class="padding" href="/base_datos/enlaces-canciones/index.html">enlaces canciones</a><ul id="R-subsections-bc3e22579dc16c8290852aa5180429fc" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/enlaces_artistas/index.html"><a class="padding" href="/base_datos/enlaces_artistas/index.html">enlaces_artistas</a><ul id="R-subsections-160dd2252c58e9a23df3980ae7d1f231" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/letras/index.html"><a class="padding" href="/base_datos/letras/index.html">letras</a><ul id="R-subsections-5bc76eae3f4748ff709de915519c7f8b" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/listenbrainz/index.html"><a class="padding" href="/base_datos/listenbrainz/index.html">listenbrainz</a><ul id="R-subsections-158bd460f441772b9b327cdf609b4ccc" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/mb_data_canciones/index.html"><a class="padding" href="/base_datos/mb_data_canciones/index.html">mb_data_canciones</a><ul id="R-subsections-9e1b9d00dfe9a1f471ed288bbb8efd54" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/mb_release_group/index.html"><a class="padding" href="/base_datos/mb_release_group/index.html">mb_release_group</a><ul id="R-subsections-d8c715fec481215953be476f01dd8730" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/mb_sellos/index.html"><a class="padding" href="/base_datos/mb_sellos/index.html">mb_sellos</a><ul id="R-subsections-4c4506fb1ded5e0740ec1b9fec8e14d8" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/post_fresh_rss/index.html"><a class="padding" href="/base_datos/post_fresh_rss/index.html">post_fresh_rss</a><ul id="R-subsections-a9acbec6a6a1dbaeb909d92cda785280" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/redes_sociales/index.html"><a class="padding" href="/base_datos/redes_sociales/index.html">redes_sociales</a><ul id="R-subsections-4f021ddf8a760f4d514d2e2d8e3b04fc" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/scrobbles-lastfm/index.html"><a class="padding" href="/base_datos/scrobbles-lastfm/index.html">Scrobbles lastfm</a><ul id="R-subsections-c9f998292b082f9890ee6fb3cc71f657" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/wikilinks/index.html"><a class="padding" href="/base_datos/wikilinks/index.html">wikilinks</a><ul id="R-subsections-9a8996316975311e9eb147dc4a101e17" class="collapsible-menu"></ul></li>
+            <li class="alwaysopen " data-nav-id="/base_datos/yt_song_links/index.html"><a class="padding" href="/base_datos/yt_song_links/index.html">yt_song_links</a><ul id="R-subsections-7fe35424cfec8f2a4727d1c87c2082ca" class="collapsible-menu"></ul></li></ul></li>
+            <li class="" data-nav-id="/credenciales/index.html"><a class="padding" href="/credenciales/index.html">credenciales</a><ul id="R-subsections-531febb0ee57af4ff73e1c73de87ea64" class="collapsible-menu"></ul></li>
+            <li class="" data-nav-id="/instalacion/index.html"><a class="padding" href="/instalacion/index.html">instalación</a></li>
+            <li class="" data-nav-id="/introduccion/index.html"><a class="padding" href="/introduccion/index.html">mfuz</a></li>
+            <li class="" data-nav-id="/modulos/index.html"><a class="padding" href="/modulos/index.html">MÓDULOS</a><ul id="R-subsections-2b7372743a6928555c05103f039a6cdf" class="collapsible-menu"></ul></li>
+          </ul>
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
+          <ul class="space collapsible-menu">
+          </ul>
+        </div>
+        <div id="R-footer-margin"></div>
+        <div class="R-menu-divider default-animation">
+          <hr class="padding">
+        </div>
+        <div class="R-sidebarmenu R-shortcutmenu-controls">
+          <ul class="">
+            <li class="R-variantswitcher">
+              <div class="padding menu-control">
+                <i class="fa-fw fas fa-paint-brush"></i>
+                <span>&nbsp;</span>
+                <div class="control-style">
+                  <label class="a11y-only" for="R-select-variant">Theme</label>
+                  <select id="R-select-variant">
+                    <option id="R-select-variant-relearn-light" value="relearn-light" selected>Relearn Light</option>
+                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
+                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
+                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
+                  </select>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <script>window.relearn.markVariant();</script>
+            </li>
+          </ul>
+        </div>
+<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
+      </div>
+    </aside>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

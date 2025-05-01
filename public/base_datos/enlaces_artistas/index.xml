@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>enlaces_artistas :: mfuz</title>
+    <link>//192.168.1.133:1313/base_datos/enlaces_artistas/index.html</link>
+    <description>Configuración JSON { &#34;db_path&#34;: &#34;ruta/a/tu/base_de_datos.db&#34;, &#34;log_path&#34;: &#34;logs/&#34;, &#34;cache_path&#34;: &#34;cache/&#34;, &#34;cache_duration&#34;: 30, &#34;rate_limit&#34;: 0.5, &#34;spotify&#34;: { &#34;client_id&#34;: &#34;tu_spotify_client_id&#34;, &#34;client_secret&#34;: &#34;tu_spotify_client_secret&#34; }, &#34;lastfm&#34;: { &#34;api_key&#34;: &#34;tu_lastfm_api_key&#34;, &#34;api_secret&#34;: &#34;tu_lastfm_api_secret&#34; }, &#34;discogs&#34;: { &#34;token&#34;: &#34;tu_discogs_token&#34; }, &#34;user_agent&#34;: &#34;MusicDatabaseEnricher/1.0 (contacto@ejemplo.com)&#34; } Variables de entorno alternativas SPOTIFY_CLIENT_ID SPOTIFY_CLIENT_SECRET LASTFM_API_KEY LASTFM_API_SECRET DISCOGS_TOKEN Tabla artists Campo Tipo Descripción spotify_url TEXT URL del artista en Spotify youtube_url TEXT URL del canal/tópico del artista en YouTube musicbrainz_url TEXT URL del artista en MusicBrainz discogs_url TEXT URL del artista en Discogs rateyourmusic_url TEXT URL del artista en RateYourMusic bandcamp_url TEXT URL del artista en Bandcamp mbid TEXT ID de MusicBrainz del artista origin TEXT Origen o país del artista formed_year INTEGER Año de formación del artista total_albums INTEGER Número total de álbumes del artista bio TEXT Biografía del artista similar_artists TEXT/JSON Artistas similares tags TEXT/JSON Etiquetas o géneros aliases TEXT/JSON Nombres alternativos del artista member_of TEXT/JSON Grupos a los que pertenece el artista lastfm_url TEXT URL del artista en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla albums Campo Tipo Descripción spotify_url TEXT URL del álbum en Spotify spotify_id TEXT ID del álbum en Spotify youtube_url TEXT URL de resultados o playlist del álbum en YouTube musicbrainz_url TEXT URL del álbum en MusicBrainz discogs_url TEXT URL del álbum en Discogs rateyourmusic_url TEXT URL del álbum en RateYourMusic bandcamp_url TEXT URL del álbum en Bandcamp mbid TEXT ID de MusicBrainz del álbum producers TEXT/JSON Productores del álbum engineers TEXT/JSON Ingenieros de grabación mastering_engineers TEXT/JSON Ingenieros de masterización credits JSON Detalles de los créditos lastfm_url TEXT URL del álbum en Last.fm links_updated TIMESTAMP Fecha de la última actualización Tabla songs Campo Tipo Descripción mbid TEXT Identificador de MusicBrainz para la grabación tags include #enlaces_artista_album sort by due reverse hide tags</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/base_datos/enlaces_artistas/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Argumentos</title>
+      <link>//192.168.1.133:1313/base_datos/enlaces_artistas/argumentos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/enlaces_artistas/argumentos/index.html</guid>
+      <description>Argumento Tipo Descripción --config Obligatorio Ruta al archivo de configuración JSON --artist Opcional Buscar un artista específico --album Opcional Buscar un álbum específico --days Opcional Actualizar registros más antiguos que N días --force-update Flag Forzar actualización de todos los registros --missing-only Flag Actualizar solo registros con datos faltantes --older-only Flag Actualizar solo registros más antiguos --summary-only Flag Mostrar solo resumen sin actualizar --debug Flag Activar modo debug con screenshots --disable-services Lista Deshabilitar servicios específicos</description>
+    </item>
+    <item>
+      <title>Credenciales</title>
+      <link>//192.168.1.133:1313/base_datos/enlaces_artistas/credenciales/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/enlaces_artistas/credenciales/index.html</guid>
+      <description>Servicio Credenciales Descripción Spotify client_id, client_secret Credenciales de Spotify Developer Last.fm api_key, api_secret Claves de API de Last.fm Discogs token Token de acceso para la API de Discogs MusicBrainz No requiere credenciales Usa un user-agent personalizado</description>
+    </item>
+    <item>
+      <title>Archivos</title>
+      <link>//192.168.1.133:1313/base_datos/enlaces_artistas/archivos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/enlaces_artistas/archivos/index.html</guid>
+      <description>Tipo Ruta Descripción Logs logs/enlaces_artista_album_{timestamp}.log Registros de ejecución del script Caché cache/spotify_{artist_name}.json Respuestas cacheadas de la API de Spotify cache/lastfm_{artist_name}.json Respuestas cacheadas de la API de Last.fm cache/musicbrainz_{artist_name}.json Respuestas cacheadas de la API de MusicBrainz cache/discogs_{artist_name}.json Respuestas cacheadas de la API de Discogs Depuración debug_screenshots/{timestamp}_{service}_{artist_name}.png Capturas de pantalla en modo debug</description>
+    </item>
+    <item>
+      <title>Datos</title>
+      <link>//192.168.1.133:1313/base_datos/enlaces_artistas/datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/base_datos/enlaces_artistas/datos/index.html</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
