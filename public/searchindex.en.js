@@ -145,8 +145,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "mfuz \u003e  credenciales",
-    "content": "Crea una accediendo a este enlace\n![Pasted](img/Pasted image 20250326011917.png)\nLuego copien en un lugar seguro su api key y secret\nCrea una accediendo a este enlace\nLuego copien en un lugar seguro su api key y secret",
-    "description": "Crea una accediendo a este enlace\n![Pasted](img/Pasted image 20250326011917.png)\nLuego copien en un lugar seguro su api key y secret\nCrea una accediendo a este enlace\nLuego copien en un lugar seguro su api key y secret",
+    "content": "Crea una accediendo a este enlace\nLuego copien en un lugar seguro su api key y secret",
+    "description": "Crea una accediendo a este enlace\nLuego copien en un lugar seguro su api key y secret",
     "tags": [],
     "title": "lastfm",
     "uri": "/credenciales/lastfm/index.html"
@@ -265,16 +265,16 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "mfuz \u003e  credenciales",
-    "content": "Otra maravilla del código abierto, en su página puedes agregar manualmente tus artistas favoritos para poder estar al tanto por mail o RSS de sus lanzamientos.\nPuedes obtener su id tras crear una cuenta.\nPara obtener el id y usarlo en esta app puedes copiar el enlace del icono RSS:\n![Pasted image 20250326014837.png](Pasted image 20250326014837.png)\nY quedate con la última parte tras id=\nhttps://muspy.com/feed?id=este_será_tu_id",
-    "description": "Otra maravilla del código abierto, en su página puedes agregar manualmente tus artistas favoritos para poder estar al tanto por mail o RSS de sus lanzamientos.\nPuedes obtener su id tras crear una cuenta.\nPara obtener el id y usarlo en esta app puedes copiar el enlace del icono RSS:\n![Pasted image 20250326014837.png](Pasted image 20250326014837.png)\nY quedate con la última parte tras id=\nhttps://muspy.com/feed?id=este_será_tu_id",
+    "content": "Otra maravilla del código abierto, en su página puedes agregar manualmente tus artistas favoritos para poder estar al tanto por mail o RSS de sus lanzamientos.\nPuedes obtener su id tras crear una cuenta.\nPara obtener el id y usarlo en esta app puedes copiar el enlace del icono RSS:\nY quedate con la última parte tras id=\nhttps://muspy.com/feed?id=este_será_tu_id",
+    "description": "Otra maravilla del código abierto, en su página puedes agregar manualmente tus artistas favoritos para poder estar al tanto por mail o RSS de sus lanzamientos.\nPuedes obtener su id tras crear una cuenta.\nPara obtener el id y usarlo en esta app puedes copiar el enlace del icono RSS:\nY quedate con la última parte tras id=",
     "tags": [],
     "title": "muspy",
     "uri": "/credenciales/muspy/index.html"
   },
   {
     "breadcrumb": "mfuz \u003e  credenciales",
-    "content": "Primero accede con tu cuenta spotify aquí, que no, que era aquí\n![Pasted image 20250326012529.png](Pasted image 20250326012529.png) Luego accede a tu dashboard\n![Pasted image 20250326012823.png](Pasted image 20250326012823.png) Crean una app nueva especificando un nombre y una redirect-uri, copien esta última junto al client-id y client-secret\nTen en cuenta que Spotify permite un máximo de 20.000 consultas por día, tendrás que ajustar el lanzamiento del script si superas dicho número de elementos.\nSe realizará una consulta por cada artista, álbum y canción existente en la base de datos. Una vez usado el primer script [[db_musica_path.py]] puedes consultar cuantos elementos existen en tu base de datos usando [[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py]]",
-    "description": "Primero accede con tu cuenta spotify aquí, que no, que era aquí\n![Pasted image 20250326012529.png](Pasted image 20250326012529.png) Luego accede a tu dashboard\n![Pasted image 20250326012823.png](Pasted image 20250326012823.png) Crean una app nueva especificando un nombre y una redirect-uri, copien esta última junto al client-id y client-secret\nTen en cuenta que Spotify permite un máximo de 20.000 consultas por día, tendrás que ajustar el lanzamiento del script si superas dicho número de elementos.\nSe realizará una consulta por cada artista, álbum y canción existente en la base de datos. Una vez usado el primer script [[db_musica_path.py]] puedes consultar cuantos elementos existen en tu base de datos usando [[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py]]",
+    "content": "Primero accede con tu cuenta spotify aquí, que no, que era aquí\nLuego accede a tu dashboard\nCrean una app nueva especificando un nombre y una redirect-uri, copien esta última junto al client-id y client-secret\nTen en cuenta que Spotify permite un máximo de 20.000 consultas por día, tendrás que ajustar el lanzamiento del script si superas dicho número de elementos.\nSe realizará una consulta por cada artista, álbum y canción existente en la base de datos. Una vez usado el primer script [[db_musica_path.py]] puedes consultar cuantos elementos existen en tu base de datos usando [[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py]]",
+    "description": "Primero accede con tu cuenta spotify aquí, que no, que era aquí\nLuego accede a tu dashboard\nCrean una app nueva especificando un nombre y una redirect-uri, copien esta última junto al client-id y client-secret\nTen en cuenta que Spotify permite un máximo de 20.000 consultas por día, tendrás que ajustar el lanzamiento del script si superas dicho número de elementos.",
     "tags": [],
     "title": "spotify",
     "uri": "/credenciales/spotify/index.html"
