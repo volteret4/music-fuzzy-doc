@@ -1,3 +1,7 @@
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 theme = 'hugo-theme-relearn'
 baseURL = 'https://volteret4.github.io/music-fuzzy-doc'
 relativeURLs = false
