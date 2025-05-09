@@ -15,7 +15,7 @@ title = 'mfuz'
   disableLanguageSwitchingButton = true
   disableGeneratorVersion = true
   disableAssetsBusting = true # desactivar en prod.
-  themeVariant = ['relearn-light', 'relearn-dark', 'zen-light', 'zen-dark']
+  themeVariant = ['zen-dark', 'zen-light', 'relearn-light', 'relearn-dark']
   linkTitle = 'mfuz'
 
 [outputs]
