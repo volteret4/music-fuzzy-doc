@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Módulo 02 Editor de la base de datos :: mfuz</title>
+    <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-02-editor-de-la-base-de-datos/index.html</link>
+    <description>Módulo 2: Editor de la base de datos Aqui se podrán editar campos de la base de datos.&#xA;Mucho cuidado con editar algo que no sea una canción, enlace, o campo de texto con información, actualmente no maneja bien los encadenamientos, por lo que si editas un artista, puede que sus discos queden huérfanos.</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/modulos/m%C3%B3dulo-02-editor-de-la-base-de-datos/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

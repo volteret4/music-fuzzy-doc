@@ -4,6 +4,7 @@ weight: 1
 ---
 
 #### Módulo 132: Configuración
+![Pasted image 20250509185826.png](Pasted-image-20250509185826.png)
 
 Este es el módulo encargado de crear una UI para la configuración y permite modificar cualquier argumento recibido por el resto de módulos.
 

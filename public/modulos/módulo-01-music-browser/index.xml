@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Módulo 01 Music Browser :: mfuz</title>
+    <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-01-music-browser/index.html</link>
+    <description>Music-fuzzy Encargado de mostrar:&#xA;Cajón de búsqueda que acepta filtros Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:&#xA;a: artista&#xA;b: álbum&#xA;t: canción&#xA;y: año&#xA;g: género&#xA;s: sello&#xA;Listado de coincidencias con la búsqueda Los resultados se muestran separando anidados según el criterio de búsqueda</description>
+    <generator>Hugo</generator>
+    <language>es-ES</language>
+    <atom:link href="//192.168.1.133:1313/modulos/m%C3%B3dulo-01-music-browser/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

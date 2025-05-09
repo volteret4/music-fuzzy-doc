@@ -15,13 +15,6 @@
       <description>Inicio Este script [[music_padre.py]] se encarga de gestionar las pestañas en que se cargaran los modulos. Para ello lee configuración del [[base_module.py]] y carga los modulos indicados en [[config.json]] junto a los argumentos necesarios.&#xA;Debido al carácter modular de esta aplicación puedes activar o desactivar las pestañas deseadas, teniendo en cuenta configurar los requisitos correspondientes en el [[config]]</description>
     </item>
     <item>
-      <title>Modulos de la app</title>
-      <link>//192.168.1.133:1313/modulos/index.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>//192.168.1.133:1313/modulos/index.html</guid>
-      <description>MÓDULOS: not done tags include #m_fuzzy tags include #config_editor hide tags sort by due sort by priority sort by scheduled</description>
-    </item>
-    <item>
       <title>instalación</title>
       <link>//192.168.1.133:1313/instalacion/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,6 +27,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//192.168.1.133:1313/base_datos/index.html</guid>
       <description>Para poder crear la base de datos tienes varias opciones:&#xA;Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.</description>
+    </item>
+    <item>
+      <title>Modulos de la app</title>
+      <link>//192.168.1.133:1313/modulos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/modulos/index.html</guid>
+      <description>MÓDULOS: not done tags include #m_fuzzy tags include #config_editor hide tags sort by due sort by priority sort by scheduled</description>
     </item>
     <item>
       <title>credenciales</title>

@@ -3,10 +3,17 @@
   <channel>
     <title>Modulos de la app :: mfuz</title>
     <link>//192.168.1.133:1313/modulos/index.html</link>
-    <description>MÓDULOS: not done tags include #m_fuzzy tags include #config_editor hide tags sort by due sort by priority sort by scheduled</description>
+    <description>MÓDULOS: ![[Módulo 09 Enlaces]]&#xA;![[Módulo 10 Listas Spotify]]&#xA;![[Módulo 11 Widgets]]&#xA;![[Módulo 12 Reproductor]]&#xA;not done tags include #m_fuzzy tags include #config_editor hide tags sort by due sort by priority sort by scheduled</description>
     <generator>Hugo</generator>
     <language>es-ES</language>
     <atom:link href="//192.168.1.133:1313/modulos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Módulo 01 Music Browser</title>
+      <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-01-music-browser/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/modulos/m%C3%B3dulo-01-music-browser/index.html</guid>
+      <description>Music-fuzzy Encargado de mostrar:&#xA;Cajón de búsqueda que acepta filtros Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:&#xA;a: artista&#xA;b: álbum&#xA;t: canción&#xA;y: año&#xA;g: género&#xA;s: sello&#xA;Listado de coincidencias con la búsqueda Los resultados se muestran separando anidados según el criterio de búsqueda</description>
+    </item>
     <item>
       <title>Modulo 01 music-fuzzy</title>
       <link>//192.168.1.133:1313/modulos/modulo-01-music-fuzzy/index.html</link>
@@ -20,6 +27,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//192.168.1.133:1313/modulos/modulo-02-editor-de-la-base-de-datos/index.html</guid>
       <description>Módulo 2: Editor de la base de datos Parecido al primer tab, este se permite editar cualquier campo de la base de datos.&#xA;Script: [[editor_module.py]]&#xA;not done tags include #m_fuzzy tags include #db_editor hide tags sort by due sort by priority sort by scheduled</description>
+    </item>
+    <item>
+      <title>Módulo 02 Editor de la base de datos</title>
+      <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-02-editor-de-la-base-de-datos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/modulos/m%C3%B3dulo-02-editor-de-la-base-de-datos/index.html</guid>
+      <description>Módulo 2: Editor de la base de datos Aqui se podrán editar campos de la base de datos.&#xA;Mucho cuidado con editar algo que no sea una canción, enlace, o campo de texto con información, actualmente no maneja bien los encadenamientos, por lo que si editas un artista, puede que sus discos queden huérfanos.</description>
     </item>
     <item>
       <title>Modulo 03 Blogs</title>
@@ -36,11 +50,32 @@
       <description></description>
     </item>
     <item>
+      <title>Módulo 04 Conciertos</title>
+      <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-04-conciertos/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/modulos/m%C3%B3dulo-04-conciertos/index.html</guid>
+      <description>Con este módulo se pueden buscar conciertos en diferentes servicios y obtener enlaces para comprar las entradas.&#xA;Los servicios posibles actualmente son:&#xA;setlistfm spotify ticketmaster</description>
+    </item>
+    <item>
+      <title>Módulo 05 Muspy</title>
+      <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-05-muspy/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/modulos/m%C3%B3dulo-05-muspy/index.html</guid>
+      <description>Módulo 6: Muspy Este modulo en combinación con la api de Muspy permite consultar que artistas van a sacar una nueva producción próximamente.&#xA;Puede leer la base de datos o realizar búsquedas individuales de los mismos en muspy y lo muestra en un listado.&#xA;not done tags include #m_fuzzy tags include #muspy hide tags sort by due sort by priority sort by scheduled</description>
+    </item>
+    <item>
       <title>Modulo 05 Scripts</title>
       <link>//192.168.1.133:1313/modulos/modulo-05-scripts/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//192.168.1.133:1313/modulos/modulo-05-scripts/index.html</guid>
       <description>Módulo 5: Scripts Este módulos se encarga de lanzar unos scripts con diversos argumentos configurado todo ello en un JSON.&#xA;Scripts: [[scripts_module.py]]&#xA;not done tags include #m_fuzzy tags include #scripts hide tags sort by due sort by priority sort by scheduled</description>
+    </item>
+    <item>
+      <title>Módulo 06 Jaangle</title>
+      <link>//192.168.1.133:1313/modulos/m%C3%B3dulo-06-jaangle/index.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//192.168.1.133:1313/modulos/m%C3%B3dulo-06-jaangle/index.html</guid>
+      <description>Este módulo es un pequeño quiz musical con tu música.&#xA;Actualmente solo funciona con música local!!&#xA;Opciones Se pueden configurar algunas opciones:</description>
     </item>
     <item>
       <title>Modulo 06 Muspy</title>
@@ -54,7 +89,7 @@
       <link>//192.168.1.133:1313/modulos/modulo-07-estadisticas/index.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//192.168.1.133:1313/modulos/modulo-07-estadisticas/index.html</guid>
-      <description>Módulo 7: Estadísticas</description>
+      <description>Módulo 7: Estadísticas Con este módulo podras obtener estadísticas sobre todos los datos recopilados en la api desde diferentes perspectivas:&#xA;Artistas TODO&#xA;Álbums TODO&#xA;Canciones TODO&#xA;Fecha TODO&#xA;Géneros Sellos Productores TODO</description>
     </item>
     <item>
       <title>Modulo 07 Lastfm scrobbler</title>

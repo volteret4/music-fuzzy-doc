@@ -153,321 +153,6 @@
   <header class="headline">
   </header>
 
-<h1 id="modulos-de-la-app">Modulos de la app</h1>
-
-<h4 id="módulos">MÓDULOS:</h4>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #config_editor 
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-          <section>
-            <h1 class="a11y-only">Subsections of Modulos de la app</h1>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-01-music-fuzzy">Modulo 01 music-fuzzy</h1>
-
-<h5 id="music-fuzzy">Music-fuzzy</h5>
-<p>[[music_fuzzy_module.py]]</p>
-<p>![[Pasted image 20250509150417.png]]</p>
-<p>Encargado de mostrar:</p>
-<ol>
-<li><strong>Cajón de búsqueda que acepta filtros</strong></li>
-</ol>
-<p>Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:</p>
-<p><code>a:</code> artista</p>
-<p><code>b:</code> álbum</p>
-<p><code>g:</code> género</p>
-<ol>
-<li><strong>Listado de coincidencias con la búsqueda</strong></li>
-</ol>
-<p>Los resultados se muestran separando los álbumes con headers, los álbumes de las canciones.</p>
-<ol start="3">
-<li><strong>Panel informativo del elemento seleccionado</strong></li>
-</ol>
-<p>Si es una canción contendrá la letra, y en todos los casos mostrará cuando la haya:</p>
-<ul>
-<li>Información sobre el artista en lastfm y wikipedia</li>
-<li>Información sobre el álbum en lastfm y wikipedia</li>
-<li>Metadata como Sello discográfico, ruta a la carpeta, bitrate</li>
-<li>Enlaces a servicios con información sobre artista o álbum</li>
-<li>Botón para añadir canción a una playlist de spotify en su panel correspondiente</li>
-</ul>
-<ol start="4">
-<li><strong>Botones</strong></li>
-</ol>
-<p><code>Play</code> Reproducirá el album o canción seleccionada
-<code>Open</code> Abrirá la carpeta del elemento seleccionado
-<code>Script 1-3</code> Permiten añadir scripts personales para esas canciones</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #music-fuzzy 
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-02-editor-de-la-base-de-datos">Modulo 02 Editor de la base de datos</h1>
-
-<h4 id="módulo-2-editor-de-la-base-de-datos">Módulo 2: Editor de la base de datos</h4>
-<p>Parecido al primer tab, este se permite editar cualquier campo de la base de datos.</p>
-<p>Script:
-[[editor_module.py]]</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #db_editor 
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-03-blogs">Modulo 03 Blogs</h1>
-
-<h4 id="módulo-3-blogs-playlists">Módulo 3: Blogs playlists</h4>
-<p>Pensado para crear una playlist mensual de cada blog musical que sigo:</p>
-<ol>
-<li>Obtiene las urls a los posts no leídos de mi servidor freshrss y las separa por meses de publicación</li>
-<li>Busca en cada post, enlaces a youtube, bandcamp y soundcloud y los añade a la playlist</li>
-<li>Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda.</li>
-</ol>
-<p>Se pueden añadir urls a post singulares para crear una playlist del mismo y guardarla en playlist locales.</p>
-<p>Actualmente reproduce las canciones en mpv</p>
-<p>Script:
-[[menu_blogs_module.py]]</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #blogs 
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-04-conciertos">Modulo 04 Conciertos</h1>
-
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-05-scripts">Modulo 05 Scripts</h1>
-
-<h4 id="módulo-5-scripts">Módulo 5: Scripts</h4>
-<p>Este módulos se encarga de lanzar unos scripts con diversos argumentos configurado todo ello en un JSON.</p>
-<p>Scripts:
-[[scripts_module.py]]</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #scripts 
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-06-muspy">Modulo 06 Muspy</h1>
-
-<h4 id="módulo-6-muspy">Módulo 6: Muspy</h4>
-<p>Este módulo le el archivo de los artistas y realizar búsquedas de los mismos en muspy  y lo muestra en un listado.</p>
-<p>Es posible ver que artistas ya existen en la base de datos.</p>
-<p>Script:
-[[muspy_releases_module.py]]</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #muspy
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-07-estadisticas">Modulo 07 Estadisticas</h1>
-
-<h4 id="módulo-7-estadísticas">Módulo 7: Estadísticas</h4>
-<p>![[Pasted image 20250509154058.png]]</p>
-<p>![[Pasted image 20250509154215.png]]</p>
-<p>![[Pasted image 20250509154308.png]]</p>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-07-lastfm-scrobbler">Modulo 07 Lastfm scrobbler</h1>
-
-<h4 id="módulo-7-lastfm-scrobbler">Módulo 7: Lastfm scrobbler</h4>
-<p>Este módulo muestra información de la última canción scrobbleada en lastfm, obtenida de la base de datos si existe en ella, asi como una lista con el <code>número variable</code> de canciones scrobbleadas.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #scrobbler 
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-<p>Script:
-[[lastfm_scrobbler.py]]</p>
-<p>Ejemplo para añadir elementos
-[[Lastfm scrobbler, añadir items de la base de datos]]</p>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-08-jaangle">Modulo 08 Jaangle</h1>
-
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="modulo-09-enlaces">Modulo 09 Enlaces</h1>
-
-<h4 id="módulo-9-enlaces">Módulo 9: Enlaces</h4>
-<p>Desde aquí podrás buscar cualquier canción, álbum o artista para obtener enlaces a los múltiples servicios musicales ofrecidos.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #Enlaces
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="módulo-10-listas-spotify">Módulo 10 Listas Spotify</h1>
-
-<h4 id="módulo-10-listas-spotify">Módulo 10: Listas Spotify</h4>
-<p>Permite crear nuevas playlists, buscar canciones y añadirlas o cargarlas desde otras playlists.</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #spotify
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="módulo-11-widgets">Módulo 11 Widgets</h1>
-
-<h4 id="módulo-11-widgets">Módulo 11: Widgets</h4>
-<p>Permite la búsqueda en los servicios listados de artistas, álbumes o canciones.</p>
-<ul>
-<li>Bandcamp</li>
-<li>Soundcloud</li>
-<li></li>
-</ul>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #widgets
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="módulo-12-reproductor">Módulo 12 Reproductor</h1>
-
-<h4 id="módulo-12-reproductor">Módulo 12: Reproductor</h4>
-<p>Siguiendo la reproducción de, por ahora Deadbeef</p>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #m_fuzzy
-tags include #Reproductor
-hide tags
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="módulo-132-configuración">Módulo 132 Configuración</h1>
-
-<h4 id="módulo-132-configuración">Módulo 132: Configuración</h4>
-<p>Este es el módulo encargado de crear una UI para la configuración y permite modificar cualquier argumento recibido por el resto de módulos.</p>
-<p>Las claves del json [[Spaces/Scripts/menus/musica/config.json|config.json]] con múltiples opciones se mostrarán como un menú desplegable.</p>
-<p>Script:
-[[config_editor_module.py]]</p>
-
-  <footer class="footline">
-  </footer>
-</article>
-          </section>
-<article class="default">
-  <header class="headline">
-  </header>
-
 <h1 id="instalación">instalación</h1>
 
 <p>Actualmente la aplicación solo está disponible para sistemas Linux, ya sea un Sistema Operativo, o el submódulo wsl para windows</p>
@@ -511,6 +196,21 @@ sort by scheduled</code></pre></div>
 <li>[[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py|consultar_items_db.py]] Puedes obtener diversos campos de la base de datos usando varios filtros. Leer mas aqui TODO</li>
 <li>[[unir_artistas.py]] Permite unir artistas bajo un mismo nombre, útil cuando te aparecen Chimobayo feat. Björk o similares colaboraciones.</li>
 </ul>
+<p>![[01. Archivos locales]]</p>
+<p>![[07. Enlaces artistas]]</p>
+<p>![[08. Enlaces albums]]</p>
+<p>![[12. Letras]]</p>
+<p>![[09. Enlaces canciones]]</p>
+<p>![[10. Wikipedia]]</p>
+<p>![[02. Scrobbles lastfm]]</p>
+<p>![[03. Listens listenbrainz]]</p>
+<p>![[05. Musicbrainz album info]]</p>
+<p>![[11. Musicbrainz sellos]]</p>
+<p>![[06. Musicbrainz canciones]]</p>
+<p>![[13. Articulos]]</p>
+<p>![[11. Youtube links de canciones]]</p>
+<p>![[04. Redes]]</p>
+<p>![[20. Optimización]]</p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
 tags include #create_db
 
@@ -763,6 +463,7 @@ Se ha probado con:</p>
 
 <h1 id="02-scrobbles-lastfm">02. Scrobbles lastfm</h1>
 
+<p>673940154</p>
 <p>Obtiene scrobbles de lastfm para el usuario indicado</p>
 <blockquote>
 <p>27.000 scrobbles con 11.180 enlazados en 6 minutos</p></blockquote>
@@ -3936,6 +3637,325 @@ o como parte de la cadena de scripts de db_creator.py.</p>
   <header class="headline">
   </header>
 
+<h1 id="modulos-de-la-app">Modulos de la app</h1>
+
+<h4 id="módulos">MÓDULOS:</h4>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #config_editor 
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+          <section>
+            <h1 class="a11y-only">Subsections of Modulos de la app</h1>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-01-music-fuzzy">Modulo 01 music-fuzzy</h1>
+
+<h5 id="music-fuzzy">Music-fuzzy</h5>
+<p>[[music_fuzzy_module.py]]</p>
+<p><a href="#R-image-75aea4c3755fd848e814c58f19b15f26" class="lightbox-link"><img alt="Pasted image 20250509150417.png" class="lazy lightbox figure-image" loading="lazy" src="/modulos/modulo-01-music-fuzzy/Pasted-image-20250509150417.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-75aea4c3755fd848e814c58f19b15f26"><img alt="Pasted image 20250509150417.png" class="lazy lightbox lightbox-image" loading="lazy" src="/modulos/modulo-01-music-fuzzy/Pasted-image-20250509150417.png"></a></p>
+<p>Encargado de mostrar:</p>
+<ol>
+<li><strong>Cajón de búsqueda que acepta filtros</strong></li>
+</ol>
+<p>Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:</p>
+<p><code>a:</code> artista</p>
+<p><code>b:</code> álbum</p>
+<p><code>g:</code> género</p>
+<ol>
+<li><strong>Listado de coincidencias con la búsqueda</strong></li>
+</ol>
+<p>Los resultados se muestran separando los álbumes con headers, los álbumes de las canciones.</p>
+<ol start="3">
+<li><strong>Panel informativo del elemento seleccionado</strong></li>
+</ol>
+<p>Si es una canción contendrá la letra, y en todos los casos mostrará cuando la haya:</p>
+<ul>
+<li>Información sobre el artista en lastfm y wikipedia</li>
+<li>Información sobre el álbum en lastfm y wikipedia</li>
+<li>Metadata como Sello discográfico, ruta a la carpeta, bitrate</li>
+<li>Enlaces a servicios con información sobre artista o álbum</li>
+<li>Botón para añadir canción a una playlist de spotify en su panel correspondiente</li>
+</ul>
+<ol start="4">
+<li><strong>Botones</strong></li>
+</ol>
+<p><code>Play</code> Reproducirá el album o canción seleccionada
+<code>Open</code> Abrirá la carpeta del elemento seleccionado
+<code>Script 1-3</code> Permiten añadir scripts personales para esas canciones</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #music-fuzzy 
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-02-editor-de-la-base-de-datos">Modulo 02 Editor de la base de datos</h1>
+
+<h4 id="módulo-2-editor-de-la-base-de-datos">Módulo 2: Editor de la base de datos</h4>
+<p>Parecido al primer tab, este se permite editar cualquier campo de la base de datos.</p>
+<p>Script:
+[[editor_module.py]]</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #db_editor 
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-03-blogs">Modulo 03 Blogs</h1>
+
+<h4 id="módulo-3-blogs-playlists">Módulo 3: Blogs playlists</h4>
+<p>Pensado para crear una playlist mensual de cada blog musical que sigo:</p>
+<ol>
+<li>Obtiene las urls a los posts no leídos de mi servidor freshrss y las separa por meses de publicación</li>
+<li>Busca en cada post, enlaces a youtube, bandcamp y soundcloud y los añade a la playlist</li>
+<li>Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda.</li>
+</ol>
+<p>Se pueden añadir urls a post singulares para crear una playlist del mismo y guardarla en playlist locales.</p>
+<p>Actualmente reproduce las canciones en mpv</p>
+<p>Script:
+[[menu_blogs_module.py]]</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #blogs 
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-04-conciertos">Modulo 04 Conciertos</h1>
+
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-05-scripts">Modulo 05 Scripts</h1>
+
+<h4 id="módulo-5-scripts">Módulo 5: Scripts</h4>
+<p>Este módulos se encarga de lanzar unos scripts con diversos argumentos configurado todo ello en un JSON.</p>
+<p>Scripts:
+[[scripts_module.py]]</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #scripts 
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-06-muspy">Modulo 06 Muspy</h1>
+
+<h4 id="módulo-6-muspy">Módulo 6: Muspy</h4>
+<p>Este módulo le el archivo de los artistas y realizar búsquedas de los mismos en muspy  y lo muestra en un listado.</p>
+<p>Es posible ver que artistas ya existen en la base de datos.</p>
+<p>Script:
+[[muspy_releases_module.py]]</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #muspy
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-07-estadisticas">Modulo 07 Estadisticas</h1>
+
+<h4 id="módulo-7-estadísticas">Módulo 7: Estadísticas</h4>
+<p><a href="#R-image-08ffccf2cd3fd7335d780b227f278e0d" class="lightbox-link"><img alt="Pasted image 20250509154058.png" class="lazy lightbox figure-image" loading="lazy" src="/modulos/modulo-07-estadisticas/Pasted-image-20250509154058.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-08ffccf2cd3fd7335d780b227f278e0d"><img alt="Pasted image 20250509154058.png" class="lazy lightbox lightbox-image" loading="lazy" src="/modulos/modulo-07-estadisticas/Pasted-image-20250509154058.png"></a></p>
+<p><a href="#R-image-3d464ca4a39aed1bcc33a0065e061f0f" class="lightbox-link"><img alt="Pasted image 20250509154215.png" class="lazy lightbox figure-image" loading="lazy" src="/modulos/modulo-07-estadisticas/Pasted-image-20250509154215.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3d464ca4a39aed1bcc33a0065e061f0f"><img alt="Pasted image 20250509154215.png" class="lazy lightbox lightbox-image" loading="lazy" src="/modulos/modulo-07-estadisticas/Pasted-image-20250509154215.png"></a></p>
+<p><a href="#R-image-cf6b5abf2d6d519a451aefa03a106759" class="lightbox-link"><img alt="Pasted image 20250509154308.png" class="lazy lightbox figure-image" loading="lazy" src="/modulos/modulo-07-estadisticas/Pasted-image-20250509154308.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-cf6b5abf2d6d519a451aefa03a106759"><img alt="Pasted image 20250509154308.png" class="lazy lightbox lightbox-image" loading="lazy" src="/modulos/modulo-07-estadisticas/Pasted-image-20250509154308.png"></a></p>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-07-lastfm-scrobbler">Modulo 07 Lastfm scrobbler</h1>
+
+<h4 id="módulo-7-lastfm-scrobbler">Módulo 7: Lastfm scrobbler</h4>
+<p>Este módulo muestra información de la última canción scrobbleada en lastfm, obtenida de la base de datos si existe en ella, asi como una lista con el <code>número variable</code> de canciones scrobbleadas.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #scrobbler 
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+<p>Script:
+[[lastfm_scrobbler.py]]</p>
+<p>Ejemplo para añadir elementos
+[[Lastfm scrobbler, añadir items de la base de datos]]</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-08-jaangle">Modulo 08 Jaangle</h1>
+
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="modulo-09-enlaces">Modulo 09 Enlaces</h1>
+
+<h4 id="módulo-9-enlaces">Módulo 9: Enlaces</h4>
+<p>Desde aquí podrás buscar cualquier canción, álbum o artista para obtener enlaces a los múltiples servicios musicales ofrecidos.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #Enlaces
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="módulo-10-listas-spotify">Módulo 10 Listas Spotify</h1>
+
+<h4 id="módulo-10-listas-spotify">Módulo 10: Listas Spotify</h4>
+<p>Permite crear nuevas playlists, buscar canciones y añadirlas o cargarlas desde otras playlists.</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #spotify
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="módulo-11-widgets">Módulo 11 Widgets</h1>
+
+<h4 id="módulo-11-widgets">Módulo 11: Widgets</h4>
+<p>Permite la búsqueda en los servicios listados de artistas, álbumes o canciones.</p>
+<ul>
+<li>Bandcamp</li>
+<li>Soundcloud</li>
+<li></li>
+</ul>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #widgets
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="módulo-12-reproductor">Módulo 12 Reproductor</h1>
+
+<h4 id="módulo-12-reproductor">Módulo 12: Reproductor</h4>
+<p>Siguiendo la reproducción de, por ahora Deadbeef</p>
+<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
+tags include #m_fuzzy
+tags include #Reproductor
+hide tags
+sort by due
+sort by priority
+sort by scheduled</code></pre></div>
+
+  <footer class="footline">
+  </footer>
+</article>
+<article class="default">
+  <header class="headline">
+  </header>
+
+<h1 id="módulo-132-configuración">Módulo 132 Configuración</h1>
+
+<h4 id="módulo-132-configuración">Módulo 132: Configuración</h4>
+<p>Este es el módulo encargado de crear una UI para la configuración y permite modificar cualquier argumento recibido por el resto de módulos.</p>
+<p>Las claves del json [[Spaces/Scripts/menus/musica/config.json|config.json]] con múltiples opciones se mostrarán como un menú desplegable.</p>
+<p>Script:
+[[config_editor_module.py]]</p>
+
+  <footer class="footline">
+  </footer>
+</article>
+          </section>
+<article class="default">
+  <header class="headline">
+  </header>
+
 <h1 id="credenciales">credenciales</h1>
 
 <p>Aqui explicaré brevemente como obtener algunas de las credenciales:</p>
@@ -3974,8 +3994,12 @@ o como parte de la cadena de scripts de db_creator.py.</p>
 <h1 id="lastfm">lastfm</h1>
 
 <p>Crea una accediendo a este <a href="https://www.last.fm/api/account/create" rel="external" target="_blank">enlace</a></p>
-<p><a href="#R-image-00db31fd789e70bcd19b1396db998535" class="lightbox-link"><img alt="Pasted image 20250326011917.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/lastfm/Pasted-image-20250326011917.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-00db31fd789e70bcd19b1396db998535"><img alt="Pasted image 20250326011917.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/lastfm/Pasted-image-20250326011917.png"></a></p>
+<p><a href="#R-image-dc5ab477260d892ffbb28e765b86b98b" class="lightbox-link"><img alt="Pasted image 20250326011917.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/lastfm/Pasted-image-20250326011917.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-dc5ab477260d892ffbb28e765b86b98b"><img alt="Pasted image 20250326011917.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/lastfm/Pasted-image-20250326011917.png"></a></p>
+<p>Luego copien en un lugar seguro su api key y secret</p>
+<p>Crea una accediendo a este <a href="https://www.last.fm/api/account/create" rel="external" target="_blank">enlace</a></p>
+<p><a href="#R-image-52fba43194a39112f578383acd7777f6" class="lightbox-link"><img alt="Pasted image 20250326011917.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/lastfm/Pasted-image-20250326011917.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-52fba43194a39112f578383acd7777f6"><img alt="Pasted image 20250326011917.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/lastfm/Pasted-image-20250326011917.png"></a></p>
 <p>Luego copien en un lugar seguro su api key y secret</p>
 
   <footer class="footline">
@@ -4001,8 +4025,8 @@ o como parte de la cadena de scripts de db_creator.py.</p>
 <p>Otra maravilla del código abierto, en su página puedes agregar manualmente tus artistas favoritos para poder estar al tanto por mail o RSS de sus lanzamientos.</p>
 <p>Puedes obtener su id tras <a href="https://muspy.com/signup" rel="external" target="_blank">crear una cuenta</a>.</p>
 <p>Para obtener el id y usarlo en esta app puedes copiar el enlace del icono RSS:</p>
-<p><a href="#R-image-9b146e53270d91d9d16479afe41ee826" class="lightbox-link"><img alt="Pasted image 20250326014837.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/muspy/Pasted-image-20250326014837.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-9b146e53270d91d9d16479afe41ee826"><img alt="Pasted image 20250326014837.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/muspy/Pasted-image-20250326014837.png"></a></p>
+<p><a href="#R-image-3443819f47f22d29fc8d2888ddbd8abc" class="lightbox-link"><img alt="Pasted image 20250326014837.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/muspy/Pasted-image-20250326014837.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3443819f47f22d29fc8d2888ddbd8abc"><img alt="Pasted image 20250326014837.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/muspy/Pasted-image-20250326014837.png"></a></p>
 <p>Y quedate con la última parte tras <code>id=</code></p>
 <div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-https" data-lang="https">https://muspy.com/feed?id=este_será_tu_id</code></pre></div>
 
@@ -4016,11 +4040,11 @@ o como parte de la cadena de scripts de db_creator.py.</p>
 <h1 id="spotify">spotify</h1>
 
 <p>Primero accede con tu cuenta spotify <a href="https://www.youtube.com/watch?v=oHg5SJYRHA0" rel="external" target="_blank">aquí</a>, que no, que era <a href="https://developer.spotify.com/" rel="external" target="_blank">aquí</a></p>
-<p><a href="#R-image-c087fa10338c58ecba6adf77d5bb78f7" class="lightbox-link"><img alt="Pasted image 20250326012529.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/spotify/Pasted-image-20250326012529.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-c087fa10338c58ecba6adf77d5bb78f7"><img alt="Pasted image 20250326012529.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/spotify/Pasted-image-20250326012529.png"></a>
+<p><a href="#R-image-3b12f1811ca7b72b1d6a9c263dd730e2" class="lightbox-link"><img alt="Pasted image 20250326012529.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/spotify/Pasted-image-20250326012529.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-3b12f1811ca7b72b1d6a9c263dd730e2"><img alt="Pasted image 20250326012529.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/spotify/Pasted-image-20250326012529.png"></a>
 Luego accede a tu dashboard</p>
-<p><a href="#R-image-a0116042902ec0e82ab2920de7c39331" class="lightbox-link"><img alt="Pasted image 20250326012823.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/spotify/Pasted-image-20250326012823.png" style=" height: auto; width: auto;"></a>
-<a href="javascript:history.back();" class="lightbox-back" id="R-image-a0116042902ec0e82ab2920de7c39331"><img alt="Pasted image 20250326012823.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/spotify/Pasted-image-20250326012823.png"></a>
+<p><a href="#R-image-a097682a98939b3ccec2bb65ab2df3eb" class="lightbox-link"><img alt="Pasted image 20250326012823.png" class="lazy lightbox figure-image" loading="lazy" src="/credenciales/spotify/Pasted-image-20250326012823.png" style=" height: auto; width: auto;"></a>
+<a href="javascript:history.back();" class="lightbox-back" id="R-image-a097682a98939b3ccec2bb65ab2df3eb"><img alt="Pasted image 20250326012823.png" class="lazy lightbox lightbox-image" loading="lazy" src="/credenciales/spotify/Pasted-image-20250326012823.png"></a>
 Crean una app nueva especificando un <code>nombre</code> y una <code>redirect-uri</code>, copien esta última junto al client-id y client-secret</p>
 <p>Ten en cuenta que Spotify permite un máximo de 20.000 consultas por día, tendrás que ajustar el lanzamiento del script si superas dicho número de elementos.</p>
 <p>Se realizará una consulta por cada artista, álbum y canción existente en la base de datos. Una vez usado el primer script [[db_musica_path.py]] puedes consultar cuantos elementos existen en tu base de datos usando [[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py]]</p>
