@@ -79,6 +79,9 @@
     <loc>//192.168.1.133:1313/modulos/modulo-06-muspy/index.html</loc>
   </url>
   <url>
+    <loc>//192.168.1.133:1313/modulos/modulo-07-estadisticas/index.html</loc>
+  </url>
+  <url>
     <loc>//192.168.1.133:1313/modulos/modulo-07-lastfm-scrobbler/index.html</loc>
   </url>
   <url>
@@ -98,6 +101,9 @@
   </url>
   <url>
     <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-132-configuraci%C3%B3n/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/modulos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/credenciales/muspy/index.html</loc>
@@ -221,9 +227,6 @@
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/13.-articulos/datos/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/modulos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/credenciales/index.html</loc>

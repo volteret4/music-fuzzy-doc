@@ -161,8 +161,8 @@ var relearn_searchindex = [
   },
   {
     "breadcrumb": "mfuz \u003e  Modulos de la app",
-    "content": "Music-fuzzy [[music_fuzzy_module.py]]\nEncargado de mostrar:\nCajón de búsqueda que acepta filtros Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:\na: artista\nb: álbum\ng: género\nListado de coincidencias con la búsqueda Los resultados se muestran separando los álbumes con headers, los álbumes de las canciones.\nPanel informativo del elemento seleccionado Si es una canción contendrá la letra, y en todos los casos mostrará cuando la haya:\nInformación sobre el artista en lastfm y wikipedia Información sobre el álbum en lastfm y wikipedia Metadata como Sello discográfico, ruta a la carpeta, bitrate Enlaces a servicios con información sobre artista o álbum Botón para añadir canción a una playlist de spotify en su panel correspondiente Botones Play Reproducirá el album o canción seleccionada Open Abrirá la carpeta del elemento seleccionado Script 1-3 Permiten añadir scripts personales para esas canciones\nnot done tags include #m_fuzzy tags include #music-fuzzy hide tags sort by due sort by priority sort by scheduled",
-    "description": "Music-fuzzy [[music_fuzzy_module.py]]\nEncargado de mostrar:\nCajón de búsqueda que acepta filtros Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:\na: artista\nb: álbum\ng: género\nListado de coincidencias con la búsqueda Los resultados se muestran separando los álbumes con headers, los álbumes de las canciones.\nPanel informativo del elemento seleccionado Si es una canción contendrá la letra, y en todos los casos mostrará cuando la haya:",
+    "content": "Music-fuzzy [[music_fuzzy_module.py]]\n![[Pasted image 20250509150417.png]]\nEncargado de mostrar:\nCajón de búsqueda que acepta filtros Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:\na: artista\nb: álbum\ng: género\nListado de coincidencias con la búsqueda Los resultados se muestran separando los álbumes con headers, los álbumes de las canciones.\nPanel informativo del elemento seleccionado Si es una canción contendrá la letra, y en todos los casos mostrará cuando la haya:\nInformación sobre el artista en lastfm y wikipedia Información sobre el álbum en lastfm y wikipedia Metadata como Sello discográfico, ruta a la carpeta, bitrate Enlaces a servicios con información sobre artista o álbum Botón para añadir canción a una playlist de spotify en su panel correspondiente Botones Play Reproducirá el album o canción seleccionada Open Abrirá la carpeta del elemento seleccionado Script 1-3 Permiten añadir scripts personales para esas canciones\nnot done tags include #m_fuzzy tags include #music-fuzzy hide tags sort by due sort by priority sort by scheduled",
+    "description": "Music-fuzzy [[music_fuzzy_module.py]]\n![[Pasted image 20250509150417.png]]\nEncargado de mostrar:\nCajón de búsqueda que acepta filtros Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:\na: artista\nb: álbum\ng: género\nListado de coincidencias con la búsqueda Los resultados se muestran separando los álbumes con headers, los álbumes de las canciones.\nPanel informativo del elemento seleccionado Si es una canción contendrá la letra, y en todos los casos mostrará cuando la haya:",
     "tags": [],
     "title": "Modulo 01 music-fuzzy",
     "uri": "/modulos/modulo-01-music-fuzzy/index.html"
@@ -206,6 +206,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Modulo 06 Muspy",
     "uri": "/modulos/modulo-06-muspy/index.html"
+  },
+  {
+    "breadcrumb": "mfuz \u003e  Modulos de la app",
+    "content": "Módulo 7: Estadísticas ![[Pasted image 20250509154058.png]]\n![[Pasted image 20250509154215.png]]\n![[Pasted image 20250509154308.png]]",
+    "description": "Módulo 7: Estadísticas ![[Pasted image 20250509154058.png]]\n![[Pasted image 20250509154215.png]]\n![[Pasted image 20250509154308.png]]",
+    "tags": [],
+    "title": "Modulo 07 Estadisticas",
+    "uri": "/modulos/modulo-07-estadisticas/index.html"
   },
   {
     "breadcrumb": "mfuz \u003e  Modulos de la app",
@@ -262,6 +270,14 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Módulo 132 Configuración",
     "uri": "/modulos/m%C3%B3dulo-132-configuraci%C3%B3n/index.html"
+  },
+  {
+    "breadcrumb": "mfuz",
+    "content": "MÓDULOS: not done tags include #m_fuzzy tags include #config_editor hide tags sort by due sort by priority sort by scheduled",
+    "description": "MÓDULOS: not done tags include #m_fuzzy tags include #config_editor hide tags sort by due sort by priority sort by scheduled",
+    "tags": [],
+    "title": "Modulos de la app",
+    "uri": "/modulos/index.html"
   },
   {
     "breadcrumb": "mfuz \u003e  credenciales",
@@ -590,14 +606,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Datos",
     "uri": "/base_datos/13.-articulos/datos/index.html"
-  },
-  {
-    "breadcrumb": "mfuz",
-    "content": "MÓDULOS: not done tags include #m_fuzzy tags include #config_editor hide tags sort by due sort by priority sort by scheduled",
-    "description": "MÓDULOS: not done tags include #m_fuzzy tags include #config_editor hide tags sort by due sort by priority sort by scheduled",
-    "tags": [],
-    "title": "Modulos de la app",
-    "uri": "/modulos/index.html"
   },
   {
     "breadcrumb": "mfuz",

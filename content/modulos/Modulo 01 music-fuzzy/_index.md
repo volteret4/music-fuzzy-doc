@@ -7,7 +7,7 @@ weight: 1
 
 [[music_fuzzy_module.py]]
 
-
+![Pasted image 20250509150417.png](Pasted-image-20250509150417.png)
 
 Encargado de mostrar:
 
