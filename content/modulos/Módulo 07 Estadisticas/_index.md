@@ -1,12 +1,7 @@
 ---
-title: Modulo 07 Estadisticas
+title: "M\xF3dulo 07 Estadisticas"
 weight: 1
 ---
-
-#### Módulo 7: Estadísticas
-
-
-
 
 Con este módulo podras obtener estadísticas sobre todos los datos recopilados en la api desde diferentes perspectivas:
 

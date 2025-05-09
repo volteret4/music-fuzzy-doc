@@ -3,8 +3,6 @@ title: "M\xF3dulo 01 Music Browser"
 weight: 1
 ---
 
-##### Music-fuzzy
-
 ![Pasted image 20250509150417.png](Pasted-image-20250509150417.png)
 
 Encargado de mostrar:

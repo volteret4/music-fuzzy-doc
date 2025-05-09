@@ -3,8 +3,6 @@ title: "M\xF3dulo 02 Editor de la base de datos"
 weight: 1
 ---
 
-#### Módulo 2: Editor de la base de datos
-
 ![Pasted image 20250509190329.png](Pasted-image-20250509190329.png)
 
 Aqui se podrán editar campos de la base de datos.

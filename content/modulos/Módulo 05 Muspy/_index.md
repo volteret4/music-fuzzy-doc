@@ -3,9 +3,7 @@ title: "M\xF3dulo 05 Muspy"
 weight: 1
 ---
 
-#### Módulo 6: Muspy
-
-  ![Pasted image 20250509170648.png](Pasted-image-20250509170648.png)
+![Pasted image 20250509170648.png](Pasted-image-20250509170648.png)
 
 Este modulo en combinación con la api de [Muspy](https://muspy.com/) permite consultar que artistas van a sacar una nueva producción próximamente.
 
