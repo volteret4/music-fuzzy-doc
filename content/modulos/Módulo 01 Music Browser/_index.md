@@ -42,11 +42,16 @@ Si es una canción contendrá la letra, y en todos los casos mostrará cuando la
 
 4. **Botones**
 
-`Play, Next, Prev, Stop` Controlará la reproducción de la música en el reproductor escogido
-`Open` Abrirá la carpeta del elemento seleccionado
-`Spotify` Permiten añadir las canciones seleccionadas a las playlists
-`Lastfm`
-`
+- `Play, Next, Prev, Stop` Controlará la reproducción de la música en el reproductor escogido
+- `Open` Abrirá la carpeta del elemento seleccionado
+- `Spotify` Permiten añadir las canciones seleccionadas a las playlists
+- `Lastfm`
+- `Buscar discos nuevos` Buscará nuevas producciones para el artista seleccionado en muspy
+- `Jaangle` Filtrará el elemento seleccionado para jugarlo o no en Jaangle
+- `Feeds` Rotará la información mostrada entre wikipedia, feeds y metadata
+- `Buscar conciertos` Buscará conciertos para el artista seleccionado
+- `Estadísticas` Mostrará las estadísticas para el elemento seleccionado
+- `Enviar a URL Playlists` Enviará el elemento seleccionado al creador de playlists locales
 
 ```tasks
 not done

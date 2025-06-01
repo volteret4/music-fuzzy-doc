@@ -10,14 +10,12 @@ Permite buscar artistas, álbums o canciones en diversos servicios o añadir un 
 	- Local
 	- Rss server (actualmente FreshRss)
 	- Spotify (requiere credenciales)
-	- youtube??
 - Reproducir en `mpv` local o enlaces
 	  
 Los servicios admitidos son:
 - Base de datos local
 - Bandcamp
 - Soundcloud
-- Spotify (requiere credenciales)
 - Youtube 
 
 
@@ -32,7 +30,7 @@ Pensado para crear una playlist mensual de cada blog musical que sigo en FreshRs
 
 Se pueden añadir urls a post singulares para crear una playlist del mismo extrayendo los enlaces a los servicios admitidos y guardarla en playlist locales.
 
-Actualmente reproduce las canciones en mpv.
+
 
 
 
