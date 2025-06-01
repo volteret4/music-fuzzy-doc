@@ -1,5 +1,5 @@
 ---
-title: "instalaci\xF3n"
+title: "Instalaci\xF3n"
 weight: 2
 ---
 
