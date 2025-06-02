@@ -18,6 +18,7 @@ Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar u
 
 El resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales o paquetes de python.
 
+> Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En Credenciales puedes encontrar un apartado con consejos al respecto.
 
 ## Dependencias totales
 ```sh
@@ -30,6 +31,28 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 - [[estadisticas_db.py]] Muestra detalladamente el estado de la base de datos en comparación a una tabla completa finalizando todos los scripts. Uso `python estadisticas_db.py --db-path basedatos.db`
 - [[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py|consultar_items_db.py]] Puedes obtener diversos campos de la base de datos usando varios filtros. Leer mas aqui TODO
 - [[unir_artistas.py]] Permite unir artistas bajo un mismo nombre, útil cuando te aparecen Chimobayo feat. Björk o similares colaboraciones.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

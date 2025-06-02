@@ -15,6 +15,8 @@ Este script permite varios métodos para mejorar la búsqueda estricta:
 
 > Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían
 
+
+
 #### Tabla `listens`
 | Campo              | Tipo    | Descripción                                                            |
 | ------------------ | ------- | ---------------------------------------------------------------------- |
@@ -29,6 +31,7 @@ Este script permite varios métodos para mejorar la búsqueda estricta:
 | `album_id`         | INTEGER | ID del álbum correspondiente en la tabla `albums` (si se encuentra)    |
 | `artist_id`        | INTEGER | ID del artista correspondiente en la tabla `artists` (si se encuentra) |
 | `additional_data`  | TEXT    | Metadatos adicionales en formato JSON (añadido dinámicamente)          |
+
 ##### Tabla `listenbrainz_config`
 | Campo            | Tipo      | Descripción                                 |
 | ---------------- | --------- | ------------------------------------------- |
@@ -36,6 +39,7 @@ Este script permite varios métodos para mejorar la búsqueda estricta:
 | `username`       | TEXT      | Nombre de usuario en ListenBrainz           |
 | `last_timestamp` | INTEGER   | Último timestamp procesado                  |
 | `last_updated`   | TIMESTAMP | Fecha y hora de la última actualización     |
+
 ##### Tabla `normalized_songs` (si se activa `enhanced_matching`)
 | Campo               | Tipo    | Descripción         |
 | ------------------- | ------- | ------------------- |

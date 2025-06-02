@@ -3,11 +3,6 @@ title: 02. Scrobbles lastfm
 weight: 1
 ---
 
-673940154
-
-
-
-
 Obtiene scrobbles de lastfm para el usuario indicado
 
 > 27.000 scrobbles con 11.180 enlazados en 6 minutos
@@ -25,6 +20,7 @@ Obtiene scrobbles de lastfm para el usuario indicado
 | `song_id`       | INTEGER | ID de referencia a la tabla `songs` (puede ser NULL)   |
 | `album_id`      | INTEGER | ID de referencia a la tabla `albums` (puede ser NULL)  |
 | `artist_id`     | INTEGER | ID de referencia a la tabla `artists` (puede ser NULL) |
+
 ##### Tabla `lastfm_config`
 | Campo             | Tipo      | Descripción                   |
 | ----------------- | --------- | ----------------------------- |
@@ -32,6 +28,7 @@ Obtiene scrobbles de lastfm para el usuario indicado
 | `lastfm_username` | TEXT      | Nombre de usuario de Last.fm  |
 | `last_timestamp`  | INTEGER   | Último timestamp procesado    |
 | `last_updated`    | TIMESTAMP | Fecha de última actualización |
+
 ##### Tabla `artists`
 | Campo        | Tipo | Descripción                       |
 | ------------ | ---- | --------------------------------- |
@@ -41,6 +38,7 @@ Obtiene scrobbles de lastfm para el usuario indicado
 | `bio`        | TEXT | Biografía del artista             |
 | `lastfm_url` | TEXT | URL de Last.fm para el artista    |
 | `origen`     | TEXT | Origen de los datos ('scrobbles') |
+
 ##### Tabla `albums`
 | Campo          | Tipo    | Descripción                       |
 | -------------- | ------- | --------------------------------- |
@@ -51,6 +49,7 @@ Obtiene scrobbles de lastfm para el usuario indicado
 | `mbid`         | TEXT    | ID de MusicBrainz                 |
 | `total_tracks` | INTEGER | Número total de pistas            |
 | `origen`       | TEXT    | Origen de los datos ('scrobbles') |
+
 
 ##### Tabla `songs`
 | Campo             | Tipo    | Descripción                              |
@@ -67,6 +66,7 @@ Obtiene scrobbles de lastfm para el usuario indicado
 | `artist`          | TEXT    | Artista de la canción                    |
 | `genre`           | TEXT    | Género musical                           |
 | `origen`          | TEXT    | Origen de los datos ('scrobbles')        |
+
 ##### Tabla `song_links`
 | Campo        | Tipo    | Descripción                    |
 | ------------ | ------- | ------------------------------ |
