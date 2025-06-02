@@ -19,7 +19,6 @@ git clone https://github.com/volteret4/mfuz
 ![[Spaces/Blogs/blogs/snipets y scripts/music-fuzzy/instalacion/config json|config json]]
 
 
-[[config json]]
 
 
-[[requisitos]]
+
