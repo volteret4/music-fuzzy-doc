@@ -3,7 +3,7 @@ title: Credenciales
 weight: 5
 ---
 
-Aqui explicaré brevemente como obtener algunas de las credenciales:
+Aqui explicaré brevemente como obtener algunas de las credenciales o como usar alguna herramienta útil como docker, python o picard (tags).
 
 
 
@@ -23,5 +23,14 @@ Aqui explicaré brevemente como obtener algunas de las credenciales:
 
 
 
+
+
+
+
+
+![[Spaces/Blogs/snipets y scripts/music-fuzzy/credenciales/python|python]]
+
+
+![[Spaces/Blogs/snipets y scripts/music-fuzzy/credenciales/docker|docker]]
 
 

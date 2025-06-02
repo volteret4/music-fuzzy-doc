@@ -17,3 +17,9 @@ git clone https://github.com/volteret4/mfuz
 
 #### Configurar el config file ya sea `json` o `yml`
 ![[Spaces/Blogs/blogs/snipets y scripts/music-fuzzy/instalacion/config json|config json]]
+
+
+[[config json]]
+
+
+[[requisitos]]

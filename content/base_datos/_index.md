@@ -17,15 +17,16 @@ python db_creator.py --config config/db_creator_config.json
 
 Primero has de elegir cual será la fuente de tu música, para ello puedes elegir varios puntos de partida, combinables entre ellos:
 
+Estos scripts se pueden combinar entre si para aumentar la cantidad de datos de la base de datos, pero si la intención es obtener la colección completa de trabajos de tus artistas presentes en tu biblioteca local, es más apropiado usar los scripts dedicados para las discografías con discogs en vez de spotify.
+
 - #### Crearla con archivos locales
   - Usará el script path/db_musica_path
   - Leerá la metadata de tus archivos de música, y con ella creará una estructura básica.
-> 	Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En Credenciales puedes encontrar un apartado con consejos al respecto.
 - #### Obtener los artistas que sigues en spotify y sus discografías
   - Usará el script `path/db_musica_spotify`
   - Leerá todos los artistas que sigues y tomará toda su discografía en spotify para crear la estructura "básica"
 
-Estos scripts se pueden combinar entre si para aumentar la cantidad de datos de la base de datos, pero si la intención es obtener la colección completa de trabajos de tus artistas presentes en tu biblioteca local, es más apropiado usar los scripts dedicados para las discografías con discogs en vez de spotify.
+> 	Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En [Credenciales](https://volteret4.github.io/music-fuzzy-doc/credenciales/picard/index.html) puedes encontrar un apartado con consejos al respecto.
 
 
 Una vez creada la estructura principal, el resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales especificados en tal caso en el config.json
@@ -42,6 +43,9 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 - [[estadisticas_db.py]] Muestra detalladamente el estado de la base de datos en comparación a una tabla completa finalizando todos los scripts. Uso `python estadisticas_db.py --db-path basedatos.db`
 - [[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py|consultar_items_db.py]] Puedes obtener diversos campos de la base de datos usando varios filtros. Leer mas aqui TODO
 - [[unir_artistas.py]] Permite unir artistas bajo un mismo nombre, útil cuando te aparecen Chimobayo feat. Björk o similares colaboraciones.
+
+
+
 
 
 
