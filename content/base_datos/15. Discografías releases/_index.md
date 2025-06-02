@@ -3,56 +3,6 @@ title: "15. Discograf\xEDas releases"
 weight: 1
 ---
 
-## Archivos que crea/edita el script
-
-|Archivo|Tipo|Descripción|Ubicación por defecto|
-|---|---|---|---|
-|`music.db`|Base de datos SQLite|Modifica la tabla `discogs_discography` existente añadiendo información detallada|`{PROJECT_ROOT}/music.db`|
-
-## Argumentos de configuración que puede recibir
-
-|Parámetro|Tipo|Valor por defecto|Descripción|
-|---|---|---|---|
-|`db_path`|string|`{PROJECT_ROOT}/music.db`|Ruta completa a la base de datos SQLite|
-|`discogs_token`|string|`''` (vacío)|Token de autenticación para la API de Discogs (requerido)|
-|`delay_between_requests`|float|`1.5`|Tiempo de espera en segundos entre peticiones a la API|
-|`force_update`|boolean|`False`|Si es `True`, actualiza todos los registros; si es `False`, solo actualiza registros sin datos|
-
-## Columnas que añade a la tabla `discogs_discography`
-
-### Nuevas columnas agregadas automáticamente
-
-|Columna|Tipo|Descripción|
-|---|---|---|
-|`uri_release`|TEXT|URI única del release en Discogs|
-|`labels`|JSON|Información de los sellos discográficos (almacenado como JSON)|
-|`companies`|JSON|Información de las compañías relacionadas (almacenado como JSON)|
-|`formats`|JSON|Información detallada de formatos (almacenado como JSON)|
-|`rating_count`|INTEGER|Número total de valoraciones del release|
-|`rate_average`|REAL|Puntuación promedio del release|
-|`num_for_sale`|INTEGER|Número de copias disponibles para venta|
-|`lowest_price`|REAL|Precio más bajo de venta disponible|
-|`release_title`|TEXT|Título completo del release|
-|`released`|TEXT|Fecha de lanzamiento específica|
-|`notes`|TEXT|Notas adicionales del release|
-|`genres`|JSON|Géneros musicales (almacenado como JSON)|
-|`styles`|JSON|Estilos musicales específicos (almacenado como JSON)|
-|`tracklist`|JSON|Lista completa de pistas (almacenado como JSON)|
-|`extraartists`|JSON|Artistas adicionales y colaboradores (almacenado como JSON)|
-|`estimated_weight`|REAL|Peso estimado del formato físico|
-|`blocked_from_sale`|INTEGER|Indicador si está bloqueado para venta (0/1)|
-|`is_offensive`|INTEGER|Indicador si contiene contenido ofensivo (0/1)|
-|`images`|JSON|URLs de imágenes del release (almacenado como JSON)|
-
-### Columnas actualizadas (ya existentes)
-
-|Columna|Tipo|Descripción|
-|---|---|---|
-|`status`|TEXT|Estado actualizado del release|
-|`year`|INTEGER|Año de lanzamiento actualizado|
-|`thumb`|TEXT|URL de imagen en miniatura actualizada|
-|`last_updated`|TIMESTAMP|Fecha de última actualización (se actualiza automáticamente)|
-
 ## Funcionalidades principales del script
 
 ### Gestión de Rate Limiting
@@ -106,3 +56,37 @@ El script proporciona información detallada durante la ejecución:
 - **Robustez**: Diseñado para manejar interrupciones y errores de red
 - **Eficiencia**: Usa delays adaptativos para optimizar el uso de la API
 - **Seguridad**: Implementa múltiples niveles de protección contra rate limiting
+
+
+#### Nuevas columnas agregadas automáticamente
+
+|Columna|Tipo|Descripción|
+|---|---|---|
+|`uri_release`|TEXT|URI única del release en Discogs|
+|`labels`|JSON|Información de los sellos discográficos (almacenado como JSON)|
+|`companies`|JSON|Información de las compañías relacionadas (almacenado como JSON)|
+|`formats`|JSON|Información detallada de formatos (almacenado como JSON)|
+|`rating_count`|INTEGER|Número total de valoraciones del release|
+|`rate_average`|REAL|Puntuación promedio del release|
+|`num_for_sale`|INTEGER|Número de copias disponibles para venta|
+|`lowest_price`|REAL|Precio más bajo de venta disponible|
+|`release_title`|TEXT|Título completo del release|
+|`released`|TEXT|Fecha de lanzamiento específica|
+|`notes`|TEXT|Notas adicionales del release|
+|`genres`|JSON|Géneros musicales (almacenado como JSON)|
+|`styles`|JSON|Estilos musicales específicos (almacenado como JSON)|
+|`tracklist`|JSON|Lista completa de pistas (almacenado como JSON)|
+|`extraartists`|JSON|Artistas adicionales y colaboradores (almacenado como JSON)|
+|`estimated_weight`|REAL|Peso estimado del formato físico|
+|`blocked_from_sale`|INTEGER|Indicador si está bloqueado para venta (0/1)|
+|`is_offensive`|INTEGER|Indicador si contiene contenido ofensivo (0/1)|
+|`images`|JSON|URLs de imágenes del release (almacenado como JSON)|
+
+##### Columnas actualizadas (ya existentes)
+
+|Columna|Tipo|Descripción|
+|---|---|---|
+|`status`|TEXT|Estado actualizado del release|
+|`year`|INTEGER|Año de lanzamiento actualizado|
+|`thumb`|TEXT|URL de imagen en miniatura actualizada|
+|`last_updated`|TIMESTAMP|Fecha de última actualización (se actualiza automáticamente)|

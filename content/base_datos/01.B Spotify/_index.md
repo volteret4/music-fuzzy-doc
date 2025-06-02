@@ -3,34 +3,7 @@ title: 01.B Spotify
 weight: 1
 ---
 
-# Documentación del Script db_musica_spotify.py
-
-## Archivos que Crea/Edita el Script
-
-|Archivo|Tipo|Ubicación|Descripción|
-|---|---|---|---|
-|Base de datos SQLite|Edita/Crea|Especificada por `--db-path`|Base de datos principal con tablas de música|
-|Token de Spotify|Crea/Edita|`.content/cache/.spotify_token.json`|Cache del token de autenticación de Spotify|
-|Log del script|Crea/Edita|`.content/logs/db/db_musica_spotify.log`|Archivo de logs del proceso|
-|Salida de consola|Edita|STDOUT|Logs en tiempo real durante la ejecución|
-
-## Argumentos que Puede Recibir
-
-| Argumento                 | Tipo   | Valor por Defecto                    | Descripción                                     | Requerido |
-| ------------------------- | ------ | ------------------------------------ | ----------------------------------------------- | --------- |
-| `--db-path`               | string | -                                    | Ruta al archivo de la base de datos SQLite      | ✅ Sí      |
-| `--spotify-client-id`     | string | Variable de entorno/config           | ID de cliente de Spotify                        | ❌ No      |
-| `--spotify-client-secret` | string | Variable de entorno/config           | Secreto de cliente de Spotify                   | ❌ No      |
-| `--spotify-redirect-uri`  | string | `http://localhost:8888/callback`     | URI de redirección para autenticación           | ❌ No      |
-| `--spotify-cache-path`    | string | `.content/cache/.spotify_token.json` | Ruta para almacenar el token de Spotify         | ❌ No      |
-| `--force-update`          | flag   | `False`                              | Fuerza la actualización de datos existentes     | ❌ No      |
-| `--no-skip-existing`      | flag   | `False`                              | No omite artistas existentes con origen "local" | ❌ No      |
-| `--user-id`               | string | Usuario autenticado                  | ID de usuario de Spotify específico             | ❌ No      |
-| `--config`                | string | -                                    | Archivo de configuración JSON                   | ❌ No      |
-
-## Tablas y Columnas que Crea en la Base de Datos
-
-### Tabla: `songs`
+#### Tabla: `songs`
 
 |Columna|Tipo|Restricciones|Descripción|
 |---|---|---|---|
@@ -64,7 +37,7 @@ weight: 1
 |has_lyrics|INTEGER|DEFAULT 0|Indica si tiene letras|
 |origen|TEXT|DEFAULT 'spotify'|Fuente de los datos|
 
-### Tabla: `artists`
+##### Tabla: `artists`
 
 |Columna|Tipo|Restricciones|Descripción|
 |---|---|---|---|
@@ -99,7 +72,7 @@ weight: 1
 |added_year|INTEGER|-|Año cuando se añadió|
 |spotify_popularity|INTEGER|-|Popularidad en Spotify (0-100)|
 
-### Tabla: `albums`
+##### Tabla: `albums`
 
 |Columna|Tipo|Restricciones|Descripción|
 |---|---|---|---|
@@ -138,7 +111,7 @@ weight: 1
 |added_month|INTEGER|-|Mes cuando se añadió|
 |added_year|INTEGER|-|Año cuando se añadió|
 
-### Tabla: `genres`
+##### Tabla: `genres`
 
 |Columna|Tipo|Restricciones|Descripción|
 |---|---|---|---|
@@ -148,7 +121,7 @@ weight: 1
 |related_genres|TEXT|-|Géneros relacionados|
 |origin_year|INTEGER|-|Año de origen del género|
 
-### Tabla: `lyrics`
+##### Tabla: `lyrics`
 
 |Columna|Tipo|Restricciones|Descripción|
 |---|---|---|---|
@@ -158,7 +131,7 @@ weight: 1
 |source|TEXT|DEFAULT 'Genius'|Fuente de las letras|
 |last_updated|TIMESTAMP|-|Última actualización|
 
-### Tabla: `song_links`
+##### Tabla: `song_links`
 
 |Columna|Tipo|Restricciones|Descripción|
 |---|---|---|---|
@@ -175,7 +148,7 @@ weight: 1
 |soundcloud_url|TEXT|-|URL de SoundCloud|
 |boomkat_url|TEXT|-|URL de Boomkat|
 
-### Tablas FTS (Full Text Search)
+##### Tablas FTS (Full Text Search)
 
 |Tabla|Descripción|
 |---|---|
@@ -185,7 +158,7 @@ weight: 1
 |`artist_fts`|Búsqueda de texto completo en artistas|
 |`album_fts`|Búsqueda de texto completo en álbumes|
 
-### Índices Creados
+##### Índices Creados
 
 - `idx_songs_artist` - Índice en `songs.artist`
 - `idx_songs_album` - Índice en `songs.album`

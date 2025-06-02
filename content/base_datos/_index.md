@@ -3,26 +3,37 @@ title: "Creaci\xF3n de la base de datos"
 weight: 3
 ---
 
-Para poder crear la base de datos tienes varias opciones:
-- Crearla con archivos locales 
-- Extraer información de tus scrobbles en lastfm o listenbrainz
-- Obtener los artistas que sigues en spotify y sus discografías TODO
-- Procesar los artistas que sigues en muspy TODO
-- Todo ello secuencialmente
+# Base de datos
+Esta aplicación necesita la creación de una base de datos musical, y para ello necesitas editar el archivo `db_creator_config.json` en la carpeta `config`. En el podrás ver la configuración individual de cada script y el orden en que se ejecutaran los seleccionados.
 
-Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero. 
+Una vez editado podrás lanzar el script `db_creator.py` asi desde la carpeta raiz:
 
-> En cada paso se dan unas estimaciones del tiempo consumido
->
-> Todas las consultas respetan los limites establecidas por cada api, aunque las restricciones diarias pausaran el script que alcanze el límite hasta que este sea reestablecido
+```bash
+python db_creator.py --config config/db_creator_config.json
+```
 
-El resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales o paquetes de python.
 
-> Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En Credenciales puedes encontrar un apartado con consejos al respecto.
+## Configuración JSON
 
-## Dependencias totales
+Primero has de elegir cual será la fuente de tu música, para ello puedes elegir varios puntos de partida, combinables entre ellos:
+
+- #### Crearla con archivos locales
+  - Usará el script path/db_musica_path
+  - Leerá la metadata de tus archivos de música, y con ella creará una estructura básica.
+> 	Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En Credenciales puedes encontrar un apartado con consejos al respecto.
+- #### Obtener los artistas que sigues en spotify y sus discografías
+  - Usará el script `path/db_musica_spotify`
+  - Leerá todos los artistas que sigues y tomará toda su discografía en spotify para crear la estructura "básica"
+
+Estos scripts se pueden combinar entre si para aumentar la cantidad de datos de la base de datos, pero si la intención es obtener la colección completa de trabajos de tus artistas presentes en tu biblioteca local, es más apropiado usar los scripts dedicados para las discografías con discogs en vez de spotify.
+
+
+Una vez creada la estructura principal, el resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales especificados en tal caso en el config.json
+
+
+## Dependencias para la base de datos
 ```sh
-pip install requests beautifulsoup4 spotipy musicbrainzngs python3-discogs-client pylast python-youtube-search playwright tqdm
+pip install requests beautifulsoup4 spotipy musicbrainzngs python3-discogs-client pylast python-youtube-search playwright tqdm sqlite3 
 google-api-python-client ??
 ```
 
@@ -95,6 +106,16 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 
 
 
+
+
+
+#### Consejos
+
+> Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero. 
+
+> En cada paso se dan unas estimaciones del tiempo consumido
+>
+> Todas las consultas respetan los limites establecidas por cada api y las restricciones diarias pausaran el script que alcance el límite hasta que este sea restablecido
 
 
 
