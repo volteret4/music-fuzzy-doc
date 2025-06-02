@@ -12,6 +12,6 @@ Para obtener el id y usarlo en esta app puedes copiar el enlace del icono RSS:
 ![Pasted image 20250326014837.png](Pasted-image-20250326014837.png)
 
 Y quedate con la última parte tras `id=`
-```https
+```py {lineNos="true" wrap="true" title="Obtener id"}
 https://muspy.com/feed?id=este_será_tu_id
 ```

@@ -11,4 +11,4 @@ Luego para activarlo, antes de instalar los paquetes en el mismo, ejecutamos:
 
 Linux `source entorno-virtual/bin/activate` 
 
-Windows `entorno-virtual\Scripts\activate
+Windows `entorno-virtual\Scripts\activate`
