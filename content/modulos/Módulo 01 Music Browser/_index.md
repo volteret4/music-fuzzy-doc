@@ -53,12 +53,3 @@ Si es una canción contendrá la letra, y en todos los casos mostrará cuando la
 - `Estadísticas` Mostrará las estadísticas para el elemento seleccionado
 - `Enviar a URL Playlists` Enviará el elemento seleccionado al creador de playlists locales
 
-```tasks
-not done
-tags include #m_fuzzy
-tags include #music-fuzzy 
-hide tags
-sort by due
-sort by priority
-sort by scheduled
-```

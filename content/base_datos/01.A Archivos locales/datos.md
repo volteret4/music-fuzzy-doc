@@ -1,6 +1,6 @@
 ---
 title: Datos
-weight: 3
+weight: 2
 ---
 
 Rellena las tablas artists, álbums y songs con:

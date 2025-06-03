@@ -35,12 +35,3 @@ Se pueden añadir urls a post singulares para crear una playlist del mismo extra
 
 
 
-```tasks
-not done
-tags include #m_fuzzy
-tags include #url 
-hide tags
-sort by due
-sort by priority
-sort by scheduled
-```

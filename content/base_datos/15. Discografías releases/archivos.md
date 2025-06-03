@@ -1,6 +1,6 @@
 ---
 title: Archivos
-weight: 2
+weight: 3
 ---
 
 |Archivo|Tipo|Descripción|Ubicación por defecto|

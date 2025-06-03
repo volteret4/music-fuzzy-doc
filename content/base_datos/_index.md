@@ -20,11 +20,13 @@ Primero has de elegir cual será la fuente de tu música, para ello puedes elegi
 Estos scripts se pueden combinar entre si para aumentar la cantidad de datos de la base de datos, pero si la intención es obtener la colección completa de trabajos de tus artistas presentes en tu biblioteca local, es más apropiado usar los scripts dedicados para las discografías con discogs en vez de spotify.
 
 - #### Crearla con archivos locales
-  - Usará el script path/db_musica_path
+  - Usará el script `path/db_musica_path`.
   - Leerá la metadata de tus archivos de música, y con ella creará una estructura básica.
+  - Creará una columna **origen** con el string **local** para en la app poder filtrar de este modo.
 - #### Obtener los artistas que sigues en spotify y sus discografías
   - Usará el script `path/db_musica_spotify`
   - Leerá todos los artistas que sigues y tomará toda su discografía en spotify para crear la estructura "básica"
+  - Creará una columna **origen** con el string **local** para en la app poder filtrar de este modo.
 
 > 	Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En [Credenciales](https://volteret4.github.io/music-fuzzy-doc/credenciales/picard/index.html) puedes encontrar un apartado con consejos al respecto.
 
@@ -43,6 +45,8 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 - [[estadisticas_db.py]] Muestra detalladamente el estado de la base de datos en comparación a una tabla completa finalizando todos los scripts. Uso `python estadisticas_db.py --db-path basedatos.db`
 - [[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py|consultar_items_db.py]] Puedes obtener diversos campos de la base de datos usando varios filtros. Leer mas aqui TODO
 - [[unir_artistas.py]] Permite unir artistas bajo un mismo nombre, útil cuando te aparecen Chimobayo feat. Björk o similares colaboraciones.
+
+- 
 
 
 
@@ -123,12 +127,3 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 
 
 
-```tasks
-not done
-tags include #create_db
-
-short mode
-sort by due
-sort by priority
-sort by scheduled
-```

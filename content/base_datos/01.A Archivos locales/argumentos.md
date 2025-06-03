@@ -1,6 +1,6 @@
 ---
 title: Argumentos
-weight: 2
+weight: 3
 ---
 
 Con estos argumentos puedes crear tu base de datos con el esquema necesario para todos los demás scripts. 

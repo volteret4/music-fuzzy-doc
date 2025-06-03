@@ -1,6 +1,6 @@
 ---
 title: Credenciales
-weight: 3
+weight: 4
 ---
 
 - Spotify API (client_id, client_secret)

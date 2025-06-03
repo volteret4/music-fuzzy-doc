@@ -1,6 +1,6 @@
 ---
 title: Datos
-weight: 3
+weight: 2
 ---
 
 1. **album_links** (principal)
@@ -9,3 +9,10 @@ weight: 3
 2. **albums** (referencia)
     - Lee información sobre álbumes (id, name, artist_id)
     - No modifica directamente esta tabla
+
+
+#### Archivos
+| Archivo                                        | Descripción                                              | Detalles de Formato o Estructura                     |
+| ---------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------- |
+| `~/.cache/music_db/enlaces_albumes_cache.json` | Almacena resultados de búsquedas previas                 | `{"query_hash": {"url": "...", "timestamp": "..."}}` |
+| `logs/enlaces_albumes.log`                     | Registra actividad, errores y resultados de la ejecución | `[FECHA] [NIVEL] [Mensaje]`                          |

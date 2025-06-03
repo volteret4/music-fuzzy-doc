@@ -1,6 +1,6 @@
 ---
 title: Archivos
-weight: 3
+weight: 4
 ---
 
 |Tipo|Ruta por Defecto / Configurada|Formato|Descripción / Contenido Principal|

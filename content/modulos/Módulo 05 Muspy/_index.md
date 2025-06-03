@@ -30,12 +30,3 @@ Puede leer la base de datos o realizar búsquedas individuales de los mismos en 
 
 
 
-```tasks
-not done
-tags include #m_fuzzy
-tags include #muspy
-hide tags
-sort by due
-sort by priority
-sort by scheduled
-```
