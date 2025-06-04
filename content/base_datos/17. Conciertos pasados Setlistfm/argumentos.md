@@ -1,6 +1,6 @@
 ---
 title: Argumentos
-weight: 4
+weight: 3
 ---
 
 |Argumento|Tipo|Descripción|Valor por defecto|Requerido|

@@ -57,4 +57,3 @@ El script proporciona información detallada durante la ejecución:
 - **Eficiencia**: Usa delays adaptativos para optimizar el uso de la API
 - **Seguridad**: Implementa múltiples niveles de protección contra rate limiting
 
-

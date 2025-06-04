@@ -18,8 +18,6 @@ Los servicios admitidos son:
 - Soundcloud
 - Youtube 
 
-
-
 Muestra información del artista o álbum buscado de la base de datos
 
 Pensado para crear una playlist mensual de cada blog musical que sigo en FreshRss:
@@ -29,9 +27,4 @@ Pensado para crear una playlist mensual de cada blog musical que sigo en FreshRs
 3. Busca con yt-dl el nombre de cada enlace y crea un archivo .txt llamado igual que la playlist para poder mostrar el nombre cuando se pueda.
 
 Se pueden añadir urls a post singulares para crear una playlist del mismo extrayendo los enlaces a los servicios admitidos y guardarla en playlist locales.
-
-
-
-
-
 

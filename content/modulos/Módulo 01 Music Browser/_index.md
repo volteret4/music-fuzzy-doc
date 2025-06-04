@@ -11,7 +11,6 @@ Encargado de mostrar:
 
 Además de los filtros en menús desplegables para encontrar la música añadida recientemente a la base de datos, se pueden usar los siguientes atajos en el cajón de búsqueda:
 
-
 `a:` artista
 
 `b:` álbum
@@ -23,8 +22,6 @@ Además de los filtros en menús desplegables para encontrar la música añadida
 `g:` género
 
 `s:` sello
-
-
 
 1. **Listado de coincidencias con la búsqueda**
    

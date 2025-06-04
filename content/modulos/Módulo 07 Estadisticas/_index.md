@@ -22,7 +22,6 @@ Con este módulo podras obtener estadísticas sobre todos los datos recopilados 
 	- **Colaboradores**
 	![Pasted image 20250601160931.png](Pasted-image-20250601160931.png)
 
-
 - ##### Álbums
 TODO
 - ##### Canciones

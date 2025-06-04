@@ -23,15 +23,9 @@ Dependiendo de los módulos deseados vas a necesitar varias credenciales apis o 
 | configuración | config_editor.json   | Archivo que maneja una pestaña con la configuraciçon de cada módulo                                                            |
 | UI db creador | base de datos        |                                                                                                                                |
 
-
 La creación de la base de datos también es modular, cada script aporta un conjunto diferente de datos. En caso de no tener interés por todos estos sería conveniente bien los requisitos de cada paso antes de ejecutarlo.
 
 Una vez tengas claro que partes vas a usar puedes revisar la sección credenciales en caso de necesitar algún enlace o indicación.
-
-
-
-
-
 
 [^1]: Obligatorio
 [^2]: Elegir entre al menos una de estas opciones

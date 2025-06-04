@@ -31,7 +31,6 @@ weight: 1
 | `--lastfm_api_key`         | str  | API Key válida   | API key para acceder a Last.fm.                                      |
 | `--stats_file`             | str  | Ruta a archivo   | Si se proporciona, se guarda un archivo JSON con estadísticas.       |
 
-
 ### Tablas
 
 #### Artistas

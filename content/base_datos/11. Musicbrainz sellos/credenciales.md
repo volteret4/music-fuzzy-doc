@@ -1,6 +1,6 @@
 ---
 title: Credenciales
-weight: 3
+weight: 4
 ---
 
 |Variable|Descripción|Opcional|

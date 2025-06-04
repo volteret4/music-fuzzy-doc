@@ -12,7 +12,6 @@ Una vez editado podrás lanzar el script `db_creator.py` asi desde la carpeta ra
 python db_creator.py --config config/db_creator_config.json
 ```
 
-
 ## Configuración JSON
 
 Primero has de elegir cual será la fuente de tu música, para ello puedes elegir varios puntos de partida, combinables entre ellos:
@@ -30,9 +29,7 @@ Estos scripts se pueden combinar entre si para aumentar la cantidad de datos de 
 
 > 	Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En [Credenciales](https://volteret4.github.io/music-fuzzy-doc/credenciales/picard/index.html) puedes encontrar un apartado con consejos al respecto.
 
-
 Una vez creada la estructura principal, el resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales especificados en tal caso en el config.json
-
 
 ## Dependencias para la base de datos
 ```sh
@@ -94,29 +91,6 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #### Consejos
 
 > Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero. 
@@ -124,6 +98,4 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 > En cada paso se dan unas estimaciones del tiempo consumido
 >
 > Todas las consultas respetan los limites establecidas por cada api y las restricciones diarias pausaran el script que alcance el límite hasta que este sea restablecido
-
-
 

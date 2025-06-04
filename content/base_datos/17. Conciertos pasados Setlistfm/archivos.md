@@ -1,6 +1,6 @@
 ---
 title: Archivos
-weight: 3
+weight: 2
 ---
 
 |Archivo|Descripción|Tipo de operación|

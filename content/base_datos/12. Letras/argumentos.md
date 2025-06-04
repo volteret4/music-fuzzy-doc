@@ -1,6 +1,6 @@
 ---
 title: Argumentos
-weight: 3
+weight: 2
 ---
 
 | Argumento        | Tipo   | Descripción                                                                          | Valor por Defecto |

@@ -23,15 +23,5 @@ Aqui explicaré brevemente como obtener algunas de las credenciales o como usar 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ![[picard]]
+

@@ -1,6 +1,6 @@
 ---
 title: Datos
-weight: 2
+weight: 4
 ---
 
 ##### Tabla: `discogs_discography`

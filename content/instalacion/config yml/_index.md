@@ -5,12 +5,9 @@ weight: 1
 
 Este es el archivo que configurará la aplicación, pudiendo elegir que tabs están activos, y que configuración tendrá cada uno de los módulos.
 
-
 Además de poder editar el config.yml directamente, existe un módulo que leerá el archivo dinámicamente pudiendo actualizar todos sus campos desde la interfaz de la app.
 
-
 Las rutas a archivos se pueden escribir de modo absoluto `/home/user/spotify_token.txt` o de forma relativa, partiendo de la ruta en la que esté la raiz de la app, quedando `.content/spotify_token.txt` en `/ruta/app/.content/spotify_token.txt`
-
 
 ```yml
 # Configuración global que leerán todos los módulos activos
@@ -45,7 +42,6 @@ global_theme_config:
     perico: db/sqlite/musica.sqlite
   query_db_script_path: db/tools/consultar_items_db.py
 
-
 # Reproductores posibles
 
 music_players:
@@ -77,7 +73,6 @@ music_players:
       player_name: playerctl
       player_path: /usr/bin/playerctl
 
-
 # Lastfm ??
 lastfm:
   enabled: true
@@ -87,7 +82,6 @@ lastfm:
 spotify:
   client_id: 
   client_secret: 
-
 
 # Temas
 
@@ -117,7 +111,6 @@ logging_options:
   log_filename: .content/logs/multi_module_manager.log
   show_module_name: true
   enable_colors: true
-
 
 # Modulos activos
 
@@ -217,7 +210,6 @@ modules:
       log_level: INFO
       log_types: ERROR
 
-
 # Módulos desactivados
 
 modulos_desactivados:
@@ -233,7 +225,6 @@ modulos_desactivados:
     debug_enabled: true
     capture_stdout: true
     log_color: '#7AA2F7'
-
 
 # Buscador de nuevos albumes
 - name: Muspy
@@ -329,5 +320,4 @@ modulos_desactivados:
   path: casa
 
 ```
-
 

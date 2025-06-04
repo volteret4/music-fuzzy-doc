@@ -1,6 +1,6 @@
 ---
 title: Archivos
-weight: 5
+weight: 2
 ---
 
 | Tipo       | Ruta                                                   | Descripción                                             |

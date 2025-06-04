@@ -11,4 +11,3 @@ o como parte de la cadena de scripts de db_creator.py.
 
 > 4 horas en 5140 canciones, Media de una canción cada 2.82 segundos
 
-

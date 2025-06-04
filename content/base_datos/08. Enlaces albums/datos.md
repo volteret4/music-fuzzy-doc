@@ -1,6 +1,6 @@
 ---
 title: Datos
-weight: 2
+weight: 3
 ---
 
 1. **album_links** (principal)
@@ -9,7 +9,6 @@ weight: 2
 2. **albums** (referencia)
     - Lee información sobre álbumes (id, name, artist_id)
     - No modifica directamente esta tabla
-
 
 #### Archivos
 | Archivo                                        | Descripción                                              | Detalles de Formato o Estructura                     |

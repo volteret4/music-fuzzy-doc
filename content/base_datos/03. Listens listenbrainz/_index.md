@@ -15,5 +15,3 @@ Este script permite varios métodos para mejorar la búsqueda estricta:
 
 > Se recomienda realizar varias pasadas, una con cada argumento hasta que encuentre un porcentaje que parezca apropiado. Lo que tu comprendas que me decían
 
-
-

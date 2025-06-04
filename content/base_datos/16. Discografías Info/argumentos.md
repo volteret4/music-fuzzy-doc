@@ -1,6 +1,6 @@
 ---
 title: Argumentos
-weight: 4
+weight: 3
 ---
 
 |Parámetro|Tipo|Valor por defecto|Descripción|
@@ -9,8 +9,6 @@ weight: 4
 |`force_update`|boolean|`False`|Si es `True`, actualiza todos los artistas; si es `False`, solo procesa artistas sin información|
 |`sleep_time`|int/float|`1`|Tiempo de espera en segundos entre peticiones a la API|
 |`discogs_token`|string|`''` (vacío)|Token de autenticación para la API de Discogs (opcional pero recomendado)|
-
-
 
 ## Procesamiento de datos de la API
 
