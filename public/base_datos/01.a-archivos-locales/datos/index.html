@@ -3,24 +3,28 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="Tabla listenbrainz_backfill Campo Tipo Descripción id INTEGER Campo id (clave primaria) Tabla listenbrainz_config Campo Tipo Descripción id INTEGER Campo id (clave primaria) Tabla normalized_songs Campo Tipo Descripción song_id INTEGER Campo song_id (clave primaria) normalized_title TEXT Campo normalized_title normalized_artist TEXT Campo normalized_artist normalized_album TEXT Campo normalized_album Tabla song_links Campo Tipo Descripción links_updated TEXT Campo links_updated (detectado en operación DML)">
+    <meta name="description" content="Rellena las tablas artists, álbums y songs con:
+Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain) ![[db_music_path_module.py]]">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Datos :: mfuz">
-    <meta name="twitter:description" content="Tabla listenbrainz_backfill Campo Tipo Descripción id INTEGER Campo id (clave primaria) Tabla listenbrainz_config Campo Tipo Descripción id INTEGER Campo id (clave primaria) Tabla normalized_songs Campo Tipo Descripción song_id INTEGER Campo song_id (clave primaria) normalized_title TEXT Campo normalized_title normalized_artist TEXT Campo normalized_artist normalized_album TEXT Campo normalized_album Tabla song_links Campo Tipo Descripción links_updated TEXT Campo links_updated (detectado en operación DML)">
-    <meta property="og:url" content="//192.168.1.133:1313/base_datos/03.-listens-listenbrainz/datos/index.html">
+    <meta name="twitter:description" content="Rellena las tablas artists, álbums y songs con:
+Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain) ![[db_music_path_module.py]]">
+    <meta property="og:url" content="//192.168.1.133:1313/base_datos/01.a-archivos-locales/datos/index.html">
     <meta property="og:site_name" content="mfuz">
     <meta property="og:title" content="Datos :: mfuz">
-    <meta property="og:description" content="Tabla listenbrainz_backfill Campo Tipo Descripción id INTEGER Campo id (clave primaria) Tabla listenbrainz_config Campo Tipo Descripción id INTEGER Campo id (clave primaria) Tabla normalized_songs Campo Tipo Descripción song_id INTEGER Campo song_id (clave primaria) normalized_title TEXT Campo normalized_title normalized_artist TEXT Campo normalized_artist normalized_album TEXT Campo normalized_album Tabla song_links Campo Tipo Descripción links_updated TEXT Campo links_updated (detectado en operación DML)">
+    <meta property="og:description" content="Rellena las tablas artists, álbums y songs con:
+Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain) ![[db_music_path_module.py]]">
     <meta property="og:locale" content="es_ES">
     <meta property="og:type" content="article">
     <meta property="article:section" content="Creación de la base de datos">
     <meta itemprop="name" content="Datos :: mfuz">
-    <meta itemprop="description" content="Tabla listenbrainz_backfill Campo Tipo Descripción id INTEGER Campo id (clave primaria) Tabla listenbrainz_config Campo Tipo Descripción id INTEGER Campo id (clave primaria) Tabla normalized_songs Campo Tipo Descripción song_id INTEGER Campo song_id (clave primaria) normalized_title TEXT Campo normalized_title normalized_artist TEXT Campo normalized_artist normalized_album TEXT Campo normalized_album Tabla song_links Campo Tipo Descripción links_updated TEXT Campo links_updated (detectado en operación DML)">
-    <meta itemprop="wordCount" content="58">
+    <meta itemprop="description" content="Rellena las tablas artists, álbums y songs con:
+Campo Origen Descripción file_path Metadata Ruta completa al archivo de audio title Metadata Título de la canción track_number Metadata Número de pista dentro del álbum artist Metadata Artista principal album_artist Metadata Artista del álbum (puede diferir del artista de la pista) album Metadata Nombre del álbum date Metadata Año de publicación o grabación genre Metadata Género musical label Metadata Sello discográfico mbid Metadata Identificador MusicBrainz last_modified Archivo Fecha de última modificación del archivo added_timestamp Sistema Momento exacto en que fue añadido a la base de datos added_week Derivado Semana del año en la que fue añadido added_month Derivado Mes en que fue añadido added_year Derivado Año en que fue añadido folder_path Sistema Carpeta donde se encuentra el archivo replay_gain_album_gain Metadata Ganancia de volumen del álbum (ReplayGain) replay_gain_album_peak Metadata Pico de volumen del álbum (ReplayGain) replay_gain_track_gain Metadata Ganancia de volumen de la pista (ReplayGain) replay_gain_track_peak Metadata Pico de volumen de la pista (ReplayGain) ![[db_music_path_module.py]]">
+    <meta itemprop="wordCount" content="161">
     <title>Datos :: mfuz</title>
-    <link href="/base_datos/03.-listens-listenbrainz/datos/index.xml" rel="alternate" type="application/rss+xml" title="Datos :: mfuz">
-    <link href="/base_datos/03.-listens-listenbrainz/datos/index.print.html" rel="alternate" type="text/html" title="Datos :: mfuz">
+    <link href="/base_datos/01.a-archivos-locales/datos/index.xml" rel="alternate" type="application/rss+xml" title="Datos :: mfuz">
+    <link href="/base_datos/01.a-archivos-locales/datos/index.print.html" rel="alternate" type="text/html" title="Datos :: mfuz">
     <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
     <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
     <link href="/css/theme.css" rel="stylesheet">
@@ -36,7 +40,7 @@
       window.relearn = window.relearn || {};
       // configuration
       window.relearn.min = ``;
-      window.relearn.path='\/base_datos\/03.-listens-listenbrainz\/datos\/index.html';
+      window.relearn.path='\/base_datos\/01.a-archivos-locales\/datos\/index.html';
       window.relearn.relBasePath='..\/..\/..';
       window.relearn.relBaseUri='..\/..\/..';
       window.relearn.absBaseUri='\/\/192.168.1.133:1313';
@@ -88,7 +92,7 @@
       window.T_N_results_found = `{1} results found for "{0}"`;
     </script>
   </head>
-  <body class="mobile-support html" data-url="/base_datos/03.-listens-listenbrainz/datos/index.html">
+  <body class="mobile-support html" data-url="/base_datos/01.a-archivos-locales/datos/index.html">
     <div id="R-body" class="default-animation">
       <div id="R-body-overlay"></div>
       <nav id="R-topbar">
@@ -107,15 +111,15 @@
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuzz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/03.-listens-listenbrainz/index.html"><span itemprop="name">03. Listens listenbrainz</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/01.a-archivos-locales/index.html"><span itemprop="name">01.A Archivos locales</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Datos</span><meta itemprop="position" content="4"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
-            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/03.-listens-listenbrainz/datos/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/01.a-archivos-locales/datos/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/03.-listens-listenbrainz/argumentos/index.html" title="Argumentos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/01.a-archivos-locales/configuraci%C3%B3n/index.html" title="Configuración (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/04.-redes/index.html" title="04. Redes (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/01.b-spotify/index.html" title="01.B Spotify (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.-archivos-locales/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/01.a-archivos-locales/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/01.b-spotify/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/index.html</loc>
@@ -40,13 +43,40 @@
     <loc>//192.168.1.133:1313/base_datos/12.-letras/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.-articulos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/13.a-art%C3%ADculos-en-servidor-rss/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/13.b-review-scrapper/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/14.-discograf%C3%ADas-masters/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/15.-discograf%C3%ADas-releases/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/16.-discograf%C3%ADas-info/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/17.-conciertos-pasados-setlistfm/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/18.-charts-populares/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/19.-im%C3%A1genes/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/20.-optimizaci%C3%B3n/index.html</loc>
   </url>
   <url>
+    <loc>//192.168.1.133:1313/instalacion/config-yml/index.html</loc>
+  </url>
+  <url>
     <loc>//192.168.1.133:1313/credenciales/discogs/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/credenciales/docker/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/credenciales/genius/index.html</loc>
@@ -61,43 +91,25 @@
     <loc>//192.168.1.133:1313/credenciales/lirycs_ovh/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-01-music-fuzzy/index.html</loc>
+    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-01-music-browser/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-02-editor-de-la-base-de-datos/index.html</loc>
+    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-02-editor-de-la-base-de-datos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-03-blogs/index.html</loc>
+    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-03-url-playlists/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-04-conciertos/index.html</loc>
+    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-04-conciertos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-05-scripts/index.html</loc>
+    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-05-muspy/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-06-muspy/index.html</loc>
+    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-06-jaangle/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-07-estadisticas/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-07-lastfm-scrobbler/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-08-jaangle/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/modulos/modulo-09-enlaces/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-10-listas-spotify/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-11-widgets/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-12-reproductor/index.html</loc>
+    <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-07-estadisticas/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-132-configuraci%C3%B3n/index.html</loc>
@@ -106,13 +118,58 @@
     <loc>//192.168.1.133:1313/credenciales/muspy/index.html</loc>
   </url>
   <url>
+    <loc>//192.168.1.133:1313/credenciales/picard/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/credenciales/python/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/instalacion/requisitos/index.html</loc>
+  </url>
+  <url>
     <loc>//192.168.1.133:1313/credenciales/spotify/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/credenciales/youtube/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.-archivos-locales/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/01.b-spotify/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/13.a-art%C3%ADculos-en-servidor-rss/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/14.-discograf%C3%ADas-masters/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/15.-discograf%C3%ADas-releases/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/16.-discograf%C3%ADas-info/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/17.-conciertos-pasados-setlistfm/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/01.a-archivos-locales/argumentos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/argumentos/index.html</loc>
@@ -124,6 +181,24 @@
     <loc>//192.168.1.133:1313/base_datos/04.-redes/argumentos/index.html</loc>
   </url>
   <url>
+    <loc>//192.168.1.133:1313/base_datos/08.-enlaces-albums/argumentos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/10.-wikipedia/argumentos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/12.-letras/argumentos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/credenciales/configuraci%C3%B3n/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/instalacion/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/01.b-spotify/argumentos/index.html</loc>
+  </url>
+  <url>
     <loc>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/argumentos/index.html</loc>
   </url>
   <url>
@@ -133,13 +208,7 @@
     <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/08.-enlaces-albums/argumentos/index.html</loc>
-  </url>
-  <url>
     <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/argumentos/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/10.-wikipedia/argumentos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/argumentos/index.html</loc>
@@ -148,40 +217,25 @@
     <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/12.-letras/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/13.a-art%C3%ADculos-en-servidor-rss/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.-articulos/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/14.-discograf%C3%ADas-masters/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/instalacion/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/15.-discograf%C3%ADas-releases/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/16.-discograf%C3%ADas-info/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/17.-conciertos-pasados-setlistfm/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.-articulos/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/01.a-archivos-locales/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/credenciales/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/credenciales/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/credenciales/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/credenciales/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/01.-archivos-locales/datos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/datos/index.html</loc>
@@ -202,19 +256,28 @@
     <loc>//192.168.1.133:1313/base_datos/12.-letras/datos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/archivos/index.html</loc>
-  </url>
-  <url>
     <loc>//192.168.1.133:1313/base_datos/08.-enlaces-albums/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/configuraci%C3%B3n_json/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/credenciales/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/credenciales/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/credenciales/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/credenciales/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/01.a-archivos-locales/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/01.b-spotify/datos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/datos/index.html</loc>
@@ -223,7 +286,22 @@
     <loc>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/datos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.-articulos/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/13.a-art%C3%ADculos-en-servidor-rss/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/14.-discograf%C3%ADas-masters/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/15.-discograf%C3%ADas-releases/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/16.-discograf%C3%ADas-info/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base_datos/17.-conciertos-pasados-setlistfm/datos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/modulos/index.html</loc>
@@ -232,13 +310,13 @@
     <loc>//192.168.1.133:1313/credenciales/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/datos/index.html</loc>
-  </url>
-  <url>
     <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/datos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/web_docker/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/categories/index.html</loc>

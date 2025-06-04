@@ -1,5 +1,5 @@
 ---
-title: Acceso Web
+title: Web
 weight: 6
 ---
 

@@ -36,11 +36,11 @@ weight: 4
     "descripcion": "Variables de entorno utilizadas",
     "variables": [
       "SPOTIFY_CLIENT_ID",
-      "GOOGLE_API_KEY",
-      "LASTFM_API_KEY",
       "DISCOGS_TOKEN",
-      "SPOTIFY_CLIENT_SECRET",
       "LASTFM_USER",
+      "LASTFM_API_KEY",
+      "GOOGLE_API_KEY",
+      "SPOTIFY_CLIENT_SECRET",
       "DB_PATH"
     ]
   }

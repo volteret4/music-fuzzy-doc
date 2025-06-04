@@ -51,7 +51,7 @@
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // variant stuff
-      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.themevariants = [ 'zen-dark', 'zen-light', 'relearn-light', 'relearn-dark' ];
       window.relearn.customvariantname = "my-custom-variant";
       window.relearn.changeVariant = function(variant) {
         var oldVariant = document.documentElement.dataset.rThemeVariant;
@@ -105,7 +105,7 @@
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuzz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/index.html"><span itemprop="name">Creación de la base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base_datos/04.-redes/index.html"><span itemprop="name">04. Redes</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Argumentos</span><meta itemprop="position" content="4"></li>
@@ -131,187 +131,9 @@
       <div id="R-main-overlay"></div>
       <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
         <div class="flex-block-wrapper">
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="argumentos">Argumentos</h1>
-
-<table>
-  <thead>
-      <tr>
-          <th>Argumento</th>
-          <th>Tipo</th>
-          <th>Descripción</th>
-          <th>Valor por Defecto</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td><code>config</code></td>
-          <td><code>dict</code></td>
-          <td>Diccionario con la configuración</td>
-          <td>—</td>
-      </tr>
-      <tr>
-          <td><code>config.db_path</code></td>
-          <td><code>str</code></td>
-          <td>Ruta al archivo de la base de datos SQLite (obligatorio)</td>
-          <td>—</td>
-      </tr>
-      <tr>
-          <td><code>config.discogs_token</code></td>
-          <td><code>str</code></td>
-          <td>Token para la API de Discogs (obligatorio)</td>
-          <td>—</td>
-      </tr>
-      <tr>
-          <td><code>config.rate_limit</code></td>
-          <td><code>float</code></td>
-          <td>Tiempo de espera entre solicitudes (por defecto: <code>1.0</code>)</td>
-          <td><code>1.0</code></td>
-      </tr>
-      <tr>
-          <td><code>config.max_retries</code></td>
-          <td><code>int</code></td>
-          <td>Número máximo de reintentos para solicitudes fallidas (por defecto: <code>3</code>)</td>
-          <td><code>3</code></td>
-      </tr>
-      <tr>
-          <td><code>config.batch_size</code></td>
-          <td><code>int</code></td>
-          <td>Cantidad de artistas a procesar por lote (por defecto: <code>50</code>)</td>
-          <td><code>50</code></td>
-      </tr>
-      <tr>
-          <td><code>config.force_update</code></td>
-          <td><code>bool</code></td>
-          <td>Forzar actualización incluso si ya existen datos (por defecto: <code>False</code>)</td>
-          <td><code>False</code></td>
-      </tr>
-      <tr>
-          <td><code>config.missing_only</code></td>
-          <td><code>bool</code></td>
-          <td>Procesar solo artistas sin registro de redes sociales (por defecto: <code>True</code>)</td>
-          <td><code>True</code></td>
-      </tr>
-      <tr>
-          <td><code>config.concurrent_workers</code></td>
-          <td><code>int</code></td>
-          <td>Número de hilos para procesamiento en paralelo (por defecto: <code>1</code>)</td>
-          <td><code>1</code></td>
-      </tr>
-      <tr>
-          <td><code>config.user_agent</code></td>
-          <td><code>str</code></td>
-          <td>Agente de usuario para las solicitudes HTTP (por defecto: <code>'MusicDatabaseApp/1.0'</code>)</td>
-          <td><code>'MusicDatabaseApp/1.0'</code></td>
-      </tr>
-  </tbody>
-</table>
-
-  <footer class="footline">
-  </footer>
-</article>
         </div>
       </main>
     </div>
-    <aside id="R-sidebar" class="default-animation">
-      <div id="R-header-topbar" class="default-animation"></div>
-      <div id="R-header-wrapper" class="default-animation">
-        <div id="R-header" class="default-animation">
-          <a id="R-logo" class="R-default" href="/index.html">
-            <div class="logo-title">mfuz</div>
-          </a>
-        </div>
-        <search><form action="/search/index.html" method="get">
-          <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-            <label class="a11y-only" for="R-search-by">Search</label>
-            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-          </div>
-        </form></search>
-      </div>
-      <div id="R-homelinks" class="default-animation homelinks">
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
-          <ul class="space collapsible-menu">
-            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-controls">
-          <ul class="">
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-      </div>
-      <div id="R-content-wrapper" class="highlightable">
-        <div class="R-sidebarmenu R-shortcutmenu-home">
-          <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/introduccion/index.html"><a class="padding" href="/introduccion/index.html">Introducción</a></li>
-            <li class="" data-nav-id="/instalacion/index.html"><a class="padding" href="/instalacion/index.html">instalación</a></li>
-            <li class="parent " data-nav-id="/base_datos/index.html"><a class="padding" href="/base_datos/index.html">Creación de la base de datos</a><ul id="R-subsections-37c67787f2618f27a34854322beea326" class="collapsible-menu">
-            <li class="alwaysopen " data-nav-id="/base_datos/01.-archivos-locales/index.html"><a class="padding" href="/base_datos/01.-archivos-locales/index.html">01. Archivos locales</a><ul id="R-subsections-3e9e116a949857f3e3a6d61c5878605b" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/02.-scrobbles-lastfm/index.html"><a class="padding" href="/base_datos/02.-scrobbles-lastfm/index.html">02. Scrobbles lastfm</a><ul id="R-subsections-daf5d9c9bf8a0cc30ec50d022f5887ba" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/03.-listens-listenbrainz/index.html"><a class="padding" href="/base_datos/03.-listens-listenbrainz/index.html">03. Listens listenbrainz</a><ul id="R-subsections-f1ea3787eb4503d18aa6397488641259" class="collapsible-menu"></ul></li>
-            <li class="parent alwaysopen " data-nav-id="/base_datos/04.-redes/index.html"><a class="padding" href="/base_datos/04.-redes/index.html">04. Redes</a><ul id="R-subsections-4be5a71bd1b25789187eab8571b08644" class="collapsible-menu">
-            <li class="active " data-nav-id="/base_datos/04.-redes/argumentos/index.html"><a class="padding" href="/base_datos/04.-redes/argumentos/index.html">Argumentos</a></li>
-            <li class="" data-nav-id="/base_datos/04.-redes/datos/index.html"><a class="padding" href="/base_datos/04.-redes/datos/index.html">Datos</a></li></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/05.-musicbrainz-album-info/index.html"><a class="padding" href="/base_datos/05.-musicbrainz-album-info/index.html">05. Musicbrainz album info</a><ul id="R-subsections-d5801afae2b1eff86bc040725084533f" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/06.-musicbrainz-canciones/index.html"><a class="padding" href="/base_datos/06.-musicbrainz-canciones/index.html">06. Musicbrainz canciones</a><ul id="R-subsections-0f1498ef2be9e216e7993fb6bd45b228" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/07.-enlaces-artistas/index.html"><a class="padding" href="/base_datos/07.-enlaces-artistas/index.html">07. Enlaces artistas</a><ul id="R-subsections-3997c35cc47d59797e233a5e2fe19719" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/08.-enlaces-albums/index.html"><a class="padding" href="/base_datos/08.-enlaces-albums/index.html">08. Enlaces albums</a><ul id="R-subsections-df801400fc0f4d9f424934670c336b6f" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/09.-enlaces-canciones/index.html"><a class="padding" href="/base_datos/09.-enlaces-canciones/index.html">09. Enlaces canciones</a><ul id="R-subsections-21fb9c477ea173deca16eb3f5ca6e4d6" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/10.-wikipedia/index.html"><a class="padding" href="/base_datos/10.-wikipedia/index.html">10. Wikipedia</a><ul id="R-subsections-4c554b0c0f97ca7f1c572dbb1f2bceb4" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/11.-musicbrainz-sellos/index.html"><a class="padding" href="/base_datos/11.-musicbrainz-sellos/index.html">11. Musicbrainz sellos</a><ul id="R-subsections-e234f5b478207841695abd655a554c7b" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/11.-youtube-links-de-canciones/index.html"><a class="padding" href="/base_datos/11.-youtube-links-de-canciones/index.html">11. Youtube links de canciones</a><ul id="R-subsections-5f9b2d40a8e37f28f84ab57896dbff11" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/12.-letras/index.html"><a class="padding" href="/base_datos/12.-letras/index.html">12. Letras</a><ul id="R-subsections-42c3561b19f9d4392c6c31ba2a7d934d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/13.-articulos/index.html"><a class="padding" href="/base_datos/13.-articulos/index.html">13. Articulos</a><ul id="R-subsections-978383d0296a32b5bc93de27fcf2d893" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/base_datos/20.-optimizaci%C3%B3n/index.html"><a class="padding" href="/base_datos/20.-optimizaci%C3%B3n/index.html">20. Optimización</a></li></ul></li>
-            <li class="" data-nav-id="/modulos/index.html"><a class="padding" href="/modulos/index.html">Modulos de la app</a><ul id="R-subsections-2b7372743a6928555c05103f039a6cdf" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/credenciales/index.html"><a class="padding" href="/credenciales/index.html">credenciales</a><ul id="R-subsections-531febb0ee57af4ff73e1c73de87ea64" class="collapsible-menu"></ul></li>
-          </ul>
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
-          <ul class="space collapsible-menu">
-          </ul>
-        </div>
-        <div id="R-footer-margin"></div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-controls">
-          <ul class="">
-            <li class="R-variantswitcher">
-              <div class="padding menu-control">
-                <i class="fa-fw fas fa-paint-brush"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <label class="a11y-only" for="R-select-variant">Theme</label>
-                  <select id="R-select-variant">
-                    <option id="R-select-variant-relearn-light" value="relearn-light" selected>Relearn Light</option>
-                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
-                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
-                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
-                  </select>
-                </div>
-                <div class="clear"></div>
-              </div>
-              <script>window.relearn.markVariant();</script>
-            </li>
-          </ul>
-        </div>
-<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
-      </div>
-    </aside>
     <script src="/js/clipboard/clipboard.min.js" defer></script>
     <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
     <script src="/js/theme.js" defer></script>

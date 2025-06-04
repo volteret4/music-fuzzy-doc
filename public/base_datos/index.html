@@ -3,24 +3,28 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <meta name="description" content="Para poder crear la base de datos tienes varias opciones:
-Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.">
+    <meta name="description" content="Base de datos Esta aplicación necesita la creación de una base de datos musical, y para ello necesitas editar el archivo db_creator_config.json en la carpeta config. En el podrás ver la configuración individual de cada script y el orden en que se ejecutaran los seleccionados.
+Una vez editado podrás lanzar el script db_creator.py asi desde la carpeta raiz:
+python db_creator.py --config config/db_creator_config.json Configuración JSON Primero has de elegir cual será la fuente de tu música, para ello puedes elegir varios puntos de partida, combinables entre ellos:">
     <meta name="author" content="">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Creación de la base de datos :: mfuz">
-    <meta name="twitter:description" content="Para poder crear la base de datos tienes varias opciones:
-Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.">
+    <meta name="twitter:description" content="Base de datos Esta aplicación necesita la creación de una base de datos musical, y para ello necesitas editar el archivo db_creator_config.json en la carpeta config. En el podrás ver la configuración individual de cada script y el orden en que se ejecutaran los seleccionados.
+Una vez editado podrás lanzar el script db_creator.py asi desde la carpeta raiz:
+python db_creator.py --config config/db_creator_config.json Configuración JSON Primero has de elegir cual será la fuente de tu música, para ello puedes elegir varios puntos de partida, combinables entre ellos:">
     <meta property="og:url" content="//192.168.1.133:1313/base_datos/index.html">
     <meta property="og:site_name" content="mfuz">
     <meta property="og:title" content="Creación de la base de datos :: mfuz">
-    <meta property="og:description" content="Para poder crear la base de datos tienes varias opciones:
-Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.">
+    <meta property="og:description" content="Base de datos Esta aplicación necesita la creación de una base de datos musical, y para ello necesitas editar el archivo db_creator_config.json en la carpeta config. En el podrás ver la configuración individual de cada script y el orden en que se ejecutaran los seleccionados.
+Una vez editado podrás lanzar el script db_creator.py asi desde la carpeta raiz:
+python db_creator.py --config config/db_creator_config.json Configuración JSON Primero has de elegir cual será la fuente de tu música, para ello puedes elegir varios puntos de partida, combinables entre ellos:">
     <meta property="og:locale" content="es_ES">
     <meta property="og:type" content="website">
     <meta itemprop="name" content="Creación de la base de datos :: mfuz">
-    <meta itemprop="description" content="Para poder crear la base de datos tienes varias opciones:
-Crearla con archivos locales Extraer información de tus scrobbles en lastfm o listenbrainz Obtener los artistas que sigues en spotify y sus discografías TODO Procesar los artistas que sigues en muspy TODO Todo ello secuencialmente Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.">
-    <meta itemprop="wordCount" content="263">
+    <meta itemprop="description" content="Base de datos Esta aplicación necesita la creación de una base de datos musical, y para ello necesitas editar el archivo db_creator_config.json en la carpeta config. En el podrás ver la configuración individual de cada script y el orden en que se ejecutaran los seleccionados.
+Una vez editado podrás lanzar el script db_creator.py asi desde la carpeta raiz:
+python db_creator.py --config config/db_creator_config.json Configuración JSON Primero has de elegir cual será la fuente de tu música, para ello puedes elegir varios puntos de partida, combinables entre ellos:">
+    <meta itemprop="wordCount" content="471">
     <title>Creación de la base de datos :: mfuz</title>
     <link href="/base_datos/index.xml" rel="alternate" type="application/rss+xml" title="Creación de la base de datos :: mfuz">
     <link href="/base_datos/index.print.html" rel="alternate" type="text/html" title="Creación de la base de datos :: mfuz">
@@ -54,7 +58,7 @@ Crearla con archivos locales Extraer información de tus scrobbles en lastfm o l
       window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
       window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
       // variant stuff
-      window.relearn.themevariants = [ 'relearn-light', 'relearn-dark', 'zen-light', 'zen-dark' ];
+      window.relearn.themevariants = [ 'zen-dark', 'zen-light', 'relearn-light', 'relearn-dark' ];
       window.relearn.customvariantname = "my-custom-variant";
       window.relearn.changeVariant = function(variant) {
         var oldVariant = document.documentElement.dataset.rThemeVariant;
@@ -105,8 +109,17 @@ Crearla con archivos locales Extraer información de tus scrobbles en lastfm o l
                 <div class="topbar-content-wrapper">
 <nav class="TableOfContents">
   <ul>
-    <li><a href="#dependencias-totales">Dependencias totales</a></li>
-    <li><a href="#scripts-auxiliares">Scripts Auxiliares</a></li>
+    <li><a href="#configuración-json">Configuración JSON</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#dependencias-para-la-base-de-datos">Dependencias para la base de datos</a></li>
+    <li><a href="#scripts-auxiliares">Scripts Auxiliares</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
                 </div>
@@ -114,15 +127,15 @@ Crearla con archivos locales Extraer información de tus scrobbles en lastfm o l
             </div>
           </div>
           <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
-            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuzz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
             <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">Creación de la base de datos</span><meta itemprop="position" content="2"></li>
           </ol>
           <div class="topbar-area topbar-area-end" data-area="end">
             <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
             </div>
-            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/instalacion/index.html" title="instalación (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/instalacion/requisitos/index.html" title="requisitos (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
             </div>
-            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/01.-archivos-locales/index.html" title="01. Archivos locales (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base_datos/01.a-archivos-locales/index.html" title="01.A Archivos locales (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
             </div>
             <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
               <div class="topbar-content">
@@ -138,143 +151,9 @@ Crearla con archivos locales Extraer información de tus scrobbles en lastfm o l
       <div id="R-main-overlay"></div>
       <main id="R-body-inner" class="highlightable base_datos" tabindex="-1">
         <div class="flex-block-wrapper">
-<article class="default">
-  <header class="headline">
-  </header>
-
-<h1 id="creación-de-la-base-de-datos">Creación de la base de datos</h1>
-
-<p>Para poder crear la base de datos tienes varias opciones:</p>
-<ul>
-<li>Crearla con archivos locales</li>
-<li>Extraer información de tus scrobbles en lastfm o listenbrainz</li>
-<li>Obtener los artistas que sigues en spotify y sus discografías TODO</li>
-<li>Procesar los artistas que sigues en muspy TODO</li>
-<li>Todo ello secuencialmente</li>
-</ul>
-<p>Dependiendo de la cantidad de contenido que tengas, estas tareas pueden llevar un tiempo, es recomendable el uso de un pequeño servidor para realizar estas tareas sin consumir mucho tiempo y consecuentemente dinero.</p>
-<blockquote>
-<p>En cada paso se dan unas estimaciones del tiempo consumido</p>
-<p>Todas las consultas respetan los limites establecidas por cada api, aunque las restricciones diarias pausaran el script que alcanze el límite hasta que este sea reestablecido</p></blockquote>
-<p>El resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales o paquetes de python.</p>
-<h2 id="dependencias-totales">Dependencias totales</h2>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>pip install requests beautifulsoup4 spotipy musicbrainzngs python3-discogs-client pylast python-youtube-search playwright tqdm
-</span></span><span style="display:flex;"><span>google-api-python-client ??</span></span></code></pre></div>
-<h2 id="scripts-auxiliares">Scripts Auxiliares</h2>
-<p>Estos scripts puedes usarlos durante el proceso de creación o al final para consultar datos sobre la base de datos.</p>
-<ul>
-<li>[[estadisticas_db.py]] Muestra detalladamente el estado de la base de datos en comparación a una tabla completa finalizando todos los scripts. Uso <code>python estadisticas_db.py --db-path basedatos.db</code></li>
-<li>[[Spaces/Scripts/menus/musica/base_datos/tools/consultar_items_db.py|consultar_items_db.py]] Puedes obtener diversos campos de la base de datos usando varios filtros. Leer mas aqui TODO</li>
-<li>[[unir_artistas.py]] Permite unir artistas bajo un mismo nombre, útil cuando te aparecen Chimobayo feat. Björk o similares colaboraciones.</li>
-</ul>
-<div class="highlight wrap-code" dir="auto"><pre tabindex="0"><code class="language-tasks" data-lang="tasks">not done
-tags include #create_db
-
-short mode
-sort by due
-sort by priority
-sort by scheduled</code></pre></div>
-
-  <footer class="footline">
-  </footer>
-</article>
         </div>
       </main>
     </div>
-    <aside id="R-sidebar" class="default-animation">
-      <div id="R-header-topbar" class="default-animation"></div>
-      <div id="R-header-wrapper" class="default-animation">
-        <div id="R-header" class="default-animation">
-          <a id="R-logo" class="R-default" href="/index.html">
-            <div class="logo-title">mfuz</div>
-          </a>
-        </div>
-        <search><form action="/search/index.html" method="get">
-          <div class="searchbox default-animation">
-            <button class="search-detail" type="submit" title="Search (CTRL+ALT+f)"><i class="fas fa-search"></i></button>
-            <label class="a11y-only" for="R-search-by">Search</label>
-            <input data-search-input id="R-search-by" name="search-by" class="search-by" type="search" placeholder="Search...">
-            <button class="search-clear" type="button" data-search-clear="" title="Clear search"><i class="fas fa-times" title="Clear search"></i></button>
-          </div>
-        </form></search>
-      </div>
-      <div id="R-homelinks" class="default-animation homelinks">
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-homelinks">
-          <ul class="space collapsible-menu">
-            <li class="" data-nav-id="/index.html"><a class="padding" href="/index.html"><i class="fa-fw fas fa-home"></i> Home</a></li>
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-controls">
-          <ul class="">
-          </ul>
-        </div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-      </div>
-      <div id="R-content-wrapper" class="highlightable">
-        <div class="R-sidebarmenu R-shortcutmenu-home">
-          <ul class="enlarge morespace collapsible-menu">
-            <li class="" data-nav-id="/introduccion/index.html"><a class="padding" href="/introduccion/index.html">Introducción</a></li>
-            <li class="" data-nav-id="/instalacion/index.html"><a class="padding" href="/instalacion/index.html">instalación</a></li>
-            <li class="active parent " data-nav-id="/base_datos/index.html"><a class="padding" href="/base_datos/index.html">Creación de la base de datos</a><ul id="R-subsections-37c67787f2618f27a34854322beea326" class="collapsible-menu">
-            <li class="alwaysopen " data-nav-id="/base_datos/01.-archivos-locales/index.html"><a class="padding" href="/base_datos/01.-archivos-locales/index.html">01. Archivos locales</a><ul id="R-subsections-3e9e116a949857f3e3a6d61c5878605b" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/02.-scrobbles-lastfm/index.html"><a class="padding" href="/base_datos/02.-scrobbles-lastfm/index.html">02. Scrobbles lastfm</a><ul id="R-subsections-daf5d9c9bf8a0cc30ec50d022f5887ba" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/03.-listens-listenbrainz/index.html"><a class="padding" href="/base_datos/03.-listens-listenbrainz/index.html">03. Listens listenbrainz</a><ul id="R-subsections-f1ea3787eb4503d18aa6397488641259" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/04.-redes/index.html"><a class="padding" href="/base_datos/04.-redes/index.html">04. Redes</a><ul id="R-subsections-4be5a71bd1b25789187eab8571b08644" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/05.-musicbrainz-album-info/index.html"><a class="padding" href="/base_datos/05.-musicbrainz-album-info/index.html">05. Musicbrainz album info</a><ul id="R-subsections-d5801afae2b1eff86bc040725084533f" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/06.-musicbrainz-canciones/index.html"><a class="padding" href="/base_datos/06.-musicbrainz-canciones/index.html">06. Musicbrainz canciones</a><ul id="R-subsections-0f1498ef2be9e216e7993fb6bd45b228" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/07.-enlaces-artistas/index.html"><a class="padding" href="/base_datos/07.-enlaces-artistas/index.html">07. Enlaces artistas</a><ul id="R-subsections-3997c35cc47d59797e233a5e2fe19719" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/08.-enlaces-albums/index.html"><a class="padding" href="/base_datos/08.-enlaces-albums/index.html">08. Enlaces albums</a><ul id="R-subsections-df801400fc0f4d9f424934670c336b6f" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/09.-enlaces-canciones/index.html"><a class="padding" href="/base_datos/09.-enlaces-canciones/index.html">09. Enlaces canciones</a><ul id="R-subsections-21fb9c477ea173deca16eb3f5ca6e4d6" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/10.-wikipedia/index.html"><a class="padding" href="/base_datos/10.-wikipedia/index.html">10. Wikipedia</a><ul id="R-subsections-4c554b0c0f97ca7f1c572dbb1f2bceb4" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/11.-musicbrainz-sellos/index.html"><a class="padding" href="/base_datos/11.-musicbrainz-sellos/index.html">11. Musicbrainz sellos</a><ul id="R-subsections-e234f5b478207841695abd655a554c7b" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/11.-youtube-links-de-canciones/index.html"><a class="padding" href="/base_datos/11.-youtube-links-de-canciones/index.html">11. Youtube links de canciones</a><ul id="R-subsections-5f9b2d40a8e37f28f84ab57896dbff11" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/12.-letras/index.html"><a class="padding" href="/base_datos/12.-letras/index.html">12. Letras</a><ul id="R-subsections-42c3561b19f9d4392c6c31ba2a7d934d" class="collapsible-menu"></ul></li>
-            <li class="alwaysopen " data-nav-id="/base_datos/13.-articulos/index.html"><a class="padding" href="/base_datos/13.-articulos/index.html">13. Articulos</a><ul id="R-subsections-978383d0296a32b5bc93de27fcf2d893" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/base_datos/20.-optimizaci%C3%B3n/index.html"><a class="padding" href="/base_datos/20.-optimizaci%C3%B3n/index.html">20. Optimización</a></li></ul></li>
-            <li class="" data-nav-id="/modulos/index.html"><a class="padding" href="/modulos/index.html">Modulos de la app</a><ul id="R-subsections-2b7372743a6928555c05103f039a6cdf" class="collapsible-menu"></ul></li>
-            <li class="" data-nav-id="/credenciales/index.html"><a class="padding" href="/credenciales/index.html">credenciales</a><ul id="R-subsections-531febb0ee57af4ff73e1c73de87ea64" class="collapsible-menu"></ul></li>
-          </ul>
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-shortcuts">
-          <ul class="space collapsible-menu">
-          </ul>
-        </div>
-        <div id="R-footer-margin"></div>
-        <div class="R-menu-divider default-animation">
-          <hr class="padding">
-        </div>
-        <div class="R-sidebarmenu R-shortcutmenu-controls">
-          <ul class="">
-            <li class="R-variantswitcher">
-              <div class="padding menu-control">
-                <i class="fa-fw fas fa-paint-brush"></i>
-                <span>&nbsp;</span>
-                <div class="control-style">
-                  <label class="a11y-only" for="R-select-variant">Theme</label>
-                  <select id="R-select-variant">
-                    <option id="R-select-variant-relearn-light" value="relearn-light" selected>Relearn Light</option>
-                    <option id="R-select-variant-relearn-dark" value="relearn-dark">Relearn Dark</option>
-                    <option id="R-select-variant-zen-light" value="zen-light">Zen Light</option>
-                    <option id="R-select-variant-zen-dark" value="zen-dark">Zen Dark</option>
-                  </select>
-                </div>
-                <div class="clear"></div>
-              </div>
-              <script>window.relearn.markVariant();</script>
-            </li>
-          </ul>
-        </div>
-<div id="R-footer"><p>Built with <a href="https://github.com/McShelby/hugo-theme-relearn" title="love"><i class="fas fa-heart"></i></a> by <a href="https://gohugo.io/">Hugo</a></p></div>
-      </div>
-    </aside>
     <script src="/js/clipboard/clipboard.min.js" defer></script>
     <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
     <script src="/js/theme.js" defer></script>
