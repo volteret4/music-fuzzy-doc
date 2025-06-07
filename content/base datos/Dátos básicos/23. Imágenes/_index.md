@@ -3,6 +3,8 @@ title: "23. Im\xE1genes"
 weight: 1
 ---
 
+> 10 discos 1m 0,805s
+> 
 ### Archivos
 
 | Archivo o Carpeta                                   | Descripción                                            |
