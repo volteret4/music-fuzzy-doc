@@ -1,6 +1,6 @@
 ---
 title: A. Punto de partida
-weight: 2
+weight: 1
 ---
 
 Estos scripts permiten crear la base de datos con los artistas, álbumes y canciones que desees en tu colección, pudiendo elegir varios orígenes:
@@ -17,5 +17,7 @@ Estos scripts permiten crear la base de datos con los artistas, álbumes y canci
 > 	Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En [Credenciales](https://volteret4.github.io/music-fuzzy-doc/credenciales/picard/index.html) puedes encontrar un apartado con consejos al respecto.
 
 ---
+
+
 
 
