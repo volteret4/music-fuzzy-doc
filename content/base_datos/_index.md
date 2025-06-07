@@ -1,6 +1,6 @@
 ---
 title: "Creaci\xF3n de la base de datos"
-weight: 3
+weight: 2
 ---
 
 # Base de datos
@@ -29,7 +29,7 @@ Estos scripts se pueden combinar entre si para aumentar la cantidad de datos de 
 
 > 	Es aconsejable usar la aplicación `Picard` de musicbrainz para ajustar los tags de tu música digital. En [Credenciales](https://volteret4.github.io/music-fuzzy-doc/credenciales/picard/index.html) puedes encontrar un apartado con consejos al respecto.
 
-Una vez creada la estructura principal, el resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales especificados en tal caso en el config.json
+Una vez creada la estructura principal, el resto de scripts son totalmente opcionales, cada uno de ellos añadirá información a la base de datos, especificada en cada módulo. Del mismo modo es posible que requiera de ciertas credenciales especificados en tal caso en el config.json.
 
 ## Dependencias para la base de datos
 ```sh

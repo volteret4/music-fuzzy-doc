@@ -1,6 +1,6 @@
 ---
 title: Web
-weight: 6
+weight: 5
 ---
 
 ![Pasted image 20250604153713.png](Pasted-image-20250604153713.png)

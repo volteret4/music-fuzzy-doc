@@ -1,6 +1,6 @@
 ---
 title: "Instalaci\xF3n"
-weight: 2
+weight: 1
 ---
 
 Actualmente la aplicación está disponible para sistemas Linux, ya sea un Sistema Operativo, o el submódulo wsl para windows
