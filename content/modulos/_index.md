@@ -1,5 +1,5 @@
 ---
-title: Modulos de la app
+title: "M\xF3dulos"
 weight: 3
 ---
 
