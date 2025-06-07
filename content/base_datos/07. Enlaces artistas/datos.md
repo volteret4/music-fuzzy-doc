@@ -3,17 +3,47 @@ title: Datos
 weight: 4
 ---
 
+##### Tabla artists
+
+| Campo | Tipo | Descripción |
+| ----- | ---- | ----------- |
+| `spotify_url` | UNKNOWN | Campo detectado en operación DML |
+| `youtube_url` | UNKNOWN | Campo detectado en operación DML |
+| `musicbrainz_url` | UNKNOWN | Campo detectado en operación DML |
+| `discogs_url` | UNKNOWN | Campo detectado en operación DML |
+| `rateyourmusic_url` | UNKNOWN | Campo detectado en operación DML |
+| `bandcamp_url` | UNKNOWN | Campo detectado en operación DML |
+| `origin` | UNKNOWN | Campo detectado en operación DML |
+| `formed_year` | UNKNOWN | Campo detectado en operación DML |
+| `total_albums` | UNKNOWN | Campo detectado en operación DML |
+| `bio` | UNKNOWN | Campo detectado en operación DML |
+
 ##### Tabla albums
 
 | Campo | Tipo | Descripción |
 | ----- | ---- | ----------- |
-| `mbid` | TEXT | Campo mbid (detectado en operación DML) |
+| `mbid` | UNKNOWN | Campo detectado en operación DML |
 
 ##### Tabla songs
 
 | Campo | Tipo | Descripción |
 | ----- | ---- | ----------- |
-| `mbid` | TEXT | Campo mbid (detectado en operación DML) |
+| `mbid` | UNKNOWN | Campo detectado en operación DML |
+
+##### Tabla current
+
+| Campo | Tipo | Descripción |
+| ----- | ---- | ----------- |
+| `spotify_url': None` | UNKNOWN | Campo detectado en operación DML |
+| `youtube_url': None` | UNKNOWN | Campo detectado en operación DML |
+| `musicbrainz_url': None` | UNKNOWN | Campo detectado en operación DML |
+| `discogs_url': None` | UNKNOWN | Campo detectado en operación DML |
+| `rateyourmusic_url': None` | UNKNOWN | Campo detectado en operación DML |
+| `bandcamp_url': None` | UNKNOWN | Campo detectado en operación DML |
+| `origin': None` | UNKNOWN | Campo detectado en operación DML |
+| `formed_year': None` | UNKNOWN | Campo detectado en operación DML |
+| `total_albums': None` | UNKNOWN | Campo detectado en operación DML |
+| `bio': None` | UNKNOWN | Campo detectado en operación DML |
 
 ##### Configuración
 
@@ -35,20 +65,20 @@ weight: 4
   "variables_entorno": {
     "descripcion": "Variables de entorno utilizadas",
     "variables": [
-      "SPOTIFY_CLIENT_ID",
       "DISCOGS_TOKEN",
       "LASTFM_USER",
-      "LASTFM_API_KEY",
       "GOOGLE_API_KEY",
       "SPOTIFY_CLIENT_SECRET",
-      "DB_PATH"
+      "SPOTIFY_CLIENT_ID",
+      "DB_PATH",
+      "LASTFM_API_KEY"
     ]
   }
 }
 ```
 
-#### Tabla artists
+#### Tabla sqlite_master
 
 | Campo | Tipo | Descripción |
 | ----- | ---- | ----------- |
-| `mbid` | TEXT | Campo mbid (detectado en operación DML) |
+| `name` | UNKNOWN | Campo detectado en SELECT |

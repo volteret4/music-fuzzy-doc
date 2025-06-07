@@ -9,5 +9,3 @@ weight: 2
 | Configuración | `.yaml` | Archivo configuración generado/usado por el script |
 | Configuración | `.yml` | Archivo configuración generado/usado por el script |
 | Logs | `musicbrainzngs` | Archivo de log del script |
-
-#

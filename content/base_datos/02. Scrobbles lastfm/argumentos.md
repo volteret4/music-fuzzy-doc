@@ -6,4 +6,4 @@ weight: 2
 | Argumento | Tipo | Descripción |
 | --------- | ---- | ----------- |
 | `--lastfm_user` | Flag | Usuario de Last.fm |
-| `--output` | Opcional | , help= |
+| `config` | Parámetro | Parámetro de función main |

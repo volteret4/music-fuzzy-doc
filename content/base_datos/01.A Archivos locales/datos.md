@@ -28,4 +28,4 @@ Rellena las tablas artists, álbums y songs con:
 | `replay_gain_track_gain` | Metadata | Ganancia de volumen de la pista (ReplayGain)              |
 | `replay_gain_track_peak` | Metadata | Pico de volumen de la pista (ReplayGain)                  |
 
-![[db_music_path_module.py]]
+[[db_music_path_module.py]]
