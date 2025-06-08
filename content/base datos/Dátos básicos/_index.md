@@ -1,5 +1,14 @@
 ---
-title: "Im\xE1genes"
-weight: 4
+title: "Datos b\xE1sicos"
+weight: 3
 ---
 
+![[Enlaces]]
+
+![[wikipedia]]
+
+![[Letras]]
+
+![[Imágenes]]
+
+![[Escuchas]]
