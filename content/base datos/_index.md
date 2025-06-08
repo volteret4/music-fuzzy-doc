@@ -43,24 +43,6 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 
 ![[Punto de partida]]
 
-![[Spaces/Blogs/snipets y scripts/music-fuzzy/creacion base de datos/grupos/Enlaces]]
-
 ![[Datos básicos]]
 
-![[Letras]]
-
-![[Datos extra]]
-
-![[Reviews]]
-
-![[Discografias]]
-
-![[Grandes Éxitos]]
-
-![[Imágenes]]
-
-![[Instrumentos y equipo]]
-
-![[Escuchas]]
-
-![[Rateyourmusic]]
+![[datos extra]]
