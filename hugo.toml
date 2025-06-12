@@ -2,12 +2,12 @@ theme = 'hugo-theme-relearn'
 baseURL = 'https://volteret4.github.io/music-fuzzy-doc'
 relativeURLs = false
 languageCode = 'es-ES'
-title = 'mfuz'
+title = 'mfuzz'
 
 [author]
   name = 'volteret4'
   email = 'frodobolson@disroot.org'
-#  images = ['images/hero.png']
+  images = ['images/chicken.jpg']
 
   
 
@@ -17,8 +17,13 @@ title = 'mfuz'
   disableAssetsBusting = true # desactivar en prod.
   themeVariant = ['zen-dark', 'zen-light', 'relearn-light', 'relearn-dark']
   linkTitle = 'mfuz'
+  collapsibleMenu = true
 
 [outputs]
   home = ['html', 'rss', 'print']
   page = ['html', 'rss', 'print']
   section = ['html', 'rss', 'print']
+
+[markup]
+  [markup.highlight]
+    noClasses = false
