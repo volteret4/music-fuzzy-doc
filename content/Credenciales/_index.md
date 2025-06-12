@@ -7,7 +7,7 @@ Aqui explicaré brevemente como obtener algunas de las credenciales o como usar 
 
 
 
-
+![[Spaces/Blogs/snipets y scripts/music-fuzzy/credenciales/spotify]]
 
 
 

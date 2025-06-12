@@ -1,9 +1,9 @@
 ---
 title: Charts
-weight: 7
+weight: 6
 ---
 
-Charts
+Obtendremos datos para los grandes éxitos según año y/o década desde wikipedia.
 
 
 

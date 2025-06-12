@@ -19,5 +19,5 @@ Estos scripts permiten crear la base de datos con los artistas, álbumes y canci
 ---
 
 
-
+![[Spaces/Blogs/snipets y scripts/music-fuzzy/creacion base de datos/pasos/Spotify]]
 
