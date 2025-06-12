@@ -1,5 +1,5 @@
 ---
-title: "discograf\xEDas"
+title: "Discograf\xEDas"
 weight: 3
 ---
 

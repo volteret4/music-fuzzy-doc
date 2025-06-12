@@ -1,5 +1,5 @@
 ---
-title: reviews
+title: Reviews
 weight: 4
 ---
 

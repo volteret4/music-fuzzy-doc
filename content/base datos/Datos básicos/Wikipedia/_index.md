@@ -1,6 +1,5 @@
 ---
-title: wikipedia
-weight: 1
+title: Wikipedia
+weight: 2
 ---
 
-![[08. Wikipedia]]

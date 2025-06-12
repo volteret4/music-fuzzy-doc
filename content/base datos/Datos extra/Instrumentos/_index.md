@@ -1,5 +1,5 @@
 ---
-title: instrumentos
+title: Instrumentos
 weight: 7
 ---
 
