@@ -7,7 +7,7 @@ Actualmente la aplicación está disponible para sistemas Linux, ya sea un Siste
 
 Para ello necesitarás:
 
-#### Acceso
+### Acceso
 
 Puedes elegir dos modos acceso a los diferentes módulos:
 - [Acceso via UI](https://volteret4.github.io/music-fuzzy-doc/modulos/index.html) usando Qt y Python
@@ -15,23 +15,21 @@ Puedes elegir dos modos acceso a los diferentes módulos:
 
 Ambos modos necesitarán de una creación de la base de datos y de una serie de datos especificados según los módulos. (WIP)
 
-#### Instalar los requisitos
-
-##### Aplicación
+### Aplicación
 
 Está disponible para uso en linux, probado en archlinux y debian
 
-1. Clona el repositorio
+##### 1. Clona el repositorio
 ```bash
 git clone https://github.com/volteret4/mfuz 
 ```
 
-2. Instala los paquetes de python
+##### 2. Instala los paquetes de python
 ```
 pip install -r requeriments.txt
 ```
 
-1. Instala el resto de paquetes
+##### 3. Instala el resto de paquetes
 
 **debian based**
 ```sh
@@ -50,42 +48,38 @@ pacman -S
 
 > Pendientes de ajustar la necesidad imperiosa de todos estos paquetes a alguno menos
 
-4.  Editar el config file
+##### 4. Editar el config file
 
 Puedes elegir la version del config_example que desees, ya sea `json` o `yml`
 Una vez rellenadas las claves necesarias, guarda el archivo en config como config.json o config.yml
 
-5. Ejecuta la aplicación
+##### 5. Ejecuta la aplicación
 ```sh
 python main.py ruta/al/config.yml
 ```
 
-##### Web
+### Web
 
-1. Clona el repositorio:
+##### 1. Clona el repositorio:
 ```sh
 git clone https://github.com/volteret4/
 ```
 
-2. Instala los requisitos 
+##### 2. Instala los requisitos 
 - [docker y docker compose](https://volteret4.github.io/music-fuzzy-doc/credenciales/docker/index.html)
 
-1. Edita el docker-compose.yml:
+##### 3. Edita el docker-compose.yml:
 - Ruta al config.yml (usa el mismo que la aplicación)
-- 
+- Ruta a tu musica (opcional)
+- Ruta a la base de datos
 
-4. Accede al directorio y ejecuta:
+##### 4. Accede al directorio y ejecuta:
 ```sh
 docker compose build 
 docker compose up -d # para lanzarlo como daemon
 ```
 
-5. Accede desde cualquier navegador en `http://localhost:8447/`
-
-![[Base de datos]]
+##### 5. Accede desde cualquier navegador en `http://localhost:8447/`
 
 
 
-
-
-![[credenciales]]
