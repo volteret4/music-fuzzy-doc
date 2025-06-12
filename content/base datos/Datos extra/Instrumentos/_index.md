@@ -1,10 +1,9 @@
 ---
 title: instrumentos
-weight: 1
+weight: 7
 ---
 
-![[24. Equipboard artistas]]
 
-![[Equipboard instrumentos]]
 
-![[Equipboard detalles]]
+
+

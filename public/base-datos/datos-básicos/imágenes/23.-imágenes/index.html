@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es-ES" dir="ltr" itemscope itemtype="http://schema.org/Article" data-r-output-format="html">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="10 discos 1m 0,805s
+Archivos Archivo o Carpeta Descripción artists.img (columna en DB) Ruta a una imagen principal del artista. artists.img_paths (columna en DB) Lista JSON con rutas locales a imágenes del artista. artists.img_urls (columna en DB) Lista JSON con URLs de imágenes descargadas. .content/artistas_img/&lt;artista&gt;/image_N.jpg Imágenes de artistas guardadas localmente. .content/albums_img/&lt;artista&gt;_-_&lt;álbum&gt;/cover.jpg Carátulas de álbumes guardadas localmente. Carpeta temporal: .../temp/ Usada para descargas temporales y eliminar duplicados. Archivo de estadísticas (--stats_file) JSON opcional con las estadísticas del proceso. Argumentos Argumento Tipo Valores posibles Descripción --db_path str Ruta válida Ruta a la base de datos SQLite (obligatorio). --project_root str Ruta válida Ruta raíz del proyecto. Opcional, afecta a la ubicación de carpetas. --descargar_img_artistas str true / false Descargar imágenes de artistas. --guardar_url_artistas str true / false Guardar URLs de imágenes de artistas en la base de datos. --descargar_img_albums str true / false Descargar imágenes de álbumes. --guardar_url_albums str true / false Guardar URLs de carátulas en la base de datos. --force_update str true / false Forzar descarga incluso si ya existen imágenes/URLs. --spotify_client_id str ID válido Credencial para autenticar con la API de Spotify. --spotify_client_secret str Secret válido Credencial para autenticar con la API de Spotify. --discogs_token str Token válido Token de autenticación para Discogs. --lastfm_api_key str API Key válida API key para acceder a Last.fm. --stats_file str Ruta a archivo Si se proporciona, se guarda un archivo JSON con estadísticas. Datos Artistas Columna Tipo Descripción id int ID del artista (clave primaria). name str Nombre del artista. mbid str MusicBrainz ID opcional. img str Ruta a una imagen principal del artista. img_paths TEXT/JSON Lista JSON de rutas locales de imágenes descargadas. img_urls TEXT/JSON Lista JSON con URLs e información adicional (fuente, tamaño, etc.). Albums Columna Tipo Descripción id int ID del álbum (clave primaria). name str Nombre del álbum. artist_id int ID del artista (clave foránea). album_art_path str Ruta a la imagen local de la carátula. album_art_urls TEXT/JSON Lista JSON con URLs de imágenes de carátula. mbid str MusicBrainz ID opcional para el álbum. Artists networks Columna Tipo Descripción artist_id int Relación con la tabla artists. spotify str URL de Spotify del artista. Requisitos Librería / Script Obligatoria Descripción requests ✅ Realiza solicitudes HTTP a APIs (Spotify, Discogs, Last.fm). PIL (Pillow) ✅ Manipulación de imágenes (validación, tamaño). sqlite3 ✅ Acceso a la base de datos SQLite. cv2 (OpenCV) ⚠️ Recomendado Detección de duplicados visuales mediante hash perceptual. numpy ✅ Procesamiento de matrices de imágenes. argparse ✅ Manejo de argumentos por línea de comandos. base_module.PROJECT_ROOT ⚠️ Variable importada con el /root del proyecto.">
+    <meta name="author" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="23. Imágenes :: mfuz">
+    <meta name="twitter:description" content="10 discos 1m 0,805s
+Archivos Archivo o Carpeta Descripción artists.img (columna en DB) Ruta a una imagen principal del artista. artists.img_paths (columna en DB) Lista JSON con rutas locales a imágenes del artista. artists.img_urls (columna en DB) Lista JSON con URLs de imágenes descargadas. .content/artistas_img/&lt;artista&gt;/image_N.jpg Imágenes de artistas guardadas localmente. .content/albums_img/&lt;artista&gt;_-_&lt;álbum&gt;/cover.jpg Carátulas de álbumes guardadas localmente. Carpeta temporal: .../temp/ Usada para descargas temporales y eliminar duplicados. Archivo de estadísticas (--stats_file) JSON opcional con las estadísticas del proceso. Argumentos Argumento Tipo Valores posibles Descripción --db_path str Ruta válida Ruta a la base de datos SQLite (obligatorio). --project_root str Ruta válida Ruta raíz del proyecto. Opcional, afecta a la ubicación de carpetas. --descargar_img_artistas str true / false Descargar imágenes de artistas. --guardar_url_artistas str true / false Guardar URLs de imágenes de artistas en la base de datos. --descargar_img_albums str true / false Descargar imágenes de álbumes. --guardar_url_albums str true / false Guardar URLs de carátulas en la base de datos. --force_update str true / false Forzar descarga incluso si ya existen imágenes/URLs. --spotify_client_id str ID válido Credencial para autenticar con la API de Spotify. --spotify_client_secret str Secret válido Credencial para autenticar con la API de Spotify. --discogs_token str Token válido Token de autenticación para Discogs. --lastfm_api_key str API Key válida API key para acceder a Last.fm. --stats_file str Ruta a archivo Si se proporciona, se guarda un archivo JSON con estadísticas. Datos Artistas Columna Tipo Descripción id int ID del artista (clave primaria). name str Nombre del artista. mbid str MusicBrainz ID opcional. img str Ruta a una imagen principal del artista. img_paths TEXT/JSON Lista JSON de rutas locales de imágenes descargadas. img_urls TEXT/JSON Lista JSON con URLs e información adicional (fuente, tamaño, etc.). Albums Columna Tipo Descripción id int ID del álbum (clave primaria). name str Nombre del álbum. artist_id int ID del artista (clave foránea). album_art_path str Ruta a la imagen local de la carátula. album_art_urls TEXT/JSON Lista JSON con URLs de imágenes de carátula. mbid str MusicBrainz ID opcional para el álbum. Artists networks Columna Tipo Descripción artist_id int Relación con la tabla artists. spotify str URL de Spotify del artista. Requisitos Librería / Script Obligatoria Descripción requests ✅ Realiza solicitudes HTTP a APIs (Spotify, Discogs, Last.fm). PIL (Pillow) ✅ Manipulación de imágenes (validación, tamaño). sqlite3 ✅ Acceso a la base de datos SQLite. cv2 (OpenCV) ⚠️ Recomendado Detección de duplicados visuales mediante hash perceptual. numpy ✅ Procesamiento de matrices de imágenes. argparse ✅ Manejo de argumentos por línea de comandos. base_module.PROJECT_ROOT ⚠️ Variable importada con el /root del proyecto.">
+    <meta property="og:url" content="//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/23.-im%C3%A1genes/index.html">
+    <meta property="og:site_name" content="mfuz">
+    <meta property="og:title" content="23. Imágenes :: mfuz">
+    <meta property="og:description" content="10 discos 1m 0,805s
+Archivos Archivo o Carpeta Descripción artists.img (columna en DB) Ruta a una imagen principal del artista. artists.img_paths (columna en DB) Lista JSON con rutas locales a imágenes del artista. artists.img_urls (columna en DB) Lista JSON con URLs de imágenes descargadas. .content/artistas_img/&lt;artista&gt;/image_N.jpg Imágenes de artistas guardadas localmente. .content/albums_img/&lt;artista&gt;_-_&lt;álbum&gt;/cover.jpg Carátulas de álbumes guardadas localmente. Carpeta temporal: .../temp/ Usada para descargas temporales y eliminar duplicados. Archivo de estadísticas (--stats_file) JSON opcional con las estadísticas del proceso. Argumentos Argumento Tipo Valores posibles Descripción --db_path str Ruta válida Ruta a la base de datos SQLite (obligatorio). --project_root str Ruta válida Ruta raíz del proyecto. Opcional, afecta a la ubicación de carpetas. --descargar_img_artistas str true / false Descargar imágenes de artistas. --guardar_url_artistas str true / false Guardar URLs de imágenes de artistas en la base de datos. --descargar_img_albums str true / false Descargar imágenes de álbumes. --guardar_url_albums str true / false Guardar URLs de carátulas en la base de datos. --force_update str true / false Forzar descarga incluso si ya existen imágenes/URLs. --spotify_client_id str ID válido Credencial para autenticar con la API de Spotify. --spotify_client_secret str Secret válido Credencial para autenticar con la API de Spotify. --discogs_token str Token válido Token de autenticación para Discogs. --lastfm_api_key str API Key válida API key para acceder a Last.fm. --stats_file str Ruta a archivo Si se proporciona, se guarda un archivo JSON con estadísticas. Datos Artistas Columna Tipo Descripción id int ID del artista (clave primaria). name str Nombre del artista. mbid str MusicBrainz ID opcional. img str Ruta a una imagen principal del artista. img_paths TEXT/JSON Lista JSON de rutas locales de imágenes descargadas. img_urls TEXT/JSON Lista JSON con URLs e información adicional (fuente, tamaño, etc.). Albums Columna Tipo Descripción id int ID del álbum (clave primaria). name str Nombre del álbum. artist_id int ID del artista (clave foránea). album_art_path str Ruta a la imagen local de la carátula. album_art_urls TEXT/JSON Lista JSON con URLs de imágenes de carátula. mbid str MusicBrainz ID opcional para el álbum. Artists networks Columna Tipo Descripción artist_id int Relación con la tabla artists. spotify str URL de Spotify del artista. Requisitos Librería / Script Obligatoria Descripción requests ✅ Realiza solicitudes HTTP a APIs (Spotify, Discogs, Last.fm). PIL (Pillow) ✅ Manipulación de imágenes (validación, tamaño). sqlite3 ✅ Acceso a la base de datos SQLite. cv2 (OpenCV) ⚠️ Recomendado Detección de duplicados visuales mediante hash perceptual. numpy ✅ Procesamiento de matrices de imágenes. argparse ✅ Manejo de argumentos por línea de comandos. base_module.PROJECT_ROOT ⚠️ Variable importada con el /root del proyecto.">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta itemprop="name" content="23. Imágenes :: mfuz">
+    <meta itemprop="description" content="10 discos 1m 0,805s
+Archivos Archivo o Carpeta Descripción artists.img (columna en DB) Ruta a una imagen principal del artista. artists.img_paths (columna en DB) Lista JSON con rutas locales a imágenes del artista. artists.img_urls (columna en DB) Lista JSON con URLs de imágenes descargadas. .content/artistas_img/&lt;artista&gt;/image_N.jpg Imágenes de artistas guardadas localmente. .content/albums_img/&lt;artista&gt;_-_&lt;álbum&gt;/cover.jpg Carátulas de álbumes guardadas localmente. Carpeta temporal: .../temp/ Usada para descargas temporales y eliminar duplicados. Archivo de estadísticas (--stats_file) JSON opcional con las estadísticas del proceso. Argumentos Argumento Tipo Valores posibles Descripción --db_path str Ruta válida Ruta a la base de datos SQLite (obligatorio). --project_root str Ruta válida Ruta raíz del proyecto. Opcional, afecta a la ubicación de carpetas. --descargar_img_artistas str true / false Descargar imágenes de artistas. --guardar_url_artistas str true / false Guardar URLs de imágenes de artistas en la base de datos. --descargar_img_albums str true / false Descargar imágenes de álbumes. --guardar_url_albums str true / false Guardar URLs de carátulas en la base de datos. --force_update str true / false Forzar descarga incluso si ya existen imágenes/URLs. --spotify_client_id str ID válido Credencial para autenticar con la API de Spotify. --spotify_client_secret str Secret válido Credencial para autenticar con la API de Spotify. --discogs_token str Token válido Token de autenticación para Discogs. --lastfm_api_key str API Key válida API key para acceder a Last.fm. --stats_file str Ruta a archivo Si se proporciona, se guarda un archivo JSON con estadísticas. Datos Artistas Columna Tipo Descripción id int ID del artista (clave primaria). name str Nombre del artista. mbid str MusicBrainz ID opcional. img str Ruta a una imagen principal del artista. img_paths TEXT/JSON Lista JSON de rutas locales de imágenes descargadas. img_urls TEXT/JSON Lista JSON con URLs e información adicional (fuente, tamaño, etc.). Albums Columna Tipo Descripción id int ID del álbum (clave primaria). name str Nombre del álbum. artist_id int ID del artista (clave foránea). album_art_path str Ruta a la imagen local de la carátula. album_art_urls TEXT/JSON Lista JSON con URLs de imágenes de carátula. mbid str MusicBrainz ID opcional para el álbum. Artists networks Columna Tipo Descripción artist_id int Relación con la tabla artists. spotify str URL de Spotify del artista. Requisitos Librería / Script Obligatoria Descripción requests ✅ Realiza solicitudes HTTP a APIs (Spotify, Discogs, Last.fm). PIL (Pillow) ✅ Manipulación de imágenes (validación, tamaño). sqlite3 ✅ Acceso a la base de datos SQLite. cv2 (OpenCV) ⚠️ Recomendado Detección de duplicados visuales mediante hash perceptual. numpy ✅ Procesamiento de matrices de imágenes. argparse ✅ Manejo de argumentos por línea de comandos. base_module.PROJECT_ROOT ⚠️ Variable importada con el /root del proyecto.">
+    <meta itemprop="wordCount" content="421">
+    <title>23. Imágenes :: mfuz</title>
+    <link href="/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/23.-im%C3%A1genes/index.xml" rel="alternate" type="application/rss+xml" title="23. Imágenes :: mfuz">
+    <link href="/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/23.-im%C3%A1genes/index.print.html" rel="alternate" type="text/html" title="23. Imágenes :: mfuz">
+    <link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet" media="print" onload="this.media='all';this.onload=null;"><noscript><link href="/fonts/fontawesome/css/fontawesome-all.min.css" rel="stylesheet"></noscript>
+    <link href="/css/perfect-scrollbar/perfect-scrollbar.min.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="/css/format-html.css" rel="stylesheet" id="R-format-style">
+    <link href="/css/auto-complete/auto-complete.min.css" rel="stylesheet">
+    <script src="/js/auto-complete/auto-complete.min.js" defer></script>
+    <script src="/js/lunr/lunr.min.js" defer></script>
+    <script src="/js/lunr/lunr.stemmer.support.min.js" defer></script>
+    <script src="/js/lunr/lunr.multi.min.js" defer></script>
+    <script src="/js/lunr/lunr.es.min.js" defer></script>
+    <script src="/js/search.js" defer></script>
+    <script>
+      window.relearn = window.relearn || {};
+      // configuration
+      window.relearn.min = ``;
+      window.relearn.path='\/base-datos\/datos-b%C3%A1sicos\/im%C3%A1genes\/23.-im%C3%A1genes\/index.html';
+      window.relearn.relBasePath='..\/..\/..\/..';
+      window.relearn.relBaseUri='..\/..\/..\/..';
+      window.relearn.absBaseUri='\/\/192.168.1.133:1313';
+      window.relearn.contentLangs=['es'];
+      window.relearn.index_js_url="/searchindex.en.js";
+      window.relearn.disableAnchorCopy=false;
+      window.relearn.disableAnchorScrolling=false;
+      window.relearn.disableInlineCopyToClipboard=false;
+      window.relearn.enableBlockCodeWrap=true;
+      // legal
+      window.relearn.getItem = (s,n) => {return s.getItem(n)};
+      window.relearn.setItem = (s,n,v) => {return s.setItem(n,v)};
+      window.relearn.removeItem = (s,n) => {return s.removeItem(n)};
+      // variant stuff
+      window.relearn.themevariants = [ 'zen-dark', 'zen-light', 'relearn-light', 'relearn-dark' ];
+      window.relearn.customvariantname = "my-custom-variant";
+      window.relearn.changeVariant = function(variant) {
+        var oldVariant = document.documentElement.dataset.rThemeVariant;
+        window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        document.documentElement.dataset.rThemeVariant = variant;
+        if (oldVariant != variant) {
+          document.dispatchEvent( new CustomEvent('themeVariantLoaded', { detail: { variant, oldVariant } }) );
+          window.relearn.markVariant();
+        }
+      }
+      window.relearn.markVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant");
+        document.querySelectorAll(".R-variantswitcher select").forEach((select) => {select.value = variant;});
+      }
+      window.relearn.initVariant = function() {
+        var variant = window.relearn.getItem(window.localStorage, window.relearn.absBaseUri + "/variant") ?? "";
+        if( variant == window.relearn.customvariantname ){
+        }else if( !variant || !window.relearn.themevariants.includes(variant) ){
+          variant = window.relearn.themevariants[0];
+          window.relearn.setItem(window.localStorage, window.relearn.absBaseUri + "/variant", variant);
+        }
+        document.documentElement.dataset.rThemeVariant = variant;
+      }
+      window.relearn.initVariant();
+      window.relearn.markVariant();
+      // translations
+      window.T_Copy_to_clipboard = `Copy to clipboard`;
+      window.T_Copied_to_clipboard = `Copied to clipboard!`;
+      window.T_Copy_link_to_clipboard = `Copy link to clipboard`;
+      window.T_Link_copied_to_clipboard = `Copied link to clipboard!`;
+      window.T_Reset_view = `Reset view`;
+      window.T_View_reset = `View reset!`;
+      window.T_No_results_found = `No results found for "{0}"`;
+      window.T_N_results_found = `{1} results found for "{0}"`;
+    </script>
+  </head>
+  <body class="mobile-support html" data-url="/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/23.-im%C3%A1genes/index.html">
+    <div id="R-body" class="default-animation">
+      <div id="R-body-overlay"></div>
+      <nav id="R-topbar">
+        <div class="topbar-wrapper">
+          <div class="topbar-sidebar-divider"></div>
+          <div class="topbar-area topbar-area-start" data-area="start">
+            <div class="topbar-button topbar-button-sidebar" data-content-empty="disable" data-width-s="show" data-width-m="hide" data-width-l="hide"><button class="topbar-control" onclick="toggleNav()" type="button" title="Menu (CTRL&#43;ALT&#43;n)"><i class="fa-fw fas fa-bars"></i></button>
+            </div>
+            <div class="topbar-button topbar-button-toc" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="Table of Contents (CTRL&#43;ALT&#43;t)"><i class="fa-fw fas fa-list-alt"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+<nav class="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#archivos">Archivos</a></li>
+        <li><a href="#argumentos">Argumentos</a></li>
+        <li><a href="#datos">Datos</a></li>
+        <li><a href="#artists-networks">Artists networks</a></li>
+        <li><a href="#requisitos">Requisitos</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ol class="topbar-breadcrumbs breadcrumbs highlightable" itemscope itemtype="http://schema.org/BreadcrumbList">
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/index.html"><span itemprop="name">mfuzz</span></a><meta itemprop="position" content="1">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base-datos/index.html"><span itemprop="name">Base de datos</span></a><meta itemprop="position" content="2">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base-datos/datos-b%C3%A1sicos/index.html"><span itemprop="name">Datos básicos</span></a><meta itemprop="position" content="3">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><a itemprop="item" href="/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/index.html"><span itemprop="name">Imágenes</span></a><meta itemprop="position" content="4">&nbsp;>&nbsp;</li>
+            <li itemscope itemtype="https://schema.org/ListItem" itemprop="itemListElement" class=""><span itemprop="name">23. Imágenes</span><meta itemprop="position" content="5"></li>
+          </ol>
+          <div class="topbar-area topbar-area-end" data-area="end">
+            <div class="topbar-button topbar-button-print" data-content-empty="disable" data-width-s="area-more" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/23.-im%C3%A1genes/index.print.html" title="Print whole chapter (CTRL+ALT+p)"><i class="fa-fw fas fa-print"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-prev" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/index.html" title="Imágenes (🡐)"><i class="fa-fw fas fa-chevron-left"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-next" data-content-empty="disable" data-width-s="show" data-width-m="show" data-width-l="show"><a class="topbar-control" href="/base-datos/datos-b%C3%A1sicos/escuchas/index.html" title="Escuchas (🡒)"><i class="fa-fw fas fa-chevron-right"></i></a>
+            </div>
+            <div class="topbar-button topbar-button-more" data-content-empty="hide" data-width-s="show" data-width-m="show" data-width-l="show"><button class="topbar-control" onclick="toggleTopbarFlyout(this)" type="button" title="More"><i class="fa-fw fas fa-ellipsis-v"></i></button>
+              <div class="topbar-content">
+                <div class="topbar-content-wrapper">
+                  <div class="topbar-area topbar-area-more" data-area="more">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div id="R-main-overlay"></div>
+      <main id="R-body-inner" class="highlightable base-datos" tabindex="-1">
+        <div class="flex-block-wrapper">
+        </div>
+      </main>
+    </div>
+    <script src="/js/clipboard/clipboard.min.js" defer></script>
+    <script src="/js/perfect-scrollbar/perfect-scrollbar.min.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+  </body>
+</html>

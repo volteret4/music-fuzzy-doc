@@ -1,6 +1,6 @@
 ---
 title: Datos extra
-weight: 4
+weight: 3
 ---
 
 Con estos scripts podrás completar mucha información para poder extraer estadísticas y poder buscar nueva música o encontrar patrones curiosos en tu escucha o colección.

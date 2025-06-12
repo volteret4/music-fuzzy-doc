@@ -1,73 +1,88 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.a-archivos-locales/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/01.-archivos-locales/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.b-spotify/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/02.-spotify/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/03.-enlaces-artistas/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/03.-listens-listenbrainz/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/04.-youtube-links-de-canciones/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/04.-redes/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/05.-enlaces-canciones/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/wikipedia/08.-wikipedia/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/09.-redes/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/letras/10.-letras/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/08.-enlaces-albums/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/sellos/11.-musicbrainz-sellos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/12.-art%C3%ADculos-en-servidor-rss/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/10.-wikipedia/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/13.-review-scrapper/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/libros/14.-libros/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/15.-discograf%C3%ADas-discogs-masters/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/12.-letras/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/16.-discograf%C3%ADas-discogs-releases/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.a-art%C3%ADculos-en-servidor-rss/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/17.-discograf%C3%ADas-discogs-info/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.b-review-scrapper/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/18.-musicbrainz-discograf%C3%ADa/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/14.-discograf%C3%ADas-masters/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/19.-uk-csv/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/15.-discograf%C3%ADas-releases/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/20.-uk-indie-nme/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/16.-discograf%C3%ADas-info/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/20.-uk-specialized/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/17.-conciertos-pasados-setlistfm/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/21.-billboard/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/18.-charts-populares/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/22.-spain-charts/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/19.-im%C3%A1genes/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/23.-im%C3%A1genes/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/20.-optimizaci%C3%B3n/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/24.-equipboard-artistas/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/escuchas/27.-scrobbles-lastfm/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/escuchas/28.-listens-listenbrainz/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/29.-rym-artistas/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/30.-rym-artistas-info/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/31.-rym-%C3%A1lbumes/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/instalacion/config-yml/index.html</loc>
@@ -79,16 +94,34 @@
     <loc>//192.168.1.133:1313/credenciales/docker/index.html</loc>
   </url>
   <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/equipboard-detalles/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/equipboard-instrumentos/index.html</loc>
+  </url>
+  <url>
     <loc>//192.168.1.133:1313/credenciales/genius/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/introduccion/index.html</loc>
+    <loc>//192.168.1.133:1313/instalacion/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/credenciales/lastfm/index.html</loc>
   </url>
   <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/libros/index.html</loc>
+  </url>
+  <url>
     <loc>//192.168.1.133:1313/credenciales/lirycs_ovh/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/menciones/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/modulos/m%C3%B3dulo-01-music-browser/index.html</loc>
@@ -118,7 +151,7 @@
     <loc>//192.168.1.133:1313/credenciales/muspy/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/credenciales/picard/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/credenciales/python/index.html</loc>
@@ -127,196 +160,334 @@
     <loc>//192.168.1.133:1313/instalacion/requisitos/index.html</loc>
   </url>
   <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rym/index.html</loc>
+  </url>
+  <url>
     <loc>//192.168.1.133:1313/credenciales/spotify/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/wikipedia/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/credenciales/youtube/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.b-spotify/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/zz.-optimizaci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/03.-enlaces-artistas/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/04.-youtube-links-de-canciones/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/15.-discograf%C3%ADas-discogs-masters/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/16.-discograf%C3%ADas-discogs-releases/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/17.-discograf%C3%ADas-discogs-info/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/12.-art%C3%ADculos-en-servidor-rss/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.a-art%C3%ADculos-en-servidor-rss/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/sellos/11.-musicbrainz-sellos/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/14.-discograf%C3%ADas-masters/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/05.-enlaces-canciones/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/15.-discograf%C3%ADas-releases/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/escuchas/27.-scrobbles-lastfm/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/16.-discograf%C3%ADas-info/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/19.-uk-csv/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/17.-conciertos-pasados-setlistfm/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/20.-uk-indie-nme/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.a-archivos-locales/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/20.-uk-specialized/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/21.-billboard/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/03.-listens-listenbrainz/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/22.-spain-charts/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/04.-redes/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/18.-musicbrainz-discograf%C3%ADa/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/08.-enlaces-albums/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/24.-equipboard-artistas/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/10.-wikipedia/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/equipboard-detalles/archivos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/12.-letras/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/equipboard-instrumentos/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/libros/14.-libros/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/29.-rym-artistas/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/30.-rym-artistas-info/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/31.-rym-%C3%A1lbumes/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/13.-review-scrapper/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/menciones/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/01.-archivos-locales/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/02.-spotify/archivos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/09.-redes/argumentos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/escuchas/28.-listens-listenbrainz/argumentos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/letras/10.-letras/argumentos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/wikipedia/08.-wikipedia/argumentos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/credenciales/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/instalacion/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/sellos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.b-spotify/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/03.-enlaces-artistas/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/04.-youtube-links-de-canciones/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/19.-uk-csv/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/15.-discograf%C3%ADas-discogs-masters/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/16.-discograf%C3%ADas-discogs-releases/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/17.-discograf%C3%ADas-discogs-info/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/libros/14.-libros/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.a-art%C3%ADculos-en-servidor-rss/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/12.-art%C3%ADculos-en-servidor-rss/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/14.-discograf%C3%ADas-masters/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/13.-review-scrapper/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/15.-discograf%C3%ADas-releases/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/sellos/11.-musicbrainz-sellos/argumentos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/16.-discograf%C3%ADas-info/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/05.-enlaces-canciones/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/17.-conciertos-pasados-setlistfm/argumentos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/escuchas/27.-scrobbles-lastfm/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.a-archivos-locales/configuraci%C3%B3n/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/20.-uk-indie-nme/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/20.-uk-specialized/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/02.-scrobbles-lastfm/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/21.-billboard/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/03.-listens-listenbrainz/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/22.-spain-charts/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/04.-redes/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/18.-musicbrainz-discograf%C3%ADa/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/08.-enlaces-albums/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/24.-equipboard-artistas/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/10.-wikipedia/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/equipboard-detalles/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/12.-letras/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/equipboard-instrumentos/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/08.-enlaces-albums/archivos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/29.-rym-artistas/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/configuraci%C3%B3n_json/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/30.-rym-artistas-info/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/credenciales/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/31.-rym-%C3%A1lbumes/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/credenciales/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/menciones/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-musicbrainz-sellos/credenciales/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/01.-archivos-locales/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/credenciales/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/02.-spotify/configuraci%C3%B3n/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.a-archivos-locales/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/09.-redes/datos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/01.b-spotify/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/escuchas/28.-listens-listenbrainz/datos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/05.-musicbrainz-album-info/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/letras/10.-letras/datos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/06.-musicbrainz-canciones/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/wikipedia/08.-wikipedia/datos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/07.-enlaces-artistas/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/13.a-art%C3%ADculos-en-servidor-rss/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/14.-discograf%C3%ADas-masters/datos/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/15.-discograf%C3%ADas-releases/datos/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/16.-discograf%C3%ADas-info/datos/index.html</loc>
-  </url>
-  <url>
-    <loc>//192.168.1.133:1313/base_datos/17.-conciertos-pasados-setlistfm/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/letras/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/modulos/index.html</loc>
   </url>
   <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/19.-uk-csv/configuraci%C3%B3n/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/libros/14.-libros/configuraci%C3%B3n/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/13.-review-scrapper/configuraci%C3%B3n/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/04.-youtube-links-de-canciones/credenciales/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/sellos/11.-musicbrainz-sellos/credenciales/index.html</loc>
+  </url>
+  <url>
     <loc>//192.168.1.133:1313/credenciales/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/09.-enlaces-canciones/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/03.-enlaces-artistas/datos/index.html</loc>
   </url>
   <url>
-    <loc>//192.168.1.133:1313/base_datos/11.-youtube-links-de-canciones/datos/index.html</loc>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/05.-enlaces-canciones/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/escuchas/27.-scrobbles-lastfm/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/20.-uk-indie-nme/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/20.-uk-specialized/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/21.-billboard/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/22.-spain-charts/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/15.-discograf%C3%ADas-discogs-masters/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/16.-discograf%C3%ADas-discogs-releases/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/17.-discograf%C3%ADas-discogs-info/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/discograf%C3%ADas/18.-musicbrainz-discograf%C3%ADa/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/24.-equipboard-artistas/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/equipboard-detalles/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/instrumentos/equipboard-instrumentos/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/29.-rym-artistas/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/30.-rym-artistas-info/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/rateyourmusic/31.-rym-%C3%A1lbumes/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/12.-art%C3%ADculos-en-servidor-rss/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/menciones/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/01.-archivos-locales/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/punto-de-partida/02.-spotify/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/im%C3%A1genes/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/enlaces/04.-youtube-links-de-canciones/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/19.-uk-csv/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/libros/14.-libros/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/reviews/13.-review-scrapper/datos/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-b%C3%A1sicos/escuchas/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/web_docker/index.html</loc>
+  </url>
+  <url>
+    <loc>//192.168.1.133:1313/base-datos/datos-extra/charts/index.html</loc>
   </url>
   <url>
     <loc>//192.168.1.133:1313/categories/index.html</loc>

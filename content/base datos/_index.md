@@ -1,6 +1,6 @@
 ---
 title: Base de datos
-weight: 2
+weight: 1
 ---
 
 # Base de datos
