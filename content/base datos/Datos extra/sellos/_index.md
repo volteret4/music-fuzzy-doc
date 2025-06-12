@@ -1,5 +1,6 @@
 ---
 title: sellos
-weight: 2
+weight: 1
 ---
 
+![[11. Musicbrainz sellos]]
