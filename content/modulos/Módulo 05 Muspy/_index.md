@@ -24,12 +24,3 @@ Puede leer la base de datos o realizar búsquedas individuales de los mismos en 
 - `musicbrainz` Te permitirá consultar las colecciones de tu usuario, agregar alguna y añadir elementos a las mismas.
 - `Networks` Usará la api de bluesky para buscar tus artistas, y seguir aquellos que te parezcan reales pudiendo ver su profile, foto y los últimos mensajes.
 
-```tasks
-not done
-tags include #m_fuzzy
-tags include #muspy
-hide tags
-sort by due
-sort by priority
-sort by scheduled
-```

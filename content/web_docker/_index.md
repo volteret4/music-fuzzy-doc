@@ -26,12 +26,3 @@ Gracias a ella podremos:
 
 **Estadísticas Escuchas**
 
-```tasks
-not done
-tags include #web_mfuzzy
-hide tags
-short mode
-sort by due
-sort by priority
-sort by scheduled
-```

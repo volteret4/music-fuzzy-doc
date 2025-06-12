@@ -28,12 +28,3 @@ Pensado para crear una playlist mensual de cada blog musical que sigo en FreshRs
 
 Se pueden añadir urls a post singulares para crear una playlist del mismo extrayendo los enlaces a los servicios admitidos y guardarla en playlist locales.
 
-```tasks
-not done
-tags include #m_fuzzy
-tags include #url 
-hide tags
-sort by due
-sort by priority
-sort by scheduled
-```

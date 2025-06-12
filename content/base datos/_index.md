@@ -40,15 +40,6 @@ Estos scripts puedes usarlos durante el proceso de creación o al final para con
 >
 > Todas las consultas respetan los limites establecidas por cada api y las restricciones diarias pausaran el script que alcance el límite hasta que este sea restablecido
 
-```tasks
-not done
-tags include #create_db
-
-short mode
-sort by due
-sort by priority
-sort by scheduled
-```
 
 ![[Punto de partida]]
 
