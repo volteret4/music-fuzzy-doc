@@ -14,3 +14,12 @@ En este módulo se podrán editar campos de la base de datos, buscando primero e
 Script:
 [[editor_module.py]]
 
+```tasks
+not done
+tags include #m_fuzzy
+tags include #db_editor 
+hide tags
+sort by due
+sort by priority
+sort by scheduled
+```

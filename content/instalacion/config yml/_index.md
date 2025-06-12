@@ -321,3 +321,12 @@ modulos_desactivados:
 
 ```
 
+```tasks
+not done
+tags include #m_fuzzy
+tags include #json
+hide tags
+sort by due
+sort by priority
+sort by scheduled
+```
