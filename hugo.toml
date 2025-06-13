@@ -16,9 +16,10 @@ title = 'mfuzz'
   disableGeneratorVersion = true
   disableAssetsBusting = true # desactivar en prod.
   themeVariant = ['zen-dark', 'zen-light', 'relearn-light', 'relearn-dark']
-  linkTitle = 'mfuz'
+  linkTitle = 'mfuzz'
   collapsibleMenu = true
-
+  alwaysopen = false
+  
 [outputs]
   home = ['html', 'rss', 'print']
   page = ['html', 'rss', 'print']
