@@ -9,7 +9,7 @@ Además de poder editar el config.yml directamente, existe un módulo que leerá
 
 Las rutas a archivos se pueden escribir de modo absoluto `/home/user/spotify_token.txt` o de forma relativa, partiendo de la ruta en la que esté la raiz de la app, quedando `.content/spotify_token.txt` en `/ruta/app/.content/spotify_token.txt`
 
-```yml
+```yml {lineNos="true" wrap="true" title="config.yml"}
 # Configuración global que leerán todos los módulos activos
 global_theme_config:
   enable_individual_themes: true

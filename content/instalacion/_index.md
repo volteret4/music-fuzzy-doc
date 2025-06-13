@@ -20,19 +20,19 @@ Ambos modos necesitarán de una creación de la base de datos y de una serie de 
 Está disponible para uso en linux, probado en archlinux y debian
 
 ##### 1. Clona el repositorio
-```bash
-git clone https://github.com/volteret4/mfuz 
+```bash {lineNos="true" wrap="true" title="Clonar"}
+git clone https://github.com/volteret4/mfuz.git
 ```
 
 ##### 2. Instala los paquetes de python
-```
+```bash {lineNos="true" wrap="true" title="pip"}
 pip install -r requeriments.txt
 ```
 
 ##### 3. Instala el resto de paquetes
 
 **debian based**
-```sh
+```bash {lineNos="true" wrap="true" title="debian"}
 sudo apt update
 sudo apt install libxcb-cursor0 libxcb-cursor-dev
 
@@ -42,8 +42,9 @@ sudo apt install libxcb-xinerama0 libxcb-randr0 libxcb-render-util0 libxcb-keysy
 ```
 
 **arch linux**
-```sh
-pacman -S  
+```bash {lineNos="true" wrap="true" title="arch"}
+pacman -Sy
+pacman -S xcb-util-cursor qt6-base libxcb xcb-util-renderutil xcb-util-keysyms
 ```
 
 > Pendientes de ajustar la necesidad imperiosa de todos estos paquetes a alguno menos
@@ -54,15 +55,15 @@ Puedes elegir la version del config_example que desees, ya sea `json` o `yml`
 Una vez rellenadas las claves necesarias, guarda el archivo en config como config.json o config.yml
 
 ##### 5. Ejecuta la aplicación
-```sh
+```bash {lineNos="true" wrap="true" title="Ejecutar"}
 python main.py ruta/al/config.yml
 ```
 
 ### Web
 
 ##### 1. Clona el repositorio:
-```sh
-git clone https://github.com/volteret4/
+```bash {lineNos="true" wrap="true" title="Clonar"}
+git clone https://github.com/volteret4/mfuzz_docker_web.git
 ```
 
 ##### 2. Instala los requisitos 
@@ -74,12 +75,14 @@ git clone https://github.com/volteret4/
 - Ruta a la base de datos
 
 ##### 4. Accede al directorio y ejecuta:
-```sh
+```bash {lineNos="true" wrap="true" title="Construir contenedor"}
 docker compose build 
 docker compose up -d # para lanzarlo como daemon
 ```
 
 ##### 5. Accede desde cualquier navegador en `http://localhost:8447/`
+
+
 
 
 

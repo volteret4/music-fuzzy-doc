@@ -3,22 +3,47 @@ title: mfuzz
 type: home
 ---
 
-### APP
-Esta aplicación modular te permitirá gestionar tu colección musical, buscar conciertos, estar al tanto de los nuevos álbumes que van a sacar, descubrir nueva música e incluso un pequeño juego musical.
+# APP
 
-La aplicación depende de una base de datos para funcionar, que en su versión más completa puede llevar un buen tiempo en finalizar, por ello tiene un carácter modular que le hace posible seleccionar los componentes que nos interesan, pudiendo evitar otros salvando algo de tiempo y espacio.
+Esta aplicación modular permite:
+
+- Gestionar tu colección musical (álbumes, artistas, géneros, etiquetas).
+- Consultar conciertos y giras relacionados con tu biblioteca.
+- Seguir lanzamientos próximos de artistas que te interesan.
+- Explorar música nueva por afinidad, popularidad o criterios propios.
+- Crear playlists locales o en Spotify.
+- Jugar a un pequeño juego musical integrado, basado en tu colección.
+
+## Estructura modular
+
+La aplicación se apoya en una base de datos que centraliza toda la información. Su construcción completa puede requerir bastante tiempo, por lo que la arquitectura es modular: se pueden activar solo los componentes necesarios, reduciendo así el consumo de tiempo, recursos y almacenamiento.
+
+## Base de datos extendida
+
+Cuando se construye en su versión más completa, la base de datos puede incluir:
+
+- Información de Wikipedia (en varios idiomas).
+- Artistas similares y relacionados.
+- Datos sobre sellos discográficos y sublabels.
+- Colaboradores en cada álbum o track (productores, músicos invitados, etc.).
+- Ingenieros de mezcla y masterización.
+- Instrumentos utilizados por cada artista.
+- Letras de canciones.
+- Enlaces a servicios externos (Discogs, MusicBrainz, Last.fm, etc.).
+- Detalles completos de discografías.
+- Información sobre los distintos tipos de lanzamiento de un álbum (versiones, reediciones, ediciones regionales, etc.).
 
 
-> **En desarrollo:**
-> Se está implementando una interfaz gráfica que facilite la creación de la base de datos con sus botoncitos y menús
 
-### Version web
-Existe una versión web de la app en un contenedor docker, para acceso remoto junto a la base de datos. 
+## Versión web
 
-Pudes ver mas en [Acceso Web](https://volteret4.github.io/music-fuzzy-doc/web_docker/index.html)
+Existe una versión web de la aplicación que puede desplegarse mediante Docker. Esta permite el acceso remoto tanto a la interfaz como a la base de datos.
+
+Más información: [Acceso Web](https://volteret4.github.io/music-fuzzy-doc/web_docker/index.html)
+
 
 
 < 
  
 ---
-_actualizado el 12-06-2025 22:06_
+_actualizado el 13-06-2025 17:06_
