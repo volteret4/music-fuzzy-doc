@@ -3,7 +3,7 @@ baseURL = 'https://volteret4.github.io/music-fuzzy-doc'
 relativeURLs = false
 languageCode = 'es-ES'
 title = 'mfuzz'
-favicon = "favico.ico"
+favicon = "favicon.ico"
 
 [author]
   name = 'volteret4'
